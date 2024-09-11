@@ -2,7 +2,7 @@
 
 ## Task 1: Enable JIT on your VMs from Microsoft Defender for Cloud
 
-1.  Type !!Microsoft Defender for Cloud!! in the Azure portal search
+1.  Type [Link text]Microsoft Defender for Cloud[Link text] in the Azure portal search
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
 
