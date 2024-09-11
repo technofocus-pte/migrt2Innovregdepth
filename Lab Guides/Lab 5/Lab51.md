@@ -2,7 +2,7 @@
 
 ## Task 1: Enable JIT on your VMs from Microsoft Defender for Cloud
 
-1.  Type [Link text](Microsoft Defender for Cloud) in the Azure portal search
+1.  Type **Microsoft Defender for Cloud** in the Azure portal search
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
 
@@ -92,7 +92,7 @@ alt="A screenshot of a computer Description automatically generated" />
 In this exercise we will see how to create a brand new Microsoft
 Sentinel workspace.
 
-Navigate to the **http://portal.azure.com** and log in with the **MOD
+Navigate to the [http://portal.azure.com](http://portal.azure.com) and log in with the **MOD
 Administrator** credentials provided on the home tab of your lab
 environment.
 
