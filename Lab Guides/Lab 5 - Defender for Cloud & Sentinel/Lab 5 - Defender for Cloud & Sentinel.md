@@ -5,8 +5,7 @@
 1.  Type **Microsoft Defender for Cloud** in the Azure portal search
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
-
-       ![](./media/mage1.png)
+![](./media/mage1.png)
  
 2.  On **Microsoft Defender for Cloud \| Overview** page left-sided
     pane, navigate to the **Cloud Security** section and then click on
@@ -23,7 +22,7 @@
     the VMs – **PostgreSrv** is listed under the **Non** **Configured**
     tab.
 
-    ![](./media/mage4.png) 
+    ![](./media/mage4.png)
 
 5.  Select the VMs and click on **Enable JIT on 2 VMs** button on the
     right side.
