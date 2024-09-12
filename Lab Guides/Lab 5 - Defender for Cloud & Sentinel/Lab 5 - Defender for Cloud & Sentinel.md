@@ -20,8 +20,7 @@
     scroll down and click on **Just-in-time VM access** under the
     **Advanced protection** section as shown in the below image.
 
-<img src="./media/image3.png" style="width:6.5in;height:2.56528in"
-alt="A screenshot of a computer Description automatically generated" />
+     ![](./media/image3.png)
 
 4.  On the **Just-in-time VM access** page, navigate to the **Virtual
     machines** section and click on **Non Configured** tab. You will see
