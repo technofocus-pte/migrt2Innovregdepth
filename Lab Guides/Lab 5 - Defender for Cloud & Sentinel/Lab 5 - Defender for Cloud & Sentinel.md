@@ -8,7 +8,8 @@
     
     ![](./media/image1.png)
 
-
+## copy the below
+        something
 
 3.  On **Microsoft Defender for Cloud \| Overview** page left-sided
     pane, navigate to the **Cloud Security** section and then click on
