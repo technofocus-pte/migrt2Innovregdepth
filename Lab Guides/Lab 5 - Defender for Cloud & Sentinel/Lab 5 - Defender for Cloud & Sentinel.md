@@ -5,11 +5,12 @@
 1.  Type **Microsoft Defender for Cloud** in the Azure portal search
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
+    
 ![](./media/mage1.png)
 <img src="./media/image1.png"
 style="width:6.19878in;height:3.12544in" />
 
-2.  On **Microsoft Defender for Cloud \| Overview** page left-sided
+3.  On **Microsoft Defender for Cloud \| Overview** page left-sided
     pane, navigate to the **Cloud Security** section and then click on
     **Workload Protections**.
 
