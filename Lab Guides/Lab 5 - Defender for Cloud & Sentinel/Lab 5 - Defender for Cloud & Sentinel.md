@@ -14,8 +14,7 @@
     pane, navigate to the **Cloud Security** section and then click on
     **Workload Protections**.
 
-<img src="./media/image2.png" style="width:6.5in;height:4.44306in"
-alt="A screenshot of a computer Description automatically generated" />
+    ![](./media/image2.png)
 
 3.  On **Microsoft Defender for Cloud \| Workload protections** page,
     scroll down and click on **Just-in-time VM access** under the
