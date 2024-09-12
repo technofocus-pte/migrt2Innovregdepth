@@ -337,6 +337,8 @@ your Azure subscription, into your Microsoft Sentinel workspace.
 9.  On the **Azure Activity connector** page you will be able to see the
     connection status.
 
+      ![](./media/image52.png)  
+  
 <span class="mark">**Note**: It is normal if you don't immediately see
 the connector showing as connected and in green, it takes around 30
 minutes for the process to complete. Also, each subscription has a
@@ -344,8 +346,6 @@ maximum of 5 destinations for its activity logs. If this limit is
 already reached, the policy created as part of this exercise won't be
 able to add an additional destination to your Microsoft Sentinel
 workspace.</span>
-
-      ![](./media/image52.png)  
 
 10. Continue to the next exercise then you can check back after 30
     minutes.
@@ -367,7 +367,7 @@ investigate and respond to incidents.
     bar, select the **Tenant-based Microsoft Defender for Cloud**
     **(Preview)** connector and click on **Open connector page**.
 
-      ![](./media/image53.png"
+      ![](./media/image53.png) 
 
 
 3.  On the **Tenant-based Microsoft Defender for Cloud** **(Preview)**
@@ -378,13 +378,13 @@ investigate and respond to incidents.
 
 4.  You should receive the notification as **Connected successfully.**
 
-      ![](./media/image55.png"
+      ![](./media/image55.png) 
 
 
 5.  Wait for 1-2 minutes and then refresh the page, the Status of the
     connector should also be updated to **Connected.**
 
-      ![](./media/image56.png"
+      ![](./media/image56.png) 
 
 
 6.  Back on the **Data connectors** screen, type **subscription** in the
