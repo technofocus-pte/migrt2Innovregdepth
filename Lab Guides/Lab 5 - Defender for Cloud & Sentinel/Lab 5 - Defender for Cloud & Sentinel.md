@@ -6,7 +6,7 @@
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
     
-![](./media/image1.png)
+    ![](./media/image1.png)
 
 
 
