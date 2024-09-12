@@ -295,15 +295,15 @@ your Azure subscription, into your Microsoft Sentinel workspace.
 1.  While still on the **Microsoft Sentinel** page click on **Data
     Connectors** under **Configuration** section.
 
-<img src="./media/image44.png" style="width:6.26806in;height:3.02011in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image44.png)      6.26806in;height:3.02011in"
+
 
 2.  In the data connectors screen, type **activity** in the search bar,
     select the **Azure Activity** connector and click on **Open
     connector page**.
 
-<img src="./media/image45.png" style="width:6.26806in;height:2.95328in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image45.png)      6.26806in;height:2.95328in"
+
 
 3.  On the **Azure Activity connector** page, go to option number **2.
     Connect your subscriptions through diagnostic settings new
@@ -313,40 +313,40 @@ alt="A screenshot of a computer Description automatically generated" />
     Assignment** wizard, this will redirect you to the policy creation
     page.
 
-<img src="./media/image46.png" style="width:6.26806in;height:3.41597in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image46.png)      6.26806in;height:3.41597in"
+
 
 4.  On the **Scope** selection select **Azure Pass – Sponsorship** and
     under **Resource Group** select **LAWResourceGroup**. Click
     **Select**.
 
-<img src="./media/image47.png" style="width:6.26806in;height:3.49861in"
+      ![](./media/image47.png)      6.26806in;height:3.49861in"
 alt="Screens screenshot of a computer Description automatically generated" />
 
 5.  Go to the **Parameters** tab. On the **Primary Log Analytics
     workspace** select the **MicrosoftSentinelWorkspace**.
 
-<img src="./media/image48.png" style="width:6.26806in;height:4.32431in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image48.png)      6.26806in;height:4.32431in"
+
 
 6.  Under **Remediation** tab, select the check box besides **Create a
     remediation task** and then click on **Review + create** button
 
-<img src="./media/image49.png" style="width:6.26806in;height:4.29861in"
+      ![](./media/image49.png)      6.26806in;height:4.29861in"
 alt="A screenshot of a computer screen Description automatically generated" />
 
 7.  On the **Review + create** tab, click on the **Create** button.
 
-<img src="./media/image50.png" style="width:6.26806in;height:4.68264in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image50.png)      6.26806in;height:4.68264in"
+
 
 8.  In the **Notification** pane you will be able to see the ‘**Role
     Assignments creation succeeded**’, ‘**Remediation task creation
     succeeded**’ and ‘**Creating policy assignment succeeded**’
     notifications.
 
-<img src="./media/image51.png" style="width:5.5in;height:4.29097in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image51.png)      5.5in;height:4.29097in"
+
 
 9.  On the **Azure Activity connector** page you will be able to see the
     connection status.
@@ -359,8 +359,8 @@ already reached, the policy created as part of this exercise won't be
 able to add an additional destination to your Microsoft Sentinel
 workspace.</span>
 
-<img src="./media/image52.png" style="width:6.26806in;height:3.39514in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image52.png)      6.26806in;height:3.39514in"
+
 
 10. Continue to the next exercise then you can check back after 30
     minutes.
@@ -376,57 +376,57 @@ investigate and respond to incidents.
 1.  While still on the **Microsoft Sentinel** page click on **Data
     Connectors** under **Configuration** section.
 
-<img src="./media/image44.png" style="width:6.26806in;height:3.01944in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image44.png)      6.26806in;height:3.01944in"
+
 
 2.  In the **Data connectors** screen, type **tenant** in the search
     bar, select the **Tenant-based Microsoft Defender for Cloud**
     **(Preview)** connector and click on **Open connector page**.
 
-<img src="./media/image53.png"
+      ![](./media/image53.png"
 style="width:6.26806in;height:3.22639in" />
 
 3.  On the **Tenant-based Microsoft Defender for Cloud** **(Preview)**
     connector page, under **Configuration** section click on the
     **Connect** button.
 
-<img src="./media/image54.png" style="width:6.26806in;height:3.11234in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image54.png)      6.26806in;height:3.11234in"
+
 
 4.  You should receive the notification as **Connected successfully.**
 
-<img src="./media/image55.png"
+      ![](./media/image55.png"
 style="width:6.26806in;height:5.0625in" />
 
 5.  Wait for 1-2 minutes and then refresh the page, the Status of the
     connector should also be updated to **Connected.**
 
-<img src="./media/image56.png"
+      ![](./media/image56.png"
 style="width:6.26806in;height:3.11528in" />
 
 6.  Back on the **Data connectors** screen, type **subscription** in the
     search bar, select the **Subscription-based Microsoft Defender for
     Cloud** **(legacy)** connector and click on **Open connector page**.
 
-<img src="./media/image57.png" style="width:6.5in;height:4.03681in" />
+      ![](./media/image57.png)      6.5in;height:4.03681in" />
 
 7.  On the **Subscription-based Microsoft Defender for Cloud**
     **(legacy)** connector page, under **Configuration** section, select
     the **Azure Pass – Sponsorship** subscription and then click on the
     **Connect** button.
 
-<img src="./media/image58.png" style="width:6.5in;height:3.45694in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image58.png)      6.5in;height:3.45694in"
+
 
 8.  You should receive the notification as **Connected successfully**.
 
-<img src="./media/image59.png" style="width:3.16711in;height:0.78136in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image59.png)      3.16711in;height:0.78136in"
+
 
 9.  The Status of the connector should also be updated to **Connected.**
 
-<img src="./media/image60.png" style="width:6.5in;height:3.50278in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image60.png)      6.5in;height:3.50278in"
+
 
 # Exercise 3- Integration
 
@@ -437,8 +437,8 @@ the Sample Alerts.
 1.  While still on the **Microsoft Sentinel** page click
     on **Incidents** under Threat management.
 
-<img src="./media/image61.png" style="width:6.5in;height:4.71042in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image61.png)      6.5in;height:4.71042in"
+
 
 2.  As we have just enabled the **Microsoft Defender for Cloud**
     connector, it would take some time for the Incident to appear.
@@ -446,29 +446,29 @@ alt="A screenshot of a computer Description automatically generated" />
 3.  Click on **Overview** under **General** and then toggle the **New
     overview** switch to **Off**
 
-<img src="./media/image62.png" style="width:6.5in;height:3.50625in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image62.png)      6.5in;height:3.50625in"
+
 
 4.  Once the switch is off, we should be able to see the **Sample
     events** from Microsoft Defender for Cloud.
 
-<img src="./media/image63.png" style="width:6.5in;height:4.17292in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image63.png)      6.5in;height:4.17292in"
+
 
 5.  Click on **SecurityAlerts**
 
-<img src="./media/image64.png" style="width:6.5in;height:4.03472in"
-alt="A screenshot of a computer Description automatically generated" />
+      ![](./media/image64.png)      6.5in;height:4.03472in"
+
 
 6.  It should open the Log Analytic workspace and list all logs of
     **Alerts** generated and synchronized from **Microsoft Defender for
     Cloud**.
 
-<img src="./media/image65.png" style="width:6.5in;height:3.55764in" />
+      ![](./media/image65.png)      6.5in;height:3.55764in" />
 
 7.  Click on any **Alerts** to expand and list the details for the same.
 
-<img src="./media/image66.png" style="width:6.5in;height:3.70764in" />
+      ![](./media/image66.png)      6.5in;height:3.70764in" />
 
 8.  On the alert expanded details you can see.
 
@@ -489,5 +489,5 @@ alt="A screenshot of a computer Description automatically generated" />
 
     8.  And other rows with additional information.
 
-<img src="./media/image67.png" style="width:6.32578in;height:2.00519in"
+      ![](./media/image67.png)      6.32578in;height:2.00519in"
 alt="A screenshot of a computer error Description automatically generated" />
