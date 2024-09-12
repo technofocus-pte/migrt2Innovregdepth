@@ -2,7 +2,7 @@
 
 ## Task 1: Enable JIT on your VMs from Microsoft Defender for Cloud
 
-1.  Type **Microsoft Defender for Cloud** in the Azure portal search
+1.  Type ```Microsoft Defender for Cloud``` in the Azure portal search
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
     
@@ -95,13 +95,13 @@ alt="A screenshot of a computer error Description automatically generated" />
 
 7.  On the alert overview pane, investigate the following details.
 
-    1.  Severity, Status, and Activity time
+    1.  **Severity, Status, and Activity time**
 
-    2.  Description that explains the precise activity that was detected
+    2.  **Description** that explains the precise activity that was detected
 
-    3.  Affected resources
+    3.  **Affected resources**
 
-    4.  Kill chain intent of the activity on the MITRE ATT&CK matrix.
+    4.  **Kill chain intent** of the activity on the MITRE ATT&CK matrix.
 
 8.  For more detailed information that can help you to investigate the
     suspicious activity, click on **View full details** button.
