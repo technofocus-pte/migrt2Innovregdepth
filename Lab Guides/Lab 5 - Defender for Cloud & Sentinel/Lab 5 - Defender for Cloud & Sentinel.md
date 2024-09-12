@@ -162,7 +162,7 @@ workspace.
 
     5.  Click **Review + create**.
 
-      ![](./media/image22.png"
+      ![](./media/image22.png)      
 style="width:6.49994in;height:6.04583in" />
 
 6.  Click **Create** after the validation is completed. The creation
@@ -206,13 +206,13 @@ This exercise shows you how to enable Data connectors.
 2.  Select the **Assigned roles** under Manage and then click on **+ Add
     assignments.**
 
-      ![](./media/image29.png"
+      ![](./media/image29.png)      
 style="width:6.26806in;height:3.18958in" />
 
 3.  Search and select **Security Administrator**, then click on the
     **Add** button.
 
-      ![](./media/image30.png"
+      ![](./media/image30.png)      
 style="width:6.26806in;height:4.86319in" />
 
       ![](./media/image31.png)      3.46923in;height:0.55216in"
@@ -239,13 +239,13 @@ alt="A close up of a text Description automatically generated" />
     gallery content" have been removed. In that message select the
     **Click here** link
 
-      ![](./media/image35.png"
+      ![](./media/image35.png)      
 style="width:6.26766in;height:3.38542in" />
 
 8.  On the **Out-of-the-box Content Centralization** page click on
     **Continue**
 
-      ![](./media/image36.png"
+      ![](./media/image36.png)      
 style="width:6.26806in;height:3.60069in" />
 
 9.  Click on the **Complete centralization** button
@@ -256,7 +256,7 @@ style="width:6.26806in;height:3.60069in" />
 10. You should receive the notification as shown in below image
 
       ![](./media/image38.png)      2.00028in;height:0.65634in"
-alt="A close-up of a sign Description automatically generated" />
+
 
 11. From the top click on the link for **Microsoft Sentinel** or
     navigate back to the Sentinel page.
@@ -382,7 +382,7 @@ In the **Data connectors** screen, type **tenant** in the search bar,
 select the **Tenant-based Microsoft Defender for Cloud** **(Preview)**
 connector and click on **Open connector page**.
 
-      ![](./media/image53.png"
+      ![](./media/image53.png)      
 style="width:6.26806in;height:3.22639in" />
 
 On the **Tenant-based Microsoft Defender for Cloud** **(Preview)**
@@ -394,13 +394,13 @@ button.
 
 You should receive the notification as Connected successfully.
 
-      ![](./media/image55.png"
+      ![](./media/image55.png)      
 style="width:6.26806in;height:5.0625in" />
 
 Wait for 1-2 minutes and then refresh the page, the Status of the
 connector should also be updated to **Connected.**
 
-      ![](./media/image56.png"
+      ![](./media/image56.png)      
 style="width:6.26806in;height:3.11528in" />
 
 # Exercise 3- Integration
