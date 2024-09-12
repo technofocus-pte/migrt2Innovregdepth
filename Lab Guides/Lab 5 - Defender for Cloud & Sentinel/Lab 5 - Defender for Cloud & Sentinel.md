@@ -5,6 +5,7 @@
 1.  Type **Microsoft Defender for Cloud** in the Azure portal search
     box, then navigate and click on **Microsoft Defender for Cloud**
     under **Services**.
+
 ![](./media/image1.png)
 <img src="./media/image1.png"
 style="width:6.19878in;height:3.12544in" />
