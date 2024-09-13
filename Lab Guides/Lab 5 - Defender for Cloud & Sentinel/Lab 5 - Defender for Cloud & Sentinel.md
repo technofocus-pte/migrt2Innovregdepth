@@ -1,4 +1,4 @@
-**Lab 5 - Defender for Cloud & Sentinel.**
+# **Lab 5 - Defender for Cloud & Sentinel.**
 
 ## Task 1: Enable JIT on your VMs from Microsoft Defender for Cloud
 
