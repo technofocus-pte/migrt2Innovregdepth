@@ -9,7 +9,7 @@ devices.
 
 ## Task 1 – Setup the On-premise machine 
 
-1.  Open the Edge browser on the Lab VM and navigate to the link to download the [Windows Server 2022 image]( ```https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip```)
+1.  Open the Edge browser on the Lab VM and navigate to the link to download the **Windows Server 2022 image** - ```https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip```
 
 2.  Once it is downloaded click on the **Open file** link
 

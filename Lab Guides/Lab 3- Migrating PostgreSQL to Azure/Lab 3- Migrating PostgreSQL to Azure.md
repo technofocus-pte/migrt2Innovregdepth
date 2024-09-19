@@ -294,7 +294,7 @@ used for Migration.
     ![](./media/image40.png)
 
 7.  In the Windows PowerShell window run the command to copy the PostgreSQL database backup to the folder **dvdrentalbkp** on the **PostgresSrv**.
-    > **Note** - If file dvdrental.tar is not present it can be downloaded from - [dvdrental.tar](https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar) and then placed in **C:\Labfiles**
+    > **Note** - If file dvdrental.tar is not present it can be downloaded from - ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` and then placed in **C:\Labfiles**
 
     ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
 
