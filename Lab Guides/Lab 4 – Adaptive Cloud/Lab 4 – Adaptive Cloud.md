@@ -9,9 +9,7 @@ devices.
 
 ## Task 1 – Setup the On-premise machine 
 
-1.  Open the Edge browser on the Lab VM and navigate to the link to
-    download the Windows Server 2022 image -
-    ```https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip```
+1.  Open the Edge browser on the Lab VM and navigate to the link to download the [Windows Server 2022 image]( ```https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip```)
 
 2.  Once it is downloaded click on the **Open file** link
 
@@ -123,17 +121,17 @@ devices.
 6.  On the **Add a server with Azure Arc** page, provide the below
     details.
 
-    1.  Choose the Region first Region - **West US**
+    *  Choose the Region first Region - **West US**
 
-    2.  Resource group – Click on **Create new**  ```RG4ArcVM```
+    *  Resource group – Click on **Create new**  ```RG4ArcVM```
 
-    3.  Operating System – **Windows**
+    *  Operating System – **Windows**
 
-    4.  Connect SQL Server – **Uncheck the box**
+    *  Connect SQL Server – **Uncheck the box**
 
-    5.  Click on the **Download and run script button**
+    *  Click on the **Download and run script button**
 
-    ![](./media/image20.png)
+        ![](./media/image20.png)
 
 7.  Click on the Download button and also click on the Copy button.
 

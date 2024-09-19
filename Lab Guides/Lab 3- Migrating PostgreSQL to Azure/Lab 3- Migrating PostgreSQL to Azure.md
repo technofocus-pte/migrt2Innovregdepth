@@ -74,7 +74,7 @@ used for Migration.
         -PublicIpAddressName "PostgresSrvIP" `
         -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
         -Credential $cred `
-    -Size "Standard_b2ms"
+        -Size "Standard_b2ms"
     ```
 
     ![](./media/image9.png)
@@ -166,7 +166,7 @@ used for Migration.
 
     ```psql```
 
-> ![](./media/image24.png)
+    ![](./media/image24.png)
 
 21. We will set the password for the **postgres** account in psql
 
@@ -178,8 +178,7 @@ used for Migration.
 
     ![](./media/image25.png)
 
-23. Now we will set the network and other permissions to all the
-    PostgreSQL to be accessed remotely
+23. Now we will set the network and other permissions to all the PostgreSQL to be accessed remotely
 
 24. Run the below command to access the **postgresql.conf** file
 
@@ -294,11 +293,12 @@ used for Migration.
 
     ![](./media/image40.png)
 
-7.  In the Windows PowerShell window run the command to copy the
-    PostgreSQL database backup to the folder **dvdrentalbkp** on the
-    **PostgresSrv**.
+7.  In the Windows PowerShell window run the command to copy the PostgreSQL database backup to the folder **dvdrentalbkp** on the **PostgresSrv**.
+    > **Note** - If file dvdrental.tar is not present it can be downloaded from - [dvdrental.tar](https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar) and then placed in **C:\Labfiles**
 
     ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
+
+    > **Note** - Substitute the command with the **FQDN of your Ububtu Server VM** before runnint the command.
 
     When prompted to continue type **yes** and then enter the password - ```P@55w.rd1234```
 
@@ -320,7 +320,7 @@ used for Migration.
 
     ```\q```
 
-![](./media/image44.png)
+    ![](./media/image44.png)
 
 10. Back on **postgres@PostgresSrv** prompt type the below command to
     restore the backup into the newly created database.
@@ -362,34 +362,31 @@ used for Migration.
 4.  On the **New Azure Database for PostgreSQL Flexible Server** page on
     the **Basics** tab, provide the below details
 
-    1.  Resource group – Click on Create new and provide name –
-        ```RG4AzPGDb```
+    * Resource group – Click on Create new and provide name – ```RG4AzPGDb```
 
-    2.  Server name - ```ad4pfssrvXXXXX``` substitute XXXXX with
-        random number
+    * Server name - ```ad4pfssrvXXXXX``` substitute XXXXX with random number
 
-    3.  Region – **West US**
+    * Region – **West US**
 
-    4.  PostgreSQL version – **16**
+    * PostgreSQL version – **16**
 
-    5.  Workload type – **Production**
+    * Workload type – **Production**
 
-        ![A screenshot of a computer Description automatically
-        generated](./media/image50.png)
+        ![](./media/image50.png)
 
-    6.  High availability - **Disabled**
+    * High availability - **Disabled**
 
-    7.  Authentication method – **PostgreSQL Authentication only**
+    * Authentication method – **PostgreSQL Authentication only**
 
-    8.  Admin username – ```postgres```
+    * Admin username – ```postgres```
 
-    9.  Password – ```P@55w.rd1234```
+    * Password – ```P@55w.rd1234```
 
-    10. Confirm password – ```P@55w.rd1234```
+    * Confirm password – ```P@55w.rd1234```
 
-    11. Click on **Next: Networking \>**
+    * Click on **Next: Networking >**
 
-    ![](./media/image51.png)
+        ![](./media/image51.png)
 
 5.  On the **Networking** tab, enable the check box for **Allow public
     access from any Azure services within Azure to this server** and
@@ -415,8 +412,7 @@ used for Migration.
 
 ## Task 4 – Migrate the PostgreSQL database to Azure Database for PostgreSQL flexible server (Migration) 
 
-1.  The **Overview** page of the **Azure Database for PostgreSQL
-    flexible server** should open
+1.  The **Overview** page of the **Azure Database for PostgreSQL flexible server** should open
 
     ![](./media/image56.png)
 
@@ -437,16 +433,15 @@ used for Migration.
     Flexible Server** page on the **Setup** tab, provide the below
     information and then click on **Next: Select Runtime Server\>**
 
-    1.  Migration name - ```PostgreSQLToAzurePG```
+    *  Migration name - ```PostgreSQLToAzurePG```
 
-    2.  Source server – **On-premise Server**
+    *  Source server – **On-premise Server**
 
-    3.  Migration option – **Validate and Migrate**
+    *  Migration option – **Validate and Migrate**
 
-    4.  Migration mode – **Online**
+    *  Migration mode – **Online**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image60.png)
+        ![](./media/image60.png)
 
 6.  On the **Select Runtime Server** tab click on **Next: Connect to
     source\>**
@@ -456,33 +451,31 @@ used for Migration.
 7.  On the **Connect to source tab**, provide the below details and
     click on **Next : Select migration target\>**
 
-    1.  Server name – **IP address / DNS name of PostgresSrv VM**
+    *  Server name – **IP address / DNS name of PostgresSrv VM**
 
-    2.  Port – ```5432```
+    *  Port – ```5432```
 
-    3.  Server admin login name - ```postgres```
+    *  Server admin login name - ```postgres```
 
-    4.  Password - ```postgres```
+    *  Password - ```postgres```
 
-    5.  SSL mode – **Prefer**
+    *  SSL mode – **Prefer**
 
-    6.  Test Connection – Click on **Connect to source** \[wait for the
-        test connection to be Successful\]
+    *  Test Connection – Click on **Connect to source** 
+    > Wait for the test connection to be Successful
 
-        ![A screenshot of a computer Description automatically
-        generated](./media/image62.png)
+    ![](./media/image62.png)
 
 8.  On the **Select migration target** tab, provide the below details
 
-    1.  Password - ```P@55w.rd1234```
+    *  Password - ```P@55w.rd1234```
 
-    2.  Test Connection – Click on **Connect to target** \[wait for the
-        test connection to be Successful\]
+    *  Test Connection – Click on **Connect to source** 
+    > Wait for the test connection to be Successful
 
-    3.  Click on **Next : Select database(s) for migration \>**
+    * Click on **Next : Select database(s) for migration**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image63.png)
+    ![](./media/image63.png)
 
 9.  On the **Select database(s) for migration** tab, select the Database
     – **dvdrental** and then click on **Next: Summary\>**
