@@ -75,11 +75,13 @@
 ![](./media/image77.png)
 
 
-20.  You should get the notification as shown in below image.
-    ![](./media/image78.png)
+20.  You should get the notification as shown in below image     
+
+     ![](./media/image78.png)
 
 21.  Click on the **Role assignments** tab to view the role assigned in the previous step. We can see the Users listed to whom the Contributor role was assigned.
-    ![](./media/image79.png)
+
+     ![](./media/image79.png)
 
 ## Task 1: Ensure the VMs are ready
 
