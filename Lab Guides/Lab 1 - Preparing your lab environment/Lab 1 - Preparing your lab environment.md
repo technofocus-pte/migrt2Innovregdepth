@@ -10,8 +10,8 @@ in order for discovery to identify the apps installed on them.
 1.  Open the **Microsoft Edge** from the desktop, then go to the IP
     address of **RHEL-WEB-01**: 192.168.1.24.
 
-![A screenshot of a computer Description automatically
-generated](./media/image1.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image1.png)
 
 2.  **RHEL-WEB-01** serves a Drupal website that is configured to make
     calls to a database that is hosted on **RHEL-DB-01**. Successfully
@@ -29,8 +29,8 @@ generated](./media/image1.png)
 3.  In the left navigation, under **Migration goals**, select **Servers,
     databases and web apps**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image2.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image2.png)
 
 4.  On the **Servers, databases and web apps** blade, select **Create
     project** in the middle of the page.
@@ -38,14 +38,14 @@ generated](./media/image2.png)
 5.  On the **Create project** blade, use the following settings to
     create a new project.
 
-Use the default values for any setting not specified in the table.
+    Use the default values for any setting not specified in the table.
 
-Resource group – click on **Create new** ```AZMigrateRG```
+    Resource group – click on **Create new** ```AZMigrateRG```
 
-Project - ```az-migrate-XXXXXX``` \[substitute XXXXXX with random
-number\]
+    Project - ```az-migrate-XXXXXX``` \[substitute XXXXXX with random
+    number\]
 
-Geography - **United States**
+    Geography - **United States**
 
 6.  Select **Create**.
 
@@ -67,8 +67,7 @@ Geography - **United States**
     appliance** box, enter ```HV-XXXXXX``` substitute **XXXXX** with
     the number used previously., then select **Generate key**.
 
-**Note** - The key-generation process can take up to 2 minutes to
-complete.
+    >**Note** - The key-generation process can take up to 2 minutes to complete.
 
 4.  Once the key is generated, select the **copy icon** on the **Project
     key** field.
@@ -78,10 +77,7 @@ complete.
 5.  Under **2. Download Azure Migrate appliance**, select **.zip file.
     500MB**, and *note* the Download button\*.
 
-This would download the PowerShell script that installs the appliance to
-a Windows Server machine. For this workshop, the script has **already
-been downloaded** to the E: drive and **run**. You will **continue past
-this step**.
+    >This would download the PowerShell script that installs the appliance to a Windows Server machine. For this workshop, the script has **already been downloaded** to the E: drive and **run**. You will **continue past this step**.
 
 6.  Under **3. Set up the appliance**
 
@@ -113,38 +109,38 @@ this step**.
 
     ![](./media/image5.png)
 
-It can take up to 10 minutes for registration to complete.
+    >It can take up to 10 minutes for registration to complete.
 
 15. In the **Provide Hyper-V host credentials** section, select **Add
     credentials** and add credentials with the following settings:
 
-- Friendly Name - ```Hypervisor```
+    - Friendly Name - ```Hypervisor```
 
-- User Name - ```Administrator```
+    - User Name - ```Administrator```
 
-- Password - ```Passw0rd! ```
+    - Password - ```Passw0rd! ```
 
 16. In the **Provide Hyper-V host/cluster details** section,
     select **add a discovery source**, then select **Add single
     item** and use the following settings:
 
-- Discovery source - **Hyper-V Host/Cluster**
+    - Discovery source - **Hyper-V Host/Cluster**
 
-- IP address FQDN - ```win-msite54sfl9```
+    - IP address FQDN - ```win-msite54sfl9```
 
-- Map credentials - **Hypervisor**
+    - Map credentials - **Hypervisor**
 
 17. In the **Provide server credentials to perform software
     inventory** section, ensure that the slider is **enabled**, then add
     credentials with the following settings:
 
-- Credentials type - **Linux (Non-domain)**
+    - Credentials type - **Linux (Non-domain)**
 
-- Friendly Name - ```RHELUser```
+    - Friendly Name - ```RHELUser```
 
-- User Name - ```fetch6474```
+    - User Name - ```fetch6474```
 
-- Password - ```RHELWorkshop```
+    - Password - ```RHELWorkshop```
 
 18. Select **Start discovery**.
 
@@ -158,74 +154,65 @@ It can take up to 10 minutes for registration to complete.
 1.  While in the Azure Portal, click on the Portal menu or from the home
     page choose the Microsoft Defender for Cloud
 
-![A screenshot of a computer Description automatically
-generated](./media/image6.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image6.png)
 
 2.  On Microsoft Defender for Cloud page, under the **General** section,
     navigate and click on **Getting started**. In the **Upgrade** tab,
     navigate and click on the **Upgrade** button.
 
-> **Note**: You may need to wait for a few minutes for the upgrade to
-> complete.
+    > **Note**: You may need to wait for a few minutes for the upgrade to complete.
 
-![A screenshot of a computer Description automatically
-generated](./media/image7.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image7.png)
 
 3.  You’ll receive a notification stating **Trial started**.
 
-![A screenshot of a computer Description automatically generated with
-low confidence](./media/image8.png)
+    ![A screenshot of a computer Description automatically generated with
+    low confidence](./media/image8.png)
 
 4.  In **Microsoft Defender for Cloud | Getting started** page, click on
     the **Install agents** tab, select your active **Azure
     Subscription** as shown in the below image, then click on the
     **Install agents button.**
 
-![A screenshot of a computer Description automatically
-generated](./media/image9.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image9.png)
 
 5.  **You’ll receive a notification Agents installation initiated.**
 
-![A screenshot of a computer Description automatically generated with
-low confidence](./media/image10.png)
+    ![A screenshot of a computer Description automatically generated with
+    low confidence](./media/image10.png)
 
 ## Task 2: Enable additional data collection setting for Defender for Cloud
 
 1.  On Microsoft Defender for Cloud page, navigate to **Management**
     section and click on **Environment settings.**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image11.png)
+    > ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
 2.  Click on the **Azure Pass – Sponsorship** Subscription listed.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image12.png)
+    ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
-3.  Notice the Defender coverage is **11/12 plans** for the
-    Subscription.
+3.  Notice the Defender coverage is **11/12 plans** for the Subscription.
 
-4.  On **Settings | Defender plans** page, click on **Enable all
-    plans.**
+4.  On **Settings | Defender plans** page, click on **Enable all plans.**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image13.png)
+    ![A screenshot of a computer Description automatically generated](./media/image13.png)
 
 5.  Select **Microsoft Defender for APIs Plan 1** and then click on
     **Save** button.
 
-> ![A screenshot of a computer screen Description automatically
-> generated](./media/image14.png)
+    ![A screenshot of a computer screen Description automatically generated](./media/image14.png)
 
 6.  Click on the **Save** button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image15.png)
+    ![A screenshot of a computer Description automatically generated](./media/image15.png)
 
 7.  You should get the notifications as shown in below image.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image16.png)
+    ![A screenshot of a computer Description automatically generated](./media/image16.png)
 
 # Exercise 3: Create a Business case and run an assessment
 
@@ -235,37 +222,35 @@ low confidence](./media/image10.png)
     and web apps** page. Select **Refresh** to verify that your servers
     have been discovered.
 
-![A screenshot of a computer Description automatically
-generated](./media/image17.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image17.png)
 
 2.  In the **Azure Migrate: Discovery and assessment** section,
     select **Build business case**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image18.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image18.png)
 
 3.  In the **Build business case** blade, use the following values to
     create the business case.
 
-- Business case name - ```bc-43240741```
+    - Business case name - ```bc-43240741```
 
-- Target location - **eastus**
+    - Target location - **eastus**
 
-- Migration strategy - **Azure recommended approach to minimize cost**
+    - Migration strategy - **Azure recommended approach to minimize cost**
 
-- Savings options - **Reserved Instance + Azure Savings Plan**
+    - Savings options - **Reserved Instance + Azure Savings Plan**
 
-- Discount (%) on Pay as you go - **0**
+    - Discount (%) on Pay as you go - **0**
 
-- Select **Build business case**.
+    - Select **Build business case**.
 
-![Business Case Refresh](./media/image19.png)
+    ![Business Case Refresh](./media/image19.png)
 
-The business case can take up to 5 minutes to generate. If it has been
-more than 5 minutes, select **Refresh**.
+    > The business case can take up to 5 minutes to generate. If it has been more than 5 minutes, select **Refresh**.
 
-4.  On the **bc-43240741** page, review the information indicating Azure
-    readiness and monthly cost estimate for both compute and storage.
+4.  On the **bc-43240741** page, review the information indicating Azure readiness and monthly cost estimate for both compute and storage.
 
 ## Task 2: Configure, run, and view an assessment
 
@@ -289,31 +274,31 @@ more than 5 minutes, select **Refresh**.
 5.  On the Assessment Settings page, use the following settings to
     create the assessment.
 
-Accept the default settings for anything not specified in the table.
+    > Accept the default settings for anything not specified in the table.
 
-- Target location - **eastus**
+    - Target location - **eastus**
 
-- Storage type - **Premium managed disks**
+    - Storage type - **Premium managed disks**
 
-- Savings options - **None**
+    - Savings options - **None**
 
-- Sizing criteria - **As on premises**
+    - Sizing criteria - **As on premises**
 
-- VM series - **Dsv3_series**
+    - VM series - **Dsv3_series**
 
-- Comfort factor - **1**
+    - Comfort factor - **1**
 
-- Offer - **Pay-As-You-Go**
+    - Offer - **Pay-As-You-Go**
 
-- Currency - **US Dollar ($)**
+    - Currency - **US Dollar ($)**
 
-- Discount - **0**
+    - Discount - **0**
 
-- VM uptime - **31 Day(s) per month and 24 Hour(s) per day**
+    - VM uptime - **31 Day(s) per month and 24 Hour(s) per day**
 
-- Already have a Windows Server license? - **No**
+    - Already have a Windows Server license? - **No**
 
-- Security - **No**
+    - Security - **No**
 
 6.  Select **Save** to return to Create Assessment, then select **Next:
     Select servers to assess \>**
@@ -321,24 +306,21 @@ Accept the default settings for anything not specified in the table.
 7.  Use the following settings to create the server group and select the
     servers to be assessed.
 
-Accept the default settings for anything not specified in the table.
+    > Accept the default settings for anything not specified in the table.
 
-> Assessment name - ```as-43240741```
->
-> Select or create a group - **Create new**
->
-> Group name - ```RHEL-Servers```
->
-> List of machines to be added to the group - **RHEL-DB-01** and
-> **RHEL-WEB-01**
+    Assessment name - ```as-43240741```
 
-8.  Select **Create assessment**. You will be redirected to the **Azure
-    Migrate | Servers, databases and web apps** page.
+    Select or create a group - **Create new**
+
+    Group name - ```RHEL-Servers```
+
+    List of machines to be added to the group - **RHEL-DB-01** and **RHEL-WEB-01**
+
+8.  Select **Create assessment**. You will be redirected to the **Azure Migrate | Servers, databases and web apps** page.
 
 9.  **Refresh** the page.
 
-10. In the **Azure Migrate: Discovery and Assessment** section, verify
-    that the **Assessments Total** equals **1**, then select **1**.
+10. In the **Azure Migrate: Discovery and Assessment** section, verify that the **Assessments Total** equals **1**, then select **1**.
 
     ![](./media/image22.png)
 
@@ -351,6 +333,5 @@ Accept the default settings for anything not specified in the table.
 12. On the **as-43240741** page, review the information indicating Azure
     readiness and monthly cost estimate for both compute and storage.
 
-In real-world scenarios, you should consider installing the Dependency
-Agent to provide more insights into server dependencies during the
-assessment stage.
+        In real-world scenarios, you should consider installing the Dependency Agent to provide more insights into server dependencies during the
+        assessment stage.
