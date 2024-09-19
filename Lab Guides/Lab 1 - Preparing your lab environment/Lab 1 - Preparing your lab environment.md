@@ -333,5 +333,5 @@ in order for discovery to identify the apps installed on them.
 12. On the **as-43240741** page, review the information indicating Azure
     readiness and monthly cost estimate for both compute and storage.
 
-        In real-world scenarios, you should consider installing the Dependency Agent to provide more insights into server dependencies during the
-        assessment stage.
+> In real-world scenarios, you should consider installing the Dependency Agent to provide more insights into server dependencies during the
+assessment stage.
