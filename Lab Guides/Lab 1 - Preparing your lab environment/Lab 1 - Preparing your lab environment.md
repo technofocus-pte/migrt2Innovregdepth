@@ -2,6 +2,54 @@
 
 ## Exercise 1: Preparing the lab environment
 
+## Task 0 – Setup the Azure Subscription
+
+1.  Login to the provided VM using the credential provided on the **Resources** tab of the Lab interface.
+
+    ![](./media/image61.png)
+
+2.  Open the edge browser and navigate to ```http://www.microsoftazurepass.com```
+
+3.  Click the **Start** button to get started.
+
+    ![](./media/image62.png)
+
+    > **Note**: Do not use your Company/Work Account to login to redeem the Azure Pass, another Azure Pass will not be issued.
+
+4.  Enter the **Office 365 Tenant credentials** to complete the sign in
+    process
+
+5.  Once the sign in process is completed, click on "**Confirm Microsoft Account**" if the correct email address is listed.
+
+    ![](./media/image63.png)
+
+6.  From the **Azure Promo Code** section on the **Resources** tab of the Lab interface, enter the **Promocode** in the Promo code box and click "**Claim Promo Code**".
+
+    ![](./media/image64.png)
+
+7.  It may take few seconds to process the redemption.
+
+    ![](./media/image65.png)
+
+8.  Enter the mandatory Profile information and select the check boxes and then click on "**Sign up**".
+
+    ![](./media/image66.png)
+
+    ![](./media/image67.png)
+
+    > **Note** – you may be prompted to register and complete MFA authentication, proceed ahead with the MFA registration using **Microsoft Authenticator App** or **Phone method**.
+
+    ![](./media/image68.png)
+
+9.  On the feedback page, enter your feedback and click on **Submit**.
+
+    ![](./media/image69.png)
+
+10. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
+
+    ![](./media/image70.png)
+
+
 ## Task 1: Ensure the VMs are ready
 
 Hyper-V Integration Services must be installed and running on guest VMs
