@@ -84,8 +84,8 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
 
 18. Once the registration completes, you will see the following message.
 
-![A close up of a sign Description automatically
-generated](./media/image7.jpeg)
+    ![A close up of a sign Description automatically
+    generated](./media/image7.jpeg)
 
 > It might take up to 15 minutes for the discovery of virtual machines to complete, and you may need to refresh the page to see the message. Confine to the next task even if it is not complete.
 
@@ -96,7 +96,7 @@ the target Azure environment.
 
 **Create a Virtual network**
 
-1.  In the Azure portal, in the **Search** box, enter Virtual Networks,
+1.  In the Azure portal, in the **Search** box, enter ```Virtual Networks```,
     then select **Virtual networks**.
 
 2.  On the **Virtual networks** blade, select **Create**.
@@ -114,7 +114,7 @@ the target Azure environment.
 
 **Create a Storage account**
 
-1.  In the Azure portal, in the **Search** box, enter Storage, then
+1.  In the Azure portal, in the **Search** box, enter ```Storage```, then
     select **Storage accounts**.
 
 2.  On the **Storage accounts** blade, select **Create**.
@@ -134,15 +134,7 @@ the target Azure environment.
 
     - Redundancy - **Locally-redundant storage (LRS)**
 
-4.  Once the Storage account is created, click on **Go to Resource**
-
-5.  Expand Data management and select **Data protection**, then uncheck
-    **Enable soft delete for blobs** and click on the **Save** button.
-
-    > ![A screenshot of a computer Description automatically
-    > generated](./media/image8.png)
-
-6.  On the **Networking** tab of the **Create a storage account** page,
+4.  On the **Networking** tab of the **Create a storage account** page,
     set the following settings, and leave all other settings as their
     default values:
 
@@ -154,15 +146,24 @@ the target Azure environment.
 
     ![A screenshot of a computer Description automatically generated](./media/image9.png)
 
-7.  On the **Data protection** tab, uncheck **Enable soft delete for
+5.  On the **Data protection** tab, uncheck **Enable soft delete for
     blobs**. Leave all other settings as their default values.
 
-8.  Select **Review**, then select **Create**.
+6.  Select **Review**, then select **Create**.
+
+
+7.  Once the Storage account is created, click on **Go to Resource**
+
+8.  Expand Data management and select **Data protection**, then uncheck
+    **Enable soft delete for blobs** and click on the **Save** button.
+
+    > ![A screenshot of a computer Description automatically
+    > generated](./media/image8.png)
 
 
 **Create a Public IP address**
 
-1.  In the Azure portal, in the **Search** box, enter Public IP, then
+1.  In the Azure portal, in the **Search** box, enter ```Public IP```, then
     select **Public IP addresses**.
 
 2.  On the **Public IP address** blade, select **Create**.
@@ -171,7 +172,7 @@ the target Azure environment.
 
     - Resource group - ```AZMigrateRG```
 
-    - Region - **eastus**
+    - Region - **West US 2**
 
         > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
@@ -206,12 +207,9 @@ the target Azure environment.
 4.  You may need to refresh the browser page displaying the **Azure
     Migrate Servers, databases and web apps** page.
 
-5.  On the **Specify intent** page, accept the default configuration,
-    then select **Continue**.
+5.  On the **Specify intent** page, on the **What do you want to migrate?** choose **Servers or virtual machines (VM)**, on the **Where do you want to migrate to?** choose **Azure VM**
 
-6.  On the **Replicate** page, on the **Are your machines
-    virtualized?** menu, select **Yes, with Hyper-V**, then
-    select **Next**.
+6. For the drop-down **Are your machines virtualized?** select **Yes, with Hyper-V** and then click on the **Continue** button.
 
 7.  On the **Virtual machines** tab of the Replicate page, use the following settings to complete the replication criteria.
 
@@ -227,7 +225,7 @@ the target Azure environment.
 
     - Resource group - **AZMigrateRG**
 
-    - Replication storage account - **saXXXXXX**
+    - Cache storage account - **saXXXXXX**
 
     - Virtual Network - **migration-vnet-XXXXXX**
 
