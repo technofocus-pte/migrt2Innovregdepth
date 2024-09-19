@@ -246,8 +246,7 @@ the target Azure environment.
 
     ![](./media/image12.png)
 
-12. On the Migration and modernization page, in the **Replicating
-    machines** section, examine the **Status** column in the list of the
+12. On the Migration and modernization page, in the **Replications** section, examine the **Status** column in the list of the
     replicating machines.
 
     ![](./media/image13.png)
@@ -259,8 +258,8 @@ machines** to update the status information.
 
 ## Task 4: Perform test migrations
 
-1.  In the Azure portal, on the **Migration and modernization
-    Replicating machines** page, select the **RHEL-DB-01** virtual
+1.  In the Azure portal, on the **Migration and modernization | 
+    Replications** page, select the **RHEL-DB-01** virtual
     machine.
 
     ![](./media/image14.png)
@@ -284,14 +283,15 @@ machines** to update the status information.
 
     ![](./media/image16.png)
 
-7.  Go back to the **Migration and modernization Replicating machines** page, select **Refresh**, and then verify that the both virtual machines are listed with the **Cleanup test failover pending** status.
-
-    > Wait for the test migrations to complete. This may take around 5
+    > Wait for the **Test failover** to complete. This may take around 5-7
     minutes.
+
+7.  Go back to the **Migration and modernization Replications** page, select **Refresh**, and then verify that the both virtual machines are listed with the **Cleanup test failover pending** status.
+
 
 **Validate test migrations**
 
-8.  In the Azure portal, in the **Search** box, enter Virtual machines,
+8.  In the Azure portal, in the **Search** box, enter ```Virtual machines```,
     then select **Virtual machines**.
 
 9.  Note the entries representing the newly replicated virtual machines.
@@ -332,10 +332,15 @@ machines** to update the status information.
 
 18. Verify that the Drupal website hosted on RHEL-WEB-01-test loads.
 
+19. If the website does not open, then from the **Networking settings** of the Virtual Machine, create a **Network Security Group** and enable **Port 80** as shown in below image.
+
+    ![](./media/image26.png)
+
+    ![](./media/image27.png)
+
 **Cleanup test migrations**
 
-19. Go back to the **Migration and modernization | Replicating
-    machines** page and select **RHEL-DB-01**.
+19. Go back to the **Migration and modernization | Replications** page and select **RHEL-DB-01**.
 
 20. Select the **Clean up test migration** action.
 
@@ -345,14 +350,12 @@ machines** to update the status information.
     for **Testing is complete. Delete test virtual machine**, then
     select **Cleanup Test**
 
-22. Go back to the **Migration and modernization | Replicating
-    machines** page and select **RHEL-WEB-01**.
+22. Go back to the **Migration and modernization | Replications** page and select **RHEL-WEB-01**.
 
 23. Select the **Clean up test migration** action, specifying **Testing
     is complete. Delete test virtual machine**.
 
-24. Return to the **Migration and modernization | Replicating
-    machines** page.
+24. Return to the **Migration and modernization | Replications** page.
 
 25. Wait for the **Replication status** to be **Protected** before
     continuing.
@@ -369,15 +372,14 @@ machines** to update the status information.
     migration to minimize data loss?** option is set to **Yes**, and
     select **Migrate**.
 
-3.  Go back to the **Migration and modernization | Replicating
-    machines** page and select **RHEL-WEB-01**.
+3.  Go back to the **Migration and modernization | Replications** page and select **RHEL-WEB-01**.
 
 4.  Select **Migrate** and start the migration, again
     specifying **yes** in the **Migrate** page.
 
-5.  Go back to the **Migration and modernization | Replicating
-    machines** page and select **Refresh** to monitor the status of
-    migration.
+5.  Go back to the **Migration and modernization | Replications** page and select **Refresh** to monitor the status of migration.
+
+    ![](./media/image28.png)
 
 6.  Leave Edge open for the next exercise. The migrations will continue
     processing.
@@ -389,7 +391,7 @@ machines** to update the status information.
 In this exercise you will assign the public IP you created earlier to
 the newly migrated RHEL-WEB-01 VM.
 
-1.  On the **Migration and modernization | Replicating machines** page,
+1.  On the **Migration and modernization | Replications** page,
     verify that the **Status** column displays **Planned failover
     finished** for both virtual machines.
 
@@ -421,11 +423,13 @@ the newly migrated RHEL-WEB-01 VM.
 
 9.  Select **Save** and wait for the association to complete.
 
-10. Open a new Edge tab and go to the **DNS name** you assigned to the public IP: rhel-web-43240741.eastus.cloudapp.azure.com
+10. Open a new Edge tab and go to the **DNS name** you assigned to the public IP:     ```rhel-web-XXXXXX.westus2.cloudapp.azure.com```
 
-11. Verify that the Drupal website hosted on RHEL-WEB-01 loads.
+11. If the website does not open, then from the **Networking settings** of the Virtual Machine, create a **Network Security Group** and enable **Port 80** 
 
-12. Open **Hyper-V Manager** and note that both VMs are **Off**. These
+12. Verify that the Drupal website hosted on RHEL-WEB-01 loads.
+
+13. Open **Hyper-V Manager** and note that both VMs are **Off**. These
     machines have been successfully migrated.
 
     ![](./media/image24.png)
