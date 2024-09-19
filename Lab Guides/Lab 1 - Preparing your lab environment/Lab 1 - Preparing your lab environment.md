@@ -44,7 +44,6 @@
     ![](./media/image68.png)
 
 11.  On the feedback page, enter your feedback and click on **Submit**.
-
     ![](./media/image69.png)
 
 12. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
