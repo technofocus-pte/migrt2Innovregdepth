@@ -49,13 +49,14 @@
 12. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
     ![](./media/image70.png)
 
+
 13.  In the **Azure Portal** ```https://portal.azure.com``` search box type **subscriptions** and then click on **Subscriptions**
     ![](./media/image71.png)
 
 14.  From the list of Subscriptions select the **Azure Pass –Sponsorship**. 
     ![](./media/image72.png)
 
-15.  On the Azure Pass – Sponsorship page click on **Access control (IAM)**, then click on **+Add** drop-down and select **Add role assignment**. 
+15.  On the Azure Pass – Sponsorship page click on **Access control (IAM)**, then click on **+Add** drop-down and select **Add role assignment**. 
     ![](./media/image73.png)
 
 16.  On the Add role assignment page, under the **Privileged administrator roles** tab select **Contributor** and then click on **Next**.
@@ -67,8 +68,12 @@
 18.  Click on **Review + assign** button.
     ![](./media/image76.png)
 
-19.  Click on **Review + assign** button again.
-    ![](./media/image77.png)
+19.  Click on **Review + assign** button again
+
+
+
+![](./media/image77.png)
+
 
 20.  You should get the notification as shown in below image.
     ![](./media/image78.png)
