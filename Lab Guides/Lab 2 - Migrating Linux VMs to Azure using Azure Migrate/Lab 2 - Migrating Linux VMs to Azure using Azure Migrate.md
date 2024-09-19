@@ -1,8 +1,8 @@
 # Lab 2 - Migrating Linux VMs to Azure using Azure Migrate
 
-In this Lab we will Migrate the Linux VM workload from our On-premise
-using the Azure Migrate – Server Migration tool. We will prepare the
-required Azure Resources and then replicate the VMs prior to migration.
+## Objective
+
+In this Lab we will Migrate the Linux VM workload from our On-premise using the Azure Migrate – Server Migration tool. We will prepare the required Azure Resources and then replicate the VMs prior to migration.
 
 ## Exercise 1: Migrate workloads
 
@@ -33,31 +33,25 @@ required Azure Resources and then replicate the VMs prior to migration.
 
     ![](./media/image3.png)
 
-The installer that will install the replication provider on the Hyper-V
-server will be downloaded.
+    > The installer that will install the replication provider on the Hyper-V server will be downloaded.
 
 7.  On the **Discover** blade, under **1. Prepare Hyper-V host
     servers**, select the **Download** button.
 
     ![](./media/image4.png)
 
-The registration key that will be used to register the Hyper-V host with
-the project will be downloaded.
+    > The registration key that will be used to register the Hyper-V host with the project will be downloaded.
 
 8.  Go to the **Downloads** folder then select
     the **AzureSiteRecoveryProvider** file to launch the installer.
 
-9.  In the Azure Site Recovery Provider setup (Hyper-V server) window,
-    on the **Microsoft Update** tab, select **On (recommended)**, then
-    select **Next**.
+9.  In the Azure Site Recovery Provider setup (Hyper-V server) window, on the **Microsoft Update** tab, select **On (recommended)**, then select **Next**.
 
-10. On the **Installation** tab, accept the default Installation
-    Location, then select **Install**.
+10. On the **Installation** tab, accept the default Installation Location, then select **Install**.
 
 11. Once the installation is complete, select **Register**.
 
-If you receive a message about the server already being registered,
-select **Reregister**.
+    > If you receive a message about the server already being registered, select **Reregister**.
 
 12. In the Microsoft Azure Site Recovery Wizard, on the **Vault
     Settings** tab, to the right of the **Key file** box,
@@ -70,32 +64,28 @@ select **Reregister**.
 
     ![](./media/image6.png)
 
-The Key file, Subscription, Vault name, and Hyper-V site name values are
-populated when the key file is added.
+    > The Key file, Subscription, Vault name, and Hyper-V site name values are populated when the key file is added.
 
 14. Select **Next**.
 
 15. On the **Proxy Settings** tab, accept the default setting, then
     select **Next**.
 
-The registration can take up to 5 minutes to complete.
+    > The registration can take up to 5 minutes to complete.
 
 16. Once the registration is complete, select **Finish**.
 
 17. Back in the browser, on the **Discover** blade, under **2. Finalize
     registration**, select word **Finalize registration**.
 
-You may need to refresh the page and re-select the options from the
-beginning of this task to enable the Finalize registration button.
+    > You may need to refresh the page and re-select the options from the beginning of this task to enable the Finalize registration button.
 
 18. Once the registration completes, you will see the following message.
 
 ![A close up of a sign Description automatically
 generated](./media/image7.jpeg)
 
-It might take up to 15 minutes for the discovery of virtual machines to
-complete, and you may need to refresh the page to see the message.
-Confine to the next task even if it is not complete.
+> It might take up to 15 minutes for the discovery of virtual machines to complete, and you may need to refresh the page to see the message. Confine to the next task even if it is not complete.
 
 ## Task 2: Setup Azure resources
 
@@ -111,12 +101,12 @@ the target Azure environment.
 
 3.  Use the following settings to create a virtual network.
 
-- Resource group- ```AZMigrateRG```
+    - Resource group- ```AZMigrateRG```
 
-- Virtual network name - ```migration-vnet-XXXXXX``` \[substitute
-  XXXXXX with random number\]
+    - Virtual network name - ```migration-vnet-XXXXXX``` \[substitute
+    XXXXXX with random number\]
 
-- Region **eastus**
+    - Region **eastus**
 
 **Create a Storage account**
 
@@ -125,50 +115,44 @@ the target Azure environment.
 
 2.  On the **Storage accounts** blade, select **Create**.
 
-3.  Use the following settings to create a storage account. Leave all
-    other settings as their default values.
+3.  Use the following settings to create a storage account. Leave all other settings as their default values.
 
-- Resource group - ```AZMigrateRG```
+    - Resource group - ```AZMigrateRG```
 
-- Storage account name - ```saXXXXXX``` \[substitute XXXXXX with
-  random number\]
+    - Storage account name - ```saXXXXXX``` \[substitute XXXXXX with
+    random number\]
 
-- Region - **eastus**
+    - Region - **eastus**
 
-- Performance - **Standard**
+    - Performance - **Standard**
 
-- Redundancy - **Locally-redundant storage (LRS)**
+    - Redundancy - **Locally-redundant storage (LRS)**
 
 4.  Once the Storage account is created, click on **Go to Resource**
 
 5.  Expand Data management and select **Data protection**, then uncheck
     **Enable soft delete for blobs** and click on the **Save** button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image8.png)
+    > ![A screenshot of a computer Description automatically
+    > generated](./media/image8.png)
 
 6.  On the **Networking** tab of the **Create a storage account** page,
     set the following settings, and leave all other settings as their
     default values:
 
-- Network Access - **Enable public access from selected virtual networks
-  and IP addresses**
+    - Network Access - **Enable public access from selected virtual networks and IP addresses**
 
-- Virtual network - **migration-vnet-XXXXXX**
+    - Virtual network - **migration-vnet-XXXXXX**
 
-- Subnets - **default (10.0.0.0/24)**
+    - Subnets - **default (10.0.0.0/24)**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image9.png)
+    ![A screenshot of a computer Description automatically generated](./media/image9.png)
 
 7.  On the **Data protection** tab, uncheck **Enable soft delete for
     blobs**. Leave all other settings as their default values.
 
 8.  Select **Review**, then select **Create**.
 
-Want to learn more? Review the documentation for guidance on [using the
-Azure portal to create a virtual
-network](https://learn.microsoft.com/azure/virtual-network/quick-create-portal).
 
 **Create a Public IP address**
 
@@ -179,22 +163,21 @@ network](https://learn.microsoft.com/azure/virtual-network/quick-create-portal).
 
 3.  Use the following settings to create a public IP.
 
-- Resource group - ```AZMigrateRG```
+    - Resource group - ```AZMigrateRG```
 
-- Region - **eastus**
+    - Region - **eastus**
 
-- Name - ```ipXXXXXX``` \[substitute XXXXXX with random number\]
+    - Name - ```ipXXXXXX``` \[substitute XXXXXX with random number\]
 
-- IP Version - **IPv4**
+    - IP Version - **IPv4**
 
-- SKU - **Basic**
+    - SKU - **Basic**
 
-- IP address assignment - **Static**
+    - IP address assignment - **Static**
 
-- Idle timeout (minutes) - **4**
+    - Idle timeout (minutes) - **4**
 
-- DNS name label - ```rhel-web-XXXXXX``` \[substitute XXXXXX with
-  random number\]
+    - DNS name label - ```rhel-web-XXXXXX``` \[substitute XXXXXX with random number\]
 
 4.  Select **Review + create**, then **create**
 
@@ -210,8 +193,7 @@ network](https://learn.microsoft.com/azure/virtual-network/quick-create-portal).
 3.  In the **Migration and modernization** section,
     select **Replicate**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image11.png)
+    ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
 4.  You may need to refresh the browser page displaying the **Azure
     Migrate Servers, databases and web apps** page.
@@ -223,35 +205,31 @@ network](https://learn.microsoft.com/azure/virtual-network/quick-create-portal).
     virtualized?** menu, select **Yes, with Hyper-V**, then
     select **Next**.
 
-7.  On the **Virtual machines** tab of the Replicate page, use the
-    following settings to complete the replication criteria.
+7.  On the **Virtual machines** tab of the Replicate page, use the following settings to complete the replication criteria.
 
-- Import migration settings from an Azure Migrate assessment - **Yes,
-  apply migration settings from an Azure Migrate assessment**
+    - Import migration settings from an Azure Migrate assessment - **Yes, apply migration settings from an Azure Migrate assessment**
 
-- Select group - **RHEL-Servers**
+    - Select group - **RHEL-Servers**
 
-- Select assessment - **as-43240741**
+    - Select assessment - **as-43240741**
 
-- Virtual machines **RHEL-DB-01** and **RHEL-WEB-01**
+    - Virtual machines **RHEL-DB-01** and **RHEL-WEB-01**
 
-8.  On the **Target settings** tab of the Replicate page, use the
-    following settings to specify the target details.
+8.  On the **Target settings** tab of the Replicate page, use the following settings to specify the target details.
 
-- Resource group - **AZMigrateRG**
+    - Resource group - **AZMigrateRG**
 
-- Replication storage account - **saXXXXXX**
+    - Replication storage account - **saXXXXXX**
 
-- Virtual Network - **migration-vnet-XXXXXX**
+    - Virtual Network - **migration-vnet-XXXXXX**
 
-- Subnet - **Default**
+    - Subnet - **Default**
 
-9.  On the **Compute** tab of the Replicate page, use the following
-    settings on both VMs:
+9.  On the **Compute** tab of the Replicate page, use the following settings on both VMs:
 
-- Azure VM Size - **Standard_D2s_v3**
+    - Azure VM Size - **Standard_D2s_v3**
 
-- OS Type - **Linux**
+    - OS Type - **Linux**
 
 10. Leave the settings in the remaining tabs at their defaults and
     select **Replicate**.
@@ -260,14 +238,15 @@ network](https://learn.microsoft.com/azure/virtual-network/quick-create-portal).
     apps** page, select **Refresh** and then, in the **Migration and
     modernization** section, select **Overview**.
 
-![](./media/image12.png)
+    ![](./media/image12.png)
 
 12. On the Migration and modernization page, in the **Replicating
     machines** section, examine the **Status** column in the list of the
     replicating machines.
 
-    ![](./media/image13.png) Wait until the status changes
-to **Protected**. This might take an additional 15 minutes.
+    ![](./media/image13.png)
+    
+> Wait until the status changes to **Protected**. This might take an additional 15 minutes.
 
 You will need to refresh the **Migration and modernization Replicating
 machines** to update the status information.
@@ -299,13 +278,10 @@ machines** to update the status information.
 
     ![](./media/image16.png)
 
-7.  Go back to the **Migration and modernization Replicating
-    machines** page, select **Refresh**, and then verify that the both
-    virtual machines are listed with the **Cleanup test failover
-    pending** status.
+7.  Go back to the **Migration and modernization Replicating machines** page, select **Refresh**, and then verify that the both virtual machines are listed with the **Cleanup test failover pending** status.
 
-Wait for the test migrations to complete. This may take around 5
-minutes.
+    > Wait for the test migrations to complete. This may take around 5
+    minutes.
 
 **Validate test migrations**
 
@@ -314,9 +290,7 @@ minutes.
 
 9.  Note the entries representing the newly replicated virtual machines.
 
-> Note - Initially, the virtual machines will have names consisting of
-> an **asr-temp** prefix and randomly generated suffix, but will be
-> renamed automatically to **RHEL-DB-01-test** and **RHEL-WEB-01-test**.
+    > Note - Initially, the virtual machines will have names consisting of an **asr-temp** prefix and randomly generated suffix, but will be renamed automatically to **RHEL-DB-01-test** and **RHEL-WEB-01-test**.
 
 10. On the **Virtual machines** page, select
     the **RHEL-WEB-01-test** VM.
@@ -348,7 +322,7 @@ minutes.
 17. Open a new Edge tab and go to the **DNS name** you assigned to the
     public IP:
 
-```rhel-web-XXXXXX.eastus.cloudapp.azure.com```
+    ```rhel-web-XXXXXX.eastus.cloudapp.azure.com```
 
 18. Verify that the Drupal website hosted on RHEL-WEB-01-test loads.
 
@@ -377,8 +351,7 @@ minutes.
 25. Wait for the **Replication status** to be **Protected** before
     continuing.
 
-You may need to select **Refresh** after a minute or two to see this
-update.
+    > You may need to select **Refresh** after a minute or two to see this update.
 
 ## Task 5: Perform migrations
 
@@ -414,7 +387,7 @@ the newly migrated RHEL-WEB-01 VM.
     verify that the **Status** column displays **Planned failover
     finished** for both virtual machines.
 
-You may need to select **Refresh** to see this update.
+    > You may need to select **Refresh** to see this update.
 
 2.  In the Azure portal, in the **Search** box, enter Virtual machines,
     then select **Virtual machines**.
@@ -442,8 +415,7 @@ You may need to select **Refresh** to see this update.
 
 9.  Select **Save** and wait for the association to complete.
 
-10. Open a new Edge tab and go to the **DNS name** you assigned to the
-    public IP: rhel-web-43240741.eastus.cloudapp.azure.com
+10. Open a new Edge tab and go to the **DNS name** you assigned to the public IP: rhel-web-43240741.eastus.cloudapp.azure.com
 
 11. Verify that the Drupal website hosted on RHEL-WEB-01 loads.
 

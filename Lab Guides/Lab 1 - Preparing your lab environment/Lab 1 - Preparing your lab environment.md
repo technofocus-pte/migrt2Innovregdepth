@@ -8,7 +8,7 @@ Hyper-V Integration Services must be installed and running on guest VMs
 in order for discovery to identify the apps installed on them.
 
 1.  Open the **Microsoft Edge** from the desktop, then go to the IP
-    address of **RHEL-WEB-01**: 192.168.1.24.
+    address of **RHEL-WEB-01**: ```192.168.1.24```
 
     ![A screenshot of a computer Description automatically
     generated](./media/image1.png)
