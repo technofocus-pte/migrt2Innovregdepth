@@ -14,12 +14,13 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
 
     ![](./media/image1.png)
 
-2.  On the **Discover** blade, on the **Are your Machines
-    virtualized?** menu, select **Yes, with Hyper-V**.
+2.  On the **Discover** blade, for the drop-down **Where do you want to migrate to?** select **Azure VM** option, on the **Are your Machines virtualized?** menu, select **Yes, with Hyper-V**.
 
-3.  On the **Target region** menu, select **eastus**.
+3.  On the **Target region** menu, select **West US 2**. 
 
     ![](./media/image2.png)
+
+    > <font color=red>**Note** - Ensure that the Target region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
 4.  Select the **Confirm that the target region for migration is
     eastus** checkbox, then select **Create resources**.
@@ -75,10 +76,11 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
 
 16. Once the registration is complete, select **Finish**.
 
-17. Back in the browser, on the **Discover** blade, under **2. Finalize
-    registration**, select word **Finalize registration**.
+17. Back in the browser, on the **Discover** blade, under **2. Finalize registration**, select word **Finalize registration**.
 
-    > You may need to refresh the page and re-select the options from the beginning of this task to enable the Finalize registration button.
+    ![](./media/image25.png)
+
+    > You may need to **refresh the page** and re-select the options from the beginning of this task to enable the Finalize registration button.
 
 18. Once the registration completes, you will see the following message.
 
@@ -106,7 +108,9 @@ the target Azure environment.
     - Virtual network name - ```migration-vnet-XXXXXX``` \[substitute
     XXXXXX with random number\]
 
-    - Region **eastus**
+    - Region **West US 2**
+
+    > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
 **Create a Storage account**
 
@@ -122,7 +126,9 @@ the target Azure environment.
     - Storage account name - ```saXXXXXX``` \[substitute XXXXXX with
     random number\]
 
-    - Region - **eastus**
+    - Region - **West US 2**
+
+    > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
     - Performance - **Standard**
 
@@ -166,6 +172,8 @@ the target Azure environment.
     - Resource group - ```AZMigrateRG```
 
     - Region - **eastus**
+
+        > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
     - Name - ```ipXXXXXX``` \[substitute XXXXXX with random number\]
 
@@ -322,7 +330,7 @@ machines** to update the status information.
 17. Open a new Edge tab and go to the **DNS name** you assigned to the
     public IP:
 
-    ```rhel-web-XXXXXX.eastus.cloudapp.azure.com```
+    ```rhel-web-XXXXXX.westus2.cloudapp.azure.com```
 
 18. Verify that the Drupal website hosted on RHEL-WEB-01-test loads.
 

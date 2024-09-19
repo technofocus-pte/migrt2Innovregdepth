@@ -72,7 +72,7 @@
 
 
 
-![](./media/image77.png)
+     ![](./media/image77.png)
 
 
 20.  You should get the notification as shown in below image     
@@ -351,13 +351,12 @@ in order for discovery to identify the apps installed on them.
 
 ## Task 2: Configure, run, and view an assessment
 
-1.  Switch back to the **Discover - Microsoft Azure** tab in Edge, then
-    go back to the **Azure Migrate Servers, databases and web
-    apps** page and select **Refresh**.
+1.  In a new tab navigate **Resource groups** page ```https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView``` select the **AZMigrateRG** resource group and then note down the location of the **Key Vault**, as shown below it is **West US 2**.
+   ![](./media/image84.png)
 
-2.  In the **Azure Migrate: Discovery and assessment** section,
-    select **Assess** and then, in the drop-down menu, select **Azure
-    VM**.
+    > **Note** - This location would be required to be specified for other resources to be created later in the Lab.
+
+2.  Switch back to the **Azure Migrate** page and under **Azure Migrate: Discovery and assessment** section, select **Assess** and then, in the drop-down menu, select **Azure VM**.
 
     ![](./media/image20.png)
 
@@ -373,7 +372,7 @@ in order for discovery to identify the apps installed on them.
 
     > Accept the default settings for anything not specified in the table.
 
-    - Target location - **eastus**
+    - Target location - **West US 2**
 
     - Storage type - **Premium managed disks**
 
