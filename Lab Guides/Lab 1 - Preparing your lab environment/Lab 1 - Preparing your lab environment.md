@@ -35,17 +35,19 @@
 
     ![](./media/image66.png)
 
+9. You may be prompted to register and complete MFA authentication, proceed ahead with the MFA registration using **Microsoft Authenticator App** or **Phone method**.
+
     ![](./media/image67.png)
 
-    > **Note** – you may be prompted to register and complete MFA authentication, proceed ahead with the MFA registration using **Microsoft Authenticator App** or **Phone method**.
+10. Once the Authentication is completed, click on the **Done** button.
 
     ![](./media/image68.png)
 
-9.  On the feedback page, enter your feedback and click on **Submit**.
+11.  On the feedback page, enter your feedback and click on **Submit**.
 
     ![](./media/image69.png)
 
-10. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
+12. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
 
     ![](./media/image70.png)
 
