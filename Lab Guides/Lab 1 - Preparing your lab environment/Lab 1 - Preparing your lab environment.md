@@ -44,12 +44,56 @@
     ![](./media/image68.png)
 
 11.  On the feedback page, enter your feedback and click on **Submit**.
-    ![](./media/image69.png)
+
+
+![](./media/image69.png)
 
 12. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
 
     ![](./media/image70.png)
 
+13.  In the **Azure Portal <https://portal.azure.com>** search box
+    type **subscriptions** and then click **on Subscriptions**
+    
+        ![](./media/image71.png)
+
+14.  From the list of Subscriptions select the **Azure Pass –
+    Sponsorship**. 
+
+        ![](./media/image72.png)
+
+15.  On the Azure Pass – Sponsorship page click on **Access control
+    (IAM)**, then click on **+ Add** drop-down and select** Add role
+    assignment**. 
+
+        ![](./media/image73.png)
+
+16.  On the Add role assignment page, under the **Privileged
+    administrator roles** tab select **Contributor** and then click
+    on** Next**. 
+        ![](./media/image74.png)
+
+17.  On the **Members** tab, click on **+ Select members**, then
+    choose **MOD Administrator** and then click on
+    the **Select** button. 
+
+        ![](./media/image75.png)
+
+18.  Click on** Review + assign** button. 
+
+        ![](./media/image76.png)
+
+19.  Click on **Review + assign** button again. 
+
+        ![](./media/image77.png)
+
+20.  You should get the notification as shown in below image. 
+
+        ![](./media/image78.png)
+
+21.  Click on the Role assignments tab to view the role assigned in the previous step. We can see the Users listed to whom the Contributor role was assigned. 
+
+        ![](./media/image79.png)
 
 ## Task 1: Ensure the VMs are ready
 
@@ -72,7 +116,7 @@ in order for discovery to identify the apps installed on them.
 1.  In a new Edge tab, navigate to Azure Portal ```https://portal.azure.com``` , and sign in
     using the credentials provided in the Lab resources
 
-2.  In the Azure portal, in the **Search** box, enter Azure Migrate,
+2.  In the Azure portal, in the **Search** box, enter ```Azure Migrate```
     then select **Azure Migrate** to go to the Azure Migrate page.
 
 3.  In the left navigation, under **Migration goals**, select **Servers,
@@ -104,13 +148,11 @@ in order for discovery to identify the apps installed on them.
 ## Task 3: Deploy and configure the Azure Migrate appliance
 
 1.  On the **Servers, databases and web apps** blade, in
-    the **Assessment Tools** section, under **Azure Migrate: Discovery
-    and assessment**, select **Discover**.
+    the **Assessment Tools** section, under **Azure Migrate: Discovery and assessment**, select **Discover** and choose **Using appliance**
 
     ![](./media/image3.png)
 
-2.  On the **Discover** blade, on the **Are your Machines
-    virtualized?** menu, select **Yes, with Hyper-V**.
+2.  On the **Discover** blade, on the **Are your Machines virtualized?** menu, select **Yes, with Hyper-V**.
 
 3.  Under **1. General product key**, in the **Name your
     appliance** box, enter ```HV-XXXXXX``` substitute **XXXXX** with
@@ -126,7 +168,9 @@ in order for discovery to identify the apps installed on them.
 5.  Under **2. Download Azure Migrate appliance**, select **.zip file.
     500MB**, and *note* the Download button\*.
 
-    >This would download the PowerShell script that installs the appliance to a Windows Server machine. For this workshop, the script has **already been downloaded** to the E: drive and **run**. You will **continue past this step**.
+    >This would download the PowerShell script that installs the appliance to a Windows Server machine. 
+    
+    >For this Lab, the script has **already been downloaded** to the E: drive and **run**. You will **continue past this step**.
 
 6.  Under **3. Set up the appliance**
 
@@ -206,7 +250,23 @@ in order for discovery to identify the apps installed on them.
     ![A screenshot of a computer Description automatically
     generated](./media/image6.png)
 
-2.  On Microsoft Defender for Cloud page, under the **General** section,
+2.  On the Notification – **You may be viewing limited information. To gettenant-wide visibility, click here -->** click on it.
+
+    ![](./media/image80.png)
+
+3.  On the **Get permissions** page, choose the **Security Admin** and
+    then click on **Get access** button.
+
+    ![](./media/image81.png)
+
+4.  You should get the notification as shown in below images
+
+    ![](./media/image82.png)
+
+    ![](./media/image83.png)
+
+
+5.  On Microsoft Defender for Cloud page, under the **General** section,
     navigate and click on **Getting started**. In the **Upgrade** tab,
     navigate and click on the **Upgrade** button.
 
@@ -215,12 +275,12 @@ in order for discovery to identify the apps installed on them.
     ![A screenshot of a computer Description automatically
     generated](./media/image7.png)
 
-3.  You’ll receive a notification stating **Trial started**.
+6.  You’ll receive a notification stating **Trial started**.
 
     ![A screenshot of a computer Description automatically generated with
     low confidence](./media/image8.png)
 
-4.  In **Microsoft Defender for Cloud | Getting started** page, click on
+7.  In **Microsoft Defender for Cloud | Getting started** page, click on
     the **Install agents** tab, select your active **Azure
     Subscription** as shown in the below image, then click on the
     **Install agents button.**
@@ -228,7 +288,7 @@ in order for discovery to identify the apps installed on them.
     ![A screenshot of a computer Description automatically
     generated](./media/image9.png)
 
-5.  **You’ll receive a notification Agents installation initiated.**
+8.  **You’ll receive a notification Agents installation initiated.**
 
     ![A screenshot of a computer Description automatically generated with
     low confidence](./media/image10.png)
