@@ -14,7 +14,7 @@
 
     ![](./media/image62.png)
 
-    > **Note**: Do not use your Company/Work Account to login to redeem the Azure Pass, another Azure Pass will not be issued.
+    > <font color=Orangered> **Note**:  Do not use your **Company/Work Account** to login to redeem the Azure Pass, another Azure Pass will not be issued.</font>
 
 4.  Enter the **Office 365 Tenant credentials** to complete the sign in
     process
@@ -123,8 +123,8 @@ in order for discovery to identify the apps installed on them.
 
     Resource group – click on **Create new** ```AZMigrateRG```
 
-    Project - ```az-migrate-XXXXXX``` \[substitute XXXXXX with random
-    number\]
+    Project - ```az-migrate-XXXXXX``` [substitute XXXXXX with random
+    number]
 
     Geography - **United States**
 
@@ -156,9 +156,13 @@ in order for discovery to identify the apps installed on them.
 5.  Under **2. Download Azure Migrate appliance**, select **.zip file.
     500MB**, and *note* the Download button\*.
 
-    >This would download the PowerShell script that installs the appliance to a Windows Server machine. 
+    <font color=Green>
+
+    > **This would download the PowerShell script that installs the appliance to a Windows Server machine.** 
     
     >For this Lab, the script has **already been downloaded** to the E: drive and **run**. You will **continue past this step**.
+    
+    </font>
 
 6.  Under **3. Set up the appliance**
 
@@ -190,7 +194,9 @@ in order for discovery to identify the apps installed on them.
 
     ![](./media/image5.png)
 
-    >It can take up to 10 minutes for registration to complete.
+    <font color=Green>
+
+    > **It can take up to 10 minutes for registration to complete.** </font>
 
 15. In the **Provide Hyper-V host credentials** section, select **Add
     credentials** and add credentials with the following settings:
@@ -258,7 +264,7 @@ in order for discovery to identify the apps installed on them.
     navigate and click on **Getting started**. In the **Upgrade** tab,
     navigate and click on the **Upgrade** button.
 
-    > **Note**: You may need to wait for a few minutes for the upgrade to complete.
+    > <font color=Orangered> **Note**: You may need to wait for a few minutes for the upgrade to complete.</font>
 
     ![A screenshot of a computer Description automatically
     generated](./media/image7.png)
@@ -354,7 +360,7 @@ in order for discovery to identify the apps installed on them.
 1.  In a new tab navigate **Resource groups** page ```https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView``` select the **AZMigrateRG** resource group and then note down the location of the **Key Vault**, as shown below it is **West US 2**.
    ![](./media/image84.png)
 
-    > **Note** - This location would be required to be specified for other resources to be created later in the Lab.
+    > <font color=Orangered> **Note** - This location would be required to be specified for other resources to be created later in the Lab.</font>
 
 2.  Switch back to the **Azure Migrate** page and under **Azure Migrate: Discovery and assessment** section, select **Assess** and then, in the drop-down menu, select **Azure VM**.
 
@@ -369,8 +375,8 @@ in order for discovery to identify the apps installed on them.
 
 5.  On the Assessment Settings page, use the following settings to
     create the assessment.
-
-    > Accept the default settings for anything not specified in the table.
+    <font color=Green>
+    > **Accept the default settings for anything not specified in the table.** </font>
 
     - Target location - **West US 2**
 
@@ -429,5 +435,7 @@ in order for discovery to identify the apps installed on them.
 12. On the **as-43240741** page, review the information indicating Azure
     readiness and monthly cost estimate for both compute and storage.
 
-> In real-world scenarios, you should consider installing the Dependency Agent to provide more insights into server dependencies during the
-assessment stage.
+<font color=Green>
+
+> **In real-world scenarios, you should consider installing the Dependency Agent to provide more insights into server dependencies during the
+assessment stage.** </font>
