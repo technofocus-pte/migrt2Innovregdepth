@@ -464,7 +464,7 @@ used for Migration.
 7.  On the **Connect to source tab**, provide the below details and
     click on **Next : Select migration target\>**
 
-    *  Server name – **IP address / DNS name of PostgresSrv VM**
+    *  Server name – **Public IP address / DNS name of PostgresSrv VM**
 
     *  Port – ```5432```
 
@@ -475,7 +475,8 @@ used for Migration.
     *  SSL mode – **Prefer**
 
     *  Test Connection – Click on **Connect to source** 
-    > Wait for the test connection to be Successful
+
+    > **Wait for the test connection to be Successful**
 
     ![](./media/image62.png)
 
@@ -484,7 +485,10 @@ used for Migration.
     *  Password - ```P@55w.rd1234```
 
     *  Test Connection – Click on **Connect to source** 
-    > Wait for the test connection to be Successful
+
+    > **Wait for the test connection to be Successful**
+
+
 
     * Click on **Next : Select database(s) for migration**
 
@@ -546,8 +550,8 @@ used for Migration.
 
     ![](./media/image75.png)
 
-20. Back on the Migration page, we can see that the Migration of the
-    PostgreSQL database is completed.
+20. Back on the **Migration** page, we can see that the Migration of the
+    PostgreSQL database is **Succeeded**.
 
     ![](./media/image76.png)
 
@@ -574,8 +578,12 @@ used for Migration.
 
     ![](./media/image36.png)
 
-Hence, we have successfully migrated the On-premises PostgreSQL database
-to Azure Database for PostgreSQL Flexible Server.
+<font color=darkgreen>
+
+>**Hence, we have successfully migrated the On-premises PostgreSQL database
+to Azure Database for PostgreSQL Flexible Server**.
+
+</font>
 
 ## Summary 
 
