@@ -3,7 +3,7 @@
 **Objective**
 
 In the Lab we would be deploying a Virtual machine to host the
-PostgreSQL database and create the required PostgreSQL infrastructure
+**PostgreSQL database** and create the required **PostgreSQL infrastructure**
 and then we will migrate the PostgreSQL Database using the **Azure
 Database for Postgres Flexible Server (Migration)** ![A diagram of a
 data flow Description automatically generated with medium
@@ -12,10 +12,10 @@ confidence](./media/image1.png)
 ## Task 1 – Deploy the Virtual machine to host the PostgreSQL database for the On-premises environment.
 
 We will deploy **Ubuntu 22.0.4.4 LTS** VM, on which we will install
-PostgreSQL Server 16 and then create the Sample Database that will be
+**PostgreSQL Server 16** and then create the Sample Database that will be
 used for Migration.
 
-1.  From the Azure Portal open the Azure Cloud Shell
+1.  From the Azure Portal ```https://portal.azure.com``` open the Azure Cloud Shell
 
     ![](./media/image2.png)
 
@@ -233,7 +233,7 @@ used for Migration.
 
     ![](./media/image32.png)
 
-34. From the list of Resource groups select **PostgresRG,**then select
+34. From the list of Resource groups select **PostgresRG** then select
     the VM - **PostgresSrv**
 
 35. On the **PostgresSrv** page, select **Networking setting** and then
@@ -294,15 +294,22 @@ used for Migration.
     ![](./media/image40.png)
 
 7.  In the Windows PowerShell window run the command to copy the PostgreSQL database backup to the folder **dvdrentalbkp** on the **PostgresSrv**.
-    > **Note** - If file dvdrental.tar is not present it can be downloaded from - ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` and then placed in **C:\Labfiles**
+
+    <font color=orangered>
+    
+    > **Note** - Substitute the command before running with the **FQDN of your Ububtu Server VM** before running the command. refer **Task 1 - step 11**
+    </font>
 
     ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
-
-    > **Note** - Substitute the command with the **FQDN of your Ububtu Server VM** before runnint the command.
 
     When prompted to continue type **yes** and then enter the password - ```P@55w.rd1234```
 
     ![](./media/image41.png)
+
+    <font color=blue>
+
+    > **Note** - If the file **dvdrental.tar** is not present, it can be downloaded from - ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` and then placed in **C:\Labfiles**
+    </font>
 
 
 8.  Switch back to the tab on the prompt **postgres@PostgresSrv** run
@@ -402,9 +409,15 @@ used for Migration.
 
     ![](./media/image53.png)
 
-7.  The Deployment will start.
+7.  The Deployment will begin.
 
     ![](./media/image54.png)
+
+    <font color=darkgreen>
+
+    >**Note** - The deployment will take around 10 minutes to complete 
+
+    </font>
 
 8.  Once the Deployment is completed click on **Go to resource** button.
 
