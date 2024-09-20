@@ -23,12 +23,12 @@ devices.
 
     ```cd``` then press the **Tab** key to auto populate the name of the folder, then press Enter key.
 
-    ```azcopy copy 'https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip' "C:\Users\Administrator\Downloads"```
+    ```azcopy copy "https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"```
 
 
     <font color=Darkgreen>
 
-    > The above command will copy the **Windows Server 2022** image in the Downloads folder. The download process can take upto 10-15 minutes to download the image.
+    > The above command will copy the **Windows Server 2022** image in the Downloads folder. The download process can take upto 7-10 minutes to download the image.
 
     </font>
 
@@ -116,8 +116,7 @@ devices.
 
 ## Task 2 – Add Azure Arc resource via Script
 
-1.  In a new Edge tab, go to ``` https://portal.azure.com/```, and
-    sign in using the provided credentials.
+1.  Once logged into the **WinSrv20224Arc** VM , Open the Edge browser and navigate to **Azure Portal** ```https://portal.azure.com/```, and Sign in using the Lab provided credentials.
 
 2.  While in the Azure Portal in the search type ```arc``` and then select Azure Arc
 
@@ -141,8 +140,18 @@ devices.
 6.  On the **Add a server with Azure Arc** page, provide the below
     details.
 
-    *  Choose the Region first Region - **West US**
+    <font color=darkred>
 
+    > **Before creating Resource group, choose the Region to avoid error** 
+
+    </font>
+
+    
+
+    *  Region -  <font color=Red> **West US**
+
+    </font>
+    
     *  Resource group – Click on **Create new**  ```RG4ArcVM```
 
     *  Operating System – **Windows**
@@ -153,12 +162,12 @@ devices.
 
         ![](./media/image20.png)
 
-7.  Click on the Download button and also click on the Copy button.
+7.  Click on the **Download** button and also click on the **Copy** button.
 
     ![](./media/image21.png)
 
-8.  Switch back to the **WinSrv20224Arc** VM and right-click on the
-    Start button and select **Windows PowerShell (Admin)**
+8.  Right-click on the
+    **Start button** and select **Windows PowerShell (Admin)**
 
     ![](./media/image22.png)
 
@@ -180,27 +189,27 @@ devices.
 
     ![](./media/image26.png)
 
-13. The Machine should be successfully connected to Azure
+13. The message **Connect Machine to Azure** should be displayed as shown in the image below.
 
     ![](./media/image27.png)
 
 ## Task 3 – Manage the Arc Server
 
-1.  Switch back to the Azure Portal windows in the Edge browser.
+1.  Switch back to Lab VM and open the Azure Portal ```https://portal.azure.com```
 
-2.  Click on the Azure Arc link
+2.  While in the Azure Portal in the search type ```arc``` and then select **Azure Arc**
 
-    ![](./media/image28.png)
+    ![](./media/image16.png)
 
 3.  Select **Machines** under Azure Arc resources
 
     ![](./media/image29.png)
 
-4.  You should be able to see the Server showing as **Connected**
+4.  You should be able to see the Machine **WinSrv20224Arc** showing as **Connected**
 
     ![](./media/image30.png)
 
-5.  Click on the Server name to open the details, the from the
+5.  Click on the **WinSrv20224Arc** to open the details, the from the
     **Overview** page, click on **Updates**
 
     ![](./media/image31.png)
@@ -216,11 +225,11 @@ devices.
 
     ![](./media/image34.png)
 
-8.  On the Insights page, click on the **Enable** button.
+8.  On the **Insights** page, click on the **Enable** button.
 
     ![](./media/image35.png)
 
-9.  On the Monitoring configuration page, click on Configure button.
+9.  On the **Monitoring configuration** page, click on **Configure** button.
 
     ![](./media/image36.png)
 
@@ -233,10 +242,10 @@ devices.
 
     ![](./media/image38.png)
 
-    >**Note**– As we had enabled **Microsoft Defender for Cloud** earlier, we should be able to see the recommendations for the Server.
+    >**Note**– We had enabled **Microsoft Defender for Cloud** earlier, we should be able to see the recommendations in about 30 minutes for the Server as it was recently onboarded.
 
-11. We should be able to see the recommendations for the on-boarded
-    server.
+11. Once the recommendations for the on-boarded
+    server are available they should appear as shown in the below image.
 
     ![](./media/image39.png)
 
@@ -244,9 +253,7 @@ devices.
 
     ![](./media/image40.png)
 
-13. Click on **Go to Updates using Azure Update Manager** button.
-
-    ![](./media/image41.png)
+13. If required click on **Go to Updates using Azure Update Manager** button.
 
 14. Click on **Check for updates** button.
 
@@ -263,7 +270,7 @@ devices.
 
     ![](./media/image45.png)
 
-17. Once the Assessment is completed, click on the Refresh button again.
+17. Once the Assessment is completed, click on the **Refresh** button again.
 
     ![](./media/image46.png)
 
@@ -318,4 +325,4 @@ devices.
     ![](./media/image59.png)
 
 28. Hence, we have successfully on-boarded the On-premise Windows server
-    and we can manage the Server from the Azure Portal Azure Arc.
+    and we can manage the Server from the Azure Portal using **Azure Arc**.
