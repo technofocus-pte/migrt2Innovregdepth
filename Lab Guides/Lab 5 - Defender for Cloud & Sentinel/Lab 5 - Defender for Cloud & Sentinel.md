@@ -124,11 +124,11 @@
 In this exercise we will see how to create a Microsoft Sentinel
 workspace.
 
-1.  Navigate to the **http://portal.azure.com** and log in with the
-    **MOD Administrator** credentials provided on the home tab of your
+1.  Navigate to the ```https://portal.azure.com``` and log in with the
+    **MOD Administrator** credentials provided with the Lab resources of your
     lab environment.
 
-2.  In the top search bar, type **Microsoft Sentinel** and click on
+2.  In the top search bar, type ```Microsoft Sentinel``` and click on
     **Microsoft Sentinel**.
 
       ![](./media/image19.png)
@@ -152,9 +152,9 @@ workspace.
 
     1.  Subscription: **Azure Pass - Sponsorship**
 
-    2.  Resource Group: click on **Create new** **LAWResourceGroup**
+    2.  Resource Group: click on **Create new** ``LAWResourceGroup``
 
-    3.  Workspace Name: **SentWrkspcXXXXXX** \[substitute **XXXXXX**
+    3.  Workspace Name: ```SentWrkspcXXXXXX``` [substitute **XXXXXX**
         with random number\]
 
     4.  Region: **West US**
@@ -164,8 +164,7 @@ workspace.
       ![](./media/image22.png)      
 
 
-6.  Click **Create** after the validation is completed. The creation
-    takes a few seconds.
+6.  Click **Create** after the validation is completed. The creation takes a few seconds.
 
       ![](./media/image23.png) 
  
@@ -176,7 +175,7 @@ workspace.
       ![](./media/image24.png) 
  
 
-8.  Select your workspace and click **Add** at the bottom.
+8.  Select your workspace that you just created and click **Add** at the bottom.
 
       ![](./media/image25.png)
  
@@ -186,7 +185,7 @@ workspace.
       ![](./media/image26.png)
  
 
-10. Your Microsoft Sentinel workspace is now ready to use!
+10. Your Microsoft Sentinel workspace is now ready to use, click on the **OK** button to proceed.
 
       ![](./media/image27.png) 
  
@@ -216,12 +215,12 @@ This exercise shows you how to enable Data connectors.
       ![](./media/image31.png) 
 
 4.  On the Azure Portal
-    [**http://portal.azure.com**](http://portal.azure.com) and search
-    for **Microsoft Sentinel** and click on **Microsoft Sentinel**.
+    ```https://portal.azure.com``` and search
+    for ```Microsoft Sentinel``` and click on **Microsoft Sentinel**.
 
       ![](./media/image32.png) 
 
-5.  Select **SentWrkspc123456**.
+5.  Select **SentWrkspcXXXXXX**.
 
       ![](./media/image33.png)  
 
@@ -230,8 +229,8 @@ This exercise shows you how to enable Data connectors.
       ![](./media/image34.png)   
  
 
-7.  You should get the message “Data Connector with "content source =
-    gallery content" have been removed. In that message select the
+7.  You should get the message **Data Connector with "content source =
+    gallery content" have been removed.** In that message select the
     **Click here** link
 
       ![](./media/image35.png)      
@@ -255,24 +254,30 @@ This exercise shows you how to enable Data connectors.
 
       ![](./media/image39.png)
     
-13. Click on the **Refresh** button and you should be able to see the
+13. Click on the **Refresh** button and you should be able to see the few connectors
     Data connectors showing.
 
       ![](./media/image40.png) 
  
 
-14. Click on **Content hub**
+      <font color=darkgreen>
+      
+      > **Note** - Sometime it may not install any connector, which is also fine to proceed ahead with the Labs.
+
+      </font>
+
+14. Click on **Content hub** under **Content management**
 
       ![](./media/image41.png)
  
 
-15. On the Content hub page search for **Azure Activity** and then
+15. On the Content hub page search for ```Azure Activity``` and then
     select **Azure Activity** content and click on **Install** button
 
       ![](./media/image42.png) 
  
 
-16. On the Content hub page search for **Microsoft defender for cloud**
+16. On the Content hub page search for ```Microsoft defender for cloud```
     and then select **Microsoft Defender for Cloud** content and click
     on **Install** button
 
@@ -289,7 +294,7 @@ your Azure subscription, into your Microsoft Sentinel workspace.
 
       ![](./media/image44.png) 
 
-2.  In the data connectors screen, type **activity** in the search bar,
+2.  In the data connectors screen, type ```activity``` in the search bar,
     select the **Azure Activity** connector and click on **Open
     connector page**.
 
@@ -305,11 +310,10 @@ your Azure subscription, into your Microsoft Sentinel workspace.
 
       ![](./media/image46.png)  
 
-4.  On the **Scope** selection select **Azure Pass – Sponsorship** and
-    under **Resource Group** select **LAWResourceGroup**. Click
+4.  On the **Scope** selection select **Azure Pass – Sponsorship**. Click
     **Select**.
 
-      ![](./media/image47.png)   
+      ![](./media/image47.png)
 
 5.  Go to the **Parameters** tab. On the **Primary Log Analytics
     workspace** select the **MicrosoftSentinelWorkspace**.
@@ -324,8 +328,7 @@ your Azure subscription, into your Microsoft Sentinel workspace.
 
 7.  On the **Review + create** tab, click on the **Create** button.
 
-      ![](./media/image50.png)  
-
+      ![](./media/image50.png)
 
 8.  In the **Notification** pane you will be able to see the ‘**Role
     Assignments creation succeeded**’, ‘**Remediation task creation
@@ -338,17 +341,18 @@ your Azure subscription, into your Microsoft Sentinel workspace.
     connection status.
 
       ![](./media/image52.png)  
-  
-<span class="mark">**Note**: It is normal if you don't immediately see
-the connector showing as connected and in green, it takes around 30
-minutes for the process to complete. Also, each subscription has a
-maximum of 5 destinations for its activity logs. If this limit is
-already reached, the policy created as part of this exercise won't be
-able to add an additional destination to your Microsoft Sentinel
-workspace.</span>
 
-10. Continue to the next exercise then you can check back after 30
-    minutes.
+
+      <font color=darkblue>
+
+
+      > **Note**: It is normal if you don't immediately see
+      the connector showing as **Connected** and in green, it takes around 30
+      minutes for the process to complete.
+      
+      </font>
+
+10. Continue to the next exercise then you can check back after 30 minutes.
 
 ## Task 4: Enable Microsoft Defender for Cloud data connector.
 
@@ -363,12 +367,17 @@ investigate and respond to incidents.
 
       ![](./media/image44.png)    
 
-2.  In the **Data connectors** screen, type **tenant** in the search
+2.  In the **Data connectors** screen, type ```tenant``` in the search
     bar, select the **Tenant-based Microsoft Defender for Cloud**
     **(Preview)** connector and click on **Open connector page**.
 
       ![](./media/image53.png) 
 
+      > **Note** - If you receive the error **Data Connector Not Found**, then navigate to **Content Hub** and then Reinstall the **Microsoft Defender for Cloud Connector** again. 
+
+      ![](./media/image68.png)
+
+      ![](./media/image69.png)
 
 3.  On the **Tenant-based Microsoft Defender for Cloud** **(Preview)**
     connector page, under **Configuration** section click on the
@@ -387,7 +396,7 @@ investigate and respond to incidents.
       ![](./media/image56.png) 
 
 
-6.  Back on the **Data connectors** screen, type **subscription** in the
+6.  Back on the **Data connectors** screen, type ```subscription``` in the
     search bar, select the **Subscription-based Microsoft Defender for
     Cloud** **(legacy)** connector and click on **Open connector page**.
 
@@ -421,7 +430,7 @@ the Sample Alerts.
       ![](./media/image61.png)  
 
 2.  As we have just enabled the **Microsoft Defender for Cloud**
-    connector, it would take some time for the Incident to appear.
+    connector, it would take about 20-30 minutes for the Incidents to appear.
 
 3.  Click on **Overview** under **General** and then toggle the **New
     overview** switch to **Off**
@@ -450,8 +459,10 @@ the Sample Alerts.
       ![](./media/image66.png)    
 
 8.  On the alert expanded details you can see.
+ 
+      <font color=darkred>
 
-    1.  TimeGenerated \[UTC\]
+    1.  TimeGenerated [UTC]
 
     2.  Displayname
 
@@ -467,5 +478,6 @@ the Sample Alerts.
     7.  RemeditalSteps
 
     8.  And other rows with additional information.
+      </font>
 
       ![](./media/image67.png)    
