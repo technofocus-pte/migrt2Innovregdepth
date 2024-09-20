@@ -9,13 +9,33 @@ devices.
 
 ## Task 1 – Setup the On-premise machine 
 
-1.  Open the Edge browser on the Lab VM and navigate to the link to download the **Windows Server 2022 image** - ```https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip```
+1.  Open the Edge browser on the Lab VM and navigate to the link to download the **AzCopy** file - ```https://aka.ms/downloadazcopy-v10-windows``` open the zip file and extract it in the folder ```C:\AzCopy```
 
-2.  Once it is downloaded click on the **Open file** link
+    ![](./media/image61.png)
 
-    ![](./media/image1.png)
+2. Right-click on Star-men and select Windows PowerShell (Admin)
 
-3.  Click on Extract all button.
+3. Type the below commands to donwload the **Windows Server 2022 image**
+
+    ```cmd```
+
+    ```cd\AzCopy```
+
+    ```cd``` then press the **Tab** key to auto populate the name of the folder, then press Enter key.
+
+    ```azcopy copy 'https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip' "C:\Users\Administrator\Downloads"```
+
+
+    <font color=Darkgreen>
+
+    > The above command will copy the **Windows Server 2022** image in the Downloads folder. The download process can take upto 10-15 minutes to download the image.
+
+    </font>
+
+    ![](./media/image62.png)
+    ![](./media/image63.png)
+
+3.  Once the download is completed, open the Downloads folder in File explorer and then select the file **WinSrv20224Arc.zip**, click on **Extract all** button.
 
     ![](./media/image2.png)
 
