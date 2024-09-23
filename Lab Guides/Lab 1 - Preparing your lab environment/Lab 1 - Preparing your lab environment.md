@@ -275,7 +275,7 @@ in order for discovery to identify the apps installed on them.
 
     > ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
-2.  Scroll down and then expand Tenant-Root-Group and then click on the **Azure Pass – Sponsorship** Subscription listed.
+2.  Scroll down and then expand **Tenant Root Group** and then click on the **Azure Pass – Sponsorship** Subscription listed.
 
     ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
