@@ -50,7 +50,7 @@
     ![](./media/image70.png)
 
 
-13.  In the **Azure Portal** ```https://portal.azure.com``` search box type **subscriptions** and then click on **Subscriptions**
+13.  In the **Azure Portal** ```https://portal.azure.com``` search box type ```subscriptions``` and then click on **Subscriptions**
     ![](./media/image71.png)
 
 14.  From the list of Subscriptions select the **Azure Pass –Sponsorship**. 
@@ -360,7 +360,11 @@ in order for discovery to identify the apps installed on them.
 1.  In a new tab navigate **Resource groups** page ```https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView``` select the **AZMigrateRG** resource group and then note down the location of the **Key Vault**, as shown below it is **West US 2**.
    ![](./media/image84.png)
 
-    > <font color=Orangered> **Note** - This location would be required to be specified for other resources to be created later in the Lab.</font>
+    <font color=Orangered>
+
+    > **Note** - This location would be required to be specified for other resources to be created later in the Lab, also to ensure the **Azure resources are created in the same region** to ensure the Migration is done smoothly.
+
+    </font>
 
 2.  Switch back to the **Azure Migrate** page and under **Azure Migrate: Discovery and assessment** section, select **Assess** and then, in the drop-down menu, select **Azure VM**.
 
