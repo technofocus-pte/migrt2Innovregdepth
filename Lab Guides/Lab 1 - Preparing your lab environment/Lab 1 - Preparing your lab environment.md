@@ -16,8 +16,7 @@
 
     > <font color=Orangered> **Note**:  Do not use your **Company/Work Account** to login to redeem the Azure Pass, another Azure Pass will not be issued.</font>
 
-4.  Enter the **Office 365 Tenant credentials** to complete the sign in
-    process
+4.  Enter the **Office 365 Tenant credentials** provided on the **Resources/Home** tab of the Lab interface to complete the sign in process
 
 5.  Once the sign in process is completed, click on "**Confirm Microsoft Account**" if the correct email address is listed.
 

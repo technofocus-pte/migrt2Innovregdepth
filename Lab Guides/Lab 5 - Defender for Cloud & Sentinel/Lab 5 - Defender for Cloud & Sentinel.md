@@ -66,7 +66,7 @@
 
       ![](./media/image10.png)
 
-2.  Click on the Sample alerts button to generate alerts.
+2.  Click on the **Sample alerts** button to generate alerts.
 
       ![](./media/image11.png)
  
