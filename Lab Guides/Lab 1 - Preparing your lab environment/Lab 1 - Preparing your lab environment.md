@@ -259,7 +259,7 @@ in order for discovery to identify the apps installed on them.
     ![](./media/image83.png)
 
 
-5.  On Microsoft Defender for Cloud page, under the **General** section,
+5.  Refresh the browser and then in **Microsoft Defender for Cloud** page, under the **General** section,
     navigate and click on **Getting started**. In the **Upgrade** tab,
     navigate and click on the **Upgrade** button.
 
@@ -268,32 +268,14 @@ in order for discovery to identify the apps installed on them.
     ![A screenshot of a computer Description automatically
     generated](./media/image7.png)
 
-6.  You’ll receive a notification stating **Trial started**.
-
-    ![A screenshot of a computer Description automatically generated with
-    low confidence](./media/image8.png)
-
-7.  In **Microsoft Defender for Cloud | Getting started** page, click on
-    the **Install agents** tab, select your active **Azure
-    Subscription** as shown in the below image, then click on the
-    **Install agents button.**
-
-    ![A screenshot of a computer Description automatically
-    generated](./media/image9.png)
-
-8.  **You’ll receive a notification Agents installation initiated.**
-
-    ![A screenshot of a computer Description automatically generated with
-    low confidence](./media/image10.png)
-
 ## Task 2: Enable additional data collection setting for Defender for Cloud
 
-1.  On Microsoft Defender for Cloud page, navigate to **Management**
+1.  On **Microsoft Defender for Cloud** page, navigate to **Management**
     section and click on **Environment settings.**
 
     > ![A screenshot of a computer Description automatically generated](./media/image11.png)
 
-2.  Click on the **Azure Pass – Sponsorship** Subscription listed.
+2.  Scroll down and then expand Tenant-Root-Group and then click on the **Azure Pass – Sponsorship** Subscription listed.
 
     ![A screenshot of a computer Description automatically generated](./media/image12.png)
 
