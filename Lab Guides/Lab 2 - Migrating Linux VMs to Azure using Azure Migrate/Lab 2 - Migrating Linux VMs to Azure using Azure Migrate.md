@@ -22,8 +22,7 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
 
     > <font color=red>**Note** - Ensure that the Target region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
-4.  Select the **Confirm that the target region for migration is
-    eastus** checkbox, then select **Create resources**.
+4.  Select the **Confirm that the target region for migration is the same as the region for the AZMigrateRG** checkbox, then select **Create resources**.
 
 5.  Wait for the Migrate Project and Vault resources to finish
     deploying.
