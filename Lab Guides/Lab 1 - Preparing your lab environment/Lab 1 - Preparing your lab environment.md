@@ -1,272 +1,231 @@
-# Lab 1 - Preparing your lab environment
+# ラボ 1 - ラボ環境の準備
 
-## Exercise 1: Preparing the lab environment
+## 演習 1: ラボ環境の準備
 
-## Task 0 – Setup the Azure Subscription
+## タスク 0 - Azure サブスクリプションのセットアップ
 
-1.  Login to the provided VM using the credential provided on the **Resources** tab of the Lab interface.
+1. ラボ インターフェイスの [**リソース**] タブで提供される資格情報を使用して、提供された VM にログインします。
 
-    ![](./media/image61.png)
+![](./media/image61.png)
 
-2.  Open the edge browser and navigate to ```http://www.microsoftazurepass.com```
+2. エッジ ブラウザーを開き、```http://www.microsoftazurepass.com``` に移動します。
 
-3.  Click the **Start** button to get started.
+3. [**開始**] ボタンをクリックして開始します。
 
-    ![](./media/image62.png)
+![](./media/image62.png)
 
-    > <font color=Orangered> **Note**:  Do not use your **Company/Work Account** to login to redeem the Azure Pass, another Azure Pass will not be issued.</font>
+> <font color=Oranged> **注意**: Azure Pass を利用するためにログインする際に、**会社/職場アカウント** を使用しないでください。別の Azure Pass は発行されません。</font>
 
-4.  Enter the **Office 365 Tenant credentials** provided on the **Resources/Home** tab of the Lab interface to complete the sign in process
+4. ラボ インターフェイスの **リソース/ホーム** タブで提供される **Office 365 テナント資格情報** を入力して、サインイン プロセスを完了します
 
-5.  Once the sign in process is completed, click on "**Confirm Microsoft Account**" if the correct email address is listed.
+5. サインイン プロセスが完了したら、正しいメール アドレスが表示されている場合は [**Microsoft アカウントの確認**] をクリックします。
 
-    ![](./media/image63.png)
+![](./media/image63.png)
 
-6.  From the **Azure Promo Code** section on the **Resources** tab of the Lab interface, enter the **Promocode** in the Promo code box and click "**Claim Promo Code**".
+6. ラボ インターフェイスの **リソース** タブの **Azure プロモーション コード** セクションで、プロモーション コード ボックスに **プロモーション コード** を入力し、[**プロモーション コードの取得**] をクリックします。
 
-    ![](./media/image64.png)
+![](./media/image64.png)
 
-7.  It may take few seconds to process the redemption.
+7. 引き換えの処理には数秒かかる場合があります。
 
-    ![](./media/image65.png)
+![](./media/image65.png)
 
-8.  Enter the mandatory Profile information and select the check boxes and then click on "**Sign up**".
+8. 必須のプロファイル情報を入力し、チェックボックスをオンにして、「**サインアップ**」をクリックします。
 
-    ![](./media/image66.png)
+![](./media/image66.png)
 
-9. You may be prompted to register and complete MFA authentication, proceed ahead with the MFA registration using **Microsoft Authenticator App** or **Phone method**.
+9. 登録して MFA 認証を完了するように求められる場合があります。**Microsoft Authenticator アプリ** または **電話による方法** を使用して MFA 登録を進めます。
 
-    ![](./media/image67.png)
+![](./media/image67.png)
 
-10. Once the Authentication is completed, click on the **Done** button.
+10. 認証が完了したら、「**完了**」ボタンをクリックします。
 
-    ![](./media/image68.png)
+![](./media/image68.png)
 
-11.  On the feedback page, enter your feedback and click on **Submit**.
-    ![](./media/image69.png)
+11. フィードバック ページでフィードバックを入力し、「**送信**」をクリックします。
 
-12. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
-    ![](./media/image70.png)
+![](./media/image69.png)
 
+12. Azure ポータルに自動的にリダイレクトされ、Azure サービスを使用する準備が整います。
+![](./media/image70.png)
 
-13.  In the **Azure Portal** ```https://portal.azure.com``` search box type ```subscriptions``` and then click on **Subscriptions**
-    ![](./media/image71.png)
+13. **Azure Portal** ```https://portal.azure.com``` 検索ボックスに「```subscriptions```」と入力し、[**サブスクリプション**] をクリックします。
+![](./media/image71.png)
 
-14.  From the list of Subscriptions select the **Azure Pass –Sponsorship**. 
-    ![](./media/image72.png)
+14. サブスクリプションの一覧から、[**Azure Pass – スポンサーシップ**] を選択します。
+![](./media/image72.png)
 
-15.  On the Azure Pass – Sponsorship page click on **Access control (IAM)**, then click on **+Add** drop-down and select **Add role assignment**. 
-    ![](./media/image73.png)
+15. [Azure Pass – スポンサーシップ] ページで、[**アクセス制御 (IAM)] をクリックし、[**+ 追加**] ドロップダウンをクリックして、[**ロールの割り当ての追加**] を選択します。
+![](./media/image73.png)
 
-16.  On the Add role assignment page, under the **Privileged administrator roles** tab select **Contributor** and then click on **Next**.
-    ![](./media/image74.png)
+16. [ロールの割り当ての追加] ページの [**特権管理者ロール**] タブで [**共同作成者**] を選択し、[**次へ**] をクリックします。
+![](./media/image74.png)
 
-17.  On the **Members** tab, click on **+ Select members**, then choose **MOD Administrator** and then click on the **Select** button. 
-    ![](./media/image75.png)
+17. [メンバー] タブで [+ メンバーを選択] をクリックし、[MOD 管理者] を選択して [選択] ボタンをクリックします。
+![](./media/image75.png)
 
-18.  Click on **Review + assign** button.
-    ![](./media/image76.png)
+18. [確認 + 割り当て] ボタンをクリックします。
+![](./media/image76.png)
 
-19.  Click on **Review + assign** button again
+19. [確認 + 割り当て] ボタンをクリックします
 
+![](./media/image77.png)
 
+20. 以下の画像のように通知が表示されます
 
-     ![](./media/image77.png)
+![](./media/image78.png)
 
+21. [ロールの割り当て] タブをクリックして、前の手順で割り当てられたロールを表示します。Contributor ロールが割り当てられたユーザーが一覧表示されます。
 
-20.  You should get the notification as shown in below image     
+![](./media/image79.png)
 
-     ![](./media/image78.png)
+## タスク 1: VM の準備ができていることを確認する
 
-21.  Click on the **Role assignments** tab to view the role assigned in the previous step. We can see the Users listed to whom the Contributor role was assigned.
+ゲスト VM にインストールされているアプリを検出で識別するには、Hyper-V 統合サービスがゲスト VM にインストールされ、実行されている必要があります。
 
-     ![](./media/image79.png)
+1. デスクトップから **Microsoft Edge** を開き、**RHEL-WEB-01** の IP アドレス: ```192.168.1.24``` に移動します。
 
-## Task 1: Ensure the VMs are ready
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image1.png)
 
-Hyper-V Integration Services must be installed and running on guest VMs
-in order for discovery to identify the apps installed on them.
+2. **RHEL-WEB-01** は、**RHEL-DB-01** でホストされているデータベースを呼び出すように構成された Drupal Web サイトを提供します。Web サイトが正常に読み込まれると、両方の VM が正しく機能していることが確認できます。
 
-1.  Open the **Microsoft Edge** from the desktop, then go to the IP
-    address of **RHEL-WEB-01**: ```192.168.1.24```
+## タスク 2: Azure Migrate プロジェクトを作成する
 
-    ![A screenshot of a computer Description automatically
-    generated](./media/image1.png)
+1. 新しい Edge タブで、Azure Portal ```https://portal.azure.com``` に移動し、ラボ リソースで提供される資格情報を使用してサインインします
 
-2.  **RHEL-WEB-01** serves a Drupal website that is configured to make
-    calls to a database that is hosted on **RHEL-DB-01**. Successfully
-    loading the website confirms that both VMs are functioning
-    correctly.
+2. Azure Portal の [**検索**] ボックスに「```Azure Migrate```」と入力し、[**Azure Migrate**] を選択して Azure Migrate ページに移動します。
 
-## Task 2: Create an Azure Migrate project
+3. 左側のナビゲーションの [**移行の目標**] で、[**サーバー、データベース、Web アプリ**] を選択します。
 
-1.  In a new Edge tab, navigate to Azure Portal ```https://portal.azure.com``` , and sign in
-    using the credentials provided in the Lab resources
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image2.png)
 
-2.  In the Azure portal, in the **Search** box, enter ```Azure Migrate```
-    then select **Azure Migrate** to go to the Azure Migrate page.
+4. [**サーバー、データベース、Web アプリ**] ブレードで、ページの中央にある [**プロジェクトの作成**] を選択します。
 
-3.  In the left navigation, under **Migration goals**, select **Servers,
-    databases and web apps**.
+5. [**プロジェクトの作成**] ブレードで、次の設定を使用して新しいプロジェクトを作成します。
 
-    ![A screenshot of a computer Description automatically
-    generated](./media/image2.png)
+表に指定されていない設定には、既定値を使用します。
 
-4.  On the **Servers, databases and web apps** blade, select **Create
-    project** in the middle of the page.
+リソース グループ - [**新規作成** ```AZMigrateRG```] をクリックします
 
-5.  On the **Create project** blade, use the following settings to
-    create a new project.
+プロジェクト - ```az-migrate-XXXXXX``` [XXXXXX をランダムな数字に置き換えます]
 
-    Use the default values for any setting not specified in the table.
+地域 - **米国**
 
-    Resource group – click on **Create new** ```AZMigrateRG```
+6. [**作成**] を選択します。
 
-    Project - ```az-migrate-XXXXXX``` [substitute XXXXXX with random
-    number]
+7. デプロイが完了するまで待ってから、次のタスクに進みます。
 
-    Geography - **United States**
+## タスク 3: Azure Migrate アプライアンスをデプロイして構成する
 
-6.  Select **Create**.
+1. [**サーバー、データベース、Web アプリ**] ブレードの [**評価ツール**] セクションの [**Azure Migrate: 検出と評価**] で、[**検出**] を選択し、[**アプライアンスの使用**] を選択します
 
-7.  Wait for the deployment to complete before proceeding to the next
-    task.
+![](./media/image3.png)
 
-## Task 3: Deploy and configure the Azure Migrate appliance
+2. [**検出**] ブレードの [**マシンは仮想化されていますか?**] メニューで、[**はい (Hyper-V を使用)] を選択します。
 
-1.  On the **Servers, databases and web apps** blade, in
-    the **Assessment Tools** section, under **Azure Migrate: Discovery and assessment**, select **Discover** and choose **Using appliance**
+3. [**1. 一般的なプロダクト キー**] の [**アプライアンスに名前を付ける**] ボックスに「```HV-XXXXXX```」と入力し、[**XXXXX**] を以前に使用した番号に置き換えてから、[**キーの生成**] を選択します。
 
-    ![](./media/image3.png)
+>**注** - キー生成プロセスは完了するまでに最大 2 分かかる場合があります。
 
-2.  On the **Discover** blade, on the **Are your Machines virtualized?** menu, select **Yes, with Hyper-V**.
+4. キーが生成されたら、**プロジェクト キー** フィールドの **コピー アイコン** を選択します。
 
-3.  Under **1. General product key**, in the **Name your
-    appliance** box, enter ```HV-XXXXXX``` substitute **XXXXX** with
-    the number used previously., then select **Generate key**.
+![](./media/image4.png)
 
-    >**Note** - The key-generation process can take up to 2 minutes to complete.
+5. **2. Azure Migrate アプライアンスをダウンロード** で、**.zip ファイル (500 MB)** を選択し、ダウンロード ボタンに注意してください。
 
-4.  Once the key is generated, select the **copy icon** on the **Project
-    key** field.
+<font color=Green>
 
-    ![](./media/image4.png)
+> **これにより、アプライアンスを Windows Server マシンにインストールする PowerShell スクリプトがダウンロードされます。**
 
-5.  Under **2. Download Azure Migrate appliance**, select **.zip file.
-    500MB**, and *note* the Download button\*.
+>このラボでは、スクリプトは **既に E: ドライブにダウンロードされ、**実行** されています。**この手順を続行します**。
 
-    <font color=Green>
+</font>
 
-    > **This would download the PowerShell script that installs the appliance to a Windows Server machine.** 
-    
-    >For this Lab, the script has **already been downloaded** to the E: drive and **run**. You will **continue past this step**.
-    
-    </font>
+6. **3. アプライアンスをセットアップ** で
 
-6.  Under **3. Set up the appliance**
+7. Edge ウィンドウを最小化し、デスクトップで **Azure Migrate Appliance Configuration Manager** ショートカットを選択します。
 
-7.  Minimize the Edge window, then select the **Azure Migrate Appliance
-    Configuration Manager** shortcut on the desktop.
+8. **Azure Migrate Appliance Configuration Manager** ページが読み込まれたら、EULA に同意する必要がある場合があります。プロンプトが表示されたら、**同意する** を選択します。
 
-8.  Once the **Azure Migrate Appliance Configuration Manager** page
-    loads, you may need to accept the EULA. Select **Accept** if
-    prompted.
+9. **Azure Migrate Appliance Configuration Manager** ページの **Hyper-V アプライアンスを登録するには、ここにキーを貼り付けます** ボックスに、先ほどコピーしたキーを貼り付けます。
 
-9.  On the **Azure Migrate Appliance Configuration Manager** page, in
-    the **Register Hyper-V appliance by pasting the key here** box,
-    paste the key you copied earlier.
+10. **確認** を選択します。
 
-10. Select **Verify**.
+11. **ログイン** を選択します。**Azure ログインを続行** するように求めるモーダルが表示されます。
 
-11. Select **Login**. A modal will appear asking you to **Continue with
-    Azure Login**.
+12. **コードをコピーしてログイン** を選択し、デバイス コードを貼り付けてからユーザー名を選択して、サブスクリプションにサインインします。
 
-12. Select **Copy code & Login** and sign in to your subscription by
-    pasting the device code, then selecting your username.
+13. **Microsoft Azure PowerShell にサインインしようとしていますか?** というプロンプトが表示されたら、**続行** を選択し、新しく開いたブラウザー タブを閉じます。
 
-13. When prompted **Are you trying to sign in to Microsoft Azure
-    PowerShell?**, select **Continue** and close the newly opened
-    browser tab.
+14. **Azure Migrate Appliance Configuration Manager** ページで、登録が完了するまで待ちます。
 
-14. On the **Azure Migrate Appliance Configuration Manager** page, wait
-    for registration to complete.
+![](./media/image5.png)
 
-    ![](./media/image5.png)
+<font color=Green>
 
-    <font color=Green>
+> **登録が完了するまでに最大 10 分かかる場合があります。** </font>
 
-    > **It can take up to 10 minutes for registration to complete.** </font>
+15. [**Hyper-V ホストの資格情報を提供する**] セクションで、[**資格情報の追加**] を選択し、次の設定で資格情報を追加します。
 
-15. In the **Provide Hyper-V host credentials** section, select **Add
-    credentials** and add credentials with the following settings:
+- フレンドリ名 - ```Hypervisor```
 
-    - Friendly Name - ```Hypervisor```
+- ユーザー名 - ```Administrator```
 
-    - User Name - ```Administrator```
+- パスワード - ```Passw0rd! ```
 
-    - Password - ```Passw0rd! ```
+16. **Hyper-V ホスト/クラスターの詳細を指定** セクションで、**検出ソースを追加** を選択し、**単一項目を追加** を選択して、次の設定を使用します:
 
-16. In the **Provide Hyper-V host/cluster details** section,
-    select **add a discovery source**, then select **Add single
-    item** and use the following settings:
+- 検出ソース - **Hyper-V ホスト/クラスター**
 
-    - Discovery source - **Hyper-V Host/Cluster**
+- IP アドレス FQDN - ```win-msite54sfl9```
 
-    - IP address FQDN - ```win-msite54sfl9```
+- 資格情報のマップ - **ハイパーバイザー**
 
-    - Map credentials - **Hypervisor**
+17. **ソフトウェア インベントリを実行するためのサーバー資格情報を指定** セクションで、スライダーが **有効** になっていることを確認してから、次の設定で資格情報を追加します:
 
-17. In the **Provide server credentials to perform software
-    inventory** section, ensure that the slider is **enabled**, then add
-    credentials with the following settings:
+- 資格情報の種類 - **Linux (非ドメイン)**
 
-    - Credentials type - **Linux (Non-domain)**
+- フレンドリ名 - ```RHELUser```
 
-    - Friendly Name - ```RHELUser```
+- ユーザー名 - ```fetch6474```
 
-    - User Name - ```fetch6474```
+- パスワード - ```RHELWorkshop```
 
-    - Password - ```RHELWorkshop```
+18. **検出を開始** を選択します。
 
-18. Select **Start discovery**.
+19. 次の演習のために Edge を開いたままにしておきます。検出処理は続行されます。
 
-19. Leave Edge open for the next exercise. Discovery will continue
-    processing.
+# 演習 2: Microsoft Defender for Cloud の有効化
 
-# Exercise 2: Enabling Microsoft Defender for Cloud
+## タスク 1: Microsoft Defender for Cloud の有効化
 
-## Task 1: Enable Microsoft Defender for Cloud
+1. Azure ポータルで、ポータル メニューをクリックするか、ホーム ページから Microsoft Defender for Cloud を選択します。
 
-1.  While in the Azure Portal, click on the Portal menu or from the home
-    page choose the Microsoft Defender for Cloud
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image6.png)
 
-    ![A screenshot of a computer Description automatically
-    generated](./media/image6.png)
+2. 通知で、**表示している情報が限定されている可能性があります。テナント全体の可視性を取得するには、ここをクリックしてください -->** をクリックします。
 
-2.  On the Notification – **You may be viewing limited information. To gettenant-wide visibility, click here -->** click on it.
+![](./media/image80.png)
 
-    ![](./media/image80.png)
+3. **アクセス許可の取得** ページで、**セキュリティ管理者** を選択し、**アクセスの取得** ボタンをクリックします。
 
-3.  On the **Get permissions** page, choose the **Security Admin** and
-    then click on **Get access** button.
+![](./media/image81.png)
 
-    ![](./media/image81.png)
+4. 以下の画像のような通知が表示されます
 
-4.  You should get the notification as shown in below images
+![](./media/image82.png)
 
-    ![](./media/image82.png)
+![](./media/image83.png)
 
-    ![](./media/image83.png)
+5. ブラウザーを更新し、**Microsoft Defender for Cloud** ページの **全般** セクションで、
+**開始** に移動してクリックします。
 
+**アップグレード** タブで、
+**アップグレード** ボタンをクリックして移動します。
 
-5.  Refresh the browser and then in **Microsoft Defender for Cloud** page, under the **General** section,
-    navigate and click on **Getting started**. In the **Upgrade** tab,
-    navigate and click on the **Upgrade** button.
+> <font color=Oranged> **注**: アップグレードが完了するまで数分かかる場合があります。</font>
 
-    > <font color=Orangered> **Note**: You may need to wait for a few minutes for the upgrade to complete.</font>
-
-    ![A screenshot of a computer Description automatically
-    generated](./media/image7.png)
+![コンピューターのスクリーンショット 説明は自動的に生成されます](./media/image7.png)
 
 ## Task 2: Enable additional data collection setting for Defender for Cloud
 
