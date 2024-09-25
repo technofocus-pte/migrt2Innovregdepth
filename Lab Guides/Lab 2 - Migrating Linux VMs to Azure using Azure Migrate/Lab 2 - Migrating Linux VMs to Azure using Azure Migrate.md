@@ -1,435 +1,368 @@
-# Lab 2 - Migrating Linux VMs to Azure using Azure Migrate
+# ラボ 2 - Azure Migrate を使用して Linux VM を Azure に移行する
 
-## Objective
+## 目的
 
-In this Lab we will Migrate the Linux VM workload from our On-premise using the Azure Migrate – Server Migration tool. We will prepare the required Azure Resources and then replicate the VMs prior to migration.
+このラボでは、Azure Migrate – Server Migration ツールを使用して、オンプレミスから Linux VM ワークロードを移行します。必要な Azure リソースを準備し、移行前に VM をレプリケートします。
 
-## Exercise 1: Migrate workloads
+## 演習 1: ワークロードの移行
 
-## Task 1: Prepare for migration of Hyper-V VMs
+## タスク 1: Hyper-V VM の移行の準備
 
-1.  On the **Servers, databases and web apps** blade, move through the
-    page to the **Migration Tools** section, under **Migration and
-    modernization**, select **Discover**.
+1. [**サーバー、データベース、Web アプリ**] ブレードで、ページを移動して [**移行ツール**] セクションに移動し、[**移行と最新化**] の下で [**検出**] を選択します。
 
-    ![](./media/image1.png)
+![](./media/image1.png)
 
-2.  On the **Discover** blade, for the drop-down **Where do you want to migrate to?** select **Azure VM** option, on the **Are your Machines virtualized?** menu, select **Yes, with Hyper-V**.
+2. [**検出**] ブレードで、ドロップダウン [**移行先はどこですか?**] で [**Azure VM**] オプションを選択し、[**マシンは仮想化されていますか?**] メニューで [**はい、Hyper-V を使用**] を選択します。
 
-3.  On the **Target region** menu, select **West US 2**. 
+3. [**ターゲット リージョン**] メニューで、[**米国西部 2**] を選択します。
 
-    ![](./media/image2.png)
+![](./media/image2.png)
 
-    > <font color=red>**Note** - Ensure that the Target region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
+> <font color=red>**注** - ターゲット リージョンが、ラボ 1 で以前に記録した **AZMigrateRG** リソース グループの場所/リージョンと同じであることを確認します。</font>
 
-4.  Select the **Confirm that the target region for migration is
-    eastus** checkbox, then select **Create resources**.
+4. [**移行のターゲット リージョンが eastus であることを確認する**] チェックボックスをオンにし、[**リソースの作成**] を選択します。
 
-5.  Wait for the Migrate Project and Vault resources to finish
-    deploying.
+5. 移行プロジェクトと Vault リソースの展開が完了するまで待ちます。
 
-6.  On the **Discover** blade, under **Prepare Hyper-V host servers**,
-    select the word **Download**, *not the **Download** button after
-    it.*
+6. [**検出**] ブレードの [**Hyper-V ホスト サーバーの準備**] で、*その後の [**ダウンロード**] ボタンではなく、**ダウンロード** という単語を選択します。*
 
-    ![](./media/image3.png)
+![](./media/image3.png)
 
-    > The installer that will install the replication provider on the Hyper-V server will be downloaded.
+> Hyper-V サーバーにレプリケーション プロバイダーをインストールするインストーラーがダウンロードされます。
 
-7.  On the **Discover** blade, under **1. Prepare Hyper-V host
-    servers**, select the **Download** button.
+7. [**検出**] ブレードの [**1. Hyper-V ホスト サーバーの準備**] で、[**ダウンロード**] ボタンを選択します。
 
-    ![](./media/image4.png)
+![](./media/image4.png)
 
-    > The registration key that will be used to register the Hyper-V host with the project will be downloaded.
+> プロジェクトに Hyper-V ホストを登録するために使用される登録キーがダウンロードされます。
 
-8.  Go to the **Downloads** folder then select
-    the **AzureSiteRecoveryProvider** file to launch the installer.
+8. [**ダウンロード**] フォルダーに移動し、[**AzureSiteRecoveryProvider**] ファイルを選択してインストーラーを起動します。
 
-9.  In the Azure Site Recovery Provider setup (Hyper-V server) window, on the **Microsoft Update** tab, select **On (recommended)**, then select **Next**.
+9. [Azure Site Recovery Provider セットアップ (Hyper-V サーバー)] ウィンドウの [**Microsoft Update**] タブで [**オン (推奨)**] を選択し、[**次へ**] を選択します。
 
-10. On the **Installation** tab, accept the default Installation Location, then select **Install**.
+10. [**インストール**] タブで、既定のインストール場所を受け入れ、[**インストール**] を選択します。
 
-11. Once the installation is complete, select **Register**.
+11. インストールが完了したら、[**登録**] を選択します。
 
-    > If you receive a message about the server already being registered, select **Reregister**.
+> サーバーが既に登録されているというメッセージが表示された場合は、[**再登録**] を選択します。
 
-12. In the Microsoft Azure Site Recovery Wizard, on the **Vault
-    Settings** tab, to the right of the **Key file** box,
-    select **Browse**.
+12. Microsoft Azure Site Recovery ウィザードの [**Vault 設定**] タブで、[**キー ファイル**] ボックスの右側にある [**参照**] を選択します。
 
-    ![](./media/image5.png)
+![](./media/image5.png)
 
-13. Go to the **Downloads** folder, select
-    the **az-migrate-project** file, then select **Open**.
+13. [**ダウンロード**] フォルダーに移動し、[**az-migrate-project**] ファイルを選択して、[**開く**] を選択します。
 
-    ![](./media/image6.png)
+![](./media/image6.png)
 
-    > The Key file, Subscription, Vault name, and Hyper-V site name values are populated when the key file is added.
+> キー ファイルが追加されると、[キー ファイル]、[サブスクリプション]、[Vault 名]、および [Hyper-V サイト名] の値が入力されます。
 
-14. Select **Next**.
+14. [**次へ**] を選択します。
 
-15. On the **Proxy Settings** tab, accept the default setting, then
-    select **Next**.
+15. [**プロキシ設定**] タブで、既定の設定を受け入れ、[**次へ**] を選択します。
 
-    > The registration can take up to 5 minutes to complete.
+> 登録が完了するまでに最大 5 分かかることがあります。
 
-16. Once the registration is complete, select **Finish**.
+16. 登録が完了したら、[**完了**] を選択します。
 
-17. Back in the browser, on the **Discover** blade, under **2. Finalize registration**, select word **Finalize registration**.
+17. ブラウザーに戻り、[**検出**] ブレードの [**2.登録を完了する** で、**登録を完了する** という単語を選択します。
 
-    ![](./media/image25.png)
+![](./media/image25.png)
 
-    > You may need to **refresh the page** and re-select the options from the beginning of this task to enable the Finalize registration button.
+> 登録を完了するボタンを有効にするには、**ページを更新** して、このタスクの最初からオプションを再度選択する必要がある場合があります。
 
-18. Once the registration completes, you will see the following message.
+18. 登録が完了すると、次のメッセージが表示されます。
 
-    ![A close up of a sign Description automatically
-    generated](./media/image7.jpeg)
+![自動的に生成された標識の説明のクローズアップ](./media/image7.jpeg)
 
-> It might take up to 15 minutes for the discovery of virtual machines to complete, and you may need to refresh the page to see the message. Confine to the next task even if it is not complete.
+> 仮想マシンの検出が完了するまでに最大 15 分かかる場合があり、メッセージを表示するにはページを更新する必要がある場合があります。完了していなくても、次のタスクに進みます。
 
-## Task 2: Setup Azure resources
+## タスク 2: Azure リソースのセットアップ
 
-Now that you have created an Azure Migrate project, you need implement
-the target Azure environment.
+Azure Migrate プロジェクトを作成したので、ターゲットの Azure 環境を実装する必要があります。
 
-**Create a Virtual network**
+**仮想ネットワークを作成する**
 
-1.  In the Azure portal, in the **Search** box, enter ```Virtual Networks```,
-    then select **Virtual networks**.
+1. Azure ポータルの **検索** ボックスに「```Virtual Networks```」と入力し、**仮想ネットワーク** を選択します。
 
-2.  On the **Virtual networks** blade, select **Create**.
+2. **仮想ネットワーク** ブレードで、**作成** を選択します。
 
-3.  Use the following settings to create a virtual network.
+3. 次の設定を使用して仮想ネットワークを作成します。
 
-    - Resource group- ```AZMigrateRG```
+- リソース グループ - ```AZMigrateRG```
 
-    - Virtual network name - ```migration-vnet-XXXXXX``` \[substitute
-    XXXXXX with random number\]
+- 仮想ネットワーク名 - ```migration-vnet-XXXXXX``` \[XXXXXX をランダムな数字に置き換えます\]
 
-    - Region **West US 2**
+- リージョン **West US 2**
 
-    > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
+> <font color="red"> **注** - リージョンが、ラボ 1 で以前に記録した **AZMigrateRG** リソース グループの場所/リージョンと同じであることを確認します。</font>
 
-**Create a Storage account**
+**ストレージ アカウントを作成する**
 
-1.  In the Azure portal, in the **Search** box, enter ```Storage```, then
-    select **Storage accounts**.
+1. Azure ポータルの [**検索**] ボックスに「ストレージ」と入力し、[**ストレージ アカウント**] を選択します。
 
-2.  On the **Storage accounts** blade, select **Create**.
+2. [**ストレージ アカウント**] ブレードで、[**作成**] を選択します。
 
-3.  Use the following settings to create a storage account. Leave all other settings as their default values.
+3. 次の設定を使用してストレージ アカウントを作成します。その他の設定はすべて既定値のままにします。
 
-    - Resource group - ```AZMigrateRG```
+- リソース グループ - ```AZMigrateRG```
 
-    - Storage account name - ```saXXXXXX``` \[substitute XXXXXX with
-    random number\]
+- ストレージ アカウント名 - ```saXXXXXX``` \[XXXXXX をランダムな数字に置き換えます\]
 
-    - Region - **West US 2**
+- リージョン - **West US 2**
 
-    > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
+> <font color="red"> **注** - リージョンが、ラボ 1 で以前に記録した **AZMigrateRG** リソース グループの場所/リージョンと同じであることを確認してください。</font>
 
-    - Performance - **Standard**
+- パフォーマンス - **標準**
 
-    - Redundancy - **Locally-redundant storage (LRS)**
+- 冗長性 - **ローカル冗長ストレージ (LRS)**
 
-4.  On the **Networking** tab of the **Create a storage account** page,
-    set the following settings, and leave all other settings as their
-    default values:
+4. [**ストレージ アカウントの作成**] ページの [**ネットワーク**] タブで、次の設定を行い、その他の設定はすべて既定値のままにします。
 
-    - Network Access - **Enable public access from selected virtual networks and IP addresses**
+- ネットワーク アクセス - **選択した仮想ネットワークと IP アドレスからのパブリック アクセスを有効にする**
 
-    - Virtual network - **migration-vnet-XXXXXX**
+- 仮想ネットワーク - **migration-vnet-XXXXXX**
 
-    - Subnets - **default (10.0.0.0/24)**
+- サブネット - **デフォルト(10.0.0.0/24)**
 
-    ![A screenshot of a computer Description automatically generated](./media/image9.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image9.png)
 
-5.  On the **Data protection** tab, uncheck **Enable soft delete for
-    blobs**. Leave all other settings as their default values.
+5. [**データ保護**] タブで、[**BLOB の論理的な削除を有効にする**] のチェックを外します。その他の設定はすべて既定値のままにします。
 
-6.  Select **Review**, then select **Create**.
+6. [**確認**] を選択し、[**作成**] を選択します。
 
+7. ストレージ アカウントが作成されたら、[**リソースに移動**] をクリックします。
 
-7.  Once the Storage account is created, click on **Go to Resource**
+8. [データ管理] を展開して [**データ保護**] を選択し、[**BLOB の論理的な削除を有効にする**] のチェックを外し、[**保存**] ボタンをクリックします。
 
-8.  Expand Data management and select **Data protection**, then uncheck
-    **Enable soft delete for blobs** and click on the **Save** button.
+> ![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image8.png)
 
-    > ![A screenshot of a computer Description automatically
-    > generated](./media/image8.png)
+**パブリック IP アドレスの作成**
 
+1. Azure ポータルの [**検索**] ボックスに「```パブリック IP```」と入力し、[**パブリック IP アドレス**] を選択します。
 
-**Create a Public IP address**
+2. **パブリック IP アドレス** ブレードで、**作成** を選択します。
 
-1.  In the Azure portal, in the **Search** box, enter ```Public IP```, then
-    select **Public IP addresses**.
+3. 次の設定を使用してパブリック IP を作成します。
 
-2.  On the **Public IP address** blade, select **Create**.
+- リソース グループ - ```AZMigrateRG```
 
-3.  Use the following settings to create a public IP.
+- リージョン - **West US 2**
 
-    - Resource group - ```AZMigrateRG```
+> <font color="red"> **注** - リージョンが、ラボ 1 で以前に記録した **AZMigrateRG** リソース グループのロケーション/リージョンと **同じ** であることを確認します。</font>
 
-    - Region - **West US 2**
+- 名前 - ```ipXXXXXX``` \[XXXXXX をランダムな数字に置き換えます\]
 
-        > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
+- IP バージョン - **IPv4**
 
-    - Name - ```ipXXXXXX``` \[substitute XXXXXX with random number\]
+- SKU - **Basic**
 
-    - IP Version - **IPv4**
+- IP アドレスの割り当て - **静的**
 
-    - SKU - **Basic**
+- アイドル タイムアウト (分) - **4**
 
-    - IP address assignment - **Static**
+- DNS 名ラベル - ```rhel-web-XXXXXX``` \[XXXXXX をランダムな数字に置き換えます\]
 
-    - Idle timeout (minutes) - **4**
+4. [**確認 + 作成**] を選択し、[**作成**] を選択します
 
-    - DNS name label - ```rhel-web-XXXXXX``` \[substitute XXXXXX with random number\]
+## タスク 3: Hyper-V VM のレプリケーションを構成する
 
-4.  Select **Review + create**, then **create**
+1. Edge ブラウザーで新しいタブを開き、URL に移動します -
+```https://portal.azure.com/?feature.customportal=false&feature.canmodifystamps=true&microsoft_azure_migrate=migratecanary#view/Microsoft_Azure_Migrate/AmhResourceMenuBlade/~/getStarted```
 
-## Task 3: Configure replication of Hyper-V VMs
+2. [**検出、評価、移行**] ボタンをクリックします。
 
-1.  In the Edge browser open a new tab and navigate to the URL -
-    ```https://portal.azure.com/?feature.customportal=false&feature.canmodifystamps=true&microsoft_azure_migrate=migratecanary#view/Microsoft_Azure_Migrate/AmhResourceMenuBlade/~/getStarted```
+![](./media/image10.png)
 
-2.  Click on **Discover, assess and migrate** button.
+3. [**移行と最新化**] セクションで、
 
-    ![](./media/image10.png)
+[**レプリケート**] を選択します。
 
-3.  In the **Migration and modernization** section,
-    select **Replicate**.
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image11.png)
 
-    ![A screenshot of a computer Description automatically generated](./media/image11.png)
+4. [**Azure Migrate Servers、データベース、Web アプリ**] ページが表示されているブラウザー ページを更新する必要がある場合があります。
 
-4.  You may need to refresh the browser page displaying the **Azure
-    Migrate Servers, databases and web apps** page.
+5. [**意図を指定**] ページの [**何を移行しますか?**] で [**サーバーまたは仮想マシン (VM)**] を選択し、[**移行先はどこですか?**] で [**Azure VM**] を選択します
 
-5.  On the **Specify intent** page, on the **What do you want to migrate?** choose **Servers or virtual machines (VM)**, on the **Where do you want to migrate to?** choose **Azure VM**
+6. [**マシンは仮想化されていますか?**] ドロップダウンで [**はい、Hyper-V を使用**] を選択し、[**続行**] ボタンをクリックします。
 
-6. For the drop-down **Are your machines virtualized?** select **Yes, with Hyper-V** and then click on the **Continue** button.
+7.  [レプリケート] ページの [**仮想マシン**] タブで、次の設定を使用してレプリケーション条件を完了します。
 
-7.  On the **Virtual machines** tab of the Replicate page, use the following settings to complete the replication criteria.
+- Azure Migrate 評価から移行設定をインポート - **はい、Azure Migrate 評価から移行設定を適用します**
 
-    - Import migration settings from an Azure Migrate assessment - **Yes, apply migration settings from an Azure Migrate assessment**
+- グループを選択 - **RHEL-Servers**
 
-    - Select group - **RHEL-Servers**
+- 評価を選択 - **as-43240741**
 
-    - Select assessment - **as-43240741**
+- 仮想マシン **RHEL-DB-01** および **RHEL-WEB-01**
 
-    - Virtual machines **RHEL-DB-01** and **RHEL-WEB-01**
+8. [レプリケート] ページの [**ターゲット設定**] タブで、次の設定を使用してターゲットの詳細を指定します。
 
-8.  On the **Target settings** tab of the Replicate page, use the following settings to specify the target details.
+- リソース グループ - **AZMigrateRG**
 
-    - Resource group - **AZMigrateRG**
+- キャッシュ ストレージ アカウント - **saXXXXXX**
 
-    - Cache storage account - **saXXXXXX**
+- 仮想ネットワーク - **migration-vnet-XXXXXX**
 
-    - Virtual Network - **migration-vnet-XXXXXX**
+- サブネット - **Default**
 
-    - Subnet - **Default**
+9. [レプリケート] ページの [**コンピューティング**] タブで、両方の VM で次の設定を使用します。
 
-9.  On the **Compute** tab of the Replicate page, use the following settings on both VMs:
+- Azure VM サイズ - **Standard_D2s_v3**
 
-    - Azure VM Size - **Standard_D2s_v3**
+- OS タイプ - **Linux**
 
-    - OS Type - **Linux**
+10. 残りのタブの設定はデフォルトのままにして、[**レプリケート**] を選択します。
 
-10. Leave the settings in the remaining tabs at their defaults and
-    select **Replicate**.
+11. [**Azure Migrate サーバー、データベース、Web アプリ**] ページに戻り、[**更新**] を選択してから、[**移行と最新化**] セクションで [**概要**] を選択します。
 
-11. Return to the **Azure Migrate Servers, databases and web
-    apps** page, select **Refresh** and then, in the **Migration and
-    modernization** section, select **Overview**.
+![](./media/image12.png)
 
-    ![](./media/image12.png)
+12. [移行と最新化] ページの [**レプリケーション**] セクションで、レプリケートするマシンの一覧の [**ステータス**] 列を確認します。
 
-12. On the Migration and modernization page, in the **Replications** section, examine the **Status** column in the list of the
-    replicating machines.
+![](./media/image13.png)
 
-    ![](./media/image13.png)
-    
-> Wait until the status changes to **Protected**. This might take an additional 15 minutes.
+> ステータスが [**保護済み**] に変わるまで待ちます。これにはさらに 15 分かかる場合があります。
 
-You will need to refresh the **Migration and modernization Replicating
-machines** to update the status information.
+ステータス情報を更新するには、[**移行と最新化] の [レプリケートするマシン**] を更新する必要があります。
 
-## Task 4: Perform test migrations
+## タスク 4: テスト移行を実行する
 
-1.  In the Azure portal, on the **Migration and modernization | 
-    Replications** page, select the **RHEL-DB-01** virtual
-    machine.
+1. Azure ポータルの [**移行と最新化 | レプリケーション**] ページで、**RHEL-DB-01** 仮想マシンを選択します。
 
-    ![](./media/image14.png)
+![](./media/image14.png)
 
-2.  On the **RHEL-DB-01** page, select **Test migration**.
+2. [**RHEL-DB-01**] ページで、[**テスト移行**] を選択します。
 
-    ![](./media/image15.png)
+![](./media/image15.png)
 
-3.  Select the **migration-vnet-XXXXXX** virtual network and then
-    select **Test migration**.
+3. **migration-vnet-XXXXXX** 仮想ネットワークを選択し、**テスト移行** を選択します。
 
-4.  Go back to the **Migration and modernization Replicating
-    machines** page, then select the **RHEL-WEB-01** virtual machine.
+4. **移行と最新化 マシンのレプリケーション** ページに戻り、**RHEL-WEB-01** 仮想マシンを選択します。
 
-5.  On the **RHEL-WEB-01** page, initiate a **Test migration** using
-    the **migration-vnet-XXXXXX** virtual network.
+5. **RHEL-WEB-01** ページで、**migration-vnet-XXXXXX** 仮想ネットワークを使用して **テスト移行** を開始します。
 
-6.  Go back to the **Migration and modernization Replicating
-    machines** page. The **Replication status** should be **Initiating
-    test failover**
+6. **移行と最新化 マシンのレプリケーション** ページに戻ります。**レプリケーション ステータス** は **テスト フェイルオーバーを開始しています** になっているはずです。
 
-    ![](./media/image16.png)
+![](./media/image16.png)
 
-    > Wait for the **Test failover** to complete. This may take around 5-7
-    minutes.
+> **テスト フェイルオーバー** が完了するまで待ちます。これには約 5～7 分かかる場合があります。
 
-7.  Go back to the **Migration and modernization Replications** page, select **Refresh**, and then verify that the both virtual machines are listed with the **Cleanup test failover pending** status.
+7. [**移行と最新化のレプリケーション**] ページに戻り、[**更新**] を選択して、両方の仮想マシンが [**クリーンアップ テスト フェールオーバーが保留中**] 状態で一覧表示されていることを確認します。
 
+**テスト移行を検証する**
 
-**Validate test migrations**
+8. Azure ポータルの [**検索**] ボックスに「仮想マシン」と入力し、[**仮想マシン**] を選択します。
 
-8.  In the Azure portal, in the **Search** box, enter ```Virtual machines```,
-    then select **Virtual machines**.
+9. 新しくレプリケートされた仮想マシンを表すエントリをメモします。
 
-9.  Note the entries representing the newly replicated virtual machines.
+> 注 - 最初は、仮想マシンの名前は **asr-temp** プレフィックスとランダムに生成されたサフィックスで構成されますが、自動的に **RHEL-DB-01-test** と **RHEL-WEB-01-test** に変更されます。
 
-    > Note - Initially, the virtual machines will have names consisting of an **asr-temp** prefix and randomly generated suffix, but will be renamed automatically to **RHEL-DB-01-test** and **RHEL-WEB-01-test**.
+10. [**仮想マシン**] ページで、**RHEL-WEB-01-test** VM を選択します。
 
-10. On the **Virtual machines** page, select
-    the **RHEL-WEB-01-test** VM.
+![](./media/image17.png)
 
-    ![](./media/image17.png)
+11. [**RHEL-WEB-01-test**] ページの [**設定**] で [**ネットワーク**] を選択します。
 
-11. On the **RHEL-WEB-01-test** page,
-    under **Settings** select **Networking**.
+12. [**Networking**] ブレードで、ネットワーク インターフェイス **nic-RHEL-WEB-01-00-test** を選択します。
 
-12. On the **Networking** blade, select the network
-    interface **nic-RHEL-WEB-01-00-test**
+![](./media/image18.png)
 
-    ![](./media/image18.png)
+13. [**nic-RHEL-WEB-01-00-test**] ページの [**Settings**] で [**IP configurations**] を選択します。
 
-13. On the **nic-RHEL-WEB-01-00-test** page,
-    under **Settings** select **IP configurations**.
+14. [**nic-RHEL-WEB-01-00-test-ipConfig**] を選択して、IP 構成を編集します。
 
-14. Select **nic-RHEL-WEB-01-00-test-ipConfig** to edit the IP
-    configuration.
+![](./media/image19.png)
 
-    ![](./media/image19.png)
+15. [**Edit IP configuration**] ブレードで、[**Associate public IP address**] のボックスをオンにし、[**Public IP address**] で [**ip43240741**] を選択します。
 
-15. In the **Edit IP configuration** blade, check the box
-    for **Associate public IP address**, then select **ip43240741** for
-    the **Public IP address**.
+16. [**Save**] を選択して、関連付けが完了するまで待ちます。
 
-16. Select **Save** and wait for the association to complete.
+17. 新しい Edge タブを開き、パブリック IP に割り当てた **DNS 名** に移動します:
 
-17. Open a new Edge tab and go to the **DNS name** you assigned to the
-    public IP:
+```rhel-web-XXXXXX.westus2.cloudapp.azure.com```
 
-    ```rhel-web-XXXXXX.westus2.cloudapp.azure.com```
+18. RHEL-WEB-01-test でホストされている Drupal Web サイトが読み込まれることを確認します。
 
-18. Verify that the Drupal website hosted on RHEL-WEB-01-test loads.
+19. Web サイトが開かない場合は、仮想マシンの **ネットワーク設定** から **ネットワーク セキュリティ グループ** を作成し、下の画像に示すように **ポート 80** を有効にします。
 
-19. If the website does not open, then from the **Networking settings** of the Virtual Machine, create a **Network Security Group** and enable **Port 80** as shown in below image.
+![](./media/image26.png)
 
-    ![](./media/image26.png)
+![](./media/image27.png)
 
-    ![](./media/image27.png)
+**テスト移行のクリーンアップ**
 
-**Cleanup test migrations**
+19. [**移行と最新化 | レプリケーション**] ページに戻り、[**RHEL-DB-01**] を選択します。
 
-19. Go back to the **Migration and modernization | Replications** page and select **RHEL-DB-01**.
+20. [**テスト移行のクリーンアップ**] アクションを選択します。
 
-20. Select the **Clean up test migration** action.
+![](./media/image20.png)
 
-    ![](./media/image20.png)
+21. [**Notes**] フィールドを空白のままにして、[**Testing is complete. Delete test virtual machine**] のチェックボックスをオンにし、[**Cleanup Test**] を選択します。
 
-21. Leave the **Notes** field blank and select the checkbox
-    for **Testing is complete. Delete test virtual machine**, then
-    select **Cleanup Test**
+22. [**Migration and modernization | Replications**] ページに戻り、[**RHEL-WEB-01**] を選択します。
 
-22. Go back to the **Migration and modernization | Replications** page and select **RHEL-WEB-01**.
+23. [**Clean up test migration**] アクションを選択し、[**Testing is complete. Delete test virtual machine**] を指定します。
 
-23. Select the **Clean up test migration** action, specifying **Testing
-    is complete. Delete test virtual machine**.
+24. [**Migration and modernization | Replications**] ページに戻ります。
 
-24. Return to the **Migration and modernization | Replications** page.
+25. [**Replication status**] が [**Protected**] になるまで待ってから続行します。
 
-25. Wait for the **Replication status** to be **Protected** before
-    continuing.
+> この更新を確認するには、1 ～ 2 分後に [**Refresh**] を選択する必要がある場合があります。
 
-    > You may need to select **Refresh** after a minute or two to see this update.
+## タスク 5: 移行を実行する
 
-## Task 5: Perform migrations
+1. **RHEL-DB-01** を選択し、**移行** アクションをトリガーします。
 
-1.  Select **RHEL-DB-01** and trigger the **Migrate** action.
+![](./media/image21.png)
 
-    ![](./media/image21.png)
+2. **移行** ページで、**データ損失を最小限に抑えるために移行前にマシンをシャットダウンしますか?** オプションが **はい** に設定されていることを確認し、**移行** を選択します。
 
-2.  On the **Migrate** page, ensure that the **Shutdown machines before
-    migration to minimize data loss?** option is set to **Yes**, and
-    select **Migrate**.
+3. **移行と最新化 | レプリケーション** ページに戻り、**RHEL-WEB-01** を選択します。
 
-3.  Go back to the **Migration and modernization | Replications** page and select **RHEL-WEB-01**.
+4. **移行** を選択し、**移行** ページで再度 **はい** を指定して移行を開始します。
 
-4.  Select **Migrate** and start the migration, again
-    specifying **yes** in the **Migrate** page.
+5. **移行と最新化 | レプリケーション** ページに戻り、**更新** を選択して移行のステータスを監視します。
 
-5.  Go back to the **Migration and modernization | Replications** page and select **Refresh** to monitor the status of migration.
+![](./media/image28.png)
 
-    ![](./media/image28.png)
+6. 次の演習のために Edge を開いたままにしておきます。移行処理は続行されます。
 
-6.  Leave Edge open for the next exercise. The migrations will continue
-    processing.
+# 演習 2: 移行後のタスク
 
-# Exercise 2: Post-migration tasks
+## タスク 1: 移行後のタスクを完了する
 
-## Task 1: Complete post migration tasks
+この演習では、先ほど作成したパブリック IP を、新しく移行した RHEL-WEB-01 VM に割り当てます。
 
-In this exercise you will assign the public IP you created earlier to
-the newly migrated RHEL-WEB-01 VM.
+1. [**移行と最新化 | レプリケーション**] ページで、両方の仮想マシンの [**状態**] 列に [**計画されたフェールオーバーが終了しました**] と表示されていることを確認します。
 
-1.  On the **Migration and modernization | Replications** page,
-    verify that the **Status** column displays **Planned failover
-    finished** for both virtual machines.
+> この更新を表示するには、[**更新**] を選択する必要がある場合があります。
 
-    > You may need to select **Refresh** to see this update.
+2. Azure ポータルの [**検索**] ボックスに「仮想マシン」と入力し、[**仮想マシン**] を選択します。
 
-2.  In the Azure portal, in the **Search** box, enter Virtual machines,
-    then select **Virtual machines**.
+3. [**仮想マシン**] ページで、[**RHEL-WEB-01**] VM を選択します。
 
-3.  On the **Virtual machines** page, select the **RHEL-WEB-01** VM.
+4. [**RHEL-WEB-01**] ページの [**設定**] で [**ネットワーク**] を選択します。
 
-4.  On the **RHEL-WEB-01** page,
-    under **Settings** select **Networking**.
+5. [**Networking**] ブレードで、ネットワーク インターフェイス **nic-RHEL-WEB-01-00** を選択します。
 
-5.  On the **Networking** blade, select the network
-    interface **nic-RHEL-WEB-01-00**
+![](./media/image22.png)
 
-    ![](./media/image22.png)
+6. [**nic-RHEL-WEB-01-00**] ページの [**Settings**] で [**IP configurations**] を選択します。
 
-6.  On the **nic-RHEL-WEB-01-00** page, under **Settings** select **IP
-    configurations**.
+7. [**nic-RHEL-WEB-01-00-ipConfig**] を選択して、IP 構成を編集します。
 
-7.  Select **nic-RHEL-WEB-01-00-ipConfig** to edit the IP configuration.
+![](./media/image23.png)
 
-    ![](./media/image23.png)
+8. [**Edit IP configuration**] ブレードで、[**Associate public IP address**] のボックスをオンにし、[**Public IP address**] で [**ip43240741**] を選択します。
 
-8.  In the **Edit IP configuration** blade, check the box
-    for **Associate public IP address**, then select **ip43240741** for
-    the **Public IP address**.
+9. [**Save**] を選択して、関連付けが完了するまで待ちます。
 
-9.  Select **Save** and wait for the association to complete.
+10. 新しい Edge タブを開き、パブリック IP に割り当てた **DNS 名** に移動します: ```rhel-web-XXXXXX.westus2.cloudapp.azure.com```
 
-10. Open a new Edge tab and go to the **DNS name** you assigned to the public IP:     ```rhel-web-XXXXXX.westus2.cloudapp.azure.com```
+11. Web サイトが開かない場合は、仮想マシンの **ネットワーク設定** から **ネットワーク セキュリティ グループ** を作成し、**ポート 80** を有効にします
 
-11. If the website does not open, then from the **Networking settings** of the Virtual Machine, create a **Network Security Group** and enable **Port 80** 
+12. RHEL-WEB-01 でホストされている Drupal Web サイトが読み込まれることを確認します。
 
-12. Verify that the Drupal website hosted on RHEL-WEB-01 loads.
+13. **Hyper-V マネージャー** を開き、両方の VM が **オフ** になっていることを確認します。これらのマシンは正常に移行されています。
 
-13. Open **Hyper-V Manager** and note that both VMs are **Off**. These
-    machines have been successfully migrated.
-
-    ![](./media/image24.png)
+![](./media/image24.png)
