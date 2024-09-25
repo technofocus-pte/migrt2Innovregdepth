@@ -1,369 +1,480 @@
-# ラボ 1 - ラボ環境の準備
+# ラボ1 - ラボ環境の準備
 
-## 演習 1: ラボ環境の準備
+**実習1：ラボ環境の準備**
 
-## タスク 0 - Azure サブスクリプションのセットアップ
+**タスク 0 - Azure サブスクリプションのセットアップ**
 
-1. ラボ インターフェイスの [**リソース**] タブで提供される資格情報を使用して、提供された VM にログインします。
+1.  ラ ボ イ ン イ ン タ ーフ ェ イ ス の **Resources** タ ブで提供 さ
+    れ る 証明書を使用 し て、 提供 さ れ る VM に ロ グ イ ン し ます。
 
-![](./media/image61.png)
+    ![](./media/image1.png)
 
-2. エッジ ブラウザーを開き、```http://www.microsoftazurepass.com``` に移動します。
+2.  エッジ・ブラウザを開き、```http://www.microsoftazurepass.com``` に移動する。
 
-3. [**開始**] ボタンをクリックして開始します。
+3.  **Start**ボタンをクリックして開始します。
 
-![](./media/image62.png)
+    ![](./media/image2.png)
 
-> <font color=Oranged> **注意**: Azure Pass を利用するためにログインする際に、**会社/職場アカウント** を使用しないでください。別の Azure Pass は発行されません。</font>
+    <font color=Orangered>
 
-4. ラボ インターフェイスの **リソース/ホーム** タブで提供される **Office 365 テナント資格情報** を入力して、サインイン プロセスを完了します
+    > **注意：Azure
+    Passを交換するために、会社/職場アカウントを使ってログインしないでください。**
 
-5. サインイン プロセスが完了したら、正しいメール アドレスが表示されている場合は [**Microsoft アカウントの確認**] をクリックします。
+    </font>
 
-![](./media/image63.png)
 
-6. ラボ インターフェイスの **リソース** タブの **Azure プロモーション コード** セクションで、プロモーション コード ボックスに **プロモーション コード** を入力し、[**プロモーション コードの取得**] をクリックします。
+4.  Lab インターフェイスの **Resources/Home** タブで提供される **Office
+    365 テナント資格情報を**入力し、サインイン プロセスを完了する。
 
-![](./media/image64.png)
+5.  サインインが完了したら、正しいメールアドレスが表示されていれば「**Confirm
+    Microsoft Account**」をクリックします。
 
-7. 引き換えの処理には数秒かかる場合があります。
+    ![](./media/image3.png)
 
-![](./media/image65.png)
+6.  ラボ インターフェイスの \[**Resources**\] タブの \[**Azure Promo
+    Code**\] セクションで、\[Promo code box\]
+    ボックスに**Promocode** を入力し、\[**Claim Promo Code**\]
+    をクリックします。
 
-8. 必須のプロファイル情報を入力し、チェックボックスをオンにして、「**サインアップ**」をクリックします。
+    ![A screen shot of a computer Description automatically
+generated](./media/image4.png)
 
-![](./media/image66.png)
+7.  換金処理に数秒かかる場合があります。
 
-9. 登録して MFA 認証を完了するように求められる場合があります。**Microsoft Authenticator アプリ** または **電話による方法** を使用して MFA 登録を進めます。
+    ![](./media/image5.png)
 
-![](./media/image67.png)
+8.  必須のプロフィール情報を入力し、チェックボックスを選択した後、"
+    **Sign up** "をクリックしてください。
 
-10. 認証が完了したら、「**完了**」ボタンをクリックします。
+    ![](./media/image6.png)
 
-![](./media/image68.png)
+9.  MFA
+    認証の登録と完了を求めるプロンプトが表示される場合がありますが、**Microsoft
+    Authenticator アプリ**または**Phone method**で MFA
+    登録を進めてください。
 
-11. フィードバック ページでフィードバックを入力し、「**送信**」をクリックします。
+    ![](./media/image7.png)
 
-![](./media/image69.png)
+10. 認証が完了したら、「**Done」**ボタンをクリックします。
 
-12. Azure ポータルに自動的にリダイレクトされ、Azure サービスを使用する準備が整います。
-![](./media/image70.png)
+    ![A screenshot of a computer screen Description automatically
+generated](./media/image8.png)
 
-13. **Azure Portal** ```https://portal.azure.com``` 検索ボックスに「```subscriptions```」と入力し、[**サブスクリプション**] をクリックします。
-![](./media/image71.png)
+11. フィードバックのページで、フィードバックを入力し、**Submitを**クリックします。
+        ![](./media/image9.png)
 
-14. サブスクリプションの一覧から、[**Azure Pass – スポンサーシップ**] を選択します。
-![](./media/image72.png)
+12. 自動的にAzure
+    Portalにリダイレクトされ、これでAzureサービスを利用する準備が整った。
+        ![A screenshot of a computer Description automatically
+    generated](./media/image10.png)
 
-15. [Azure Pass – スポンサーシップ] ページで、[**アクセス制御 (IAM)] をクリックし、[**+ 追加**] ドロップダウンをクリックして、[**ロールの割り当ての追加**] を選択します。
-![](./media/image73.png)
+13. **Azure Portal** ```https://portal.azure.com```
+    の検索ボックスに```Subscriptions```と入力し、「**Subscriptions**」をクリックします。
+        ![A screenshot of a computer Description automatically
+    generated](./media/image11.png)
 
-16. [ロールの割り当ての追加] ページの [**特権管理者ロール**] タブで [**共同作成者**] を選択し、[**次へ**] をクリックします。
-![](./media/image74.png)
+14. サブスクリプションのリストから **Azure Pass -Sponsorship**
+    を選択します。     ![A screenshot of a box Description automatically
+    generated](./media/image12.png)
 
-17. [メンバー] タブで [+ メンバーを選択] をクリックし、[MOD 管理者] を選択して [選択] ボタンをクリックします。
-![](./media/image75.png)
+15. Azure Pass - Sponsorship ページで \[**Access control (IAM)**\]
+    をクリックし、**\[+Add\]** ドロップダウンをクリックして \[**Add role
+    assignment**\] を選択します。     ![](./media/image13.png)
 
-18. [確認 + 割り当て] ボタンをクリックします。
-![](./media/image76.png)
+16. Add role assignment page ページで、**Privileged administrator
+    roles** tab (**特権管理者の**ロール)タブの下で
+    **Contributor** **を**選択し、**Nextへ** をクリックします。
+        ![](./media/image14.png)
 
-19. [確認 + 割り当て] ボタンをクリックします
+17. **\[Members\]**タブで、「**＋Select members**」をクリックし、「**MOD
+    Administrator**」を選択して**「Select」**ボタンをクリックします。
+        ![A screenshot of a computer Description automatically
+    generated](./media/image15.png)
 
-![](./media/image77.png)
+18. **Review + assign**ボタンをクリックする。     ![](./media/image16.png)
 
-20. 以下の画像のように通知が表示されます
+19. on **Review + assign** ボタンをもう一度クリックする.
 
-![](./media/image78.png)
+    ![](./media/image17.png)
 
-21. [ロールの割り当て] タブをクリックして、前の手順で割り当てられたロールを表示します。Contributor ロールが割り当てられたユーザーが一覧表示されます。
+20. 以下の画像のような通知が届くはずです。
 
-![](./media/image79.png)
+    ![A screenshot of a computer screen Description automatically
+generated](./media/image18.png)
 
-## タスク 1: VM の準備ができていることを確認する
+21. **Role assignments**
+    タブをクリックして、前のステップで割り当てられたロールを表示します。Contributor
+    ロールが割り当てられたユーザが表示されます。
 
-ゲスト VM にインストールされているアプリを検出で識別するには、Hyper-V 統合サービスがゲスト VM にインストールされ、実行されている必要があります。
+    ![](./media/image19.png)
 
-1. デスクトップから **Microsoft Edge** を開き、**RHEL-WEB-01** の IP アドレス: ```192.168.1.24``` に移動します。
+**タスク1：VMが準備できていることを確認する。**
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image1.png)
+ゲストVMにインストールされたアプリケーションを検出するためには、ゲストVMにHyper-V
+Integration Servicesがインストールされ、実行されている必要がある。
 
-2. **RHEL-WEB-01** は、**RHEL-DB-01** でホストされているデータベースを呼び出すように構成された Drupal Web サイトを提供します。Web サイトが正常に読み込まれると、両方の VM が正しく機能していることが確認できます。
+1.  デスクトップから**Microsoft
+    Edgeを**開き、**RHEL-WEB-01:**```192.168.1.24```**の**IPアドレスにアクセスします.
 
-## タスク 2: Azure Migrate プロジェクトを作成する
+    ![A screenshot of a computer Description automatically
+generated](./media/image20.png)
 
-1. 新しい Edge タブで、Azure Portal ```https://portal.azure.com``` に移動し、ラボ リソースで提供される資格情報を使用してサインインします
+2.  **RHEL-WEB-**01は、**RHEL-DB-01で**ホストされているデータベースを呼び出すように設定されたDrupalウェブサイトを提供しています。ウェブサイトのロードに成功すると、両方の
+    VM が正しく機能していることが確認できる。
 
-2. Azure Portal の [**検索**] ボックスに「```Azure Migrate```」と入力し、[**Azure Migrate**] を選択して Azure Migrate ページに移動します。
+**タスク 2: Azure Migrate プロジェクトの作成**
 
-3. 左側のナビゲーションの [**移行の目標**] で、[**サーバー、データベース、Web アプリ**] を選択します。
+1.  新しい Edge タブで Azure Portal ```https://portal.azure.com```
+    に移動し、ラボのリソースで提供された認証情報を使用してサインインします。
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image2.png)
+2.  Azure Portal の **Search** ボックスで ```Azure Migrate```
+    と入力し、**Azure Migrate を**選択して Azure Migrate
+    ページに移動します。
 
-4. [**サーバー、データベース、Web アプリ**] ブレードで、ページの中央にある [**プロジェクトの作成**] を選択します。
+3.  左のナビゲーションの「**Migration goals**」で、 「**Servers,
+    databases and web apps**」を選択します。
 
-5. [**プロジェクトの作成**] ブレードで、次の設定を使用して新しいプロジェクトを作成します。
+    ![A screenshot of a computer Description automatically
+generated](./media/image21.png)
 
-表に指定されていない設定には、既定値を使用します。
+4.  **Servers, databases and web apps**ブレードで、ページ中央の**Create
+    projectを**選択します。
 
-リソース グループ - [**新規作成** ```AZMigrateRG```] をクリックします
+5.  **Create project**
+    ブレードで、以下の設定を使用して新しいプロジェクトを作成します。
 
-プロジェクト - ```az-migrate-XXXXXX``` [XXXXXX をランダムな数字に置き換えます]
+    - 表で指定されていない設定は、デフォルト値を使用する。
 
-地域 - **米国**
+    - リソースグループ – **Create new** ```AZMigrateRG```をクリックします。
 
-6. [**作成**] を選択します。
+    - プロジェクト **-** ```az-migrate-XXXXXX``` \[substitute XXXXXX with
+    random number\]
 
-7. デプロイが完了するまで待ってから、次のタスクに進みます。
+    - 地理 - **アメリカ**
 
-## タスク 3: Azure Migrate アプライアンスをデプロイして構成する
+6.  **Create**を選択する。
 
-1. [**サーバー、データベース、Web アプリ**] ブレードの [**評価ツール**] セクションの [**Azure Migrate: 検出と評価**] で、[**検出**] を選択し、[**アプライアンスの使用**] を選択します
+7.  次のタスクに進む前に、配備が完了するのを待ちます。
 
-![](./media/image3.png)
+**タスク 3: Azure Migrateアプライアンスの展開と構成**
 
-2. [**検出**] ブレードの [**マシンは仮想化されていますか?**] メニューで、[**はい (Hyper-V を使用)] を選択します。
+1.  **サーバー、データベース、および Web アプリ** ブレードの
+    **\[Assessment Tools** \] セクションで、**\[Azure Migrate: Discovery
+    and assessment**］の下で、**［Discover］を**選択し、［**Using
+    appliance**］を選択します。　
 
-3. [**1. 一般的なプロダクト キー**] の [**アプライアンスに名前を付ける**] ボックスに「```HV-XXXXXX```」と入力し、[**XXXXX**] を以前に使用した番号に置き換えてから、[**キーの生成**] を選択します。
+    ![](./media/image22.png)
 
->**注** - キー生成プロセスは完了するまでに最大 2 分かかる場合があります。
+2.  **Discover**ブレードの［**Are your Machines
+    virtualized（マシンは仮想化されていますか）］**メニューで、［**Yes,
+    with Hyper-V］を**選択します。
 
-4. キーが生成されたら、**プロジェクト キー** フィールドの **コピー アイコン** を選択します。
+3.  **1.General product key」の**「**Name your
+    appliance**」ボックスに「HV-XXXXXX」と入力し、「**Generate
+    key**」を選択します。
 
-![](./media/image4.png)
+    > **注** - キーの生成には最大2分かかることがあります。
 
-5. **2. Azure Migrate アプライアンスをダウンロード** で、**.zip ファイル (500 MB)** を選択し、ダウンロード ボタンに注意してください。
+4.  キーが生成されたら、**Project key** フィールドの**copy
+    icon** **を**選択する。　
 
-<font color=Green>
+    ![](./media/image23.png)
 
-> **これにより、アプライアンスを Windows Server マシンにインストールする PowerShell スクリプトがダウンロードされます。**
+5.  **2. Download Azure Migrate applianceの下**で、**.zip file.
+    500MBを**選択し、Download button\* をチェックします。
 
->このラボでは、スクリプトは **既に E: ドライブにダウンロードされ、**実行** されています。**この手順を続行します**。
+    <font color=Green>
 
-</font>
+    > **これにより、アプライアンスをWindows
+    ServerマシンにインストールするPowerShellスクリプトがダウンロードされる。**
 
-6. **3. アプライアンスをセットアップ** で
+    > このラボでは、スクリプトは**すでに**E:ドライブに**ダウンロードさ**れ、**実行されて**います。**このステップを過ぎても**続けます。
 
-7. Edge ウィンドウを最小化し、デスクトップで **Azure Migrate Appliance Configuration Manager** ショートカットを選択します。
+    </font>
 
-8. **Azure Migrate Appliance Configuration Manager** ページが読み込まれたら、EULA に同意する必要がある場合があります。プロンプトが表示されたら、**同意する** を選択します。
+6.  **3. Set up the applianceのしたで**
 
-9. **Azure Migrate Appliance Configuration Manager** ページの **Hyper-V アプライアンスを登録するには、ここにキーを貼り付けます** ボックスに、先ほどコピーしたキーを貼り付けます。
+7.  Edgeウィンドウを最小化し、デスクトップ上の**Azure Migrate Appliance
+    Configuration Manager**ショートカットを選択します。
 
-10. **確認** を選択します。
+8.  **Azure Migrate Appliance Configuration Manager**
+    ページがロードされたら、EULA
+    に同意する必要がある場合があります。プロンプトが表示されたら、**[Accept**]
+    を選択します。
 
-11. **ログイン** を選択します。**Azure ログインを続行** するように求めるモーダルが表示されます。
+9.  **Azure Migrate Appliance Configuration Manager**
+    ページで、**Register Hyper-V appliance by pasting the key here**
+    ボックスに、先ほどコピーしたキーを貼り付けます。
 
-12. **コードをコピーしてログイン** を選択し、デバイス コードを貼り付けてからユーザー名を選択して、サブスクリプションにサインインします。
+10. **Verifyを**選択する。
 
-13. **Microsoft Azure PowerShell にサインインしようとしていますか?** というプロンプトが表示されたら、**続行** を選択し、新しく開いたブラウザー タブを閉じます。
+11. **Login** を選択します。**Continue with Azure
+    Login**するよう求めるモーダルが表示されます。
 
-14. **Azure Migrate Appliance Configuration Manager** ページで、登録が完了するまで待ちます。
+12. **Copy code &
+    Loginを**選択し、デバイスコードを貼り付け、ユーザー名を選択して購読にサインインします。
 
-![](./media/image5.png)
+13. **「Are you trying to sign in to Microsoft Azure
+    PowerShell?」という**プロンプトが表示されたら、「**Continue**」を選択し、新しく開いたブラウザ・タブを閉じます。
 
-<font color=Green>
+14. **Azure Migrate Appliance Configuration Manager**
+    ページで、登録が完了するまで待ちます。
 
-> **登録が完了するまでに最大 10 分かかる場合があります。** </font>
+    ![A screenshot of a computer screen Description automatically
+    generated](./media/image24.png)
 
-15. [**Hyper-V ホストの資格情報を提供する**] セクションで、[**資格情報の追加**] を選択し、次の設定で資格情報を追加します。
 
-- フレンドリ名 - ```Hypervisor```
+    <font color=Green>
 
-- ユーザー名 - ```Administrator```
+    > **登録完了まで10分ほどかかる場合があります。**
 
-- パスワード - ```Passw0rd! ```
+    </font>
 
-16. **Hyper-V ホスト/クラスターの詳細を指定** セクションで、**検出ソースを追加** を選択し、**単一項目を追加** を選択して、次の設定を使用します:
+15. **Provide Hyper-V host credentials** セクションで、**Add credentials
+    を**選択し、以下の設定で認証情報を追加します：
 
-- 検出ソース - **Hyper-V ホスト/クラスター**
+    - Friendly Name - ```Hypervisor```
 
-- IP アドレス FQDN - ```win-msite54sfl9```
+    - ユーザー名 - ```Administrator```
 
-- 資格情報のマップ - **ハイパーバイザー**
+    - パスワード - ```Passw0rd! ```
 
-17. **ソフトウェア インベントリを実行するためのサーバー資格情報を指定** セクションで、スライダーが **有効** になっていることを確認してから、次の設定で資格情報を追加します:
+16. **Provide Hyper-V host/cluster details**セクションで、**add a
+    discovery sourceを**選択し、**Add single
+    itemを**選択して以下の設定を使用します：
 
-- 資格情報の種類 - **Linux (非ドメイン)**
+    - 検出ソース - **Hyper-V Host/Cluster**
 
-- フレンドリ名 - ```RHELUser```
+    - IPアドレス FQDN - ```win-msite54sfl9```
 
-- ユーザー名 - ```fetch6474```
+    - マップ認証 - **Hypervisor**
 
-- パスワード - ```RHELWorkshop```
+17. **Provide server credentials to perform software
+    inventory**セクションで、スライダーが**有効になって**いることを確認し、以下の設定で認証情報を追加します：
 
-18. **検出を開始** を選択します。
+    - クレデンシャルタイプ - **Linux（Non-domain）**
 
-19. 次の演習のために Edge を開いたままにしておきます。検出処理は続行されます。
+    - Friendly Name - ```RHELUser```
 
-# 演習 2: Microsoft Defender for Cloud の有効化
+    - ユーザー名 -++fetch6474```
 
-## タスク 1: Microsoft Defender for Cloud の有効化
+    - パスワード - ```RHELWorkshop```
 
-1. Azure ポータルで、ポータル メニューをクリックするか、ホーム ページから Microsoft Defender for Cloud を選択します。
+18. **Start discoveryを**選択する。
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image6.png)
+19. 次の練習のためにエッジをオープンにしておきます。ディスカバリーは処理を続行する。
 
-2. 通知で、**表示している情報が限定されている可能性があります。テナント全体の可視性を取得するには、ここをクリックしてください -->** をクリックします。
+**演習2：Microsoft Defender for Cloudを有効にする**
 
-![](./media/image80.png)
+**タスク 1：Microsoft Defender for Cloudを有効にする**
 
-3. **アクセス許可の取得** ページで、**セキュリティ管理者** を選択し、**アクセスの取得** ボタンをクリックします。
+1.  Azure Portal で、Portal メニューをクリックするか、ホームページから
+    Microsoft Defender for Cloud を選択します。
 
-![](./media/image81.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image25.png)
 
-4. 以下の画像のような通知が表示されます
+2.  お知らせについて - **You may be viewing limited information. To
+    gettenant-wide visibility, click here
+    --\>** をクリックしてください。
 
-![](./media/image82.png)
+    ![](./media/image26.png)
 
-![](./media/image83.png)
+3.  **Get permissions**ページで、**Security Adminを**選択し、**Get
+    access**ボタンをクリックする。
 
-5. ブラウザーを更新し、**Microsoft Defender for Cloud** ページの **全般** セクションで、
-**開始** に移動してクリックします。
+    ![](./media/image27.png)
 
-**アップグレード** タブで、
-**アップグレード** ボタンをクリックして移動します。
+4.  以下の画像のような通知が届くはずです。
 
-> <font color=Oranged> **注**: アップグレードが完了するまで数分かかる場合があります。</font>
+    ![A white background with black text Description automatically
+generated](./media/image28.png)
 
-![コンピューターのスクリーンショット 説明は自動的に生成されます](./media/image7.png)
+    ![](./media/image29.png)
 
-## タスク 2: Defender for Cloud の追加データ収集設定を有効にする
+5.  ブラウザを更新し、**Microsoft Defender for
+    Cloud**ページの**General**セクションで、**Getting
+    startedを**クリックします。**Upgrade**タブで\[**Upgrade\]**ボタンをクリックします。
 
-1. **Microsoft Defender for Cloud** ページで、**管理** セクションに移動し、**環境設定** をクリックします。
+    <font color=Orangered>
 
-> ![コンピューターのスクリーンショット。説明は自動的に生成されます](./media/image11.png)
+    > **注意**：アップグレードが完了するまで、数分間待つ必要があるかもしれません。
 
-2. 下にスクロールして **テナント ルート グループ** を展開し、リストされている **Azure Pass – スポンサーシップ** サブスクリプションをクリックします。
+    </font>
 
-![コンピューターのスクリーンショット。説明は自動的に生成されます](./media/image12.png)
+    ![A screenshot of a computer Description automatically
+    generated](./media/image30.png)
 
-3. サブスクリプションの Defender カバレッジが **11/12 プラン** であることを確認します。
 
-4. **設定 | Defender プラン** ページで、[すべてのプランを有効にする] をクリックします。
+**タスク2：Defender for Cloudの追加データ収集設定を有効にする**
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image13.png)
+1.  **Microsoft Defender for
+    Cloud**ページで、**管理**セクションに移動し、**Environment
+    settingsを**クリック**します。**
 
-5. [Microsoft Defender for APIs プラン 1] を選択し、[保存] ボタンをクリックします。
+    ![A screenshot of a computer Description automatically
+generated](./media/image31.png)
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image14.png)
+2.  下にスクロールし、**Tenant Root Group を**展開し、表示されている
+    **Azure Pass - Sponsorship** Subscription をクリックします。
 
-6. [保存] ボタンをクリックします。
+    ![A screenshot of a computer Description automatically
+generated](./media/image32.png)
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image15.png)
+3.  ディフェンダーの補償は**11/12plansとなって**います。
 
-7. 以下の画像に示すように、通知が表示されます。
+4.  **Settings | Defender plans** ページで、\[**Enable all
+    plans\]**をクリック**します。**
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image16.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image33.png)
 
-# 演習 3: ビジネス ケースを作成し、評価を実行する
+5.  **「Microsoft Defender for APIs Plan
+    1」**を選択し、「**Save」**ボタンをクリックします。
 
-## タスク 1: ビジネス ケースを作成して確認する
+    ![A screenshot of a computer screen Description automatically
+generated](./media/image34.png)
 
-1. Azure ポータルで、[Azure Migrate サーバー、データベース、Web アプリ] ページに戻ります。 **更新** を選択して、サーバーが検出されたことを確認します。
+6.  **Save**ボタンをクリックします。
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image17.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image35.png)
 
-2. **Azure Migrate: 検出と評価** セクションで、**ビジネス ケースの作成** を選択します。
+7.  下の画像のような通知が届くはずです。
 
-![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image18.png)
+    ![A screenshot of a computer Description automatically
+generated](./media/image36.png)
 
-3. **ビジネス ケースの作成** ブレードで、次の値を使用してビジネス ケースを作成します。
+**エクササイズ3：ビジネスケースの作成とアセスメントの実施**
 
-- ビジネス ケース名 - ```bc-43240741```
+**タスク 1：ビジネスケースの作成とレビュー**
 
-- ターゲットの場所 - **eastus**
+1.  Azure Portal で、**Azure Migrate Servers, databases and web apps**
+    ページに戻る。**Refresh**
+    を選択して、サーバーが検出されたことを確認します。
 
-- 移行戦略 - **コストを最小限に抑えるための Azure 推奨アプローチ**
+    ![A screenshot of a computer Description automatically
+generated](./media/image37.png)
 
-- 節約オプション - **予約インスタンス + Azure 節約プラン**
+2.  **Azure Migrate：Discovery and assessment**セクションで、**Build
+    business caseを**選択します。
 
-- 従量課金制の割引 (%) - **0**
+    ![A screenshot of a computer Description automatically
+generated](./media/image38.png)
 
-- **ビジネス ケースの作成** を選択します。
+3.  **Build business
+    case** ブレードでは、以下の値を使用してビジネス・ケースを作成します。
 
-![ビジネス ケースの更新](./media/image19.png)
+    - ビジネスケース名 - ```bc-43240741```
 
-> ビジネス ケースの生成には最大 5 分かかる場合があります。5 分以上経過している場合は、[**更新**] を選択します。
+    - 対象地域 - **東臼杵郡（eastus）**
 
-4. [**bc-43240741**] ページで、Azure の準備状況とコンピューティングとストレージの両方の月間コスト見積もりを示す情報を確認します。
+    - 移行戦略 - **コストを最小限に抑えるためのAzure推奨アプローチ**
 
-## タスク 2: 評価を構成、実行、表示する
+    - Savings options - **Reserved Instances + Azure Savings Plan　**
 
-1. 新しいタブで [**リソース グループ**] ページに移動し、``https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView``` **AZMigrateRG** リソース グループを選択してから、**Key Vault** の場所を書き留めます。以下に示すように、**West US 2** です。
-![](./media/image84.png)
+    - Pay as you goの割引率 (%) – 0　
 
-<font color=Oranged>
+    - **「Build business case**」を選択します。
 
-> **注** - この場所は、ラボで後で作成される他のリソース用に指定する必要があります。また、移行がスムーズに行われるように、**Azure リソースが同じリージョンに作成されるようにするためにも指定する必要があります。
+    ![Business Case Refresh](./media/image39.png)
 
-</font>
+    > ビジネス・ケースの生成には最大5分かかります。5分以上経過した場合は、「**Referesh**」を選択してください。
 
-2. **Azure Migrate** ページに戻り、**Azure Migrate: 検出と評価** セクションで **評価** を選択し、ドロップダウン メニューで **Azure VM** を選択します。
+4.  **bc-43240741**ページで、Azure
+    readinessを示す情報と、コンピュートとストレージの両方の月額コストの見積もりを確認します。
 
-![](./media/image20.png)
+**タスク 2: 評価を構成、実行、表示する**
 
-3. **評価の作成** ページで、ドロップダウン メニューをデフォルトのままにします。
+1.  新しいタブで**Resource groups** page
+    ```https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView```を開き、**AzMigrateRG**リソースグループを選択し、下図の通り、米国西部で、**Key
+    Vaultの**場所をメモする。     
+    
+    ![](./media/image40.png)
 
-4. **評価設定** の横にある **編集** リンクを選択します。
+    > **注** -
+    > この場所は、ラボの後半で作成する他のリソースにも指定する必要があります。また、**Azure
+    > リソースが同じリージョンに作成されていることを**確認し、Migrate
+    > がスムーズに行われるようにします。
 
-![](./media/image21.png)
+2.  **Azure Migrate** ページに戻り、**Azure Migrate：Discovery and
+    assessment**セクションで**Assessを**選択し、ドロップダウンメニューで**Azure
+    VMを**選択します。
 
-5. 評価設定ページで、次の設定を使用して評価を作成します。
+    ![A screenshot of a computer Description automatically generated](./media/image41.png)
 
-<font color=Green>
-> **表に指定されていないものについては、デフォルト設定を受け入れます。** </font>
+3.  **Create
+    assessment** ページでは、ドロップダウンメニューはデフォルトのままにしておきます。　
 
-- ターゲットの場所 - **米国西部 2**
+4.  **Assessment settingsの**横にある**Edit**リンクを選択します。
 
-- ストレージの種類 - **Premium マネージド ディスク**
+    ![](./media/image42.png)
 
-- 節約オプション - **なし**
+5.  評価の設定ページで、以下の設定を使用して評価を作成します。
 
-- サイズ設定基準 - **オンプレミスと同じ**
+    <font color=Green>
 
-- VM シリーズ - **Dsv3_series**
+    > **表で指定されていないものは、デフォルト設定を受け入れる。**
+    
+    </font>
 
-- 快適性係数 - **1**
+    - 対象場所 - **米国西部2（West US 2）**
 
-- オファー - **従量課金制**
+    - ストレージ・タイプ - **Premium managed disks**
 
-- 通貨 - **米ドル ($)**
+    - 貯蓄オプション – **None**
 
-- 割引 - **0**
+    - サイズ基準 - **As on premises**
 
-- VM の稼働時間 - **1 か月あたり 31 日、1 日あたり 24 時間**
+    - VMシリーズ - **Dsv3_series　**
 
-- Windows Server ライセンスを既にお持ちですか? - **いいえ**
+    - Comfort factor – **1　**
 
-- セキュリティ - **いいえ**
+    - オファー - **Pay-As-You-Go**
 
-6. **保存** を選択して評価の作成に戻り、**次へ:
-評価するサーバーの選択 \>** を選択します
+    - 通貨 - **USドル ($)**
 
-7. 次の設定を使用してサーバー グループを作成し、評価するサーバーを選択します。
+    - 割引 - **0**
 
-> 表に指定されていないものについては、既定の設定を受け入れます。
+    - VM稼働時間 - **31日/月、24時間/日**
 
-評価名 - ```as-43240741```
+    - Already have a Windows Server license? **- いいえ　**
 
-グループを選択または作成 - **新規作成**
+    - セキュリティ - **なし（No）**
 
-グループ名 - ```RHEL-Servers```
+6.  **Save** を選択して \[Create Assessment\] に戻り、**\[Next: Select
+    servers to assess \>を選択します。　　**
 
-グループに追加するマシンのリスト - **RHEL-DB-01** および **RHEL-WEB-01**
+7.  以下の設定を使用して、サーバーグループを作成し、評価対象のサーバーを選択します。
 
-8. **評価の作成** を選択します。**Azure Migrate | サーバー、データベース、および Web アプリ** ページにリダイレクトされます。
+    - 表で指定されていないものは、デフォルト設定を受け入れる。
 
-9. ページを**更新** します。
+    - 評価名 - ```as-43240741```
 
-10. **Azure Migrate: 検出と評価** セクションで、**評価の合計** が **1** に等しいことを確認してから、**1** を選択します。
+    - グループの選択または作成 - **Create new**
 
-![](./media/image22.png)
+    - グループ名 - ```RHEL-Servers```
 
-11. **Azure Migrate: 検出と評価 | 評価** ページで、新しく作成された評価 **as-43240741** を選択します。
+    - グループに追加するマシンのリスト - **RHEL-DB-**01と**RHEL-WEB-01**
 
-![](./media/image23.png)
+8.  **Create assessment** を選択します。**Azure Migrate | Servers,
+    databases and web apps** のページにリダイレクトされます。
 
-12. **as-43240741** ページで、コンピューティングとストレージの両方の Azure 対応状況と月間コスト見積もりを示す情報を確認します。
+9.  ページを**更新する**。
 
-<font color=Green>
+10. **Azure Migrate：Discovery and Assessment\]**
+    セクションで、\[**Assessments Total**\] が **1**
+    であることを確認し、\[**1\] を**選択します。
+    
+     ![A screenshot of a computer Description automatically generated](./media/image43.png)
+
+11. **Azure Migrate：Discovery and Assessment | Assessments\]**
+    ページで、新しく作成したアセスメント **as-43240741** を選択します。
+
+    ![A screenshot of a computer Description automatically
+generated](./media/image44.png)
+
+12. **as-43240741の**ページで、Azureの準備状況を示す情報と、コンピュートとストレージの両方の月額コストの見積もりを確認する。
+
+**実際のシナリオでは、Dependency Agent
+のインストールを検討して、評価段階でサーバーの依存関係をより詳しく把握できるようにする必要があります。**
