@@ -336,7 +336,7 @@ Databaseを作成します。
     <font color=blue>
 
     > **注意** -
-**dvdrental.tar**ファイルが存在しない場合は、**dvdrental.tar**ファイルを-++https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar
+**dvdrental.tar**ファイルが存在しない場合は、**dvdrental.tar**ファイルを- ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar```
 からダウンロードし、**C:˶Labfiles```に置いて**ください。
 </font>
 
