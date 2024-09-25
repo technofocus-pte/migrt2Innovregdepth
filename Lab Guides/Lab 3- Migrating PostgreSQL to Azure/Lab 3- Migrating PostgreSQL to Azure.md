@@ -1,595 +1,532 @@
-# Lab 3 - Migrating PostgreSQL to Azure.
+# ラボ 3 - PostgreSQL を Azure に移行します。
 
-**Objective**
+**目標**
 
-In the Lab we would be deploying a Virtual machine to host the
-**PostgreSQL database** and create the required **PostgreSQL infrastructure**
-and then we will migrate the PostgreSQL Database using the **Azure
-Database for Postgres Flexible Server (Migration)** ![A diagram of a
-data flow Description automatically generated with medium
-confidence](./media/image1.png)
+ラボでは、**PostgreSQL データベース** をホストする仮想マシンを展開し、必要な **PostgreSQL インフラストラクチャ** を作成します。次に、**Azure Database for Postgres フレキシブル サーバー (移行)** を使用して PostgreSQL データベースを移行します。![データ フローの図
+説明は中程度の信頼性で自動的に生成されます](./media/image1.png)
 
-## Task 1 – Deploy the Virtual machine to host the PostgreSQL database for the On-premises environment.
+## タスク 1 - オンプレミス環境の PostgreSQL データベースをホストする仮想マシンを展開します。
 
-We will deploy **Ubuntu 22.0.4.4 LTS** VM, on which we will install
-**PostgreSQL Server 16** and then create the Sample Database that will be
-used for Migration.
+**Ubuntu 22.0.4.4 LTS** VM を展開し、そこに **PostgreSQL Server 16** をインストールして、移行に使用するサンプル データベースを作成します。
 
-1.  From the Azure Portal ```https://portal.azure.com``` open the Azure Cloud Shell
+1. Azure ポータル ```https://portal.azure.com``` から Azure Cloud Shell を開きます
 
-    ![](./media/image2.png)
+![](./media/image2.png)
 
-2.  Click on the **PowerShell** button.
+2. **PowerShell** ボタンをクリックします。
 
-    ![A screenshot of a computer error Description automatically
-    generated](./media/image3.png)
+![コンピューター エラーの説明が自動的に生成されたスクリーンショット](./media/image3.png)
 
-3.  On the **Getting started** window, choose the radio button for
-    **Mount storage account** and then select the **Azure Pass –
-    Sponsorship** subscription and then click on the **Apply** button.
+3. **開始** ウィンドウで、**ストレージ アカウントのマウント** のラジオ ボタンを選択し、**Azure Pass – スポンサーシップ** サブスクリプションを選択して、**適用** ボタンをクリックします。
 
-    ![](./media/image4.png)
+![](./media/image4.png)
 
-4.  On the Mount storage account window, choose the **We will create
-    storage account for you** radio button and then click on **Next**.
+4. ストレージ アカウントのマウント ウィンドウで、**ストレージ アカウントを自動的に作成します** のラジオ ボタンを選択し、**次へ** をクリックします。
 
-    ![](./media/image5.png)
+![](./media/image5.png)
 
-5.  Wait for the deployment to complete
+5. デプロイが完了するまで待ちます
 
-    ![](./media/image6.png)
+![](./media/image6.png)
 
-6.  In the Cloud Shell PowerShell window type the below commands to
-    configure variables and create the VM that will be used for
-    installing PostgreSQL server.
+6. Cloud Shell PowerShell ウィンドウで以下のコマンドを入力して変数を設定し、PostgreSQL サーバーのインストールに使用する VM を作成します。
 
-    ```$cred = Get-Credential```
+```$cred = Get-Credential```
 
-7.  When prompted to enter credentials provide the below
+7. 資格情報の入力を求められたら、以下を入力します
 
-    User - ```postgres```
+ユーザー - ```postgres```
 
-    Password - ```P@55w.rd1234```
+パスワード - ```P@55w.rd1234```
 
-    ![](./media/image7.png)
+![](./media/image7.png)
 
-8.  Enter the below command to create the Resource group
+8. 以下のコマンドを入力してリソース グループを作成します
 
-    ```New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"```
+```New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"```
 
-    ![](./media/image8.png)
+![](./media/image8.png)
 
-9.  Enter the below command to deploy the Windows Server 2019 Datacenter
-    VM
+9. 以下のコマンドを入力して Windows Server 2019 Datacenter VM をデプロイします
 
-    ```
-    New-AzVm `
-        -ResourceGroupName "PostgresRG" `
-        -Name "PostgresSrv" `
-        -Location "WestUS" `
-        -VirtualNetworkName "PGVnet" `
-        -SubnetName "PGSubnet" `
-        -SecurityGroupName "PostgresNSG" `
-        -Securitytype "Standard" `
-        -PublicIpAddressName "PostgresSrvIP" `
-        -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
-        -Credential $cred `
-        -Size "Standard_b2ms"
-    ```
+```
+New-AzVm `
+-ResourceGroupName "PostgresRG" `
+-Name "PostgresSrv" `
+-Location "WestUS" `
+-VirtualNetworkName "PGVnet" `
+-SubnetName "PGSubnet" `
+-SecurityGroupName "PostgresNSG" `
+-Securitytype "Standard" `
+-PublicIpAddressName "PostgresSrvIP" `
+-ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
+-Credential $cred `
+-Size "Standard_b2ms"
+```
 
-    ![](./media/image9.png)
+![](./media/image9.png)
 
-10. Once the deployment is completed it will show the below
+10. デプロイが完了すると、以下が表示されます
 
-    ![](./media/image10.png)
+![](./media/image10.png)
 
-11. Run the below command to connect to the Ubuntu VM, substitute the
-    command using the **FullyQualifiedDomainName** from the output of
-    the previous command
+11. 以下のコマンドを実行して Ubuntu VM に接続し、前のコマンドの出力の **FullyQualifiedDomainName** を使用してコマンドを置き換えます
 
-    ![](./media/image11.png)
+![](./media/image11.png)
 
-    ```ssh postgres@FullyQualifiedDomainName```
+```ssh postgres@FullyQualifiedDomainName```
 
-    ![](./media/image12.png)
+![](./media/image12.png)
 
-12. When prompted to continue type **yes** and then enter the password
-    provided in during the deployment - ```P@55w.rd1234```
+12. 続行するように求められたら、**yes** と入力し、デプロイメント中に提供されたパスワード (``P@55w.rd1234```) を入力します。
 
-13. It should successfully connect to the Ubuntu Server
+13. Ubuntu サーバーに正常に接続できるはずです。
 
-    ![](./media/image13.png)
+![](./media/image13.png)
 
-14. Now we will install **PostgreSQL ver. 16** on the Ubuntu VM, we will
-    set the automated repository configuration by running the below
-    command
+14. 次に、Ubuntu VM に **PostgreSQL バージョン 16** をインストールし、以下のコマンドを実行して自動リポジトリ構成を設定します。
 
-    ```sudo apt install -y postgresql-common```
+```sudo apt install -y postgresql-common```
 
-    ```sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh```
+```sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh```
 
-    ![](./media/image14.png)
+![](./media/image14.png)
 
-    ![](./media/image15.png)
+![](./media/image15.png)
 
-15. Press the Enter key on keyboard to continue.
+15. キーボードの Enter キーを押して続行します。
 
-    ![](./media/image16.png)
+![](./media/image16.png)
 
-    ![](./media/image17.png)
+![](./media/image17.png)
 
-16. We will **import the repository signing key** by running the below
-    commands.
+16. 以下のコマンドを実行して、**リポジトリ署名キーをインポート**します。
 
-    ```sudo apt install curl ca-certificates```
+```sudo apt install curl ca-certificates```
 
-    ```sudo install -d /usr/share/postgresql-common/pgdg```
+```sudo install -d /usr/share/postgresql-common/pgdg```
 
-    ```sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc```
+```sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc```
 
-    ![](./media/image18.png)
+![](./media/image18.png)
 
-17. We will run the below command to **create the repository
-    configuration file**
+17. 以下のコマンドを実行して、**リポジトリ構成ファイルを作成します**
 
-    ```sudo apt update```
+```sudo apt update```
 
-    ```sudo apt install gnupg2 wget```
+```sudo apt install gnupg2 wget```
 
-    ```sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'```
+```sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'```
 
-    ```curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg```
+```curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg```
 
-    ![](./media/image19.png)
+![](./media/image19.png)
 
-18. We will run the below command to **update the package lists**
+18. 以下のコマンドを実行して**パッケージ リストを更新します**
 
-    ```sudo apt update```
+```sudo apt update```
 
-    ![](./media/image20.png)
+![](./media/image20.png)
 
-19. We will run the below command to **install the latest version of
-    PostgreSQL**
+19. 以下のコマンドを実行して**PostgreSQL の最新バージョンをインストールします**
 
-    ```sudo apt install postgresql-16 postgresql-contrib-16```
+```sudo apt install postgresql-16 postgresql-contrib-16```
 
-    ![](./media/image21.png)
+![](./media/image21.png)
 
-    **Note – The installation should complete in 1-2 minutes**
+**注 – インストールは 1 ～ 2 分で完了します**
 
-    ![](./media/image22.png)
+![](./media/image22.png)
 
-    ![](./media/image23.png)
+![](./media/image23.png)
 
-20. Once the installation is completed, type the below command to launch
-    the PSQL utility
+20. インストールが完了したら、以下のコマンドを入力して PSQL を起動しますユーティリティ
 
-    ```psql```
+```psql```
 
-    ![](./media/image24.png)
+![](./media/image24.png)
 
-21. We will set the password for the **postgres** account in psql
+21. psql で **postgres** アカウントのパスワードを設定します
 
-    ```\password postgres```
+```\password postgres```
 
-22. Provide the password as ```postgres``` Enter it again as
-    
-    ```postgres```
+22. パスワードを ```postgres``` として入力します
 
-    ![](./media/image25.png)
+```postgres```
 
-23. Now we will set the network and other permissions to all the PostgreSQL to be accessed remotely
+![](./media/image25.png)
 
-24. Run the below command to access the **postgresql.conf** file
+23. 次に、リモートでアクセスするすべての PostgreSQL にネットワークおよびその他の権限を設定します
 
-    ```\q```
+24. 以下のコマンドを実行して、**postgresql.conf** ファイルにアクセスします
 
-    ```sudo nano /etc/postgresql/16/main/postgresql.conf```
+```\q```
 
-25. Once the file is opened scroll down and update the setting to match
-    the below
+```sudo nano /etc/postgresql/16/main/postgresql.conf```
 
-    **Under Connection Settings remove the # and change listen_addresses = '*'**
+25. ファイルが開いたら、下にスクロールして、設定を以下の内容に更新します
 
-    ![](./media/image26.png)
+**接続設定で # を削除し、listen_addresses = '*' に変更します**
 
-    **Under WRITE-AHEAD LOG remove the # and change wal_level = logical**
+![](./media/image26.png)
 
-    ![](./media/image27.png)
+**WRITE-AHEAD LOG で# wal_level = logical** に変更します
 
-26. Once the above change is done press **Ctrl + X**
+![](./media/image27.png)
 
-    ![](./media/image28.png)
+26. 上記の変更が完了したら、**Ctrl + X** を押します
 
-27. Press type **Y** and enter to confirm.
+![](./media/image28.png)
 
-28. Run the below command to access the **pg_hba.conf** file
+27. **Y** と入力して Enter を押して確定します。
 
-    ```sudo nano /etc/postgresql/16/main/pg_hba.conf```
+28. 以下のコマンドを実行して **pg_hba.conf** ファイルにアクセスします
 
-29. Once the file is opened scroll down add the below lines at the
-    bottom of the file
+```sudo nano /etc/postgresql/16/main/pg_hba.conf```
 
-    ```
-    host all all 0.0.0.0/0 md5
-    host all all ::/0 md5
-    ```
+29. ファイルが開いたら下にスクロールして、ファイルの下部に以下の行を追加します
 
-    ![](./media/image29.png)
+```
+host all all 0.0.0.0/0 md5
+host all all ::/0 md5
+```
 
-30. Once the above change is done press **Ctrl + X**
+![](./media/image29.png)
 
-    ![](./media/image30.png)
+30. 上記の変更が完了したら、**Ctrl + X** を押します
 
-31. Press type **Y** and enter to confirm.
+![](./media/image30.png)
 
-32. Run the below command to restart the PostgreSQL service
+31. **Y** と入力して Enter を押して確定します。
 
-    ```sudo service postgresql restart```
+32. 以下のコマンドを実行して PostgreSQL サービスを再起動します
 
-    ![](./media/image31.png)
+```sudo service postgresql restart```
 
-33. On the Azure Portal, search and select !!Resource groups!!
+![](./media/image31.png)
 
-    ![](./media/image32.png)
+33. Azure ポータルで、!!Resource groups!! を検索して選択します
 
-34. From the list of Resource groups select **PostgresRG** then select
-    the VM - **PostgresSrv**
+![](./media/image32.png)
 
-35. On the **PostgresSrv** page, select **Networking setting** and then
-    click on **+ Create port rule** and choose **Inbound port Rule**
+34. リソース グループのリストから **PostgresRG** を選択し、VM - **PostgresSrv** を選択します
 
-    ![](./media/image33.png)
+35. **PostgresSrv** ページで、**ネットワーク設定** を選択し、**+ ポート ルールの作成** をクリックして、**受信ポート ルール** を選択します
 
-36. On the **Add inbound security rule** page, under service from the
-    drop-down choose **PostgreSQL** and then click on the **Add**
-    button.
+![](./media/image33.png)
 
-    ![](./media/image34.png)
+36. **受信セキュリティ ルールの追加** ページで、サービスのドロップダウンから **PostgreSQL** を選択し、**追加** ボタンをクリックします。
 
-37. You should receive the notification as shown in below image.
+![](./media/image34.png)
 
-    ![](./media/image35.png)
+37. 以下の画像に示すように、通知が届きます。
 
-38. Now the PostgreSQL server is ready to be accessed remotely.
+![](./media/image35.png)
 
-## Task 2 – Create a PostgreSQL database for the On-premises environment.
+38. これで、PostgreSQL サーバーにリモートからアクセスできるようになりました。
 
-1.  Now we will import a sample database into the PostgreSQL server
-    which we will use for Migration
+## タスク 2 – オンプレミス環境用の PostgreSQL データベースを作成します。
 
-2.  There are 15 tables in the DVD Rental database
+1. ここで、移行に使用するサンプル データベースを PostgreSQL サーバーにインポートします
 
-    ![PostgreSQL Sample Database Diagram](./media/image36.png)
+2. DVD レンタル データベースには 15 個のテーブルがあります
 
-3.  From the Azure Portal open the Azure Cloud Shell
+![PostgreSQL サンプル データベース ダイアグラム](./media/image36.png)
 
-    ![](./media/image2.png)
+3. Azure ポータルから Azure Cloud Shell を開きます
 
-4.  Ensure the Cloud Shell has launched with Bash, then run the below
-    command to connect to the **PostgresSrv** VM
+![](./media/image2.png)
 
-    ```ssh postgres@ServerDNSName```
+4. Cloud Shell が Bash で起動していることを確認し、以下のコマンドを実行して **PostgresSrv** VM に接続します
 
-    ![](./media/image37.png)
+```ssh postgres@ServerDNSName```
 
-5.  When prompted to continue type **yes** and then enter the password -
-    ```P@55w.rd1234```
+![](./media/image37.png)
 
-6.  It should successfully connect to the Ubuntu Server
+5. 続行するように求められたら、**yes** と入力し、パスワードを入力します -
+```P@55w.rd1234```
 
-    ![](./media/image38.png)
+6. Ubuntu サーバーに正常に接続されます
 
-5.  On the prompt **postgres@PostgresSrv** run the below command to
-    create a **folder** to copy the file to be used for restoring the
-    database.
+![](./media/image38.png)
 
-    ```mkdir dvdrentalbkp```
+5. プロンプト **postgres@PostgresSrv** で以下を実行します以下のコマンドを実行して、データベースの復元に使用するファイルをコピーするための**フォルダー**を作成します。
 
-     ![](./media/image39.png)
+```mkdir dvdrentalbkp```
 
-6.  On the Lab VM, right-click on the Start menu and select Windows
-    Terminal (admin)
+![](./media/image39.png)
 
-    ![](./media/image40.png)
+6. ラボ VM で、[スタート] メニューを右クリックし、[Windows ターミナル (管理者)] を選択します。
 
-7.  In the Windows PowerShell window run the command to copy the PostgreSQL database backup to the folder **dvdrentalbkp** on the **PostgresSrv**.
+![](./media/image40.png)
 
-    <font color=orangered>
-    
-    > **Note** - Substitute the command before running with the **FQDN of your Ububtu Server VM** before running the command. refer **Task 1 - step 11**
-    </font>
+7. Windows PowerShell ウィンドウで、PostgreSQL データベースのバックアップを **PostgresSrv** のフォルダー **dvdrentalbkp** にコピーするコマンドを実行します。
 
-    ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
+<font color=orangered>
 
-    When prompted to continue type **yes** and then enter the password - ```P@55w.rd1234```
+> **注** - コマンドを実行する前に、**Ububtu Server VM の FQDN** にコマンドを置き換えてください。 **タスク 1 - ステップ 11** を参照してください
+</font>
 
-    ![](./media/image41.png)
+```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
 
-    <font color=blue>
+続行するように求められたら、**yes** と入力し、パスワード - ```P@55w.rd1234``` を入力します
 
-    > **Note** - If the file **dvdrental.tar** is not present, it can be downloaded from - ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` and then placed in **C:\Labfiles**
-    </font>
+![](./media/image41.png)
 
+<font color=blue>
 
-8.  Switch back to the tab on the prompt **postgres@PostgresSrv** run
-    the below command to launch PSQL
+> **注** - ファイル **dvdrental.tar** が存在しない場合は、- ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` からダウンロードして、**C:\Labfiles** に配置することができます
+</font>
 
-    ```psql```
-    
-    ![](./media/image42.png)
+8. プロンプト **postgres@PostgresSrv** のタブに戻ります以下のコマンドを実行して PSQL を起動します
 
-9.  On the **psql** prompt run the below command to create a database
+```psql```
 
-    ```CREATE DATABASE dvdrental;```
+![](./media/image42.png)
 
-    ![](./media/image43.png)
+9. **psql** プロンプトで以下のコマンドを実行してデータベースを作成します
 
-    ```\q```
+```CREATE DATABASE dvdrental;```
 
-    ![](./media/image44.png)
+![](./media/image43.png)
 
-10. Back on **postgres@PostgresSrv** prompt type the below command to
-    restore the backup into the newly created database.
+```\q```
 
-    ```cd dvdrentalbkp```
+![](./media/image44.png)
 
-    ```pg_restore -U postgres -d dvdrental "dvdrental.tar"```
+10. **postgres@PostgresSrv** プロンプトに戻り、以下のコマンドを入力して、新しく作成したデータベースにバックアップを復元します。
 
-    ![](./media/image45.png)
+```cd dvdrentalbkp```
 
-    **Note** – if any error or warning message appear, they can be safely ignored, and the blank database is updated with 15 Tables.
+```pg_restore -U postgres -d dvdrental "dvdrental.tar"```
 
-11. We can check the database details by running the below commands
+![](./media/image45.png)
 
-    ```psql```
+**注** – エラーまたは警告メッセージが表示された場合は無視しても問題ありません。空のデータベースが 15 個のテーブルで更新されます。
 
-    ```\c dvdrental```
+11. 以下のコマンドを実行して、データベースの詳細を確認できます
 
-    ![](./media/image46.png)
+```psql```
 
-    ```\dt```
+```\c dvdrental```
 
-    ![](./media/image47.png)
+![](./media/image46.png)
 
-## Task 3 – Create an Azure Database for PostgreSQL flexible Server
+```\dt```
 
-1.  Open the Edge browser navigate to the Azure Portal
-    ```https://portal.azure.com```
+![](./media/image47.png)
 
-2.  Search for ```postgres``` and choose **Azure Database for
-    PostgreSQL flexible Servers**
+## タスク 3 – Azure Database for PostgreSQL フレキシブル サーバーを作成する
 
-    ![](./media/image48.png)
+1. Edge ブラウザーを開き、Azure Portal に移動します
+```https://portal.azure.com```
 
-3.  Click on **+ Create**
+2. ```postgres``` を検索し、**Azure Database for
+PostgreSQL フレキシブル サーバー** を選択します
 
-    ![](./media/image49.png)
+![](./media/image48.png)
 
-4.  On the **New Azure Database for PostgreSQL Flexible Server** page on
-    the **Basics** tab, provide the below details
+3. **+ 作成** をクリックします
 
-    * Resource group – Click on Create new and provide name – ```RG4AzPGDb```
+![](./media/image49.png)
 
-    * Server name - ```ad4pfssrvXXXXX``` substitute XXXXX with random number
+4. **基本** タブの **新しい Azure Database for PostgreSQL フレキシブル サーバー** ページで、以下の詳細を入力します
 
-    * Region – **West US**
+* リソース グループ – [新規作成] をクリックし、名前を入力します – ```RG4AzPGDb```
 
-    * PostgreSQL version – **16**
+* サーバー名 – ```ad4pfssrvXXXXX``` (XXXXX はランダムな数字に置き換えます)
 
-    * Workload type – **Production**
+* リージョン – **米国西部**
 
-        ![](./media/image50.png)
+* PostgreSQL バージョン – **16**
 
-    * High availability - **Disabled**
+* ワークロードの種類 – **運用**
 
-    * Authentication method – **PostgreSQL Authentication only**
+![](./media/image50.png)
 
-    * Admin username – ```postgres```
+* 高可用性 - **無効**
 
-    * Password – ```P@55w.rd1234```
+* 認証方法 - **PostgreSQL 認証のみ**
 
-    * Confirm password – ```P@55w.rd1234```
+* 管理者ユーザー名 - ```postgres```
 
-    * Click on **Next: Networking >**
+* パスワード - ```P@55w.rd1234```
 
-        ![](./media/image51.png)
+* パスワードの確認 - ```P@55w.rd1234```
 
-5.  On the **Networking** tab, enable the check box for **Allow public
-    access from any Azure services within Azure to this server** and
-    click on **+ Add Client IP address** also add the **Public IP
-    address** of the **PostgresSrv** and then click on **Review +
-    create** button.
+* [次へ: ネットワーク >] をクリックします。
 
-    ![](./media/image37.png)
+![](./media/image51.png)
 
-    ![](./media/image52.png)
+5. [ネットワーク] タブで、[Azure 内の任意の Azure サービスからこのサーバーへのパブリック アクセスを許可する] チェック ボックスをオンにし、[+ クライアント IP アドレスの追加] をクリックして、**PostgresSrv** の **パブリック IP アドレス** も追加し、[確認 + 作成] ボタンをクリックします。
 
-6.  Review the details and click on the **Create** button.
+![](./media/image37.png)
 
-    ![](./media/image53.png)
+![](./media/image52.png)
 
-7.  The Deployment will begin.
+6. 詳細を確認し、[**作成**] ボタンをクリックします。
 
-    ![](./media/image54.png)
+![](./media/image53.png)
 
-    <font color=darkgreen>
+7. デプロイメントが開始されます。
 
-    >**Note** - The deployment will take around 10 minutes to complete 
-
-    </font>
-
-8.  Once the Deployment is completed click on **Go to resource** button.
-
-    ![](./media/image55.png)
-
-## Task 4 – Migrate the PostgreSQL database to Azure Database for PostgreSQL flexible server (Migration) 
-
-1.  The **Overview** page of the **Azure Database for PostgreSQL flexible server** should open
-
-    ![](./media/image56.png)
-
-2.  Review the overview page and check out the various tabs
-
-    ![](./media/image57.png)
-
-3.  Under **Settings** select **Databases**, you should be able to see 3
-    Databases listed.
-
-    ![](./media/image58.png)
-
-4.  Click on **Migration** and then select **+ Create** button.
-
-    ![](./media/image59.png)
-
-5.  On the **Migrate PostgreSQL to Azure Database for PostgreSQL
-    Flexible Server** page on the **Setup** tab, provide the below
-    information and then click on **Next: Select Runtime Server\>**
-
-    *  Migration name - ```PostgreSQLToAzurePG```
-
-    *  Source server – **On-premise Server**
-
-    *  Migration option – **Validate and Migrate**
-
-    *  Migration mode – **Online**
-
-        ![](./media/image60.png)
-
-6.  On the **Select Runtime Server** tab click on **Next: Connect to
-    source\>**
-
-    ![](./media/image61.png)
-
-7.  On the **Connect to source tab**, provide the below details and
-    click on **Next : Select migration target\>**
-
-    *  Server name – **Public IP address / DNS name of PostgresSrv VM**
-
-    *  Port – ```5432```
-
-    *  Server admin login name - ```postgres```
-
-    *  Password - ```postgres```
-
-    *  SSL mode – **Prefer**
-
-    *  Test Connection – Click on **Connect to source** 
-
-    > **Wait for the test connection to be Successful**
-
-    ![](./media/image62.png)
-
-8.  On the **Select migration target** tab, provide the below details
-
-    *  Password - ```P@55w.rd1234```
-
-    *  Test Connection – Click on **Connect to source** 
-
-    > **Wait for the test connection to be Successful**
-
-
-
-    * Click on **Next : Select database(s) for migration**
-
-    ![](./media/image63.png)
-
-9.  On the **Select database(s) for migration** tab, select the Database
-    – **dvdrental** and then click on **Next: Summary\>**
-
-    ![](./media/image64.png)
-
-10. On the **Summary** tan, review the information shown and click on
-    the **Start Validation and Migration** button.
-
-    ![](./media/image65.png)
-
-11. On the Migration page, click on the **PostgreSQLToAzurePG** link
-
-    ![](./media/image66.png)
-
-12. On the **PostgreSQLToAzurePG** page, click on the refresh button to
-    see the updates.
-
-    ![](./media/image67.png)
-
-13. Click on the Database name **dvdrental**
-
-    ![](./media/image68.png)
-
-14. On the **Validation** tab you should be able to see the Validation
-    tasks details.
-
-    ![](./media/image69.png)
-
-15. On the **Migration** tab, it will show the migration status queued.
-
-    ![](./media/image70.png)
-
-16. On the **PostgreSQLToAzurePG** page, click on the refresh button
-    again and notice that Migration tasks are also completed and now it
-    will **Waiting for User Action**, click on the **Cutover** button.
-
-    ![](./media/image71.png)
-
-17. When prompted **Please perform the following steps manually before
-    doing the cutover**, click on the **Yes** button![A screenshot of a
-    computer Description automatically generated](./media/image72.png)
-
-    ![A white background with black text Description automatically
-    generated](./media/image73.png)
-
-18. On the **PostgreSQLToAzurePG** page, click on the refresh button
-    again, Cutover in progress status should appear under **Migration
-    details**.
-
-    ![](./media/image74.png)
-
-19. Once the Cutover is **Completed**, close the **PostgreSQLToAzurePG**
-    blade.
-
-    ![](./media/image75.png)
-
-20. Back on the **Migration** page, we can see that the Migration of the
-    PostgreSQL database is **Succeeded**.
-
-    ![](./media/image76.png)
-
-21. Select **Databases** under Settings, select the **dvdrental** and
-    click on the **Connect** button
-
-    ![](./media/image77.png)
-
-22. When the Cloud Shell opens it will prompt for Password, provide the
-    password as ```P@55w.rd1234```
-
-    ![](./media/image78.png)
-
-23. Once it is successfully connected to the database, it will be listed
-    as **devrental=\>**
-
-24. Run the below command to list the tables in the Target Database
-
-    ```\dt```
-
-    ![](./media/image79.png)
-
-    **Note** – These tables are the same as in the Source database.
-
-    ![](./media/image36.png)
+![](./media/image54.png)
 
 <font color=darkgreen>
 
->**Hence, we have successfully migrated the On-premises PostgreSQL database
-to Azure Database for PostgreSQL Flexible Server**.
+>**注** - デプロイメントが完了するまでに約 10 分かかります
 
 </font>
 
-## Summary 
+8. デプロイメントが完了したら、[**リソースに移動**] ボタンをクリックします。
 
-In the Lab we had deploying a Virtual machine to host the PostgreSQL
-database and then we migrated the PostgreSQL Database using the **Azure
-Database for Postgres Flexible Server (Migration).**
+![](./media/image55.png)
+
+## タスク 4 – PostgreSQL データベースを Azure Database for PostgreSQL フレキシブル サーバーに移行する (移行)
+
+1. **Azure Database for PostgreSQL フレキシブル サーバー** の [概要] ページが開きます
+
+![](./media/image56.png)
+
+2. 概要ページを確認し、さまざまなタブを確認します
+
+![](./media/image57.png)
+
+3. [設定] で [データベース] を選択すると、3 つのデータベースが一覧表示されます。
+
+![](./media/image58.png)
+
+4. [移行] をクリックし、[+ 作成] ボタンを選択します。
+
+![](./media/image59.png)
+
+5. [**セットアップ**] タブの [**PostgreSQL を Azure Database for PostgreSQL
+フレキシブル サーバーに移行**] ページで、以下の情報を入力し、[**次へ: ランタイム サーバーの選択\>**] をクリックします。
+
+* 移行名 - ```PostgreSQLToAzurePG```
+
+* ソース サーバー - **オンプレミス サーバー**
+
+* 移行オプション - **検証して移行**
+
+* 移行モード - **オンライン**
+
+![](./media/image60.png)
+
+6. [**ランタイム サーバーの選択**] タブで、[**次へ: ソースへの接続\>**] をクリックします。
+
+![](./media/image61.png)
+
+7. **ソースに接続** タブで、以下の詳細を入力し、
+
+**次へ: 移行ターゲットの選択\>** をクリックします
+
+* サーバー名 – **PostgresSrv VM のパブリック IP アドレス / DNS 名**
+
+* ポート – ```5432```
+
+* サーバー管理者ログイン名 - ```postgres```
+
+* パスワード - ```postgres```
+
+* SSL モード – **優先**
+
+* テスト接続 – **ソースに接続** をクリックします
+
+> **テスト接続が成功するまで待ちます**
+
+![](./media/image62.png)
+
+8. **移行ターゲットの選択** タブで、以下の詳細を入力します
+
+* パスワード - ```P@55w.rd1234```
+
+* テスト接続 – **ソースに接続** をクリックします
+
+> **テスト接続が成功するまで待ちます**
+
+* **次へ: 選択** をクリックします移行するデータベースを選択します**
+
+![](./media/image63.png)
+
+9. [**移行するデータベースを選択**] タブで、データベース
+– **dvdrental** を選択し、[次へ: 概要\>**] をクリックします
+
+![](./media/image64.png)
+
+10. [**概要**] タブで、表示された情報を確認し、[**検証と移行の開始**] ボタンをクリックします。
+
+![](./media/image65.png)
+
+11. [移行] ページで、[**PostgreSQLToAzurePG**] リンクをクリックします
+
+![](./media/image66.png)
+
+12. [**PostgreSQLToAzurePG**] ページで、更新ボタンをクリックして更新を確認します。
+
+![](./media/image67.png)
+
+13. データベース名 **dvdrental** をクリックします。
+
+![](./media/image68.png)
+
+14. **検証** タブで、検証タスクの詳細を確認できます。
+
+![](./media/image69.png)
+
+15. **移行** タブで、移行ステータスがキューに入れられていることが表示されます。
+
+![](./media/image70.png)
+
+16. **PostgreSQLToAzurePG** ページで、もう一度更新ボタンをクリックし、移行タスクも完了し、**ユーザー アクションを待機中** になっていることを確認します。**カットオーバー** ボタンをクリックします。
+
+![](./media/image71.png)
+
+17. **カットオーバーを行う前に、次の手順を手動で実行してください** というメッセージが表示されたら、**はい** ボタンをクリックします。![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image72.png)
+
+![白い背景に黒いテキスト 説明が自動的に生成されました](./media/image73.png)
+
+18. **PostgreSQLToAzurePG** ページで、もう一度更新ボタンをクリックします。**移行の詳細** の下に、カットオーバーが進行中のステータスが表示されます。
+
+![](./media/image74.png)
+
+19. カットオーバーが **完了** したら、**PostgreSQLToAzurePG** ブレードを閉じます。
+
+![](./media/image75.png)
+
+20. **移行** ページに戻ると、PostgreSQL データベースの移行が **成功** になっていることがわかります。
+
+![](./media/image76.png)
+
+21. [設定] で [**データベース**] を選択し、[**dvdrental**] を選択して [**接続**] ボタンをクリックします
+
+![](./media/image77.png)
+
+22. Cloud Shell が開くと、パスワードの入力を求められます。パスワードとして ```P@55w.rd1234``` を入力します
+
+![](./media/image78.png)
+
+23. データベースに正常に接続されると、**devrental=\>** としてリストされます
+
+24. 以下のコマンドを実行して、ターゲット データベースのテーブルをリストします
+
+```\dt```
+
+![](./media/image79.png)
+
+**注** – これらのテーブルはソース データベースのものと同じです。
+
+![](./media/image36.png)
+
+<font color=darkgreen>
+
+>**これで、オンプレミスの PostgreSQL データベースを Azure Database for PostgreSQL フレキシブル サーバーに正常に移行できました**。
+
+</font>
+
+## 概要
+
+ラボでは、PostgreSQL データベースをホストする仮想マシンを展開し、次に **Azure Database for Postgres フレキシブル サーバー (移行)** を使用して PostgreSQL データベースを移行しました。
 
 ![](./media/image47.png)
 
