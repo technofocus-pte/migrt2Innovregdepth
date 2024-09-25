@@ -1,328 +1,296 @@
-# Lab 4 – Adaptive Cloud
+# ラボ 4 – アダプティブ クラウド
 
-## Objective
+## 目的
 
-In this lab we will manage resources across environments with Azure Arc,
-you can secure, monitor, and govern infrastructure across your
-environments, including on-premises, other public clouds, and edge
-devices.
+このラボでは、Azure Arc を使用して環境全体のリソースを管理します。
 
-## Task 1 – Setup the On-premise machine 
+オンプレミス、他のパブリック クラウド、エッジ デバイスなど、環境全体のインフラストラクチャを保護、監視、管理できます。
 
-1.  Open the Edge browser on the Lab VM and navigate to the link to download the **AzCopy** file - ```https://aka.ms/downloadazcopy-v10-windows``` open the zip file and extract it in the folder ```C:\AzCopy```
+## タスク 1 – オンプレミス マシンのセットアップ
 
-    ![](./media/image61.png)
+1. ラボ VM で Edge ブラウザーを開き、リンクに移動して **AzCopy** ファイルをダウンロードします - ```https://aka.ms/downloadazcopy-v10-windows``` zip ファイルを開いて、フォルダー ```C:\AzCopy``` に解凍します
 
-2. Right-click on Star-men and select Windows PowerShell (Admin)
+![](./media/image61.png)
 
-3. Type the below commands to donwload the **Windows Server 2022 image**
+2. Star-men を右クリックし、[Windows PowerShell (管理者)] を選択します
 
-    ```cmd```
+3. 以下のコマンドを入力して **Windows Server 2022 イメージ** をダウンロードします
 
-    ```cd\AzCopy```
+```cmd```
 
-    ```cd``` then press the **Tab** key to auto populate the name of the folder, then press Enter key.
+```cd\AzCopy```
 
-    ```azcopy copy "https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"```
+```cd``` と入力し、**Tab** キーを押してフォルダー名を自動入力してから、Enter キーを押します。
 
+```azcopy copy "https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"```
 
-    <font color=Darkgreen>
+<font color=Darkgreen>
 
-    > The above command will copy the **Windows Server 2022** image in the Downloads folder. The download process can take upto 7-10 minutes to download the image.
+> 上記のコマンドは、**Windows Server 2022** イメージをダウンロード フォルダーにコピーします。ダウンロード プロセスでは、イメージのダウンロードに最大 7 ～ 10 分かかる場合があります。
 
-    </font>
+</font>
 
-    ![](./media/image62.png)
-    ![](./media/image63.png)
+![](./media/image62.png)
 
-3.  Once the download is completed, open the Downloads folder in File explorer and then select the file **WinSrv20224Arc.zip**, click on **Extract all** button.
+![](./media/image63.png)
 
-    ![](./media/image2.png)
+3. ダウンロードが完了したら、ファイル エクスプローラーでダウンロード フォルダーを開き、**WinSrv20224Arc.zip** ファイルを選択して、[すべて展開] ボタンをクリックします。
 
-4.  Provide the folder as ```E:\Virtual Machines``` and then click
-    on the **Extract** button.
+![](./media/image2.png)
 
-    ![](./media/image3.png)
+4. フォルダーを ```E:\Virtual Machines``` として指定し、**抽出** ボタンをクリックします。
 
-5.  Open the **Hyper-V Manager** from the Task bar and then right click
-    on the Server name and then choose **Hyper-V Setting**
+![](./media/image3.png)
 
-    ![](./media/image4.png)
+5. タスク バーから **Hyper-V マネージャー** を開き、サーバー名を右クリックして **Hyper-V 設定** を選択します。
 
-6.  On the **Settings** window, choose **Enhanced Session Mode Policy**
-    option and then enable the check box for **Allow enhanced session
-    mode** and then click on the **OK** button.
+![](./media/image4.png)
 
-    ![](./media/image5.png)
+6. **設定** ウィンドウで、**拡張セッション モード ポリシー**
+オプションを選択し、**拡張セッション モードを許可する** のチェック ボックスをオンにして、**OK** ボタンをクリックします。
 
-7.  In the **Hyper-V Manager** click on the **Import Virtual Machine**
-    action.
+![](./media/image5.png)
 
-    ![](./media/image6.png)
+7. **Hyper-V マネージャー** で、**仮想マシンのインポート**
+アクションをクリックします。
 
-8.  On the **Locate Folder** page, click on the **Browse** button,
-    browse to ```E:\Virtual Machines\WinSrv20224Arc``` and then
-    click on the **Select Folder** button.
+![](./media/image6.png)
 
-    ![](./media/image7.png)
+8. [**フォルダーの検索**] ページで [**参照**] ボタンをクリックし、``E:\Virtual Machines\WinSrv20224Arc``` を参照してから、[**フォルダーの選択**] ボタンをクリックします。
 
-9.  On the **Locate Folder** page, click on the **Next** button.
+![](./media/image7.png)
 
-    ![](./media/image8.png)
+9. [**フォルダーの検索**] ページで [**次へ**] ボタンをクリックします。
 
-10. On the **Select Virtual Machine** page, click on the **Next**
-    button.
+![](./media/image8.png)
 
-11. On the **Choose Import type** page, leave the default option and
-    then click on the **Next** button.
+10. [**仮想マシンの選択**] ページで [次へ**] ボタンをクリックします。
 
-    ![](./media/image9.png)
+11. [**インポート タイプの選択**] ページで、デフォルト オプションのままにして、[**次へ**] ボタンをクリックします。
 
-12. On the **Connect Network** page, from the **Connection** drop-down
-    choose the **Microsoft Hyper-V Network Adapter** and then click on
-    the **Next** button.
+![](./media/image9.png)
 
-    ![](./media/image10.png)
+12. [**ネットワークに接続**] ページで、[**接続**] ドロップダウンから [**Microsoft Hyper-V ネットワーク アダプター**] を選択し、[**次へ**] ボタンをクリックします。
 
-13. On the **Complete Import Wizard** page review the detail and then
-    click on the **Finish** button.
+![](./media/image10.png)
 
-    ![](./media/image11.png)
+13. [**インポート ウィザードの完了**] ページで詳細を確認し、[**完了**] ボタンをクリックします。
 
-14. Right click on the **WinSrv20224Arc** VM and then choose the
-    **Start** option
+![](./media/image11.png)
 
-    ![](./media/image12.png)
+14. **WinSrv20224Arc** VM を右クリックして、**開始** オプションを選択します
 
-15. Again, right click on the **WinSrv20224Arc** VM and then choose the
-    **Connect** option
+![](./media/image12.png)
 
-    ![](./media/image13.png)
+15. 再度、**WinSrv20224Arc** VM を右クリックして、**接続** オプションを選択します
 
-16. Press the **Ctrl+Alt+Delete** button from the Virtual Machine
-    Connection window
+![](./media/image13.png)
 
-    ![](./media/image14.png)
+16. 仮想マシン接続ウィンドウで **Ctrl+Alt+Delete** ボタンを押します
 
-17. Login with the below credentials
+![](./media/image14.png)
 
-    1.  Username – Administrator
+17. 以下の資格情報を使用してログインします
 
-    2.  Password – ```P@55w.rd1234```
+1. ユーザー名 – Administrator
 
-    ![](./media/image15.png)
+2. パスワード – ```P@55w.rd1234```
 
-18. Ensure that you have successfully logged in.
+![](./media/image15.png)
 
-## Task 2 – Add Azure Arc resource via Script
+18. 正常にログインしたことを確認します。
 
-1.  Once logged into the **WinSrv20224Arc** VM , Open the Edge browser and navigate to **Azure Portal** ```https://portal.azure.com/```, and Sign in using the Lab provided credentials.
+## タスク 2 – スクリプトを使用して Azure Arc リソースを追加する
 
-2.  While in the Azure Portal in the search type ```arc``` and then select Azure Arc
+1. **WinSrv20224Arc** VM にログインしたら、Edge ブラウザーを開いて **Azure Portal** ```https://portal.azure.com/``` に移動し、ラボで提供された資格情報を使用してサインインします。
 
-    ![](./media/image16.png)
+2. Azure Portal で、検索に「``arc```」と入力し、Azure Arc を選択します
 
-3.  Under **Manage resources across environments** click on the **Add
-    resources** button.
+![](./media/image16.png)
 
-    ![](./media/image17.png)
+3. **環境間でリソースを管理** の下にある **リソースの追加** ボタンをクリックします。
 
-4.  On the **Add Azure Arc resources** page, click on **Add/Create**
-    button and choose **Add a machine.**
+![](./media/image17.png)
 
-    ![](./media/image18.png)
+4. [**Azure Arc リソースの追加**] ページで、[**追加/作成**] ボタンをクリックし、[**マシンの追加**] を選択します。
 
-5.  On the **Add servers with Azure Arc** page, click on **Generate
-    script** button under the **Add a single server**.
+![](./media/image18.png)
 
-    ![](./media/image19.png)
+5. [**Azure Arc を使用したサーバーの追加**] ページで、[**単一サーバーの追加**] の下にある [**スクリプトの生成**] ボタンをクリックします。
 
-6.  On the **Add a server with Azure Arc** page, provide the below
-    details.
+![](./media/image19.png)
 
-    <font color=darkred>
+6. [**Azure Arc を使用したサーバーの追加**] ページで、以下の詳細を入力します。
 
-    > **Before creating Resource group, choose the Region to avoid error** 
+<font color=darkred>
 
-    </font>
+> **リソース グループを作成する前に、エラーを回避するためにリージョンを選択してください**
 
-    
+</font>
 
-    *  Region -  <font color=Red> **West US**
+* リージョン - <font color=Red> **米国西部**
 
-    </font>
-    
-    *  Resource group – Click on **Create new**  ```RG4ArcVM```
+</font>
 
-    *  Operating System – **Windows**
+* リソース グループ - **新規作成** ```RG4ArcVM``` をクリック
 
-    *  Connect SQL Server – **Uncheck the box**
+* オペレーティング システム - **Windows**
 
-    *  Click on the **Download and run script button**
+* SQL Server に接続 - **ボックスのチェックを外す**
 
-        ![](./media/image20.png)
+* **スクリプトをダウンロードして実行ボタン** をクリック
 
-7.  Click on the **Download** button and also click on the **Copy** button.
+![](./media/image20.png)
 
-    ![](./media/image21.png)
+7. **ダウンロード** ボタンをクリックし、**コピー** ボタンもクリックします。
 
-8.  Right-click on the
-    **Start button** and select **Windows PowerShell (Admin)**
+![](./media/image21.png)
 
-    ![](./media/image22.png)
+8. **スタート ボタン** を右クリックして、**Windows PowerShell (管理者)** を選択します
 
-9.  On the **Windows PowerShell (Admin)** Window paste the copied script
-    from clipboard
+![](./media/image22.png)
 
-    ![](./media/image23.png)
+9. **Windows PowerShell (管理者)** ウィンドウで、クリップボードからコピーしたスクリプトを貼り付けます
 
-10. The Script should be launched as shown in below image
+![](./media/image23.png)
 
-    ![](./media/image24.png)
+10. スクリプトは、以下の画像のように起動します
 
-11. When prompted to login, login with the provided credentials
+![](./media/image24.png)
 
-    ![](./media/image25.png)
+11. ログインを求められたら、提供された資格情報を使用してログインします
 
-12. Once authentication is successful switch back to the PowerShell
-    window
+![](./media/image25.png)
 
-    ![](./media/image26.png)
+12. 認証が成功したら、PowerShell ウィンドウに戻ります
 
-13. The message **Connect Machine to Azure** should be displayed as shown in the image below.
+![](./media/image26.png)
 
-    ![](./media/image27.png)
+13. 以下の画像のように、**マシンを Azure に接続** というメッセージが表示されます。
 
-## Task 3 – Manage the Arc Server
+![](./media/image27.png)
 
-1.  Switch back to Lab VM and open the Azure Portal ```https://portal.azure.com```
+## タスク 3 – Arc サーバーの管理
 
-2.  While in the Azure Portal in the search type ```arc``` and then select **Azure Arc**
+1. ラボ VM に戻り、Azure ポータル ```https://portal.azure.com``` を開きます
 
-    ![](./media/image16.png)
+2. Azure ポータルで、検索に ```arc``` と入力し、**Azure Arc** を選択します
 
-3.  Select **Machines** under Azure Arc resources
+![](./media/image16.png)
 
-    ![](./media/image29.png)
+3. Azure Arc リソースの下にある **マシン** を選択します
 
-4.  You should be able to see the Machine **WinSrv20224Arc** showing as **Connected**
+![](./media/image29.png)
 
-    ![](./media/image30.png)
+4. マシン **WinSrv20224Arc** が **接続済み** として表示されます
 
-5.  Click on the **WinSrv20224Arc** to open the details, the from the
-    **Overview** page, click on **Updates**
+![](./media/image30.png)
 
-    ![](./media/image31.png)
+5. **WinSrv20224Arc** をクリックして詳細を開き、**概要** ページで **更新** をクリックします
 
-6.  From the **Periodic assessment** drop-down choose **Enable** and
-    then click on **Save** button.
+![](./media/image31.png)
 
-    ![](./media/image32.png)
+6. [**定期的な評価**] ドロップダウンから [**有効**] を選択し、[**保存**] ボタンをクリックします。
 
-    ![](./media/image33.png)
+![](./media/image32.png)
 
-7.  Back on the **Overview** page, click on **Monitoring insights**
+![](./media/image33.png)
 
-    ![](./media/image34.png)
+7. [**概要**] ページに戻り、[**モニタリング インサイト**] をクリックします。
 
-8.  On the **Insights** page, click on the **Enable** button.
+![](./media/image34.png)
 
-    ![](./media/image35.png)
+8. [**インサイト**] ページで、[**有効**] ボタンをクリックします。
 
-9.  On the **Monitoring configuration** page, click on **Configure** button.
+![](./media/image35.png)
 
-    ![](./media/image36.png)
+9. [**モニタリング構成**] ページで、[**構成**] ボタンをクリックします。
 
-    >**Note** – The monitoring resource can take around 5-10 minutes to be deployed.
+![](./media/image36.png)
 
+>**注** – モニタリング リソースのデプロイには 5 ～ 10 分ほどかかる場合があります。
 
-    ![](./media/image37.png)
+![](./media/image37.png)
 
-10. Back on the **Overview** page, click on Security
+10. **概要** ページに戻り、[セキュリティ] をクリックします
 
-    ![](./media/image38.png)
+![](./media/image38.png)
 
-    >**Note**– We had enabled **Microsoft Defender for Cloud** earlier, we should be able to see the recommendations in about 30 minutes for the Server as it was recently onboarded.
+>**注**– **Microsoft Defender for Cloud** は既に有効になっています。サーバーは最近オンボードされたばかりなので、約 30 分で推奨事項を確認できるはずです。
 
-11. Once the recommendations for the on-boarded
-    server are available they should appear as shown in the below image.
+11. オンボードされたサーバーの推奨事項が利用可能になると、下の画像のように表示されます。
 
-    ![](./media/image39.png)
+![](./media/image39.png)
 
-12. Back on the **Overview** page, click on **Updates**
+12. **概要** ページに戻り、[更新] をクリックします
 
-    ![](./media/image40.png)
+![](./media/image40.png)
 
-13. If required click on **Go to Updates using Azure Update Manager** button.
+13. 必要に応じて、[Azure Update Manager を使用して更新に移動] ボタンをクリックします。
 
-14. Click on **Check for updates** button.
+14. [更新プログラムの確認] ボタンをクリックします。
 
-    ![](./media/image42.png)
+![](./media/image42.png)
 
-15. Click on **OK** button on the **Trigger assess now** message.
+15. 「今すぐ評価を開始」というメッセージで「**OK**」ボタンをクリックします。
 
-    ![](./media/image43.png)
+![](./media/image43.png)
 
-    ![](./media/image44.png)
+![](./media/image44.png)
 
-16. Click on the **Refresh** button, the **Total updates** section will
-    show **Assessment is in progress**.
+16. 「**更新**」ボタンをクリックすると、「**合計更新**」セクションに「**評価が進行中です**」と表示されます。
 
-    ![](./media/image45.png)
+![](./media/image45.png)
 
-17. Once the Assessment is completed, click on the **Refresh** button again.
+17. 評価が完了したら、「**更新**」ボタンをもう一度クリックします。
 
-    ![](./media/image46.png)
+![](./media/image46.png)
 
-18. We should be able to see the details of the required updates on the
-    Server.
+18. サーバー上で必要な更新の詳細を確認できるはずです。
 
-    ![](./media/image47.png)
+![](./media/image47.png)
 
-19. Click on **One-time update** to start the updates on the Server
+19. **ワンタイム アップデート** をクリックして、サーバーでアップデートを開始します
 
-    ![](./media/image48.png)
+![](./media/image48.png)
 
-20. On the Install one-time updates page, Machines tab select the
-    **WinSrv20224Arc** VM and then click on the **Next** button.
+20. ワンタイム アップデートのインストール ページの [マシン] タブで、**WinSrv20224Arc** VM を選択し、[次へ] ボタンをクリックします。
 
-    ![](./media/image49.png)
+![](./media/image49.png)
 
-21. Review the details of the Update and then click on the **Next** button.
+21. アップデートの詳細を確認し、[次へ] ボタンをクリックします。
 
-    ![](./media/image50.png)
+![](./media/image50.png)
 
-22. On the Properties tab, click on the **Next** button
+22. [プロパティ] タブで、[次へ] ボタンをクリックします
 
-    ![](./media/image51.png)
+![](./media/image51.png)
 
-23. On the Review + Install tab, review the details and then click on
-    **Install** button.
+23. [確認とインストール] タブで詳細を確認し、[インストール] ボタンをクリックします。
 
-    ![](./media/image52.png)
+![](./media/image52.png)
 
-    ![](./media/image53.png)
+![](./media/image53.png)
 
-24. Click on the Notification to see the update details
+24. 通知をクリックして更新の詳細を確認します
 
-    ![](./media/image54.png)
+![](./media/image54.png)
 
-    ![](./media/image55.png)
+![](./media/image55.png)
 
-25. Back on the **Overview** page, click on **Monitoring insights**
+25. **概要** ページに戻り、**モニタリング インサイト** をクリックします
 
-    ![](./media/image56.png)
+![](./media/image56.png)
 
-26. Click on the **Analyze data** button
+26. **データの分析** ボタンをクリックします
 
-    ![](./media/image57.png)
+![](./media/image57.png)
 
-27. We should now be able to see the **Performance data** of the On-boarded
-    server.
+27. これで、オンボード サーバーの **パフォーマンス データ** を確認できるようになります。
 
-    ![](./media/image58.png)
+![](./media/image58.png)
 
-    ![](./media/image59.png)
+![](./media/image59.png)
 
-28. Hence, we have successfully on-boarded the On-premise Windows server
-    and we can manage the Server from the Azure Portal using **Azure Arc**.
+28. これで、オンプレミスの Windows サーバーのオンボードに成功しました。
+Azure Arc を使用して Azure Portal からサーバーを管理できます。
