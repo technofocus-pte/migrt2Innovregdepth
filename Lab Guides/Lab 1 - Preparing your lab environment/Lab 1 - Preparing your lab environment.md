@@ -227,159 +227,143 @@
 
 ![コンピューターのスクリーンショット 説明は自動的に生成されます](./media/image7.png)
 
-## Task 2: Enable additional data collection setting for Defender for Cloud
+## タスク 2: Defender for Cloud の追加データ収集設定を有効にする
 
-1.  On **Microsoft Defender for Cloud** page, navigate to **Management**
-    section and click on **Environment settings.**
+1. **Microsoft Defender for Cloud** ページで、**管理** セクションに移動し、**環境設定** をクリックします。
 
-    > ![A screenshot of a computer Description automatically generated](./media/image11.png)
+> ![コンピューターのスクリーンショット。説明は自動的に生成されます](./media/image11.png)
 
-2.  Scroll down and then expand **Tenant Root Group** and then click on the **Azure Pass – Sponsorship** Subscription listed.
+2. 下にスクロールして **テナント ルート グループ** を展開し、リストされている **Azure Pass – スポンサーシップ** サブスクリプションをクリックします。
 
-    ![A screenshot of a computer Description automatically generated](./media/image12.png)
+![コンピューターのスクリーンショット。説明は自動的に生成されます](./media/image12.png)
 
-3.  Notice the Defender coverage is **11/12 plans** for the Subscription.
+3. サブスクリプションの Defender カバレッジが **11/12 プラン** であることを確認します。
 
-4.  On **Settings | Defender plans** page, click on **Enable all plans.**
+4. **設定 | Defender プラン** ページで、[すべてのプランを有効にする] をクリックします。
 
-    ![A screenshot of a computer Description automatically generated](./media/image13.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image13.png)
 
-5.  Select **Microsoft Defender for APIs Plan 1** and then click on
-    **Save** button.
+5. [Microsoft Defender for APIs プラン 1] を選択し、[保存] ボタンをクリックします。
 
-    ![A screenshot of a computer screen Description automatically generated](./media/image14.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image14.png)
 
-6.  Click on the **Save** button.
+6. [保存] ボタンをクリックします。
 
-    ![A screenshot of a computer Description automatically generated](./media/image15.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image15.png)
 
-7.  You should get the notifications as shown in below image.
+7. 以下の画像に示すように、通知が表示されます。
 
-    ![A screenshot of a computer Description automatically generated](./media/image16.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image16.png)
 
-# Exercise 3: Create a Business case and run an assessment
+# 演習 3: ビジネス ケースを作成し、評価を実行する
 
-## Task 1: Create and review a business case
+## タスク 1: ビジネス ケースを作成して確認する
 
-1.  In Azure portal, go back to the **Azure Migrate Servers, databases
-    and web apps** page. Select **Refresh** to verify that your servers
-    have been discovered.
+1. Azure ポータルで、[Azure Migrate サーバー、データベース、Web アプリ] ページに戻ります。 **更新** を選択して、サーバーが検出されたことを確認します。
 
-    ![A screenshot of a computer Description automatically
-    generated](./media/image17.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image17.png)
 
-2.  In the **Azure Migrate: Discovery and assessment** section,
-    select **Build business case**.
+2. **Azure Migrate: 検出と評価** セクションで、**ビジネス ケースの作成** を選択します。
 
-    ![A screenshot of a computer Description automatically
-    generated](./media/image18.png)
+![コンピューターのスクリーンショット 説明が自動的に生成されました](./media/image18.png)
 
-3.  In the **Build business case** blade, use the following values to
-    create the business case.
+3. **ビジネス ケースの作成** ブレードで、次の値を使用してビジネス ケースを作成します。
 
-    - Business case name - ```bc-43240741```
+- ビジネス ケース名 - ```bc-43240741```
 
-    - Target location - **eastus**
+- ターゲットの場所 - **eastus**
 
-    - Migration strategy - **Azure recommended approach to minimize cost**
+- 移行戦略 - **コストを最小限に抑えるための Azure 推奨アプローチ**
 
-    - Savings options - **Reserved Instance + Azure Savings Plan**
+- 節約オプション - **予約インスタンス + Azure 節約プラン**
 
-    - Discount (%) on Pay as you go - **0**
+- 従量課金制の割引 (%) - **0**
 
-    - Select **Build business case**.
+- **ビジネス ケースの作成** を選択します。
 
-    ![Business Case Refresh](./media/image19.png)
+![ビジネス ケースの更新](./media/image19.png)
 
-    > The business case can take up to 5 minutes to generate. If it has been more than 5 minutes, select **Refresh**.
+> ビジネス ケースの生成には最大 5 分かかる場合があります。5 分以上経過している場合は、[**更新**] を選択します。
 
-4.  On the **bc-43240741** page, review the information indicating Azure readiness and monthly cost estimate for both compute and storage.
+4. [**bc-43240741**] ページで、Azure の準備状況とコンピューティングとストレージの両方の月間コスト見積もりを示す情報を確認します。
 
-## Task 2: Configure, run, and view an assessment
+## タスク 2: 評価を構成、実行、表示する
 
-1.  In a new tab navigate **Resource groups** page ```https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView``` select the **AZMigrateRG** resource group and then note down the location of the **Key Vault**, as shown below it is **West US 2**.
-   ![](./media/image84.png)
+1. 新しいタブで [**リソース グループ**] ページに移動し、``https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups.ReactView``` **AZMigrateRG** リソース グループを選択してから、**Key Vault** の場所を書き留めます。以下に示すように、**West US 2** です。
+![](./media/image84.png)
 
-    <font color=Orangered>
+<font color=Oranged>
 
-    > **Note** - This location would be required to be specified for other resources to be created later in the Lab, also to ensure the **Azure resources are created in the same region** to ensure the Migration is done smoothly.
+> **注** - この場所は、ラボで後で作成される他のリソース用に指定する必要があります。また、移行がスムーズに行われるように、**Azure リソースが同じリージョンに作成されるようにするためにも指定する必要があります。
 
-    </font>
+</font>
 
-2.  Switch back to the **Azure Migrate** page and under **Azure Migrate: Discovery and assessment** section, select **Assess** and then, in the drop-down menu, select **Azure VM**.
+2. **Azure Migrate** ページに戻り、**Azure Migrate: 検出と評価** セクションで **評価** を選択し、ドロップダウン メニューで **Azure VM** を選択します。
 
-    ![](./media/image20.png)
+![](./media/image20.png)
 
-3.  On the **Create assessment** page, leave the dropdowns menus on
-    their defaults.
+3. **評価の作成** ページで、ドロップダウン メニューをデフォルトのままにします。
 
-4.  Select the **Edit** link next to **Assessment settings**,
+4. **評価設定** の横にある **編集** リンクを選択します。
 
-    ![](./media/image21.png)
+![](./media/image21.png)
 
-5.  On the Assessment Settings page, use the following settings to
-    create the assessment.
-    <font color=Green>
-    > **Accept the default settings for anything not specified in the table.** </font>
-
-    - Target location - **West US 2**
-
-    - Storage type - **Premium managed disks**
-
-    - Savings options - **None**
-
-    - Sizing criteria - **As on premises**
-
-    - VM series - **Dsv3_series**
-
-    - Comfort factor - **1**
-
-    - Offer - **Pay-As-You-Go**
-
-    - Currency - **US Dollar ($)**
-
-    - Discount - **0**
-
-    - VM uptime - **31 Day(s) per month and 24 Hour(s) per day**
-
-    - Already have a Windows Server license? - **No**
-
-    - Security - **No**
-
-6.  Select **Save** to return to Create Assessment, then select **Next:
-    Select servers to assess \>**
-
-7.  Use the following settings to create the server group and select the
-    servers to be assessed.
-
-    > Accept the default settings for anything not specified in the table.
-
-    Assessment name - ```as-43240741```
-
-    Select or create a group - **Create new**
-
-    Group name - ```RHEL-Servers```
-
-    List of machines to be added to the group - **RHEL-DB-01** and **RHEL-WEB-01**
-
-8.  Select **Create assessment**. You will be redirected to the **Azure Migrate | Servers, databases and web apps** page.
-
-9.  **Refresh** the page.
-
-10. In the **Azure Migrate: Discovery and Assessment** section, verify that the **Assessments Total** equals **1**, then select **1**.
-
-    ![](./media/image22.png)
-
-11. On the **Azure Migrate: Discovery and Assessment |
-    Assessments** page, select the newly created
-    assessment **as-43240741**.
-
-    ![](./media/image23.png)
-
-12. On the **as-43240741** page, review the information indicating Azure
-    readiness and monthly cost estimate for both compute and storage.
+5. 評価設定ページで、次の設定を使用して評価を作成します。
 
 <font color=Green>
+> **表に指定されていないものについては、デフォルト設定を受け入れます。** </font>
 
-> **In real-world scenarios, you should consider installing the Dependency Agent to provide more insights into server dependencies during the
-assessment stage.** </font>
+- ターゲットの場所 - **米国西部 2**
+
+- ストレージの種類 - **Premium マネージド ディスク**
+
+- 節約オプション - **なし**
+
+- サイズ設定基準 - **オンプレミスと同じ**
+
+- VM シリーズ - **Dsv3_series**
+
+- 快適性係数 - **1**
+
+- オファー - **従量課金制**
+
+- 通貨 - **米ドル ($)**
+
+- 割引 - **0**
+
+- VM の稼働時間 - **1 か月あたり 31 日、1 日あたり 24 時間**
+
+- Windows Server ライセンスを既にお持ちですか? - **いいえ**
+
+- セキュリティ - **いいえ**
+
+6. **保存** を選択して評価の作成に戻り、**次へ:
+評価するサーバーの選択 \>** を選択します
+
+7. 次の設定を使用してサーバー グループを作成し、評価するサーバーを選択します。
+
+> 表に指定されていないものについては、既定の設定を受け入れます。
+
+評価名 - ```as-43240741```
+
+グループを選択または作成 - **新規作成**
+
+グループ名 - ```RHEL-Servers```
+
+グループに追加するマシンのリスト - **RHEL-DB-01** および **RHEL-WEB-01**
+
+8. **評価の作成** を選択します。**Azure Migrate | サーバー、データベース、および Web アプリ** ページにリダイレクトされます。
+
+9. ページを**更新** します。
+
+10. **Azure Migrate: 検出と評価** セクションで、**評価の合計** が **1** に等しいことを確認してから、**1** を選択します。
+
+![](./media/image22.png)
+
+11. **Azure Migrate: 検出と評価 | 評価** ページで、新しく作成された評価 **as-43240741** を選択します。
+
+![](./media/image23.png)
+
+12. **as-43240741** ページで、コンピューティングとストレージの両方の Azure 対応状況と月間コスト見積もりを示す情報を確認します。
+
+<font color=Green>
