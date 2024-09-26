@@ -11,7 +11,7 @@
 
 2.  エッジ・ブラウザを開き、```http://www.microsoftazurepass.com``` に移動する。
 
-3.  **Start**ボタンをクリックして開始します。
+3.  **Start** ボタンをクリックして開始します。
 
     ![](./media/image2.png)
 
