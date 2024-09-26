@@ -181,7 +181,7 @@ generated](./media/image21.png)
     ![](./media/image23.png)
 
 5.  **2. Download Azure Migrate applianceの下**で、**.zip file.
-    500MBを**選択し、Download button\* をチェックします。
+    500MBを**選択し、**Download button** をチェックします。
 
     <font color=Green>
 
@@ -294,7 +294,7 @@ generated](./media/image28.png)
 
 5.  ブラウザを更新し、**Microsoft Defender for
     Cloud**ページの**General**セクションで、**Getting
-    startedを**クリックします。**Upgrade** タブで\[**Upgrade\]**ボタンをクリックします。
+    startedを**クリックします。**Upgrade** タブで\[Upgrade\]ボタンをクリックします。
 
     <font color=Orangered>
 
