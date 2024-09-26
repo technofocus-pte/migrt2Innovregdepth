@@ -188,7 +188,7 @@ generated](./media/image21.png)
     > **これにより、アプライアンスをWindows
     ServerマシンにインストールするPowerShellスクリプトがダウンロードされる。**
 
-    > このラボでは、スクリプトは**すでに**E:ドライブに**ダウンロードさ**れ、**実行されて**います。**このステップを過ぎても**続けます。
+    > このラボでは、スクリプトはすでにE:ドライブにダウンロー3ドされ、実行済みです。このステップ飛ばし、作業を継続してください。。
 
     </font>
 
@@ -211,8 +211,7 @@ generated](./media/image21.png)
 11. **Login** を選択します。**Continue with Azure
     Login**するよう求めるモーダルが表示されます。
 
-12. **Copy code &
-    Loginを**選択し、デバイスコードを貼り付け、ユーザー名を選択して購読にサインインします。
+12. **Copy code & Login** を選択し、デバイスコードを貼り付け、ユーザー名を選択しサインインします。
 
 13. **「Are you trying to sign in to Microsoft Azure
     PowerShell?」という**プロンプトが表示されたら、「**Continue**」を選択し、新しく開いたブラウザ・タブを閉じます。
@@ -321,7 +320,7 @@ generated](./media/image31.png)
     ![A screenshot of a computer Description automatically
 generated](./media/image32.png)
 
-3.  ディフェンダーの補償は**11/12plansとなって**います。
+3.	**Defender Coverage** は11/12plansとなっています。
 
 4.  **Settings | Defender plans** ページで、\[**Enable all
     plans\]**をクリック**します。**
