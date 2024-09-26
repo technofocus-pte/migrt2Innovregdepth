@@ -124,8 +124,12 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
     - リージョン・**West US 2**
 
-    > <font color=red> **注意** -
-**AZMigrateRG**リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと**同じ**であることを確認してください。</font>
+     
+    <font color=red>
+
+    > 注意 - **AZMigrateRG** リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと同じであることを確認してください。 
+    
+    </font>
 
 **ストレージアカウントの作成**
 
@@ -143,8 +147,11 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
     - 地域 - **米国西部 2**
 
-    > <font color=red> **注意** -
-**AZMigrateRG**リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと**同じ** であることを確認してください。</font>
+    <font color=red>
+
+    > 注意 - **AZMigrateRG** リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと同じであることを確認してください。 
+    
+    </font>
 
     - パフォーマンス - **標準**
 
@@ -189,8 +196,11 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
     - 地域 - **West US 2**
 
-    > <font color=red> **注意** -
-**AZMigrateRG**リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと**同じ**であることを確認してください。</font>
+    <font color=red>
+
+    > 注意 - **AZMigrateRG** リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと同じであることを確認してください。 
+    
+    </font>
 
     - 名前 - ```ipXXXXXX``` \[XXXXXX はランダムな数字で置き換えてください。］
 

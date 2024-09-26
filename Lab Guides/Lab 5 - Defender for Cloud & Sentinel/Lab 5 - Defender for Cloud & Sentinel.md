@@ -218,6 +218,13 @@ Sentinelワークスペースを作成する方法を見ていきます。
 
     ![](./media/image37.png)
 
+      <font color=darkgreen>
+      
+    > **注** -
+    コネクタがインストールされない場合がありますが、ラボを進めるには問題ありません。
+
+    </font>
+
 10. 以下の画像のような通知が届くはずです。
 
     ![A close-up of a sign ](./media/image38.png)
@@ -232,13 +239,6 @@ Sentinelワークスペースを作成する方法を見ていきます。
 
     ![](./media/image40.png)
 
-
-      <font color=darkgreen>
-      
-    > **注** -
-    コネクタがインストールされない場合がありますが、ラボを進めるには問題ありません。
-
-    </font>
 
 13. **Content managementのContent hub** **を**クリックします。
 
