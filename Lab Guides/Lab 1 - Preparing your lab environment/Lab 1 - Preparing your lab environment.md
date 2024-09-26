@@ -55,7 +55,7 @@ generated](./media/image4.png)
 
     ![](./media/image7.png)
 
-10. 認証が完了したら、「**Done」**ボタンをクリックします。
+10. 認証が完了したら、「**Done」** ボタンをクリックします。
 
     ![A screenshot of a computer screen Description automatically
 generated](./media/image8.png)
@@ -86,8 +86,8 @@ generated](./media/image8.png)
     **Contributor** **を**選択し、**Nextへ** をクリックします。
         ![](./media/image14.png)
 
-17. **\[Members\]**タブで、「**＋Select members**」をクリックし、「**MOD
-    Administrator**」を選択して**「Select」**ボタンをクリックします。
+17. **\[Members\]** タブで、「**＋Select members**」をクリックし、「**MOD
+    Administrator**」を選択して **「Select」** ボタンをクリックします。
         ![A screenshot of a computer Description automatically
     generated](./media/image15.png)
 
@@ -119,7 +119,7 @@ Integration Servicesがインストールされ、実行されている必要が
     ![A screenshot of a computer Description automatically
 generated](./media/image20.png)
 
-2.  **RHEL-WEB-**01は、**RHEL-DB-01で**ホストされているデータベースを呼び出すように設定されたDrupalウェブサイトを提供しています。ウェブサイトのロードに成功すると、両方の
+2.  **RHEL-WEB-01** は、**RHEL-DB-01で** ホストされているデータベースを呼び出すように設定されたDrupalウェブサイトを提供しています。ウェブサイトのロードに成功すると、両方の
     VM が正しく機能していることが確認できる。
 
 **タスク 2: Azure Migrate プロジェクトの作成**
@@ -165,8 +165,8 @@ generated](./media/image21.png)
 
     ![](./media/image22.png)
 
-2.  **Discover**ブレードの［**Are your Machines
-    virtualized（マシンは仮想化されていますか）］**メニューで、［**Yes,
+2.  **Discover**ブレードの **［Are your Machines
+    virtualized（マシンは仮想化されていますか）］** メニューで、**［Yes,
     with Hyper-V］を**選択します。
 
 3.  **1.General product key」の**「**Name your
@@ -294,7 +294,7 @@ generated](./media/image28.png)
 
 5.  ブラウザを更新し、**Microsoft Defender for
     Cloud**ページの**General**セクションで、**Getting
-    startedを**クリックします。**Upgrade**タブで\[**Upgrade\]**ボタンをクリックします。
+    startedを**クリックします。**Upgrade** タブで\[**Upgrade\]**ボタンをクリックします。
 
     <font color=Orangered>
 
@@ -330,7 +330,7 @@ generated](./media/image32.png)
 generated](./media/image33.png)
 
 5.  **「Microsoft Defender for APIs Plan
-    1」**を選択し、「**Save」**ボタンをクリックします。
+    1」** を選択し、**「Save」** ボタンをクリックします。
 
     ![A screenshot of a computer screen Description automatically
 generated](./media/image34.png)
@@ -371,7 +371,7 @@ generated](./media/image38.png)
 
     - 移行戦略 - **コストを最小限に抑えるためのAzure推奨アプローチ**
 
-    - Savings options - **Reserved Instances + Azure Savings Plan　**
+    - Savings options - **Reserved Instances + Azure Savings Plan**
 
     - Pay as you goの割引率 (%) – 0　
 
@@ -426,9 +426,9 @@ generated](./media/image38.png)
 
     - サイズ基準 - **As on premises**
 
-    - VMシリーズ - **Dsv3_series　**
+    - VMシリーズ - **Dsv3_series**
 
-    - Comfort factor – **1　**
+    - Comfort factor – **1**
 
     - オファー - **Pay-As-You-Go**
 
@@ -438,12 +438,12 @@ generated](./media/image38.png)
 
     - VM稼働時間 - **31日/月、24時間/日**
 
-    - Already have a Windows Server license? **- いいえ　**
+    - Already have a Windows Server license? **- いいえ**
 
     - セキュリティ - **なし（No）**
 
 6.  **Save** を選択して \[Create Assessment\] に戻り、**\[Next: Select
-    servers to assess \>を選択します。　　**
+    servers to assess \>を選択します。**
 
 7.  以下の設定を使用して、サーバーグループを作成し、評価対象のサーバーを選択します。
 
