@@ -4,7 +4,7 @@
 
 ラボでは、**PostgreSQLデータベースを**ホストする仮想マシンをデプロイし、必要な**PostgreSQLインフラストラクチャを**作成し、**Azure
 Database for Postgres Flexible
-Server（移行**）を使用してPostgreSQLデータベースを移行します**。     
+Server（移行**）を使用してPostgreSQLデータベースを移行します 。     
 
 ![](./media/image1.png)
 
@@ -404,8 +404,7 @@ Databaseを作成します。
     - リソースグループ - 新規作成をクリックし、名前を指定 -
       ```RG4AzPGDb```+
 
-    - サーバー名 - ```ad4pfssrvXXXXX``` substitute XXXXX with random
-      number
+    - サーバー名 - ```ad4pfssrvXXXXX``` [XXXXXX はランダムな数字で置き換えてください。］
 
     - 地域 - **West US**
 
@@ -434,7 +433,7 @@ Databaseを作成します。
     services within Azure to this
     server**\]のチェックボックスを有効にし、**\[+ Add Client IP
     address**\]をクリックして、**PostgresSrvのパブリックIP**アドレスを追加し、**\[Review +
-    create\]**ボタンをクリックします。
+    create\]** ボタンをクリックします。
 
     ![AA screenshot of a computer Description automatically
 ](./media/image37.png)
@@ -473,7 +472,7 @@ PostgreSQLフレキシブルサーバーに移行する（移行）**
     ![AA screenshot of a computer Description automatically
 ](./media/image57.png)
 
-3.  **「Settings」**で**「データベース」**を選択すると、3つのデータベースが表示されます。
+3.  **「Settings」** で **「データベース」** を選択すると、3つのデータベースが表示されます。
 
     ![AA screenshot of a computer Description automatically
 ](./media/image58.png)
@@ -483,9 +482,9 @@ PostgreSQLフレキシブルサーバーに移行する（移行）**
     ![AA screenshot of a computer Description automatically
 ](./media/image59.png)
 
-5.  **「Setup**」タブの**「Migrate PostgreSQL to Azure Database for
+5.  **「Setup**」タブの **「Migrate PostgreSQL to Azure Database for
     PostgreSQL Flexible
-    Server**」ページで、以下の情報を入力し、「**Next: Select Runtime
+    Server** 」ページで、以下の情報を入力し、「**Next: Select Runtime
     Server\>**」をクリックします。
 
     - 移行名 - ```PostgreSQLToAzurePG```
@@ -506,7 +505,7 @@ PostgreSQLフレキシブルサーバーに移行する（移行）**
 ](./media/image61.png)
 
 7.  **Connect to sourceタブで**、以下の詳細を入力し、**Next : Select
-    migration target\>を**クリックする**。**
+    migration target\>を**クリックする **。**
 
     - サーバ名 - **Public IP address / DNS name of PostgresSrv VM**
 
@@ -533,18 +532,18 @@ PostgreSQLフレキシブルサーバーに移行する（移行）**
 
     > **テスト接続が成功するまで待つ。**
 
-    - **Next : Select database(s) for migration**をクリックします**。**
+    - **Next : Select database(s) for migration**をクリックします **。**
 
     ![AA screenshot of a computer Description automatically
 ](./media/image63.png)
 
 9.  [Select database(s) for migration」タブで\[Database -
-    **dvdrental**\]を選択し、\[Next: Summary\>\]**をクリックします。
+    **dvdrental**\]を選択し、\ **[Next: Summary\>\]** をクリックします。
 
     ![](./media/image64.png)
 
-10. 「Summary\]**タンで、表示されている情報を確認し、\[Start
-    Validation and Migration\]**ボタンをクリックします。
+10. **「Summary\]** タンで、表示されている情報を確認し、\ **[Start
+    Validation and Migration\]** ボタンをクリックします。
 
     ![AA screenshot of a computer Description automatically
 ](./media/image65.png)
@@ -607,7 +606,7 @@ PostgreSQLフレキシブルサーバーに移行する（移行）**
     ![AA screenshot of a computer Description automatically
 ](./media/image76.png)
 
-21. 「設定\]で**\[Databases\]**を選択し、**dvdrentalを**選択して**\[Connect\]**ボタンをクリックします。
+21. 「設定\]で **\[Databases\]** を選択し、**dvdrentalを**選択して **\[Connect\]** ボタンをクリックします。
 
     ![AA screenshot of a computer Description automatically
 ](./media/image77.png)

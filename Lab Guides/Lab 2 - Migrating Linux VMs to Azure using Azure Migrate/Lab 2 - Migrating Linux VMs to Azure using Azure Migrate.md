@@ -12,7 +12,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
 1.  **サーバー、データベース、およびWeb**アプリケーションブレードで、ページを**Migration
     tools**セクションに移動し、**Migration and
-    modernizationの下で**、**\[Discover\]**を選択します。
+    modernizationの下で**、**\[Discover\]** を選択します。
 
     ![A screenshot of a computer ](./media/image1.png)
 
@@ -42,7 +42,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
     > <font color=blue>Hyper-Vサーバーにレプリケーション・プロバイダーをインストールするインストーラーがダウンロードされます。</font>
 
 7.  **Discover** ブレードの **1. Prepare Hyper-V host
-    serversの下**で、\[**Download\]**ボタンを選択します。
+    servers の下**で、\[**Download\]** ボタンを選択します。
 
      ![A screenshot of a computer Description automatically
 ](./media/image4.png)
@@ -57,21 +57,21 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
     サーバー）ウィンドウで、**Microsoft Update**
     タブで、**On（推奨**）を選択し、**Next を**選択します。
 
-10. **「Installation」** タブで、デフォルトのインストール場所を選択し、\[**Install\]**を選択します。
+10. **「Installation」** タブで、デフォルトのインストール場所を選択し、\[**Install\]** を選択します。
 
 11. インストールが完了したら、**Registerを**選択します。
 
 
     > <font color=green> サーバーがすでに登録されているというメッセージが表示された場合は、**Reregisterを**選択します。</font>
 
-12. Microsoft Azure Site Recovery ウィザードの**［Vault
+12. Microsoft Azure Site Recovery ウィザードの **［Vault
     Settings］**タブで、**［Key
-    file**］ボックスの右側にある［**Browse**］を選択します。
+    file**］ ボックスの右側にある［**Browse**］を選択します。
 
      ![A screenshot of a computer Description automatically
 ](./media/image5.png)
 
-13. ダウンロードフォルダに移動し、**az-migrate-project**ファイルを選択し、**\[Open\]**を選択します。
+13. ダウンロードフォルダに移動し、**az-migrate-project**ファイルを選択し、**\[Open\]** を選択します。
 
      ![A screenshot of a computer Description automatically
 ](./media/image6.png)
@@ -81,8 +81,8 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
 14. **「Next」を**選択する。
 
-15. Proxy
-    Settings」**タブで、デフォルト設定を受け入れ、**Next**を選択します。
+15. **[Proxy
+    Settings」** タブで、デフォルト設定を受け入れ、**Next** を選択します。
 
 
     > <font color=blue> 登録には5分ほどかかります。</font>
@@ -91,7 +91,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
 17. ブラウザに戻り、ディスカバー・ブレードの「**2.Finalize
     registration（登録を確定する**）\]で\[**Finalize
-    registration（登録を確定する）\]**を選択します。
+    registration（登録を確定する）\]** を選択します。
 
      ![A screenshot of a computer Description automatically](./media/image7.png)
 
@@ -120,8 +120,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
     - リソースグループ- **AZMigrateRG**
 
-    - 仮想ネットワーク名 - ```migration-vnet-XXXXXX``` \[substitute
-      XXXXXX with random number\]。
+    - 仮想ネットワーク名 - ```migration-vnet-XXXXXX``` \[XXXXXX はランダムな数字で置き換えてください。］。
 
     - リージョン・**West US 2**
 
@@ -145,14 +144,14 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
     - 地域 - **米国西部 2**
 
     > <font color=red> **注意** -
-**AZMigrateRG**リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと**同じ**であることを確認してください。</font>
+**AZMigrateRG**リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと**同じ** であることを確認してください。</font>
 
     - パフォーマンス - **標準**
 
     - 冗長性 - **Locally-redundant storage (LRS)**
 
 4.  **「Create a storage
-    account** **」**ページの**「Networking」**タブで、以下の設定を行い、その他の設定はすべてデフォルト値のままにする：　
+    account」** ページの **「Networking」** タブで、以下の設定を行い、その他の設定はすべてデフォルト値のままにする：　
 
     - ネットワークアクセス - **Enable public access from selected
       virtual networks and IP addresses**
@@ -164,8 +163,8 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
      ![A screenshot of a computer Description automatically
 ](./media/image9.png)
 
-5.  **「Data protection** **\]**タブで、\[**Enable soft delete for
-    blobs\]**のチェックを外す。その他の設定はすべてデフォルト値のままにします。
+5.  **「Data protection** **\]** タブで、\[**Enable soft delete for
+    blobs\]** のチェックを外す。その他の設定はすべてデフォルト値のままにします。
 
 6.  **Reviewを**選択し、**Createを**選択する。
 
@@ -193,7 +192,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
     > <font color=red> **注意** -
 **AZMigrateRG**リソースグループのLocation/Regionが、ラボ1で説明したLocation/Regionと**同じ**であることを確認してください。</font>
 
-    - 名前 - ```ipXXXXXX``` \[substitute XXXXXX with random number］
+    - 名前 - ```ipXXXXXX``` \[XXXXXX はランダムな数字で置き換えてください。］
 
     - IPバージョン - **IPv4**
 
@@ -203,8 +202,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
 
     - アイドルタイムアウト（分） - **4**
 
-    - DNS名ラベル - ```rhel-web-XXXXXX``` \[substitute XXXXXX with random
-    number］
+    - DNS名ラベル - ```rhel-web-XXXXXX``` \[XXXXXX はランダムな数字で置き換えてください。］
 
 4.  **Review + createを**選択し、次に**createを**選択する。
 
@@ -234,10 +232,10 @@ generated](./media/image12.png)
     to?**」で「**Azure VM**」を選択します。
 
 6.  ドロップダウンの「**Are your machines virtualized?）**」で「**Yes,
-    with Hyper-V**」を選択し、「**Continue」**ボタンをクリックします。
+    with Hyper-V**」を選択し、「**Continue」** ボタンをクリックします。
 
-7.  Replicate］ページの**［Virtual
-    machines］**タブで、以下の設定を使用してレプリケーション条件を完成させます。
+7.  Replicate］ページの **［Virtual
+    machines］** タブで、以下の設定を使用してレプリケーション条件を完成させます。
 
     - Azure Migrate アセスメントから移行設定をインポート - **Yes, apply
       migration settings from an Azure Migrate assessment**
@@ -274,21 +272,21 @@ generated](./media/image12.png)
 generated](./media/image13.png)
 
 12. Migration and
-    modernizationページの**\[Replications\]**セクションで、レプリケートしているマシンのリストの**\[Status\]**列を調べます。
+    modernizationページの **\[Replications\]** セクションで、レプリケートしているマシンのリストの **\[Status\]** 列を調べます。
 
     ![A screenshot of a computer Description automatically
 generated](./media/image14.png)
 
-ステータスが**Protectedに**変わるまで待つ。さらに15分ほどかかる場合があります。
+ステータスが **Protectedに**変わるまで待つ。さらに15分ほどかかる場合があります。
 
 ステータス情報を更新するには、**Migration and modernization Replicating
 machines** **を**リフレッシュする必要があります。
 
 **タスク 4: テスト移行の実行**
 
-1.  Azure Portal の **Migration and modernization |
-    Replications**］**ページで、**RHEL-DB-01**
-    仮想マシンを選択します。
+1.  Azure Portal の  **Migration and modernization |
+    Replications**］ページで、**RHEL-DB-01**
+     仮想マシンを選択します。
 
     ![A screenshot of a computer Description automatically
 generated](./media/image15.png)
@@ -402,17 +400,17 @@ generated](./media/image22.png)
     ![A screenshot of a computer Description automatically
 generated](./media/image24.png)
 
-2.  **Migrate**ページで、\[**Shutdown machines before migration to
+2.  **Migrate** ページで、\[**Shutdown machines before migration to
     minimize data
-    loss?\]**オプションが\[**Yes\]**に設定されていることを確認し、**\[Migrate\]**を選択します。
+    loss?\]**オプションが\[**Yes\]** に設定されていることを確認し、**\[Migrate\]** を選択します。
 
 3.  **Migration and modernization |
     Replications** ページに戻り、**RHEL-WEB-01を**選択します。
 
-4.  **Migrateを**選択して移行を開始し、**\[Migrate\]**ページで再度\[**Yes\]を**指定する。
+4.  **Migrateを**選択して移行を開始し、**\[Migrate\]** ページで再度\[**Yes\]を** 指定する。
 
 5.  **Migration and modernization |
-    Replications** ページに戻り、**\[Refresh\]**を選択して移行のステータスを監視します。
+    Replications** ページに戻り、**\[Refresh\]** を選択して移行のステータスを監視します。
 
     ![](./media/image25.png)
 
@@ -428,7 +426,7 @@ VMに割り当てます。
 
 1.  **Migration and modernization |
     Replications** ページで、**\[Status\]**列に両方の仮想マシンの**\[Planned
-    failover finished** **\]**と表示されていることを確認します。
+    failover finished** **\]** と表示されていることを確認します。
 
     > <font color=blue> このアップデートを見るには、**Refresh**を選択する必要があるかもしれません。</font>
 
@@ -437,9 +435,9 @@ VMに割り当てます。
 
 3.  **Virtual machines** ページで、**RHEL-WEB-01** VMを選択します。　
 
-4.  **RHEL-WEB-01の**ページで、**\[Settings\]の**下にある**\[Networking\]**を選択します。
+4.  **RHEL-WEB-01の**ページで、**\[Settings\]の**下にある **\[Networking\]** を選択します。
 
-5.  **Networking**ブレードで、ネットワークインターフェイス**nic-RHEL-WEB-01-00を**選択する。
+5.  **Networking**ブレードで、ネットワークインターフェイス**nic-RHEL-WEB-01-00を** 選択する。
 
     ![](./media/image26.png)
 
