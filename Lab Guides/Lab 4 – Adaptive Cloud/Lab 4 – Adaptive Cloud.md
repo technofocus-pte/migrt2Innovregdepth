@@ -39,8 +39,9 @@
 
     </font>
 
-    ![ a computer screen ](./media/image2.png)     ![ a computer Description
-automatically generated](./media/image3.png)
+    ![](./media/image2.png)     
+    
+    ![](./media/image3.png)
 
 4.  ダウンロードが完了したら、ファイルエクスプローラーでダウンロードフォルダを開き、**WinSrv20224Arc.zipを**選択し、「Extract
     all」ボタンをクリックします。
