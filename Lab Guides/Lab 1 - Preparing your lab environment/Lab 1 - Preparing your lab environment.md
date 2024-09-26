@@ -147,8 +147,7 @@ generated](./media/image21.png)
 
     - リソースグループ – **Create new** ```AZMigrateRG```をクリックします。
 
-    - プロジェクト **-** ```az-migrate-XXXXXX``` \[substitute XXXXXX with
-    random number\]
+    - プロジェクト **-** ```az-migrate-XXXXXX``` \[XXXXXX はランダムな数字で置き換えてください。］
 
     - 地理 - **アメリカ**
 
@@ -255,7 +254,7 @@ generated](./media/image21.png)
 
     - Friendly Name - ```RHELUser```
 
-    - ユーザー名 -++fetch6474```
+    - ユーザー名 - ```fetch6474```
 
     - パスワード - ```RHELWorkshop```
 
@@ -364,17 +363,17 @@ generated](./media/image38.png)
 3.  **Build business
     case** ブレードでは、以下の値を使用してビジネス・ケースを作成します。
 
-    - ビジネスケース名 - ```bc-43240741```
+    - Business case name - ```bc-43240741```
 
-    - 対象地域 - **東臼杵郡（eastus）**
+    - Target location - **eastus**
 
-    - 移行戦略 - **コストを最小限に抑えるためのAzure推奨アプローチ**
+    - Migration strategy - **Azure recommended approach to minimize cost**
 
-    - Savings options - **Reserved Instances + Azure Savings Plan**
+    - Savings options - **Reserved Instance + Azure Savings Plan**
 
-    - Pay as you goの割引率 (%) – 0　
+    - Discount (%) on Pay as you go - **0**
 
-    - **「Build business case**」を選択します。
+    - Select **Build business case**.
 
     ![Business Case Refresh](./media/image39.png)
 
@@ -417,44 +416,42 @@ generated](./media/image38.png)
     
     </font>
 
-    - 対象場所 - **米国西部2（West US 2）**
+    - Target location - **West US 2**
 
-    - ストレージ・タイプ - **Premium managed disks**
+    - Storage type - **Premium managed disks**
 
-    - 貯蓄オプション – **None**
+    - Savings options - **None**
 
-    - サイズ基準 - **As on premises**
+    - Sizing criteria - **As on premises**
 
-    - VMシリーズ - **Dsv3_series**
+    - VM series - **Dsv3_series**
 
-    - Comfort factor – **1**
+    - Comfort factor - **1**
 
-    - オファー - **Pay-As-You-Go**
+    - Offer - **Pay-As-You-Go**
 
-    - 通貨 - **USドル ($)**
+    - Currency - **US Dollar ($)**
 
-    - 割引 - **0**
+    - Discount - **0**
 
-    - VM稼働時間 - **31日/月、24時間/日**
+    - VM uptime - **31 Day(s) per month and 24 Hour(s) per day**
 
-    - Already have a Windows Server license? **- いいえ**
+    - Already have a Windows Server license? - **No**
 
-    - セキュリティ - **なし（No）**
+    - Security - **No**
 
 6.  **Save** を選択して \[Create Assessment\] に戻り、**\[Next: Select
     servers to assess \>を選択します。**
 
 7.  以下の設定を使用して、サーバーグループを作成し、評価対象のサーバーを選択します。
 
-    - 表で指定されていないものは、デフォルト設定を受け入れる。
+    Assessment name - ```as-43240741```
 
-    - 評価名 - ```as-43240741```
+    Select or create a group - **Create new**
 
-    - グループの選択または作成 - **Create new**
+    Group name - ```RHEL-Servers```
 
-    - グループ名 - ```RHEL-Servers```
-
-    - グループに追加するマシンのリスト - **RHEL-DB-**01と**RHEL-WEB-01**
+    List of machines to be added to the group - **RHEL-DB-01** and **RHEL-WEB-01**
 
 8.  **Create assessment** を選択します。**Azure Migrate | Servers,
     databases and web apps** のページにリダイレクトされます。
