@@ -81,6 +81,12 @@ used for Migration.
 
 10. Once the deployment is completed it will show the below
 
+    <font color=red>
+
+    > Note - In the notepad, copy and paste the  **FullyQualifiedDomainName** from the output of the previous command     as this would be required later in the Tasks also.
+    
+    </font>
+
     ![](./media/image10.png)
 
 11. Run the below command to connect to the Ubuntu VM, substitute the
