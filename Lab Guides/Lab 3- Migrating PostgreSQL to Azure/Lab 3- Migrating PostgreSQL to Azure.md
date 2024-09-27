@@ -61,7 +61,8 @@ Databaseを作成します。
 
 8.  以下のコマンドを入力し、リソース・グループを作成する。
 
-    ```New-AzResourceGroup-ResourceGroupName "PostgresRG"-Location "WestUS```
+    ```New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"```
+    
     ![](./media/image8.png)
 
 9.  以下のコマンドを入力して、Windows Server 2019 Datacenter VMをデプロイする。
@@ -91,6 +92,12 @@ Databaseを作成します。
 
 11. 以下のコマンドを実行してUbuntu
     VMに接続し、前のコマンドの出力から**FullyQualifiedDomainNameを**使用してコマンドを置き換える.
+
+    <font color=red>
+
+    > 注 - メモ帳で、前のコマンドの出力から **FullyQualifiedDomainName** をコピーして貼り付けます。これは、後のタスクでも必要になります。
+
+    </font>
 
     ![AA screen shot of a computer Description automatically
 ](./media/image11.png)
@@ -187,7 +194,7 @@ Databaseを作成します。
 
     ```\password postgres```
 
-22. パスワードをpostgresと入力する。ポストグレスとしてまた入力する。
+22. パスワードを **postgres** と入力する。ポストグレスとしてまた入力する。
 
     ![AA computer screen shot of a blue screen Description automatically
 ](./media/image25.png)
@@ -324,7 +331,7 @@ Databaseを作成します。
     </font>
 
 
-    ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
+    ```scp "C:\Labfiles\dvdrental.tar" postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
 
     続行を求められたら「**yes**」と入力し、パスワードを入力する -
     ```P@55w.rd1234```
