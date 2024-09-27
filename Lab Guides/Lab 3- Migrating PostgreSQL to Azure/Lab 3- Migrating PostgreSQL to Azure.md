@@ -385,7 +385,7 @@ Databaseを作成します。
 
     ![](./media/image46.png)
 
-    ```dt```
+    ```\dt```
 
     ![](./media/image47.png)
 
@@ -394,7 +394,7 @@ Databaseを作成します。
 1.  Edge ブラウザを開き、Azure Portal ```https://portal.azure.com```
     に移動する。　
 
-2.  postgresを検索し、**Azure Database for PostgreSQL flexible
+2.  ```postgres```を検索し、**Azure Database for PostgreSQL flexible
     Serversを**選択します。
 
     ![AA screenshot of a computer Description automatically
