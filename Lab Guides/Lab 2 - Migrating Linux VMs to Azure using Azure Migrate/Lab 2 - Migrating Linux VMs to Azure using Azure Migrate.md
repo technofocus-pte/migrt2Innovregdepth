@@ -14,7 +14,7 @@ VMワークロードを移行します。必要なAzureリソースを準備し�
     tools**セクションに移動し、**Migration and
     modernizationの下で**、**\[Discover\]** を選択します。
 
-    ![A screenshot of a computer ](./media/image1.png)
+    ![](./media/image1.png)
 
 2.  **Discover**ブレードで、ドロップダウンの**Where do you want to
     migrate to?** で**Azure VM**オプションを選択し、**Are your Machines
