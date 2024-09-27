@@ -80,6 +80,12 @@ used for Migration.
     ![](./media/image9.png)
 
 10. Once the deployment is completed it will show the below
+    ![](./media/image10.png)
+
+11. Run the below command to connect to the Ubuntu VM, substitute the
+    command using the **FullyQualifiedDomainName** from the output of
+    the previous command
+
 
     <font color=red>
 
@@ -87,11 +93,6 @@ used for Migration.
     
     </font>
 
-    ![](./media/image10.png)
-
-11. Run the below command to connect to the Ubuntu VM, substitute the
-    command using the **FullyQualifiedDomainName** from the output of
-    the previous command
 
     ![](./media/image11.png)
 
