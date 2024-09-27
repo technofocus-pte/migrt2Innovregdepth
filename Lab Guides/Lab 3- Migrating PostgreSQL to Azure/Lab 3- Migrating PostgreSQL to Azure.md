@@ -307,7 +307,7 @@ used for Migration.
     > **Note** - Substitute the command before running with the **FQDN of your Ububtu Server VM** before running the command. refer **Task 1 - step 11**
     </font>
 
-    ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
+    ```scp "C:\Labfiles\dvdrental.tar" postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
 
     When prompted to continue type **yes** and then enter the password - ```P@55w.rd1234```
 
