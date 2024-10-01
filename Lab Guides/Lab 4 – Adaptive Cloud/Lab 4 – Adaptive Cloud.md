@@ -29,7 +29,7 @@
     ```cd``` を押してから **Tab キー**を押してフォルダ名を自動入力し、Enter を押します。
 
 
-    ```azcopy copy "https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"```
+    ```azcopy copy "https://migrinnovregnlarcdepstrg.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"```
 
 
     <font color=Darkgreen>
