@@ -1,4 +1,4 @@
-# Lab 5 - Defender for Cloud & Sentinel
+# 실습 5 - Cloud 및 Sentinel용 Defender
 
 **작업 1: Microsoft Defender for Cloud에서 VM에 JIT 활성화**
 
