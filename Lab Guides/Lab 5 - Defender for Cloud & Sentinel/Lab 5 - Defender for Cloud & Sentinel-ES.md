@@ -110,9 +110,9 @@
 
     ![](./media-ES/image18.png)
 
-**Ejercicio 2 - Implementación de Sentinel**
+## Ejercicio 2 - Implementación de Sentinel
 
-### Tarea 1: Espacio de trabajo de Microsoft Sentinel**
+### Tarea 1: Espacio de trabajo de Microsoft Sentinel
 
 En este ejercicio veremos cómo crear un área de trabajo de Microsoft
 Sentinel.
@@ -179,7 +179,7 @@ Sentinel.
 
     ![](./media-ES/image27.png)
 
-### Tarea 2: Habilite los conectores de datos.**
+### Tarea 2: Habilite los conectores de datos.
 
 Este ejercicio muestra cómo activar los conectores de datos.
 
@@ -201,8 +201,8 @@ Este ejercicio muestra cómo activar los conectores de datos.
 
     ![A close-up of a black text](./media-ES/image31.png)
 
-4.  En el Azure Portal https://portal.azure.com, busque Microsoft
-    Sentinel y haga clic en **Microsoft Sentinel**.
+4.  En el Azure Portal `https://portal.azure.com` busque `Microsoft
+    Sentinel` y haga clic en **Microsoft Sentinel**.
 
     ![computer](./media-ES/image32.png)
 
@@ -245,8 +245,12 @@ Este ejercicio muestra cómo activar los conectores de datos.
 
     ![](./media-ES/image40.png)
 
-**Nota** - En ocasiones, es posible que no se instale ningún conector,
-lo cual también está bien para continuar con los laboratorios.
+     <font color=darkgreen>
+
+    > **Nota** - En ocasiones, es posible que no se instale ningún conector,
+    lo cual también está bien para continuar con los laboratorios.
+
+    </font>
 
 13. Haga clic en **Content hub,** debajo de **Content management**
 
@@ -263,7 +267,7 @@ lo cual también está bien para continuar con los laboratorios.
 
     ![](./media-ES/image43.png)
 
-### Tarea 3: Habilite el conector de datos Azure Activity**
+### Tarea 3: Habilite el conector de datos Azure Activity
 
 Este ejercicio muestra cómo habilitar el conector de datos Azure
 Activity. Este conector traerá todos los eventos de auditoría, para las
@@ -322,15 +326,14 @@ Microsoft Sentinel.
 
     ![computer](./media-ES/image52.png)
 
-**Nota**: Es normal que el conector no aparezca inmediatamente como
-**Connected** y en color verde, el proceso tarda unos 30 minutos en
-completarse.
+    > **Nota**: Es normal que el conector no aparezca inmediatamente como
+    **Connected** y en color verde, el proceso tarda unos 30 minutos en
+    completarse.
 
 10. Continúe con el siguiente ejercicio y vuelva a verificar al cabo de
     30 minutos.
 
-### Tarea 4: Habilite el conector de datos de Microsoft Defender for
-Cloud.**
+### Tarea 4: Habilite el conector de datos de Microsoft Defender for Cloud.
 
 Este ejercicio muestra cómo habilitar el conector de datos de Microsoft
 Defender for Cloud. Este conector le permite transmitir sus alertas de
@@ -349,9 +352,9 @@ producir alertas e investigar y responder a incidentes.
 
     ![computer](./media-ES/image53.png)
 
-**Nota** - Si recibe el error **Data Connector Not Found**, vaya a
-**Content Hub** y vuelva a instalar **Microsoft Defender for Cloud
-Connector**.
+    > **Nota** - Si recibe el error **Data Connector Not Found**, vaya a
+    **Content Hub** y vuelva a instalar **Microsoft Defender for Cloud
+    Connector**.
 
     ![A black text on a white background](./media-ES/image54.png)
 
@@ -394,7 +397,7 @@ Connector**.
 
     ![](./media-ES/image62.png)
 
-**Ejercicio 3- Integración**
+## Ejercicio 3- Integración
 
 Como hemos instalado el conector Defend for Cloud, deberíamos poder ver
 el Incidente de Microsoft Defender for Cloud generado, utilizando las
@@ -435,6 +438,8 @@ Alertas de ejemplo.
 
 8.  En los detalles ampliados de la alerta se puede ver.
 
+    <font color=darkred>
+
     1.  TimeGenerated \[UTC\]
 
     2.  Displayname
@@ -451,5 +456,7 @@ Alertas de ejemplo.
     7.  RemeditalSteps
 
     8.  Y otras filas con información adicional.
+    
+    </font>
 
-    ![computer error](./media-ES/image69.png)
+![computer error](./media-ES/image69.png)
