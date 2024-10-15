@@ -5,7 +5,11 @@
 In the Lab we would be deploying a Virtual machine to host the
 **PostgreSQL database** and create the required **PostgreSQL infrastructure**
 and then we will migrate the PostgreSQL Database using the **Azure
-Database for Postgres Flexible Server (Migration)** ![A diagram of a
+Database for Postgres Flexible Server (Migration)** 
+
+> Note - You can download the Commands used in this lab - [Commands](<https://raw.githubusercontent.com/technofocus-pte/migrt2Innovregdepth/refs/heads/Spanish-ES/Lab%20Guides/Lab%203-%20Migrating%20PostgreSQL%20to%20Azure/Lab%203%20-%20Commands..txt>) 
+
+![A diagram of a
 data flow Description automatically generated with medium
 confidence](./media/image1.png)
 
