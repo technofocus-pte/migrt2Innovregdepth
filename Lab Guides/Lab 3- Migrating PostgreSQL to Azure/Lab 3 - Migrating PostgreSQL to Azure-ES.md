@@ -6,11 +6,10 @@ En el laboratorio estaremos desplegando una Virtual machine para alojar
 la **base de datos** **PostgreSQL** y crear la **infraestructura**
 **PostgreSQL** requerida. Luego migraremos la base de datos PostgreSQL
 utilizando **Azure Database for Postgres Flexible Server
-(Migration)**     ![data flow with medium confidence](./media-ES/image1.png)
+(Migration)**
+![data flow with medium confidence](./media-ES/image1.png)
 
-<font color=red>
 
-> **Nota**: Puede descargar los comandos utilizados en este laboratorio: [Comandos](<https://raw.githubusercontent.com/technofocus-pte/migrt2Innovregdepth/refs/heads/Spanish-ES/Lab%20Guides/Lab%203-%20Migrating%20PostgreSQL%20to%20Azure/Lab%203%20-%20Commands..txt>) </font>
 
 ### Tarea 1 - Implemente la VM para alojar la base de datos PostgreSQL en el entorno local.
 
@@ -327,12 +326,6 @@ ejemplo que se utilizará para la migración.
     ![A computer screen with white text](./media-ES/image41.png)
 
     <font color=blue>
-
-    > **Nota** - Si el archivo **dvdrental.tar** no está presente, se puede
-    descargar desde -
-    `https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar` 
-    y luego, alojarlo en **C:\Labfiles**
-    </font>
 
 10. Vuelva a la pestaña en el prompt **postgres@PostgresSrv** y ejecute
     el siguiente comando para activar PSQL
