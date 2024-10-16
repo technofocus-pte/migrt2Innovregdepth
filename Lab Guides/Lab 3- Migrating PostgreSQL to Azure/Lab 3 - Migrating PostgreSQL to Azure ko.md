@@ -60,20 +60,19 @@ Postgres Flexible Server (Migration)** 를 사용하여PostgreSQL Database를
 
 9.  아래 명령을 입력하여 Windows Server 2019 Datacenter VM을 배포하세요.
 
-    ```
-    New-AzVm `
-        -ResourceGroupName "PostgresRG" `
-        -Name "PostgresSrv" `
-        -Location "WestUS" `
-        -VirtualNetworkName "PGVnet" `
-        -SubnetName "PGSubnet" `
-        -SecurityGroupName "PostgresNSG" `
-        -Securitytype "Standard" `
-        -PublicIpAddressName "PostgresSrvIP" `
-        -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
-        -Credential $cred `
-        -Size "Standard_b2ms"
-    ```
+    #
+        New-AzVm `
+            -ResourceGroupName "PostgresRG" `
+            -Name "PostgresSrv" `
+            -Location "WestUS" `
+            -VirtualNetworkName "PGVnet" `
+            -SubnetName "PGSubnet" `
+            -SecurityGroupName "PostgresNSG" `
+            -Securitytype "Standard" `
+            -PublicIpAddressName "PostgresSrvIP" `
+            -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
+            -Credential $cred `
+            -Size "Standard_b2ms"
 
     ![A computer screen shot of a computer ](./media-ko-KR/image9.png)
 
@@ -309,9 +308,7 @@ Postgres Flexible Server (Migration)** 를 사용하여PostgreSQL Database를
 
     ![A computer screen with white text ](./media-ko-KR/image41.png)
 
-    > **참고** - **dvdrental.tar** 파일이 없는 경우, -
-    ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` 에서 다운로드한 후 **C:\Labfiles** 에 저장할 수 있습니다.
-
+    
 10. 프롬프트의 탭으로 다시 돌아가서 **postgres@PostgresSrv** 아래 명령을
     실행하여 PSQL을 시작하세요.
 
