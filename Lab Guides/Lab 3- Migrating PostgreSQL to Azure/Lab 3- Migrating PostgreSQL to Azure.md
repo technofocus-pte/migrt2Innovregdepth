@@ -67,25 +67,23 @@ used for Migration.
 
     ![](./media/image8.png)
 
-9.  Enter the below command to deploy the Windows Server 2019 Datacenter
-    VM
+9.  Enter the below command to deploy the Windows Server 2019 Datacenter VM
 
-    ```
-    New-AzVm `
-        -ResourceGroupName "PostgresRG" `
-        -Name "PostgresSrv" `
-        -Location "WestUS" `
-        -VirtualNetworkName "PGVnet" `
-        -SubnetName "PGSubnet" `
-        -SecurityGroupName "PostgresNSG" `
-        -Securitytype "Standard" `
-        -PublicIpAddressName "PostgresSrvIP" `
-        -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
-        -Credential $cred `
-        -Size "Standard_b2ms"
-    ```
-
-    ![](./media/image9.png)
+    # Command to deploy
+        New-AzVm `
+            -ResourceGroupName "PostgresRG" `
+            -Name "PostgresSrv" `
+            -Location "WestUS" `
+            -VirtualNetworkName "PGVnet" `
+            -SubnetName "PGSubnet" `
+            -SecurityGroupName "PostgresNSG" `
+            -Securitytype "Standard" `
+            -PublicIpAddressName "PostgresSrvIP" `
+            -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
+            -Credential $cred `
+            -Size "Standard_b2ms"
+  
+![](./media/image9.png)
 
 10. Once the deployment is completed it will show the below
     ![](./media/image10.png)
