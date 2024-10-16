@@ -67,20 +67,20 @@ Databaseを作成します。
 
 9.  以下のコマンドを入力して、Windows Server 2019 Datacenter VMをデプロイする。
 
-    ```
-    New-AzVm `
-        -ResourceGroupName "PostgresRG" `
-        -Name "PostgresSrv" `
-        -Location "WestUS" `
-        -VirtualNetworkName "PGVnet" `
-        -SubnetName "PGSubnet" `
-        -SecurityGroupName "PostgresNSG" `
-        -Securitytype "Standard" `
-        -PublicIpAddressName "PostgresSrvIP" `
-        -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
-        -Credential $cred `
-        -Size "Standard_b2ms"
-    ```
+    #
+    
+        New-AzVm `
+            -ResourceGroupName "PostgresRG" `
+            -Name "PostgresSrv" `
+            -Location "WestUS" `
+            -VirtualNetworkName "PGVnet" `
+            -SubnetName "PGSubnet" `
+            -SecurityGroupName "PostgresNSG" `
+            -Securitytype "Standard" `
+            -PublicIpAddressName "PostgresSrvIP" `
+            -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
+            -Credential $cred `
+            -Size "Standard_b2ms"
 
     ![AA computer screen shot of a computer Description automatically
 ](./media/image9.png)
@@ -339,13 +339,6 @@ Databaseを作成します。
     ![AA computer screen with white text Description automatically
 ](./media/image41.png)
 
-
-    <font color=blue>
-
-    > **注意** -
-**dvdrental.tar**ファイルが存在しない場合は、**dvdrental.tar**ファイルを- ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar```
-からダウンロードし、**C:˶Labfiles```に置いて**ください。
-</font>
 
 10. プロンプト**postgres@PostgresSrvの**タブに戻り、以下のコマンドを実行してPSQLを起動します。
 
