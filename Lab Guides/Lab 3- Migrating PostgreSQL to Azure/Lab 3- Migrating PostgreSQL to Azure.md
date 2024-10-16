@@ -11,12 +11,6 @@ Database for Postgres Flexible Server (Migration)**
 data flow Description automatically generated with medium
 confidence](./media/image1.png)
 
-<font color=red>
-
-> **Note** - You can download the Commands used in this lab and then use it during the Lab - `https://raw.githubusercontent.com/technofocus-pte/migrt2Innovregdepth/refs/heads/main/Lab%20Guides/Lab%203-%20Migrating%20PostgreSQL%20to%20Azure/Lab%203%20-%20Commands..txt` 
-
-</font>
-
 ## Task 1 – Deploy the Virtual machine to host the PostgreSQL database for the On-premises environment.
 
 We will deploy **Ubuntu 22.0.4.4 LTS** VM, on which we will install
