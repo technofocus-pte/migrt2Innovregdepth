@@ -5,9 +5,17 @@
 In the Lab we would be deploying a Virtual machine to host the
 **PostgreSQL database** and create the required **PostgreSQL infrastructure**
 and then we will migrate the PostgreSQL Database using the **Azure
-Database for Postgres Flexible Server (Migration)** ![A diagram of a
+Database for Postgres Flexible Server (Migration)** 
+
+![A diagram of a
 data flow Description automatically generated with medium
 confidence](./media/image1.png)
+
+<font color=red>
+
+> **Note** - You can download the Commands used in this lab and then use it during the Lab - [Commands](<https://raw.githubusercontent.com/technofocus-pte/migrt2Innovregdepth/refs/heads/main/Lab%20Guides/Lab%203-%20Migrating%20PostgreSQL%20to%20Azure/Lab%203%20-%20Commands..txt>) 
+
+</font>
 
 ## Task 1 – Deploy the Virtual machine to host the PostgreSQL database for the On-premises environment.
 
@@ -15,7 +23,7 @@ We will deploy **Ubuntu 22.0.4.4 LTS** VM, on which we will install
 **PostgreSQL Server 16** and then create the Sample Database that will be
 used for Migration.
 
-1.  From the Azure Portal ```https://portal.azure.com``` open the Azure Cloud Shell
+1.  From the Azure Portal `https://portal.azure.com` open the Azure Cloud Shell
 
     ![](./media/image2.png)
 
@@ -43,19 +51,19 @@ used for Migration.
     configure variables and create the VM that will be used for
     installing PostgreSQL server.
 
-    ```$cred = Get-Credential```
+    `$cred = Get-Credential`
 
 7.  When prompted to enter credentials provide the below
 
-    User - ```postgres```
+    User - `postgres`
 
-    Password - ```P@55w.rd1234```
+    Password - `P@55w.rd1234`
 
     ![](./media/image7.png)
 
 8.  Enter the below command to create the Resource group
 
-    ```New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"```
+    `New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"`
 
     ![](./media/image8.png)
 
@@ -96,12 +104,12 @@ used for Migration.
 
     ![](./media/image11.png)
 
-    ```ssh postgres@FullyQualifiedDomainName```
+    `ssh postgres@FullyQualifiedDomainName`
 
     ![](./media/image12.png)
 
 12. When prompted to continue type **yes** and then enter the password
-    provided in during the deployment - ```P@55w.rd1234```
+    provided in during the deployment - `P@55w.rd1234`
 
 13. It should successfully connect to the Ubuntu Server
 
@@ -111,9 +119,9 @@ used for Migration.
     set the automated repository configuration by running the below
     command
 
-    ```sudo apt install -y postgresql-common```
+    `sudo apt install -y postgresql-common`
 
-    ```sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh```
+    `sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh`
 
     ![](./media/image14.png)
 
@@ -128,37 +136,37 @@ used for Migration.
 16. We will **import the repository signing key** by running the below
     commands.
 
-    ```sudo apt install curl ca-certificates```
+    `sudo apt install curl ca-certificates`
 
-    ```sudo install -d /usr/share/postgresql-common/pgdg```
+    `sudo install -d /usr/share/postgresql-common/pgdg`
 
-    ```sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc```
+    `sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc`
 
     ![](./media/image18.png)
 
 17. We will run the below command to **create the repository
     configuration file**
 
-    ```sudo apt update```
+    `sudo apt update`
 
-    ```sudo apt install gnupg2 wget```
+    `sudo apt install gnupg2 wget`
 
-    ```sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'```
+    `sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
 
-    ```curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg```
+    `curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg`
 
     ![](./media/image19.png)
 
 18. We will run the below command to **update the package lists**
 
-    ```sudo apt update```
+    `sudo apt update`
 
     ![](./media/image20.png)
 
 19. We will run the below command to **install the latest version of
     PostgreSQL**
 
-    ```sudo apt install postgresql-16 postgresql-contrib-16```
+    `sudo apt install postgresql-16 postgresql-contrib-16`
 
     ![](./media/image21.png)
 
@@ -171,17 +179,17 @@ used for Migration.
 20. Once the installation is completed, type the below command to launch
     the PSQL utility
 
-    ```psql```
+    `psql`
 
     ![](./media/image24.png)
 
 21. We will set the password for the **postgres** account in psql
 
-    ```\password postgres```
+    `\password postgres`
 
-22. Provide the password as ```postgres``` Enter it again as
+22. Provide the password as `postgres` Enter it again as
     
-    ```postgres```
+    `postgres`
 
     ![](./media/image25.png)
 
@@ -189,9 +197,9 @@ used for Migration.
 
 24. Run the below command to access the **postgresql.conf** file
 
-    ```\q```
+    `\q`
 
-    ```sudo nano /etc/postgresql/16/main/postgresql.conf```
+    `sudo nano /etc/postgresql/16/main/postgresql.conf`
 
 25. Once the file is opened scroll down and update the setting to match
     the below
@@ -212,15 +220,15 @@ used for Migration.
 
 28. Run the below command to access the **pg_hba.conf** file
 
-    ```sudo nano /etc/postgresql/16/main/pg_hba.conf```
+    `sudo nano /etc/postgresql/16/main/pg_hba.conf`
 
 29. Once the file is opened scroll down add the below lines at the
     bottom of the file
 
-    ```
+    `
     host all all 0.0.0.0/0 md5
     host all all ::/0 md5
-    ```
+    `
 
     ![](./media/image29.png)
 
@@ -232,7 +240,7 @@ used for Migration.
 
 32. Run the below command to restart the PostgreSQL service
 
-    ```sudo service postgresql restart```
+    `sudo service postgresql restart`
 
     ![](./media/image31.png)
 
@@ -276,12 +284,12 @@ used for Migration.
 4.  Ensure the Cloud Shell has launched with Bash, then run the below
     command to connect to the **PostgresSrv** VM
 
-    ```ssh postgres@ServerDNSName```
+    `ssh postgres@ServerDNSName`
 
     ![](./media/image37.png)
 
 5.  When prompted to continue type **yes** and then enter the password -
-    ```P@55w.rd1234```
+    `P@55w.rd1234`
 
 6.  It should successfully connect to the Ubuntu Server
 
@@ -291,7 +299,7 @@ used for Migration.
     create a **folder** to copy the file to be used for restoring the
     database.
 
-    ```mkdir dvdrentalbkp```
+    `mkdir dvdrentalbkp`
 
      ![](./media/image39.png)
 
@@ -307,41 +315,41 @@ used for Migration.
     > **Note** - Substitute the command before running with the **FQDN of your Ububtu Server VM** before running the command. refer **Task 1 - step 11**
     </font>
 
-    ```scp "C:\Labfiles\dvdrental.tar" postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
+    `scp "C:\Labfiles\dvdrental.tar" postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"`
 
-    When prompted to continue type **yes** and then enter the password - ```P@55w.rd1234```
+    When prompted to continue type **yes** and then enter the password - `P@55w.rd1234`
 
     ![](./media/image41.png)
 
     <font color=blue>
 
-    > **Note** - If the file **dvdrental.tar** is not present, it can be downloaded from - ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar``` and then placed in **C:\Labfiles**
+    > **Note** - If the file **dvdrental.tar** is not present, it can be downloaded from - `https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar` and then placed in **C:\Labfiles**
     </font>
 
 
 8.  Switch back to the tab on the prompt **postgres@PostgresSrv** run
     the below command to launch PSQL
 
-    ```psql```
+    `psql`
     
     ![](./media/image42.png)
 
 9.  On the **psql** prompt run the below command to create a database
 
-    ```CREATE DATABASE dvdrental;```
+    `CREATE DATABASE dvdrental;`
 
     ![](./media/image43.png)
 
-    ```\q```
+    `\q`
 
     ![](./media/image44.png)
 
 10. Back on **postgres@PostgresSrv** prompt type the below command to
     restore the backup into the newly created database.
 
-    ```cd dvdrentalbkp```
+    `cd dvdrentalbkp`
 
-    ```pg_restore -U postgres -d dvdrental "dvdrental.tar"```
+    `pg_restore -U postgres -d dvdrental "dvdrental.tar"`
 
     ![](./media/image45.png)
 
@@ -349,22 +357,22 @@ used for Migration.
 
 11. We can check the database details by running the below commands
 
-    ```psql```
+    `psql`
 
-    ```\c dvdrental```
+    `\c dvdrental`
 
     ![](./media/image46.png)
 
-    ```\dt```
+    `\dt`
 
     ![](./media/image47.png)
 
 ## Task 3 – Create an Azure Database for PostgreSQL flexible Server
 
 1.  Open the Edge browser navigate to the Azure Portal
-    ```https://portal.azure.com```
+    `https://portal.azure.com`
 
-2.  Search for ```postgres``` and choose **Azure Database for
+2.  Search for `postgres` and choose **Azure Database for
     PostgreSQL flexible Servers**
 
     ![](./media/image48.png)
@@ -376,9 +384,9 @@ used for Migration.
 4.  On the **New Azure Database for PostgreSQL Flexible Server** page on
     the **Basics** tab, provide the below details
 
-    * Resource group – Click on Create new and provide name – ```RG4AzPGDb```
+    * Resource group – Click on Create new and provide name – `RG4AzPGDb`
 
-    * Server name - ```ad4pfssrvXXXXX``` substitute XXXXX with random number
+    * Server name - `ad4pfssrvXXXXX` substitute XXXXX with random number
 
     * Region – **West US**
 
@@ -392,11 +400,11 @@ used for Migration.
 
     * Authentication method – **PostgreSQL Authentication only**
 
-    * Admin username – ```postgres```
+    * Admin username – `postgres`
 
-    * Password – ```P@55w.rd1234```
+    * Password – `P@55w.rd1234`
 
-    * Confirm password – ```P@55w.rd1234```
+    * Confirm password – `P@55w.rd1234`
 
     * Click on **Next: Networking >**
 
@@ -453,7 +461,7 @@ used for Migration.
     Flexible Server** page on the **Setup** tab, provide the below
     information and then click on **Next: Select Runtime Server\>**
 
-    *  Migration name - ```PostgreSQLToAzurePG```
+    *  Migration name - `PostgreSQLToAzurePG`
 
     *  Source server – **On-premise Server**
 
@@ -473,11 +481,11 @@ used for Migration.
 
     *  Server name – **Public IP address / DNS name of PostgresSrv VM**
 
-    *  Port – ```5432```
+    *  Port – `5432`
 
-    *  Server admin login name - ```postgres```
+    *  Server admin login name - `postgres`
 
-    *  Password - ```postgres```
+    *  Password - `postgres`
 
     *  SSL mode – **Prefer**
 
@@ -489,7 +497,7 @@ used for Migration.
 
 8.  On the **Select migration target** tab, provide the below details
 
-    *  Password - ```P@55w.rd1234```
+    *  Password - `P@55w.rd1234`
 
     *  Test Connection – Click on **Connect to source** 
 
@@ -568,7 +576,7 @@ used for Migration.
     ![](./media/image77.png)
 
 22. When the Cloud Shell opens it will prompt for Password, provide the
-    password as ```P@55w.rd1234```
+    password as `P@55w.rd1234`
 
     ![](./media/image78.png)
 
@@ -577,7 +585,7 @@ used for Migration.
 
 24. Run the below command to list the tables in the Target Database
 
-    ```\dt```
+    `\dt`
 
     ![](./media/image79.png)
 
