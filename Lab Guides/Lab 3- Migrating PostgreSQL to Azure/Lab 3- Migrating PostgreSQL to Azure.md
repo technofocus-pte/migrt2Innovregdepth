@@ -83,7 +83,7 @@ used for Migration.
             -Credential $cred `
             -Size "Standard_b2ms"
   
-![](./media/image9.png)
+    ![](./media/image9.png)
 
 10. Once the deployment is completed it will show the below
     ![](./media/image10.png)
