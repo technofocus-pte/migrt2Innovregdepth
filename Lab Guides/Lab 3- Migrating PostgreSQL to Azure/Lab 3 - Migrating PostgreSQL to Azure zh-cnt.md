@@ -60,20 +60,20 @@ Server 16**，然後創建用於遷移的示例資料庫。
 9.  輸入以下命令部署 Windows Server 2019 Datacenter 虛擬機器
 
 
-    ```
-    New-AzVm `
-        -ResourceGroupName "PostgresRG" `
-        -Name "PostgresSrv" `
-        -Location "WestUS" `
-        -VirtualNetworkName "PGVnet" `
-        -SubnetName "PGSubnet" `
-        -SecurityGroupName "PostgresNSG" `
-        -Securitytype "Standard" `
-        -PublicIpAddressName "PostgresSrvIP" `
-        -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
-        -Credential $cred `
-        -Size "Standard_b2ms"
-    ```
+    #
+        New-AzVm `
+            -ResourceGroupName "PostgresRG" `
+            -Name "PostgresSrv" `
+            -Location "WestUS" `
+            -VirtualNetworkName "PGVnet" `
+            -SubnetName "PGSubnet" `
+            -SecurityGroupName "PostgresNSG" `
+            -Securitytype "Standard" `
+            -PublicIpAddressName "PostgresSrvIP" `
+            -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
+            -Credential $cred `
+            -Size "Standard_b2ms"
+
     ![A computer screen shot of a computer ](./media-zh-cnt/image9.png)
 
 10. 部署完成後，將顯示如下內容
@@ -295,10 +295,6 @@ Server 16**，然後創建用於遷移的示例資料庫。
     提示繼續時，輸入 "**是"**，然後輸入密碼 - ```P@55w.rd1234```
 
     ![A computer screen with white text ](./media-zh-cnt/image41.png)
-
-    **注意** - 如果沒有 **dvdrental.tar** 檔，可以從 -
-    ```https://github.com/technofocus-pte/migrt2Innovregdepth/raw/main/Lab%20Guides/Labfiles/dvdrental.tar```
-    下載，然後放到 **C:\Labfiles** 中。
 
 10. 切換回選項卡上的提示 **postgres@PostgresSrv** 運行以下命令啟動 PSQL
 
