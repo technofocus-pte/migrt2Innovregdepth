@@ -244,6 +244,12 @@ This exercise shows you how to enable Data connectors.
 
       ![](./media/image37.png) 
 
+      <font color=darkgreen>
+      
+      > **Note** - Sometime it may not install any connector, and the **Complete centralization** step will be stuck, which is also fine to proceed ahead with the Labs.
+
+      </font>
+
 10. You should receive the notification as shown in below image
 
       ![](./media/image38.png)   
@@ -262,7 +268,7 @@ This exercise shows you how to enable Data connectors.
 
       <font color=darkgreen>
       
-      > **Note** - Sometime it may not install any connector, which is also fine to proceed ahead with the Labs.
+      > **Note** - Sometime it may not install any connector at all and it will not show any connectors, which is also fine to proceed ahead with the Labs.
 
       </font>
 
