@@ -33,7 +33,7 @@
 5.  等待遷移項目和 Vault 資源完成部署。
 
 6.  在 **Discover** 刀片上，在 **Prepare Hyper-V host servers** 下，選擇
-    **Download** 字樣，*而不是後面的 "**下載 ***"*按鈕。*
+    **Download** 字樣，**而不是後面的 "** 下載 "**按鈕。**
 
     ![](./media-zh-cnt/image3.png)
 
@@ -212,7 +212,7 @@
 
 5.  在 **Specify intent** 頁面，在  **What do you want to migrate?**
     中選擇 **Servers or virtual machines (VM)**"，在
-    "**要遷移到哪裡？"**中選擇 "**Azure VM**
+    "**要遷移到哪裡？"** 中選擇 "**Azure VM**
 
 6.  在下拉式功能表 "**您的機器是虛擬化的嗎？**"中選擇 "**是，使用
     Hyper-V**"，然後按一下 "**繼續** "按鈕。
@@ -312,7 +312,7 @@
 
     ![](./media-zh-cnt/image19.png)
 
-13. 在 **nic-RHEL-WEB-01-00-test** 頁面，在 **"設置 "**下選擇 **"IP
+13. 在 **nic-RHEL-WEB-01-00-test** 頁面，在 **"設置 "** 下選擇 **"IP
     配置"**。
 
 14. 選擇 **nic-RHEL-WEB-01-00-test-ipConfig** 編輯 IP **配置**。
@@ -345,8 +345,8 @@
 
     ![](./media-zh-cnt/image23.png)
 
-21. 將**備註**欄位留空，並選擇**測試已完成**核取方塊**。 Delete test
-    virtual machine**，然後選擇 **Cleanup Test**
+21. 將**備註**欄位留空，並選擇 **測試已完成** 核取方塊 。 Delete test
+    virtual machine，然後選擇 **Cleanup Test**
 
 22. 返回 **Migration and modernization | Replications** 頁面，選擇
     **RHEL-WEB-01**。
@@ -397,13 +397,13 @@
 
 3.  在**虛擬機器**頁面，選擇 **RHEL-WEB-01** 虛擬機器。
 
-4.  在 **RHEL-WEB-01** 頁面的 "**設置 "**下選擇 "**網路**"。
+4.  在 **RHEL-WEB-01** 頁面的 "**設置 "** 下選擇 "**網路**"。
 
 5.  在**網路**刀片上，選擇網路介面 **nic-RHEL-WEB-01-00**
 
     ![](./media-zh-cnt/image26.png)
 
-6.  在 **nic-RHEL-WEB-01-00** 頁面的 "**設置 "**下選擇 **"IP 配置"**。
+6.  在 **nic-RHEL-WEB-01-00** 頁面的 "**設置 "** 下選擇 **"IP 配置"**。
 
 7.  選擇 **nic-RHEL-WEB-01-00-ipConfig** 編輯 IP **配置**。
 
