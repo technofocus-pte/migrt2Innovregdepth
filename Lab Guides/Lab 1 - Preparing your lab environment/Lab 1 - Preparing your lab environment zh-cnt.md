@@ -63,7 +63,7 @@ generated](./media-zh-cnt/image8.png)
 14. 從 "訂閱 "列表中選擇 " **Azure Pass –Sponsorship** "。 ![A
     screenshot of a box](./media-zh-cnt/ab0da48d18b1b12453438aebd467d496e91163f0.png)
 
-15. 在 Azure 通行證-贊助頁面點擊 **Access control （IAM）**，然後點擊**+
+15. 在 Azure 通行證-贊助頁面點擊 **Access control （IAM）**，然後點擊 **+
     Add** 下拉式功能表並選擇 **Add role assignment 分配**。
     ![](./media-zh-cnt/a360fa3da9119a638d528680065a53c942dd208f.png)
 
@@ -138,8 +138,8 @@ generated](./media-zh-cnt/image18.png)
 
 **任務 3：部署和配置 Azure Migrate 設備**
 
-1.  在 "**伺服器、資料庫和網路應用程式** "刀片的 "**評估工具 "**部分，在
-    "**Azure Migrate：發現和評估** "部分，選擇 **"發現 "**並選擇
+1.  在 "**伺服器、資料庫和網路應用程式** "刀片的 " **評估工具 "** 部分，在
+    "**Azure Migrate：發現和評估** "部分，選擇 **"發現 "** 並選擇
     **"使用設備**
 
      ![](./media-zh-cnt/image22.png)
@@ -147,7 +147,7 @@ generated](./media-zh-cnt/image18.png)
 2.  在 **"發現 "**刀片上的 "**您的機器是否虛擬化？**
     功能表中選擇**是，使用 Hyper-V**。
 
-3.  在 **1.一般產品金鑰**下，在 "**設備名稱 "**框中輸入 HV-XXXXXX
+3.  在 **1.一般產品金鑰**下，在 " **設備名稱 "** 框中輸入 HV-XXXXXX
     用之前使用的數位代替 **XXXXX**，然後選擇 "**生成金鑰**"。
 
     > **注意** - 金鑰生成過程可能需要 2 分鐘才能完成。
@@ -156,8 +156,8 @@ generated](./media-zh-cnt/image18.png)
 
     ![](./media-zh-cnt/image23.png)
 
-5.  在 **2** 下**。下載 Azure Migrate 設備**，選擇 **.zip
-    文件。500MB**，然後點擊下載按鈕\*。
+5.  在 **2** 下。下載 Azure Migrate 設備 **，選擇** .zip
+    文件。500MB **，然後點擊下載按鈕** 。
 
      **這將下載 PowerShell 腳本，將設備安裝到 Windows Server 機器上。**
 
@@ -293,7 +293,7 @@ generated](./media-zh-cnt/image28.png)
 **任務 1：創建和審查業務案例**
 
 1.  在 Azure 門戶中，返回 "**Azure 遷移伺服器、資料庫和 Web 應用程式**
-    "頁面。選擇 "**刷新 "**驗證伺服器是否已被發現。
+    "頁面。選擇 "**刷新 "** 驗證伺服器是否已被發現。
 
     ![computer](./media-zh-cnt/image37.png)
 
@@ -336,7 +336,7 @@ generated](./media-zh-cnt/image28.png)
     > **注意**--需要為實驗室稍後創建的其他資源指定此位置，同時確保**在同一區域創建
  Azure 資源**，以確保遷移順利完成。
 
-2.  切換回 **Azure 遷移**頁面，在 **Azure 遷移**下**：發現和評估**
+2.  切換回 **Azure 遷移**頁面，在 **Azure 遷移**下 **：發現和評估**
     "部分，選擇 "**評估"**，然後在下拉式功能表中選擇 "**Azure VM**"。
 
     ![](./media-zh-cnt/image41.png)
@@ -375,7 +375,7 @@ generated](./media-zh-cnt/image28.png)
 
     - 安全 - **無**
 
-6.  選擇**保存**返回創建評估，然後選擇**下一步：選擇要評估的伺服器 \**
+6.  選擇 **保存** 返回創建評估，然後選擇 **下一步：選擇要評估的伺服器**
 
 7.  使用以下設置創建伺服器組並選擇要評估的伺服器。
 
@@ -400,7 +400,7 @@ generated](./media-zh-cnt/image28.png)
      ![computer](./media-zh-cnt/image43.png)
 
 11. 在 **Azure Migrate：在 "Azure 遷移：發現和評估"|"評估
-    "**頁面，選擇新創建的評估 **as-43240741**。
+    "** 頁面，選擇新創建的評估 **as-43240741**。
 
     ![computer](./media-zh-cnt/image44.png)
 
