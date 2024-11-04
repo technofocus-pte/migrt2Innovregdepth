@@ -1,340 +1,318 @@
-# ラボ4 - アダプティブクラウド
+# 實驗室 4 - 自我調整雲
 
-**目的**
+## 客觀的
 
-このラボでは、Azure Arc
-を使用して環境全体でリソースを管理します。オンプレミス、他のパブリック
-クラウド、エッジ
-デバイスなど、環境全体でインフラストラクチャを保護、監視、管理できます。
+在本實驗室中，我們將使用 Azure Arc
+管理跨環境的資源，你可以安全、監控和治理跨環境的基礎架構，包括內部部署、其他公有雲和邊緣設備。
 
-**タスク1 - オンプレミス・マシンのセットアップ**
+## 任務 1 - 設置內部部署機器
 
-1.  Lab VM 上で Edge ブラウザを開き、**AzCopy**
-    ファイルをダウンロードするリンクに移動します -
-    ```https://aka.ms/downloadazcopy-v10-windows``` zip
-    ファイルを開き、フォルダ ```C:\AzCopy``` に解凍します。
+1.  在實驗室虛擬機器上打開 Edge 流覽器，並導航到下載 **AzCopy**
+    檔的連結 - `https://aka.ms/downloadazcopy-v10-windows`
+    打開壓縮檔並解壓到資料夾 `C:\AzCopy` 中。
 
-    ![ a computer ](./media/image1.png)
+    ![](./media-zh-cnt/image1.png)
 
-2.  Star-menを右クリックし、Windows PowerShell（管理者）を選択します。
+2.  按右鍵 Star-men，選擇 Windows PowerShell (Admin)
 
-3.  **Windows Server
-    2022イメージを**ダウンロードするには、以下のコマンドを入力します。
+3.  鍵入以下命令下載 **Windows Server 2022 映射**
 
-    ```cmd```
+    `cmd`
 
-    ```cdAzCopy```
+    `cd\AzCopy`
 
+    cd 然後按 **Tab** 鍵自動填充資料夾名稱，然後按 Enter 鍵。
 
-    ```cd``` を押してから **Tab キー**を押してフォルダ名を自動入力し、Enter を押します。
-
-
-    ```azcopy copy "https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"```
-
+    `azcopy copy "https://migrinnovregnlarcdepstrg.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"`
 
     <font color=Darkgreen>
 
-    > 上記のコマンドを実行すると、**Windows Server
-    2022の**イメージがダウンロード・フォルダーにコピーされます。イメージのダウンロードには最大7～10分かかります。
+    > 上述命令將把 **Windows Server 2022**
+    映射複製到下載檔案夾中。下載鏡像可能需要 7-10 分鐘。
 
     </font>
 
-    ![](./media/image2.png)     
-    
-    ![](./media/image3.png)
+    ![](./media-zh-cnt/image2.png)    
 
-4.  ダウンロードが完了したら、ファイルエクスプローラーでダウンロードフォルダを開き、**WinSrv20224Arc.zipを**選択し、「Extract
-    all」ボタンをクリックします。
+    ![](./media-zh-cnt/image3.png)
 
-    ![ a computer ](./media/image4.png)
+4.  下載完成後，在文件資源管理器中打開下載檔案夾，然後選擇
+    **WinSrv20224Arc.zip** 檔，點擊 **Extract all** 按鈕。
 
-5.  ```E:\Virtual Machines```とフォルダを指定し、Extract ボタンをクリックします。
+    ![](./media-zh-cnt/image4.png)
 
-    ![ a computer ](./media/image5.png)
+5.  提供資料夾為 `E:\Virtual Machines`，然後按一下 **Extract** 
+    按鈕。
 
-6.  タスクバーから**Hyper-V
-    Managerを**開き、サーバー名を右クリックして**Hyper-V
-    Settingを**選択する。
+    ![](./media-zh-cnt/image5.png)
 
+6.  從工作列打開 **Hyper-V Manager** ，然後按右鍵伺服器名稱，再選擇
+    **Hyper-V Setting**
 
-    ![ a computer ](./media/image6.png)
+    ![](./media-zh-cnt/image6.png)
 
-7.  **「Settings」**ウィンドウで、**「Enhanced Session Mode
-    Policy**」オプションを選択し、「**Allow enhanced session
-    mode 」のチェックボックスを有効にして、**「OK」ボタンをクリックします。　　
+7.  在 **Settings**  視窗中，選擇  **Enhanced Session Mode Policy** 
+    選項，然後啟用  **Allow enhanced session mode** 
+    核取方塊，然後按一下 **OK**  按鈕。
 
-    ![](./media/image7.png)
+    ![](./media-zh-cnt/image7.png)
 
-8.  **Hyper-V ManagerでImport Virtual
-    Machine**アクションをクリックします。
+8.  在 **Hyper-V Manager** 中點擊 **Import Virtual Machine** 操作。
 
-    ![ a computer ](./media/image8.png)
+    ![](./media-zh-cnt/image8.png)
 
-9.  **Locate
-    Folder**（フォルダの検索）ページで、**Browse（参照）** ボタンをクリックし、```E:∕Virtual
-    Machines∕WinSrv∕Arc```を参照し、**Select
-    Folder（フォルダの選択**）ボタンをクリックします。
+9.  在  **Locate Folder** 頁面，按一下 **Browse**  按鈕，流覽到
+    `E:\Virtual Machines\WinSrv20224Arc` 並按一下 **Select Folder**
+    按鈕。
 
-    ![ a computer ](./media/image9.png)
+    ![](./media-zh-cnt/image9.png)
 
-10. **Locate Folder** ページで、Nextボタンをクリックします。
+10. 在 **Locate Folder** 頁面，按一下 **Next**  按鈕。
 
-    ![ a computer ](./media/image10.png)
+    ![](./media-zh-cnt/image10.png)
 
-11. **Select Virtual
-    Machine**ページで **「Next」** ボタンをクリックします。
+11. 在 **Select Virtual Machine** 頁面，按一下 **Next**  按鈕。
 
-12. **Choose Import
-    type（インポートタイプの選択**）」ページで、デフォルトのまま「Next」ボタンをクリックします。
+12. 在 **Choose Import type** 頁面，保留預設選項，然後按一下 **Next** 
+    按鈕。
 
-    ![ a computer ](./media/image11.png)
+    ![](./media-zh-cnt/image11.png)
 
-13. **Connect
-    Network」** ページで、**「Connection」** ドロップダウンから「**Microsoft
-    Hyper-V Network
-    Adapter**」を選択し、「Next」ボタンをクリックします。
+13. 在 "**連接網路** "頁面，從 "**連接** "**下拉式功能表**中選擇
+    **Microsoft Hyper-V 網路介面卡**，然後按一下 **Next** 按鈕。
 
-    ![ a computer ](./media/image12.png)
+    ![](./media-zh-cnt/image12.png)
 
-14. **Complete Import
-    Wizard** ページで詳細を確認し、**Finish**ボタンをクリックします。
+14. 在 C**omplete Import Wizard** 頁面上查看詳細資訊，然後按一下
+    **Finish** "按鈕。
 
-    ![ a computer program ](./media/image13.png)
+    ![computer program](./media-zh-cnt/image13.png)
 
-15. **WinSrv20224Arc**
-    VMを右クリックし、**Start**オプションを選択します。
+15. 按右鍵 **WinSrv20224Arc** 虛擬機器，然後選擇 "**開始 "** 選項
 
-    ![ a computer ](./media/image14.png)
+    ![](./media-zh-cnt/image14.png)
 
-16. 再度、**WinSrv20224Arc**
-    VMを右クリックし、**Connect**オプションを選択します。
+16. 再次按右鍵 **WinSrv20224Arc** 虛擬機器，然後選擇 **Connect** 選項
 
-    ![ a computer ](./media/image15.png)
+    ![](./media-zh-cnt/image15.png)
 
-17. 仮想マシン接続ウィンドウから **Ctrl+Alt+Delete** ボタンを押します。
+17. 在虛擬機器連接視窗中按下 **Ctrl+Alt+Delete** 按鈕
 
-    ![](./media/image16.png)
+    ![](./media-zh-cnt/image16.png)
 
-18. 以下の認証情報でログインしてください
+18. 使用以下憑據登錄
 
-    1.  ユーザー名 - ```Administrator```
+    1.  用戶名 - **Administrator**
 
-    2.  パスワード - ```P@55w.rd1234```
+    2.  密碼 - `P@55w.rd1234`
 
-    ![](./media/image17.png)
+    ![](./media-zh-cnt/image17.png)
 
-19. ログインに成功したことを確認してください。
+19. 確保您已成功登錄。
 
-**タスク 2 - スクリプトによる Azure Arc リソースの追加**
+## 任務 2 - 通過腳本添加 Azure Arc 資源
 
-1.  **WinSrv20224Arc** VMにログインしたら、Edgeブラウザを開き、**Azure
+1.  登錄 **WinSrv20224Arc** 虛擬機器後，打開 Edge 流覽器並導航到 **Azure
     Portal**
-    ```https://portal.azure.com/```に移動し、ラボから提供された認証情報を使用してサインインします。
+    `https://portal.azure.com/`，然後使用實驗室提供的憑據登錄。
 
-2.  Azure Portal で「Type arc」と入力し、Azure Arc を選択する。
+2.  在 Azure Portal 的搜索中輸入 `arc` 形，然後選擇 Azure Arc
 
-    ![ a computer ](./media/image18.png)
+    ![](./media-zh-cnt/image18.png)
 
-3.  **Manage resources across environmentsの下で、Add
-    resources**ボタンをクリックします。
+3.  在 **Manage resources across environments** 下按一下  **Add
+    resources** 按鈕。
 
-    ![](./media/image19.png)
+    ![](./media-zh-cnt/image19.png)
 
-4.  **Add Azure Arc resources**ページで、**「Add/Create** **」**
-    ボタンをクリックし、「**Add a machine**」 を選択**します。**
+4.  在 **"添加 Azure Arc resources** 頁面，按一下 **Add/Create**
+    按鈕並選擇 **Add a machine.**
 
-    ![](./media/image20.png)
+    ![](./media-zh-cnt/image20.png)
 
-5.  **Add servers with Azure Arc** ページで、「**Add a single server**」
-    の下にある 「**Generate script**  ボタンをクリックします。　
+5.  在 **Add servers with Azure Arc** 頁面，按一下  **Generate
+    script**下的  **Add a single server** 按鈕。
 
-    ![ a computer ](./media/image21.png)
+    ![](./media-zh-cnt/image21.png)
 
-6.  **Add a server with Azure Arc** ページで、以下の詳細を入力します。
+6.  在  **Add a server with Azure Arc** 頁面上，提供以下詳細資訊。
 
     <font color=darkred>
 
-    > **リソースグループを作成する前に、エラーを避けるためにリージョンを選択してください。**
+    > **建立資源群組前，先選擇 Region，避免出錯**
 
     </font>
 
-    - 地域 - **West US**
+    - 地區 -  <font color=Red> **West US**
 
-    - リソースグループ - **Create new**  ```RG4ArcVM``` をクリックします。
+    </font>
 
-    - オペレーティングシステム - **Windows**
+    - 資源組 - 按一下 **Create new**  `RG4ArcVM`
 
-    - SQL Serverを接続する - **チェックを外す**
+    - 作業系統 - **Windows**
 
-    - **Download and run script buttonを**クリックします。
+    - 連接 SQL Server - **Uncheck the box**
 
-    ![](./media/image22.png)
+    - 點擊 **Download and run script button 按鈕**
 
-7.  **Download**ボタンをクリックし、**Copy**ボタンもクリックしてください。
+    ![](./media-zh-cnt/image22.png)
 
-    ![](./media/image23.png)
+7.  點擊 **Download** 按鈕，然後點擊 **Copy**  按鈕。
 
-8.  **「Start button**」**ボタンを**右クリックし、「**Windows PowerShell
-    (Admin)」**を選択**します**。
+    ![](./media-zh-cnt/image23.png)
 
-    ![](./media/image24.png)
+8.  按右鍵 "**開始 "按鈕**，選擇 **Windows PowerShell (Admin)**
 
-9.  **Windows PowerShell
-    (Admin)** ウィンドウで、クリップボードからコピーしたスクリプトを貼り付けます。
+    ![](./media-zh-cnt/image24.png)
 
-    ![](./media/image25.png)
+9.  在 **Windows PowerShell（管理）** 視窗粘貼從剪貼板複製的腳本
 
-10. スクリプトは以下の画像のように起動します。
+    ![](./media-zh-cnt/image25.png)
 
-    ![](./media/image26.png)
+10. 腳本應如下圖所示啟動
 
-11. ログインを求められたら、提供された認証情報でログインする。
+    ![](./media-zh-cnt/image26.png)
 
-    ![ a login page ](./media/image27.png)
+11. 出現登錄提示時，請使用提供的憑據登錄
 
-12. 認証が成功したら、PowerShellウィンドウに戻る。
+    ![login page](./media-zh-cnt/image27.png)
 
-    ![A black text on a white background ](./media/image28.png)
+12. 驗證成功後，切換回 PowerShell 視窗
 
-13. 以下の画像のように、「**Connect Machine to
-    Azure**」というメッセージが表示されるはずです。
+    ![A black text on a white background](./media-zh-cnt/image28.png)
 
-    ![](./media/image29.png)
+13. 如下圖所示，應顯示 **Connect Machine to Azure** 消息。
 
-**タスク 3 - Arc サーバの管理**
+    ![](./media-zh-cnt/image29.png)
 
-1.  Lab VM に戻り、Azure Portal ```https://portal.azure.com```を開く。
+## 任務 3 - 管理 Arc 伺服器
 
-2.  Azure Portal の検索で「arc」と入力し、**Azure Arc を**選択する。,
+1.  切換回 **Lab VM** 並打開 Azure Portal `https://portal.azure.com`
 
-    ![](./media/image18.png)
+2.  在 Azure Portal 的搜索中輸入 `arc` 形，然後選擇 **Azure Arc**
 
-3.  Azure Arc リソースで **Machines** を選択します。
+    ![](./media-zh-cnt/image18.png)
 
-    ![](./media/image30.png)
+3.  選擇 **Azure Arc** 資源下的 **Machines** 
 
-4.  マシン**WinSrv20224ArcがConnectedと**表示されるはずです。
+    ![](./media-zh-cnt/image30.png)
 
-    ![ a computer ](./media/image31.png)
+4.  您應該可以看到機器 **WinSrv20224Arc** 顯示為 **Connected**
 
-5.  **WinSrv20224Arcを**クリックして詳細を開き、**Overview**ページで**Updatesを**クリックします。
+    ![](./media-zh-cnt/image31.png)
 
-    ![ a computer ](./media/image32.png)
+5.  按一下 **WinSrv20224Arc** 打開詳細資訊，然後從
+    **Overview** 頁面按一下 **Updates**。
 
-6.  **Periodic
-    assessment** **の**ドロップダウンから「**Enable」を**選択し、**「Save」** ボタンをクリックします。
+    ![](./media-zh-cnt/image32.png)
 
-    ![ a computer ](./media/image33.png)
+6.  從  **Periodic assessment** 下拉式功能表中選擇
+    **Enable** ，然後按一下 **Save**  按鈕。
 
-    ![A close-up of a text ](./media/image34.png)
+    ![](./media-zh-cnt/image33.png)
 
-7.  **「Overview」**ページに戻り、**「Monitoring
-    insights**」をクリックする。　
+    ![A close-up of a text](./media-zh-cnt/image34.png)
 
-    ![ a computer ](./media/image35.png)
+7.  返回 **Overview** 頁面，點擊  **Monitoring insights**
 
-8.  **Insights**ページで、**Enable**ボタンをクリックする。
+    ![](./media-zh-cnt/image35.png)
 
-    ![ a computer ](./media/image36.png)
+8.  在 **Insights** 頁面，點擊 **Enable**  按鈕。
 
-9.  **Monitoring
-    configuration** ページで、**Configure**ボタンをクリックします。　
+    ![](./media-zh-cnt/image36.png)
 
-    ![ a computer ](./media/image37.png)
+9.  在 **Monitoring configuration** 頁面，按一下 **Configure** 按鈕。
 
-    > **注** - モニタリング・リソースの配置には、約5～10分かかります。
+    ![](./media-zh-cnt/image37.png)
 
-    ![ a computer ](./media/image38.png)
+    > **注意** - 部署監控資源可能需要 5-10 分鐘左右。
 
-10. **「Overview」** ページに戻り、「Security」をクリックする。
+    ![](./media-zh-cnt/image38.png)
 
-    ![ a computer ](./media/image39.png)
+10. 返回 **Overview** 頁面，按一下 "安全
 
-    > **注- Microsoft Defender for**
-    Cloudは以前に有効にしており、サーバーは最近オンボードにしたため、30分ほどで推奨を確認できるはずです。
+    ![](./media-zh-cnt/image39.png)
 
-11. 搭載されたサーバーの推奨が利用可能になると、以下の画像のように表示されるはずです。　
+    > **注：** 我們早些時候啟用了 **Microsoft Defender for
+    Cloud**，由於伺服器是最近才上載的，因此應該能在 30 分鐘左右看到建議。
 
-    ![ a computer ](./media/image40.png)
+11. 一旦板載伺服器的建議可用，就會顯示如下圖所示。
 
-12. **Overview**ページに戻り、**Updatesを**クリックします。
+    ![](./media-zh-cnt/image40.png)
 
-    ![ a computer ](./media/image41.png)
+12. 回到 **Overview** 頁面，點擊 **Updates**
 
-13. 必要に応じて、「**Go to Updates using Azure Update
-    Manager**」ボタンをクリックします。
+    ![](./media-zh-cnt/image41.png)
 
-14. **「Check for updates** 」ボタンをクリックします。
+13. 如果需要，請按一下 **Go to Updates using Azure Update Manager**
+    按鈕。
 
-    ![ a computer ](./media/image42.png)
+14. 按一下  **Check for updates**  按鈕。
 
-15. **Trigger assess nowの**メッセージで**OK**ボタンをクリックします。
+    ![](./media-zh-cnt/image42.png)
 
-    ![ a computer error ](./media/image43.png)
+15. 按一下  **Trigger assess now** 資訊上的 **OK**  按鈕。
 
-    ![A white background with black text ](./media/image44.png)
+    ![computer error](./media-zh-cnt/image43.png)
 
-16. **「Refresh」** ボタンをクリックすると、「**Total
-    updates** **」**セクションに**Assessment is in
-    progress**表示されます。
+    ![A white background with black text](./media-zh-cnt/image44.png)
 
-    ![ a computer ](./media/image45.png)
+16. 按一下 **Refresh**  按鈕， **Total updates** 部分將顯示 **Assessment
+    is in progress**。
 
-17. アセスメントが完了したら、もう一度 **「Refresh」** ボタンをクリックしてください。
+    ![](./media-zh-cnt/image45.png)
 
-    ![A white text with black text ](./media/image46.png)
+17. 評估完成後，再次按一下 "**刷新 Refresh** 。
 
-18. サーバー上で必要なアップデートの詳細を見ることができるはずです。
+    ![A white text with black text](./media-zh-cnt/image46.png)
 
-    ![ a computer ](./media/image47.png)
+18. 我們應該可以在伺服器上看到所需更新的詳細資訊。
 
-19. **One-time
-    update** をクリックすると、サーバーのアップデートが開始されます。
+    ![](./media-zh-cnt/image47.png)
 
-    ![ a computer ](./media/image48.png)
+19. **按一下**  **One-time update** 啟動伺服器上的更新
 
-20. Install one-time updatesページの「マシン」タブで**WinSrv20224Arc**
-    VMを選択し、**「Next」** ボタンをクリックします。　
+    ![](./media-zh-cnt/image48.png)
 
-    ![ a computer ](./media/image49.png)
+20. 在 "安裝一次性更新 "頁面的 "機器 "選項卡上選擇 **WinSrv20224Arc**
+    虛擬機器，然後按一下 **Next**  按鈕。
 
-21. アップデートの詳細を確認し、 「Next」 ボタンをクリックします。
+    ![](./media-zh-cnt/image49.png)
 
-    ![ a computer ](./media/image50.png)
+21. 查看更新的詳細資訊，然後按一下 **Next**  按鈕。
 
-22. **「Properties」** タブで、**「Next」** ボタンをクリックします。
+    ![](./media-zh-cnt/image50.png)
 
-    ![ a computer ](./media/image51.png)
+22. 在 "屬性 "選項卡上，按一下 **Next**  按鈕
 
-23. Review +
-    Installタブで詳細を確認し、**Install**ボタンをクリックします。
+    ![](./media-zh-cnt/image51.png)
 
-    ![ a computer ](./media/image52.png)
+23. 在 "審查 + 安裝 "選項卡上，審查詳細資訊，然後按一下 **Install** 
+    按鈕。
 
-    ![ a computer ](./media/image53.png)
+    ![](./media-zh-cnt/image52.png)
 
-24. 通知をクリックすると、アップデートの詳細が表示されます。
+    ![](./media-zh-cnt/image53.png)
 
-    ![ a computer ](./media/image54.png)
+24. 點擊通知查看更新詳情
 
-    ![ a computer ](./media/image55.png)
+    ![](./media-zh-cnt/image54.png)
 
-25. **「Overview」**ページに戻り、**「Monitoring
-    insights**」をクリックします。　
+    ![](./media-zh-cnt/image55.png)
 
-    ![ a computer ](./media/image56.png)
+25. 返回 **Overview**  頁面，點擊 **Monitoring insights**
 
-26. **Analyze data** ボタンをクリックします。
+    ![](./media-zh-cnt/image56.png)
 
-    ![ a computer ](./media/image57.png)
+26. 點擊 **Analyze data** 按鈕
 
-27. これで、オンボード・サーバーの**Performance
-    data** を見ることができるはずだ。
+    ![](./media-zh-cnt/image57.png)
 
-    ![ a computer ](./media/image58.png)
+27. 現在我們應該可以看到板載伺服器的 **Performance data**了。
 
-    ![ a computer ](./media/image59.png)
+    ![](./media-zh-cnt/image58.png)
 
-28. これで、オンプレミスの Windows Server
-    のオンボード化に成功し、**Azure Arc** を使って Azure Portal から
-    Server を管理できるようになりました。
+    ![](./media-zh-cnt/image59.png)
+
+28. 這樣，我們就成功接入了內部部署 Windows Server，並可以使用 Azure
+    **Arc** 從 Azure Portal 管理伺服器。

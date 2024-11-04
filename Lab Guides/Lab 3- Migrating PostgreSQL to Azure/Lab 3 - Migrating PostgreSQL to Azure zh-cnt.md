@@ -4,7 +4,7 @@
 
 在實驗室中，我們將部署一個虛擬機器來託管 **PostgreSQL
 資料庫**，並創建所需的 PostgreSQL **基礎設施**，然後使用 **Azure
-Database for PostgreSQL 靈活伺服器（遷移）**來遷移 PostgreSQL
+Database for PostgreSQL 靈活伺服器（遷移）** 來遷移 PostgreSQL
 **資料庫。**     
 
 ![](./media-zh-cnt/image1.png)
@@ -14,7 +14,7 @@ Database for PostgreSQL 靈活伺服器（遷移）**來遷移 PostgreSQL
 我們將部署 **Ubuntu 22.0.4.4 LTS** 虛擬機器，在上面安裝 **PostgreSQL
 Server 16**，然後創建用於遷移的示例資料庫。
 
-1.  從 Azure Portal ```https://portal.azure.com``` 打開 Azure 雲外殼
+1.  從 Azure Portal `https://portal.azure.com` 打開 Azure 雲外殼
 
     ![ ](./media-zh-cnt/image2.png)
 
@@ -34,28 +34,28 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
 5.  等待部署完成
 
-    ![computer program ](./media-zh-cnt/image6.png)
+    ![](./media-zh-cnt/image6.png)
 
 6.  在 Cloud Shell PowerShell 視窗中鍵入以下命令配置變數並創建用於安裝
     PostgreSQL 伺服器的虛擬機器。
 
-    ```$cred = Get-Credential```
+    `$cred = Get-Credential`
 
 7.  提示輸入證書時，請提供以下資訊
 
-    用戶 - ```postgres```
+    用戶 - `postgres`
 
-    密碼 - ```P@55w.rd1234```
+    密碼 - `P@55w.rd1234`
 
     ![computer screen ](./media-zh-cnt/image7.png)
 
 8.  輸入以下命令創建資源組
 
 
-    ```New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"```
+    `New-AzResourceGroup -ResourceGroupName "PostgresRG" -Location "WestUS"`
 
 
-    ![A blue screen with white text ](./media-zh-cnt/image8.png)
+    ![](./media-zh-cnt/image8.png)
 
 9.  輸入以下命令部署 Windows Server 2019 Datacenter 虛擬機器
 
@@ -78,19 +78,25 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
 10. 部署完成後，將顯示如下內容
 
-    ![A blue screen with white text ](./media-zh-cnt/image10.png)
+    ![](./media-zh-cnt/image10.png)
 
 11. 運行以下命令連接 Ubuntu 虛擬機器，請使用上一條命令輸出結果中的
     "**FullyQualifiedDomainName "** 替代該命令
 
+    <font color=red>
+
+    > **注意** - 在记事本中，从上一个命令的输出中复制并粘贴 FullyQualifiedDomainName，因为这在稍后的任务中也会需要。
+
+    </font>
+
     ![A screen shot of a computer ](./media-zh-cnt/image11.png)
 
-     ```ssh postgres@FullyQualifiedDomainName```
+     `ssh postgres@FullyQualifiedDomainName`
 
     ![A screen shot of a computer ](./media-zh-cnt/image12.png)
 
 12. 當提示繼續時，鍵入 "**是**"，然後輸入部署時提供的密碼 -
-    ```P@55w.rd1234```
+    `P@55w.rd1234`
 
 13. 它應該能成功連接到 Ubuntu 伺服器
 
@@ -101,126 +107,125 @@ Server 16**，然後創建用於遷移的示例資料庫。
     版後，我們將運行以下命令設置自動版本庫配置
 
 
-    ```sudo apt install -y postgresql-common```
+    `sudo apt install -y postgresql-common`
 
-    ```sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh```
+    `sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh`
 
-    ![A computer screen shot of a blue screen ](./media-zh-cnt/image14.png)
+    ![](./media-zh-cnt/image14.png)
 
-    ![A blue screen with white text ](./media-zh-cnt/image15.png)
+    ![](./media-zh-cnt/image15.png)
 
 15. 按鍵盤上的 Enter 鍵繼續。
 
-    ![computer program ](./media-zh-cnt/image16.png)
+    ![](./media-zh-cnt/image16.png)
 
-    ![A screen shot of a computer screen ](./media-zh-cnt/image17.png)
+    ![](./media-zh-cnt/image17.png)
 
 16. 我們將通過運行以下命令**導入版本庫簽名金鑰**。
 
+    `sudo apt install curl ca-certificates`
 
-    ```sudo apt install curl ca-certificates```
+    `sudo install -d /usr/share/postgresql-common/pgdg`
 
-    ```sudo install -d /usr/share/postgresql-common/pgdg```
+    `sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc`
 
-    ```sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc```
-
-    ![A computer screen shot of a blue screen ](./media-zh-cnt/image18.png)
+    ![](./media-zh-cnt/image18.png)
 
 17. 我們將運行以下命令**創建版本庫設定檔**
 
-    ```sudo apt update```
+    `sudo apt update`
 
-    ```sudo apt install gnupg2 wget```
+    `sudo apt install gnupg2 wget`
 
-    ```sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'```
+    `sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'`
 
-    ```curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg```
+    `curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg`
 
     ![](./media-zh-cnt/image19.png)
 
 18. 我們將運行以下命令**更新軟體包列表**
 
-    ```sudo apt update```
+    `sudo apt update`
 
-    ![A computer screen with white text ](./media-zh-cnt/image20.png)
+    ![](./media-zh-cnt/image20.png)
 
 19. 我們將運行以下命令**安裝最新版本的 PostgreSQL**
 
-    ```sudo apt install postgresql-16 postgresql-contrib-16```
+    `sudo apt install postgresql-16 postgresql-contrib-16`
 
-    ![A computer screen shot of a blue screen ](./media-zh-cnt/image21.png)
+    ![](./media-zh-cnt/image21.png)
 
     > **注意 - 安裝應在 1-2 分鐘內完成**
 
-    ![A blue screen with white text ](./media-zh-cnt/image22.png)
+    ![](./media-zh-cnt/image22.png)
 
-    ![A blue screen with white text ](./media-zh-cnt/image23.png)
+    ![](./media-zh-cnt/image23.png)
 
 20. 安裝完成後，鍵入以下命令啟動 PSQL 實用程式
 
-    ```Psql```
+    `Psql`
 
-    ![A blue screen with white text ](./media-zh-cnt/image24.png)
+    ![](./media-zh-cnt/image24.png)
 
 21. 我們將在 psql 中為 **postgres** 帳戶設置密碼
 
-    ```\password postgres```
+    `\password postgres`
 
-22. 輸入密碼為 postgres 再輸入密碼為
+22. 輸入密碼為 `postgres` 再輸入密碼為
 
-     ```postgres```
+     `postgres`
 
-    ![A computer screen shot of a blue screen ](./media-zh-cnt/image25.png)
+    ![](./media-zh-cnt/image25.png)
 
 23. 現在，我們將為所有要遠端存取的 PostgreSQL 設置網路和其他許可權
 
 24. 運行以下命令訪問 **postgresql.conf** 文件
 
-    ```\q```
+    `\q`
 
-    ```sudo nano /etc/postgresql/16/main/postgresql.conf```
+    `sudo nano /etc/postgresql/16/main/postgresql.conf`
 
 25. 打開檔後，向下滾動並更新設置，使其與以下內容一致
 
     **在 "連接設置 "下移除 \# 並更改 listen_addresses = '\*'**
 
-    ![A computer screen with white text ](./media-zh-cnt/image26.png)
+    ![](./media-zh-cnt/image26.png)
 
     **在 WRITE-AHEAD LOG 下，刪除 \# 並更改 wal_level = logical**
 
-    ![A computer screen with white text ](./media-zh-cnt/image27.png)
+    ![](./media-zh-cnt/image27.png)
 
 26. 完成上述更改後，按下 **Ctrl  X**
 
-    ![computer program ](./media-zh-cnt/image28.png)
+    ![](./media-zh-cnt/image28.png)
 
 27. 按 **Y** 鍵並回車確認。
 
 28. 運行以下命令訪問 **pg_hba.conf** 文件
 
-    ```sudo nano /etc/postgresql/16/main/pg_hba.conf```
+    `sudo nano /etc/postgresql/16/main/pg_hba.conf`
 
 29. 打開檔後，向下滾動，在檔底部添加以下行文
 
 
-    ```
-    host all all 0.0.0.0/0 md5
-    host all all ::/0 md5
-    ```
+    `host all all 0.0.0.0/0 md5`
+
+    `host all all ::/0 md5`
+    
 
     ![ ](./media-zh-cnt/image29.png)
 
 30. 完成上述更改後，按下 **Ctrl  X**
 
-    ![A blue screen with white text ](./media-zh-cnt/image30.png)
+    ![](./media-zh-cnt/image30.png)
 
 31. 按 **Y** 鍵並回車確認。
 
 32. 運行以下命令重啟 PostgreSQL 服務
 
-    ```sudo service postgresql restart```
+    `sudo service postgresql restart`
 
-    ![A blue screen with white text ](./media-zh-cnt/image31.png)
+    ![](./media-zh-cnt/image31.png)
 
 33. 在 Azure Portal 上，搜索並選擇！！資源組！！
 
@@ -259,11 +264,11 @@ Server 16**，然後創建用於遷移的示例資料庫。
 4.  確保使用 Bash 啟動雲外殼，然後運行以下命令連接 **PostgresSrv**
     虛擬機器
 
-    ```ssh postgres@ServerDNSName```
+    `ssh postgres@ServerDNSName`
 
     ![ ](./media-zh-cnt/image37.png)
 
-5.  提示繼續時，輸入 "**是"**，然後輸入密碼 - ```P@55w.rd1234```
+5.  提示繼續時，輸入 "**是"**，然後輸入密碼 - `P@55w.rd1234`
 
 6.  它應該能成功連接到 Ubuntu 伺服器
 
@@ -272,7 +277,7 @@ Server 16**，然後創建用於遷移的示例資料庫。
 7.  在 **postgres@PostgresSrv**
     **提示符**下運行以下命令，創建一個**資料夾**來複製用於恢復資料庫的檔。
 
-    ```mkdir dvdrentalbkp```
+    `mkdir dvdrentalbkp`
 
     ![](./media-zh-cnt/image39.png)
 
@@ -290,34 +295,34 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
     </font>
 
-    ```scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"```
+    `scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"`
 
-    提示繼續時，輸入 "**是"**，然後輸入密碼 - ```P@55w.rd1234```
+    提示繼續時，輸入 "**是"**，然後輸入密碼 - `P@55w.rd1234`
 
-    ![A computer screen with white text ](./media-zh-cnt/image41.png)
+    ![](./media-zh-cnt/image41.png)
 
 10. 切換回選項卡上的提示 **postgres@PostgresSrv** 運行以下命令啟動 PSQL
 
-    ```psql```
+    `psql`
 
     ![A black screen with white text ](./media-zh-cnt/image42.png)
 
 11. 在 **psql** 提示符下運行以下命令創建資料庫
 
-    ```CREATE DATABASE dvdrental;```
+    `CREATE DATABASE dvdrental;`
 
     ![A black screen with yellow text ](./media-zh-cnt/image43.png)
 
-    ```\q```
+    `\q`
 
     ![A black background with green text ](./media-zh-cnt/image44.png)
 
 12. 在 **postgres@PostgresSrv**
     提示下鍵入以下命令，將備份還原到新創建的資料庫中。
 
-    ```CD DVDrentalbkp```
+    `CD DVDrentalbkp`
 
-    ```pg_restore -U postgres -d dvdrental "dvdrental.tar "```
+    `pg_restore -U postgres -d dvdrental "dvdrental.tar "`
 
     ![](./media-zh-cnt/image45.png)
 
@@ -325,21 +330,21 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
 13. 我們可以通過運行以下命令來檢查資料庫的詳細資訊
 
-    ```psql```
+    `psql`
 
-    ```\c dvdrental```
+    `\c dvdrental`
 
     ![A screen shot of a computer ](./media-zh-cnt/image46.png)
 
-    ```\dt```
+    `\dt`
 
     ![ ](./media-zh-cnt/image47.png)
 
 **任務 3 - 為 PostgreSQL 靈活伺服器創建 Azure 資料庫**
 
-1.  打開 Edge 流覽器，導航到 Azure Portal ```https://portal.azure.com```
+1.  打開 Edge 流覽器，導航到 Azure Portal `https://portal.azure.com`
 
-2.  搜索 ```postgres``` 並選擇 **Azure Database for PostgreSQL flexible
+2.  搜索 `postgres` 並選擇 **Azure Database for PostgreSQL flexible
     Servers**
 
     ![ ](./media-zh-cnt/image48.png)
@@ -351,9 +356,9 @@ Server 16**，然後創建用於遷移的示例資料庫。
 4.  在 **Basics**  選項卡上的 "**為 New Azure Database for PostgreSQL
     Flexible Server** 頁面，提供以下詳細資訊
 
-    - 資源組 - 按一下創建新組並提供名稱 - ```RG4AzPGDb```
+    - 資源組 - 按一下創建新組並提供名稱 - `RG4AzPGDb`
 
-    - 伺服器名稱 - ```ad4pfssrvXXXXX``` 用亂數代替 XXXXX
+    - 伺服器名稱 - `ad4pfssrvXXXXX` 用亂數代替 XXXXX
 
     - 地區 -  **West US**
 
@@ -367,11 +372,11 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
     - 驗證方法 - **PostgreSQL Authentication only**
 
-    - 管理員用戶名 - ```postgres```
+    - 管理員用戶名 - `postgres`
 
-    - 密碼 - ```P@55w.rd1234```
+    - 密碼 - `P@55w.rd1234`
 
-    - 確認密碼 - ```P@55w.rd1234```
+    - 確認密碼 - `P@55w.rd1234`
 
     - 按一下 **Next: Networking \>**
 
@@ -424,7 +429,7 @@ Server 16**，然後創建用於遷移的示例資料庫。
     PostgreSQL Flexible Server** "頁面，提供以下資訊，然後按一下 **Next:
     Select Runtime Server\>**
 
-    - 遷移名稱 - ```PostgreSQLToAzurePG```
+    - 遷移名稱 - `PostgreSQLToAzurePG`
 
     - 原始伺服器 - **On-premise Server**
 
@@ -444,11 +449,11 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
     - 伺服器名稱 -  **Public IP address / DNS name of PostgresSrv VM**
 
-    - 埠 - ```5432```
+    - 埠 - `5432`
 
-    - 伺服器管理員登錄名 - ```postgres```
+    - 伺服器管理員登錄名 - `postgres`
 
-    - 密碼 - ```postgres```
+    - 密碼 - `postgres`
 
     - SSL 模式 - **Prefer**
 
@@ -460,7 +465,7 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
 8.  在 **Select migration target** 選項卡上，提供以下詳細資訊
 
-    - 密碼 - ```P@55w.rd1234```
+    - 密碼 - `P@55w.rd1234`
 
     - 測試連接 - 點擊 **Connect to source**
 
@@ -532,7 +537,7 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
     ![ ](./media-zh-cnt/image77.png)
 
-22. 雲外殼打開後會提示輸入密碼，輸入密碼為 ```P@55w.rd1234```
+22. 雲外殼打開後會提示輸入密碼，輸入密碼為 `P@55w.rd1234`
 
     ![ ](./media-zh-cnt/image78.png)
 
@@ -540,7 +545,7 @@ Server 16**，然後創建用於遷移的示例資料庫。
 
 24. 運行以下命令列出目標資料庫中的表
 
-    ```\dt```
+    `\dt`
 
     ![ ](./media-zh-cnt/image79.png)
 
