@@ -1,483 +1,445 @@
-# **Lab 5 - Defender for Cloud & Sentinel.**
+# ラボ5 - Defender for Cloud & Sentinel。
 
-## Task 1: Enable JIT on your VMs from Microsoft Defender for Cloud
+**タスク 1：Microsoft Defender for CloudからVMsのJITを有効にします。**
 
-1.  While in the **Azure Portal** ```https://portal.azure.com``` type ```Microsoft Defender for Cloud``` in the search
-    box, then click on **Microsoft Defender for Cloud**
-    under **Services**.
-    
+1.  **Azure Portal** ```https://portal.azure.com``` で検索ボックスに
+    ```Microsoft Defender for Cloud``` と入力し、**Services** の下の
+    **Microsoft Defender for Cloud** をクリックします。
+
     ![](./media/image1.png)
 
-
-3.  On **Microsoft Defender for Cloud \| Overview** page left-sided
-    pane, navigate to the **Cloud Security** section and then click on
-    **Workload Protections**.
+2.  **Microsoft Defender for
+    Cloud｜Overview」** ページの左側ペインで、**「Cloud
+    Security」** セクションに移動し、「**Workload
+    Protections**」をクリックします。
 
     ![](./media/image2.png)
 
-3.  On **Microsoft Defender for Cloud \| Workload protections** page,
-    scroll down and click on **Just-in-time VM access** under the
-    **Advanced protection** section as shown in the below image.
+3.  **Microsoft Defender for Cloud｜Workload
+    protections** ページで、下図に示すように、下にスクロールし、**「Advanced
+    protection** **」** セクションの「**Just-in-time VM
+    access**」をクリックします。
 
-     ![](./media/image3.png)
+    ![](./media/image3.png)
 
-4.  On the **Just-in-time VM access** page, navigate to the **Virtual
-    machines** section and click on **Non Configured** tab. You will see
-    the VMs – **PostgreSrv** is listed under the **Non** **Configured**
-    tab.
+4.  **Just-in-time VM access** ページで、**Virtual
+    machines**セクションに移動し、**Non
+    Configured**タブをクリックします。VMs - PostgreSrvが**Non
+    Configured**タブの下に表示されます。
 
-      ![](./media/image4.png)
- 
+    ![](./media/image4.png)
 
-5.  Select the one of the available VM and click on **Enable JIT on 1 VM** button on the
-    right side.
+5.  利用可能なVMを1つ選択し、右側の**Enable JIT on 1
+    VM**ボタンをクリックする。
 
-      ![](./media/image5.png)
- 
+    ![](./media/image5.png)
 
-6.  On the **JIT VM access configuration** page, click on **Save**.
+6.  **JIT VM access configuration** ページで、**Saveを**クリックする。
 
-      ![](./media/image6.png)
- 
+    ![](./media/image6.png)
 
-7.  You’ll receive a notification - **Just-in-time VM access
-    configuration has started**.
+7.  **Just-in-time VM access configuration has
+    startedという通知が届きます**。
 
-      ![](./media/image7.png)
- 
+    ![](./media/image7.png)
 
-8.  Click on the **Configured** tab under the **Virtual machines**
-    section, you will see that the VMs **PostgreSrv** is listed under
-    the **Configured** tab.
+8.  **Virtual
+    machines**セクションの**Configured**タブをクリックすると、VMsのPostgreSrvが**Configured**タブにリストされていることがわかります。
 
-      ![](./media/image8.png)
- 
+    ![](./media/image8.png)
 
-9.  Now in order to connect to this VM, the access is granted upon
-    request.
+9.  このVMに接続するためには、リクエストに応じてアクセスが許可される。
 
-      ![](./media/image9.png)
- 
+    ![](./media/image9.png)
 
-## Task 2: Generating and Investigating Security alerts
+**タスク 2: セキュリティ警告の生成と調査**
 
-1.  In **Microsoft Defender for Cloud** under **General** section select
-    **Security alerts**
+1.  **Microsoft Defender for
+    Cloudの**「**General** **」** セクションで「**Security
+    alerts**」を選択します。　　
 
-      ![](./media/image10.png)
+    ![](./media/image10.png)
 
-2.  Click on the **Sample alerts** button to generate alerts.
+2.  **Sample alerts** ボタンをクリックしてアラートを生成します。
 
-      ![](./media/image11.png)
- 
+    ![](./media/image11.png)
 
-3.  Click on **Create sample alerts** button.
+3.  **Create sample alerts**ボタンをクリックしてください。
 
-      ![](./media/image12.png)
- 
+    ![](./media/image12.png)
 
-      ![](./media/image13.png)
+    ![](./media/image13.png)
 
+4.  サンプルアラートが生成されます
 
-4.  Sample Alerts will be generated
+    ![](./media/image14.png)
 
-      ![](./media/image14.png)
- 
+5.  **Refresh**ボタンをクリックすると、サンプルアラートが表示されます。
 
-5.  Click on **Refresh** button, and you will be able to see the Sample
-    alerts.
+    ![](./media/image15.png)
 
-      ![](./media/image15.png)
- 
+6.  調査したいアラートをクリックしてください。
 
-6.  You can click on any alert that you wish to investigate
+7.  アラート概要ペインで、以下の詳細を調査する。
 
-7.  On the alert overview pane, investigate the following details.
+    1.  **重症度、状態、活動時間**
 
-    1.  **Severity, Status, and Activity time**
+    2.  検出された正確な活動を**説明**する**記述**
 
-    2.  **Description** that explains the precise activity that was detected
+    3.  **影響を受ける資源**
 
-    3.  **Affected resources**
+    4.  MITRE ATT&CK マトリックス上の活動の**キルチェーンインテント**。
 
-    4.  **Kill chain intent** of the activity on the MITRE ATT&CK matrix.
+8.  不審な行動を調査するのに役立つ詳細情報については、「**View full
+    details** **」** ボタンをクリックしてください。
 
-8.  For more detailed information that can help you to investigate the
-    suspicious activity, click on **View full details** button.
+    ![](./media/image16.png)
 
-      ![](./media/image16.png)
- 
+9.  **Alert details** タブで情報を確認する。
 
-9.  Review the information under **Alert details** tab.
+    ![](./media/image17.png)
 
-      ![](./media/image17.png)
+10. **Take
+    action**ボタンをクリックし、利用可能なオプションを確認します。
 
-10. Click on the **Take action** button and review the available options
+    ![](./media/image18.png)
 
-      ![](./media/image18.png)
- 
+**エクササイズ2 - Sentinelの展開**
 
-# Exercise 2 – Deploying Sentinel
+**タスク 1：Microsoft Sentinelワークスペース**
 
-## Task 1: The Microsoft Sentinel workspace
+この実習では、Microsoft
+Sentinelワークスペースを作成する方法を見ていきます。
 
-In this exercise we will see how to create a Microsoft Sentinel
-workspace.
+1.  ```https://portal.azure.com```に移動し、ラボ環境のLabリソースで提供される**MOD
+    Administrator** 資格情報でログインします。　
 
-1.  Navigate to the ```https://portal.azure.com``` and log in with the
-    **MOD Administrator** credentials provided with the Lab resources of your
-    lab environment.
+2.  上の検索バーに「```Microsoft Sentinel```」と入力し、「**Microsoft
+    Sentinel**」をクリックします。
 
-2.  In the top search bar, type ```Microsoft Sentinel``` and click on
-    **Microsoft Sentinel**.
+    ![](./media/image19.png)
 
-      ![](./media/image19.png)
- 
+3.  **Microsoft Sentinel**画面で、左上の**Create**をクリックします。
 
-3.  In the **Microsoft Sentinel** screen, click **Create** at the top
-    left.
+    ![](./media/image20.png)
 
-      ![](./media/image20.png)
- 
+4.  **Microsoft Sentinelを**既存の**Log
+    Analyticsワークスペースに**追加するか、新しいワークスペースを構築するかを選択できます。ここでは新しいものを作成するので、**Create
+    a new workspaceを**クリックする。
 
-4.  You can choose to add **Microsoft Sentinel** to an existing **Log
-    Analytics** **workspace** or build a new one. We will create a new
-    one, so click on **Create a new workspace**.
+    ![](./media/image21.png)
 
-      ![](./media/image21.png)
- 
+5.  **Create Log
+    Analyticsワークスペースの**ページで、以下のように入力します：
 
-5.  In the **Create Log Analytics workspace** page, fill out the form as
-    follows:
+    1.  サブスクリプション**Azure Pass - Sponsorship**
 
-    1.  Subscription: **Azure Pass - Sponsorship**
+    2.  リソースグループ：**Create new** 
+        ```LAWResourceGroup```をクリックする。
 
-    2.  Resource Group: click on **Create new** ``LAWResourceGroup``
+    3.  ワークスペース名```SentWrkspcXXXXXX```
+        \[XXXXXXを乱数に置き換えてください。］
 
-    3.  Workspace Name: ```SentWrkspcXXXXXX``` [substitute **XXXXXX**
-        with random number\]
+    4.  地域: **West US**
 
-    4.  Region: **West US**
+    5.  **Review + create**をクリックする。
 
-    5.  Click **Review + create**.
+    ![](./media/image22.png)
 
-      ![](./media/image22.png)      
+6.  検証が完了したら、「**Create**」をクリックします。作成には数秒かかります。
 
+    ![](./media/image23.png)
 
-6.  Click **Create** after the validation is completed. The creation takes a few seconds.
+7.  **Add Microsoft**
+    Sentinelをワークスペースページに戻るので、**Refresh**ボタンをクリックします。
 
-      ![](./media/image23.png) 
- 
+    ![](./media/image24.png)
 
-7.  You will be redirected back to the **Add Microsoft Sentinel** to a
-    workspace page, click on the **Refresh** button.
+8.  先ほど作成したワークスペースを選択し、下部にある「**Add**」をクリックします。
 
-      ![](./media/image24.png) 
- 
+    ![](./media/image25.png)
 
-8.  Select your workspace that you just created and click **Add** at the bottom.
+9.  以下の画像のような通知が届くはずです。
 
-      ![](./media/image25.png)
- 
+    ![](./media/image26.png)
 
-9.  You should receive notification as shown in below image
+10. Microsoft
+    Sentinelワークスペースを使用する準備ができましたら、OKボタンをクリックしてください。
 
-      ![](./media/image26.png)
- 
+    ![](./media/image27.png)
 
-10. Your Microsoft Sentinel workspace is now ready to use, click on the **OK** button to proceed.
+**タスク 2: データコネクタを有効にする。**
 
-      ![](./media/image27.png) 
- 
+この演習では、データコネクタを有効にする方法を説明します。
 
-## Task 2: Enable Data connectors.
+1.  ブラウザのタブで
+    ```https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers```
+    に移動し、**Tenant Administrator accountを**選択します。　
 
-This exercise shows you how to enable Data connectors.
+    ![](./media/image28.png)
 
-1.  In the browser tab navigate to ```https://portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers```
-    and select the **Tenant Administrator account**
+2.  「管理」で**Assigned roles** **を**選択し、**+ Add
+    assignments** をクリック **します。**
 
-      ![](./media/image28.png)  
- 
+    ![](./media/image29.png)
 
-2.  Select the **Assigned roles** under Manage and then click on **+ Add
-    assignments.**
+3.  検索して **「Security
+    Administrator」** を選択し、**「Add」** ボタンをクリックする。
 
-      ![](./media/image29.png)      
+    ![](./media/image30.png)
 
+    ![ ](./media/image31.png)
 
-3.  Search and select **Security Administrator**, then click on the
-    **Add** button.
+4.  Azure Portal ```https://portal.azure.com``` で Microsoft Sentinel
+    を検索し、**Microsoft Sentinel** をクリックする。
 
-      ![](./media/image30.png)      
+    ![](./media/image32.png)
 
+5.  SentWrkspcXXXXXXを選択する。
 
-      ![](./media/image31.png) 
+    ![](./media/image33.png)
 
-4.  On the Azure Portal
-    ```https://portal.azure.com``` and search
-    for ```Microsoft Sentinel``` and click on **Microsoft Sentinel**.
+6.  次に、**Configuration**セクションで**Data Connectorsを**選択する。
 
-      ![](./media/image32.png) 
+    ![](./media/image34.png)
 
-5.  Select **SentWrkspcXXXXXX**.
+7.  **Data Connector with "content source = gallery content" have been
+    removedという **メッセージが表示されるはずです**。** そのメッセージで、**Click
+    here** リンクを選択します。　
 
-      ![](./media/image33.png)  
+    ![](./media/image35.png)
 
-6.  Now select **Data Connectors** under **Configuration** section.
+8.  **Out-of-the-box Content
+    Centralization** ページで「**Continue**」をクリックします。　
 
-      ![](./media/image34.png)   
- 
+    ![](./media/image36.png)
 
-7.  You should get the message **Data Connector with "content source =
-    gallery content" have been removed.** In that message select the
-    **Click here** link
+9.  **Complete centralization** ボタンをクリック　
 
-      ![](./media/image35.png)      
-
-8.  On the **Out-of-the-box Content Centralization** page click on
-    **Continue**
-
-      ![](./media/image36.png)      
-
-9.  Click on the **Complete centralization** button
-
-      ![](./media/image37.png) 
-
-10. You should receive the notification as shown in below image
-
-      ![](./media/image38.png)   
-
-
-11. From the top click on the link for **Microsoft Sentinel** or
-    navigate back to the Sentinel page.
-
-      ![](./media/image39.png)
-    
-13. Click on the **Refresh** button and you should be able to see the few connectors
-    Data connectors showing.
-
-      ![](./media/image40.png) 
- 
+    ![](./media/image37.png)
 
       <font color=darkgreen>
       
-      > **Note** - Sometime it may not install any connector, which is also fine to proceed ahead with the Labs.
+    > **注** -
+    コネクタがインストールされない場合がありますが、ラボを進めるには問題ありません。
 
-      </font>
+    </font>
 
-14. Click on **Content hub** under **Content management**
+10. 以下の画像のような通知が届くはずです。
 
-      ![](./media/image41.png)
- 
+    ![A close-up of a sign ](./media/image38.png)
 
-15. On the Content hub page search for ```Azure Activity``` and then
-    select **Azure Activity** content and click on **Install** button
+11. 一番上から**Microsoft
+    Sentinelの**リンクをクリックするか、Sentinelページに戻ってください。
 
-      ![](./media/image42.png) 
- 
+    ![A screen shot of a computer ](./media/image39.png)
 
-16. On the Content hub page search for ```Microsoft defender for cloud```
-    and then select **Microsoft Defender for Cloud** content and click
-    on **Install** button
+12. **Refresh**ボタンをクリックすると、Data
+    connectorsがいくつか表示されるはずです。
 
-      ![](./media/image43.png) 
+    ![](./media/image40.png)
 
-## Task 3: Enable Azure Activity data connector
 
-This exercise shows you how to enable the Azure Activity data connector.
-This connector will bring all the audit events, for actions performed in
-your Azure subscription, into your Microsoft Sentinel workspace.
+13. **Content managementのContent hub** **を**クリックします。
 
-1.  While still on the **Microsoft Sentinel** page click on **Data
-    Connectors** under **Configuration** section.
+    ![](./media/image41.png)
 
-      ![](./media/image44.png) 
+14. Content hubページでAzure Activityを検索し、**Azure
+    Activity**コンテンツを選択して**Install**ボタンをクリックします。
 
-2.  In the data connectors screen, type ```activity``` in the search bar,
-    select the **Azure Activity** connector and click on **Open
-    connector page**.
+    ![](./media/image42.png)
 
-      ![](./media/image45.png)  
+15. コンテンツハブのページでMicrosoft Defender for
+    Cloudを検索し、**Microsoft Defender for
+    Cloudの**コンテンツを選択し、**Install**ボタンをクリックします。
 
-3.  On the **Azure Activity connector** page, go to option number **2.
-    Connect your subscriptions through diagnostic settings new
-    pipeline**. This method leverages Azure Policy and it brings many
-    improvements compared to the old method (more details about these
-    improvements can be found here). Click on the **Launch Azure Policy
-    Assignment** wizard, this will redirect you to the policy creation
-    page.
+    ![](./media/image43.png)
 
-      ![](./media/image46.png)  
+**タスク3：Azure Activity data connectorを有効にする**
 
-4.  On the **Scope** selection select **Azure Pass – Sponsorship**. Click
-    **Select**.
+この演習では、Azure
+Activityデータコネクタを有効にする方法を示します。このコネクタは、Azureサブスクリプションで実行されたアクションのすべての監査イベントをMicrosoft
+Sentinelワークスペースにもたらします。
 
-      ![](./media/image47.png)
+1.  **Microsoft Sentinel**ページで、**Configuration**セクションの**Data
+    Connectorsを**クリックします。
 
-5.  Go to the **Parameters** tab. On the **Primary Log Analytics
-    workspace** select the **MicrosoftSentinelWorkspace**.
+    ![](./media/image44.png)
 
-      ![](./media/image48.png) 
+2.  Data Connectors 画面で、検索バーに Activity と入力し、**Azure
+    Activity** コネクターを選択して、**Open connector page**
+    をクリックします。
 
+    ![](./media/image45.png)
 
-6.  Under **Remediation** tab, select the check box besides **Create a
-    remediation task** and then click on **Review + create** button
+3.  **Azure Activity**コネクタページで、オプション番号**2. Connect your
+    subscriptions through diagnostic settings new
+    pipeline**に進みます **。** この方法では、Azure Policy
+    を活用し、従来の方法と比較して多くの改善がもたらされます（これらの改善の詳細については、こちらを参照してください）。**Launch
+    Azure Policy
+    Assignment**ウィザードをクリックすると、ポリシー作成ページにリダイレクトされます。
 
-      ![](./media/image49.png)  
+    ![](./media/image46.png)
 
-7.  On the **Review + create** tab, click on the **Create** button.
+4.  **Scopesの**選択で **Azure Pass - Sponsorship**
+    を選択します。**Selectを**クリックします。
 
-      ![](./media/image50.png)
+    ![Screens screenshot of a computer ](./media/image47.png)
 
-8.  In the **Notification** pane you will be able to see the ‘**Role
-    Assignments creation succeeded**’, ‘**Remediation task creation
-    succeeded**’ and ‘**Creating policy assignment succeeded**’
-    notifications.
+5.  **\[Parameters］**タブに移動します。**Primary Log Analytics
+    workspace** で**MicrosoftSentinelWorkspaceを**選択します。
 
-      ![](./media/image51.png)  
+    ![](./media/image48.png)
 
-9.  On the **Azure Activity connector** page you will be able to see the
-    connection status.
+6.  **Remediation**タブで、**\[Create a remediation
+    task** **\]**以外のチェックボックスを選択し、**\[Review +
+    create** **\]** ボタンをクリックします。
 
-      ![](./media/image52.png)  
+    ![ computer screen ](./media/image49.png)
 
+7.  **Review + create**タブで、**Create**ボタンをクリックする。
 
-      <font color=darkblue>
+    ![](./media/image50.png)
 
+8.  **Notification**ペインでは、「‘**Role Assignments creation
+    succeeded**’, ‘**Remediation task creation succeeded**’ と
+    ‘**Creating policy assignment
+    succeeded**’の通知を見ることができます。
 
-      > **Note**: It is normal if you don't immediately see
-      the connector showing as **Connected** and in green, it takes around 30
-      minutes for the process to complete.
-      
-      </font>
+    ![](./media/image51.png)
 
-10. Continue to the next exercise then you can check back after 30 minutes.
+9.  **Azure Activity
+    connectorの**ページで、接続ステータスを確認できます。
 
-## Task 4: Enable Microsoft Defender for Cloud data connector.
+    ![](./media/image52.png)
 
-This exercise shows you how to enable the Microsoft Defender for Cloud
-data connector. This connector allows you to stream your security alerts
-from Microsoft Defender for Cloud into Microsoft Sentinel, so you can
-view Defender data in workbooks, query it to produce alerts, and
-investigate and respond to incidents.
+    > **注**：すぐにコネクターが**Connected**と緑色で表示されなくても、プロセスが完了するまで約30分かかります。
 
-1.  While still on the **Microsoft Sentinel** page click on **Data
-    Connectors** under **Configuration** section.
+10. 次のエクササイズに進み、30分後にまたチェックできる。
 
-      ![](./media/image44.png)    
+**タスク 4: Microsoft Defender for Cloud
+データコネクタを有効にします。**
 
-2.  In the **Data connectors** screen, type ```tenant``` in the search
-    bar, select the **Tenant-based Microsoft Defender for Cloud**
-    **(Preview)** connector and click on **Open connector page**.
+この演習では、Microsoft Defender for Cloud data
+connectorを有効にする方法を説明します。このコネクタを使用すると、Microsoft
+Defender for CloudからMicrosoft
+Sentinelにセキュリティアラートをストリームできるため、ワークブックでDefenderデータを表示したり、アラートを生成するためにクエリを実行したり、インシデントを調査して対応したりできます。
 
-      ![](./media/image53.png) 
+1.  **Microsoft Sentinel**ページで、**Configuration**セクションの**Data
+    Connectorsを**クリックします。
 
-      > **Note** - If you receive the error **Data Connector Not Found**, then navigate to **Content Hub** and then Reinstall the **Microsoft Defender for Cloud Connector** again. 
+    ![](./media/image44.png)
 
-      ![](./media/image68.png)
+2.  **Data connectors**画面で、検索バーにtenantと入力し、**Tenant-based
+    Microsoft Defender for Cloud (Preview)** コネクタを選択し、**Open
+    connector pageを**クリックします。
 
-      ![](./media/image69.png)
+    ![](./media/image53.png)
 
-3.  On the **Tenant-based Microsoft Defender for Cloud** **(Preview)**
-    connector page, under **Configuration** section click on the
-    **Connect** button.
+    <font color=red>
 
-      ![](./media/image54.png) 
+    > **注意** - **Data Connector Not
+    Foundという**エラーが表示された場合は、**Content
+    Hubに**移動し、**Microsoft Defender for Cloud
+    Connectorを**再インストールしてください。
 
-4.  You should receive the notification as **Connected successfully.**
+    </font>
 
-      ![](./media/image55.png) 
+    ![A black text on a white background ](./media/image54.png)
 
+    ![](./media/image55.png)
 
-5.  Wait for 1-2 minutes and then refresh the page, the Status of the
-    connector should also be updated to **Connected.**
+3.  **テナントベースの Microsoft Defender for Cloud (Preview)**
+    コネクタページで、**Configuration** セクションの **Connect**
+    ボタンをクリックします。
 
-      ![](./media/image56.png) 
+    ![](./media/image56.png)
 
+4.  **Connected
+    successfully（接続に成功した）**の通知が届くはずです**。**
 
-6.  Back on the **Data connectors** screen, type ```subscription``` in the
-    search bar, select the **Subscription-based Microsoft Defender for
-    Cloud** **(legacy)** connector and click on **Open connector page**.
+    ![](./media/image57.png)
 
-      ![](./media/image57.png)  
+5.  1～2分待ってからページを更新すると、コネクタのステータスも**Connectedに**更新されているはずです **。**
 
-7.  On the **Subscription-based Microsoft Defender for Cloud**
-    **(legacy)** connector page, under **Configuration** section, select
-    the **Azure Pass – Sponsorship** subscription and then click on the
-    **Connect** button.
+    ![](./media/image58.png)
 
-      ![](./media/image58.png)    
+6.  **Data
+    connectors**画面に戻り、SearchバーにSubscriptionと入力し、**Subscription-based
+    Microsoft Defender for Cloud (legacy)**コネクタを選択し、** Open
+    connector pageを**クリックします。
 
-8.  You should receive the notification as **Connected successfully**.
+    ![](./media/image59.png)
 
-      ![](./media/image59.png)  
+7.  **Subscription-based Microsoft Defender for
+    Cloud** **(legacy)** コネクタページの **\[Configuration\]**
+    セクションで、**Azure Pass - Sponsorship**
+    サブスクリプションを選択し、**\[Connect\]**
+    ボタンをクリックします。　　
 
+    ![](./media/image60.png)
 
-9.  The Status of the connector should also be updated to **Connected.**
+8.  **Connected successfully**の通知が届くはずです。　
 
-      ![](./media/image60.png)   
+    ![](./media/image61.png)
 
-# Exercise 3- Integration
+9.  コネクタの Status も **Connected** に更新する **。**
 
-As we have installed the Defend for Cloud connector, we should be able
-to see the Incident from Microsoft Defender for Cloud generated using
-the Sample Alerts.
+    ![](./media/image62.png)
 
-1.  While still on the **Microsoft Sentinel** page click
-    on **Incidents** under Threat management.
+**練習3-統合**
 
-      ![](./media/image61.png)  
+Defender for Cloudコネクタをインストールしたので、Sample
+Alertsを使用して生成されたMicrosoft Defender for
+CloudからのIncidentを見ることができるはずです。
 
-2.  As we have just enabled the **Microsoft Defender for Cloud**
-    connector, it would take about 20-30 minutes for the Incidents to appear.
+1.  **Microsoft
+    Sentinel**ページで、脅威管理の下の**Incidentsを**クリックします。　
 
-3.  Click on **Overview** under **General** and then toggle the **New
-    overview** switch to **Off**
+    ![](./media/image63.png)
 
-      ![](./media/image62.png)   
+2.  **Microsoft Defender for
+    Cloud**コネクタを有効にしたばかりなので、インシデントが表示されるまで約20～30分かかります。
 
+3.  **「General**」の「**Overview**」をクリックし、**「New
+    overview** **」** スイッチを「**Off**」に切り替えます。　
 
-4.  Once the switch is off, we should be able to see the **Sample
-    events** from Microsoft Defender for Cloud.
+    ![](./media/image64.png)
 
-      ![](./media/image63.png)   
+4.  スイッチがオフになると、Microsoft Defender for Cloudからの**Sample
+    eventsを**見ることができるはずです。
 
-5.  Click on **SecurityAlerts**
+    ![](./media/image65.png)
 
-      ![](./media/image64.png)     
+5.  **SecurityAlertsを**クリックします。
 
+    ![](./media/image66.png)
 
-6.  It should open the Log Analytic workspace and list all logs of
-    **Alerts** generated and synchronized from **Microsoft Defender for
-    Cloud**.
+6.  Log Analyticワークスペースが開き、**Microsoft Defender for
+    Cloudから**生成および同期された**Alertsの**すべてのログが一覧表示されます。
 
-      ![](./media/image65.png)    
+    ![](./media/image67.png)
 
-7.  Click on any **Alerts** to expand and list the details for the same.
+7.  **Alertsを**クリックすると、アラートの詳細が表示されます。
 
-      ![](./media/image66.png)    
+    ![](./media/image68.png)
 
-8.  On the alert expanded details you can see.
- 
-      <font color=darkred>
+8.  アラートの詳細が拡大されている。　
 
-    1.  TimeGenerated [UTC]
+    -  TimeGenerated \[UTC］
 
-    2.  Displayname
+    -  表示名
 
-    3.  AlertName
+    -  アラート名
 
-    4.  AlertSeverity
+    -  アラート重大度
 
-    5.  Description that explains the precise activity that was detected
+    -  検出された正確な活動を説明する記述
 
-    6.  ProviderName – Azure Security Center – the older name for
-        Microsoft Defender for Cloud
+    -  ProviderName - Azure Security Center (Microsoft Defender for Cloud の旧名称。)
 
-    7.  RemeditalSteps
+    -  リメディタステップ
 
-    8.  And other rows with additional information.
-      </font>
+    -  その他の行にも追加情報がある。
 
-      ![](./media/image67.png)    
+    ![ computer error ](./media/image69.png)
