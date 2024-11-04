@@ -14,8 +14,7 @@
     刀片上，通過頁面移動到 **Migration Tools** 部分，在  **Migration and
     modernization** 下選擇 **Discover**。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image1.png)
+    ![](./media-zh-cnt/image1.png)
 
 2.  在 **Discover** 刀片上，對於下拉式功能表 **Where do you want to
     migrate to?** ，選擇 **Azure Virtual Machines** 選項，在 " **Are
@@ -23,11 +22,10 @@ generated](./media-zh-cnt/image1.png)
 
 3.  在 **Target region** 功能表上，選擇 **West US 2**。
 
-> ![A close up of a text Description automatically
-> generated](./media-zh-cnt/image2.png)
->
-> **注意** - 確保目的地區域與之前在實驗室 1 中為 **AZMigrateRG**
-> 資源組指出的位置/區域**相同**。
+    ![A close up of a text](./media-zh-cnt/image2.png)
+
+    >  **注意** - 確保目的地區域與之前在實驗室 1 中為 **AZMigrateRG**
+    資源組指出的位置/區域**相同**。
 
 4.  選擇**確** **Confirm that the target region for migration is
     eastus** 核取方塊，然後選擇 **Create resources**。
@@ -37,17 +35,16 @@ generated](./media-zh-cnt/image1.png)
 6.  在 **Discover** 刀片上，在 **Prepare Hyper-V host servers** 下，選擇
     **Download** 字樣，*而不是後面的 "**下載 ***"*按鈕。*
 
-> ![](./media-zh-cnt/image3.png)
->
-> 將下載在 Hyper-V 伺服器上安裝複製提供程式的安裝程式。
+    ![](./media-zh-cnt/image3.png)
+
+    >  將下載在 Hyper-V 伺服器上安裝複製提供程式的安裝程式。
 
 7.  在**發現**刀片上，在 **1. Prepare Hyper-V host servers**, ，選擇
     **Download** 按鈕。
 
-> ![A screenshot of a computer Description automatically
-> generated](./media-zh-cnt/image4.png)
->
-> 將下載用於在專案中註冊 Hyper-V 主機的註冊金鑰。
+    ![computer](./media-zh-cnt/image4.png)
+
+    > 將下載用於在專案中註冊 Hyper-V 主機的註冊金鑰。
 
 8.  轉到 **Downloads** 檔案夾，然後選擇 **AzureSiteRecoveryProvider**
     檔啟動安裝程式。
@@ -61,50 +58,46 @@ generated](./media-zh-cnt/image1.png)
 
 11. 安裝完成後，選擇 **Register.**
 
-> 如果收到伺服器已註冊的消息，請選擇**重新 Register** 。
+    > 如果收到伺服器已註冊的消息，請選擇**重新 Register** 。
 
 12. 在 Azure Site Recovery 嚮導中，在 **Vault Settings**
     選項卡上， **Key file** 右側選擇 **Browse** 。
 
-> ![A screenshot of a computer Description automatically
-> generated](./media-zh-cnt/image5.png)
+    ![computer](./media-zh-cnt/image5.png)
 
 13. 轉到 **Downloads** 檔案夾，選擇 **az-migrate-project**
     文件，然後選擇 **Open** 。
 
-> ![A screenshot of a computer Description automatically
-> generated](./media-zh-cnt/image6.png)
->
-> 添加金鑰檔時，將填充金鑰檔、訂閱、Vault 名稱和 Hyper-V 網站名稱值。
+    ![computer](./media-zh-cnt/image6.png)
+
+    > 添加金鑰檔時，將填充金鑰檔、訂閱、Vault 名稱和 Hyper-V 網站名稱值。
 
 14. 選擇 **Next**。
 
 15. 在 **Proxy Settings** 選項卡上，接受預設設置，然後選擇 **Next** 。
 
-> 完成註冊最多需要 5 分鐘。
+    >  完成註冊最多需要 5 分鐘。
 
 16. 註冊完成後，選擇 **Finish**。
 
 17. 返回流覽器，在 **Discover** 刀片的 **2. Finalize
     registration**，選擇 **Finalize registration**。
 
-> ![A screenshot of a computer Description automatically
-> generated](./media-zh-cnt/image7.png)
->
-> 您可能需要 **refresh the page** 並重新選擇本任務開始時的選項，以啟用
-> "完成註冊 "按鈕。
+    ![computer](./media-zh-cnt/image7.png)
+
+    > 您可能需要 **refresh the page** 並重新選擇本任務開始時的選項，以啟用
+    "完成註冊 "按鈕。
 
 18. 註冊完成後，您將看到以下資訊。
 
-> ![A close up of a sign Description automatically
-> generated](./media-zh-cnt/image8.jpeg)
->
-> 發現虛擬機器可能需要 15
-> 分鐘才能完成，您可能需要刷新頁面才能看到消息。即使任務未完成，也請執行下一項任務。
+    ![A close up of a sign](./media-zh-cnt/image8.jpeg)
+
+ 發現虛擬機器可能需要 15
+ 分鐘才能完成，您可能需要刷新頁面才能看到消息。即使任務未完成，也請執行下一項任務。
 
 **任務 2：設置 Azure 資源**
 
-> 既然已經創建了 Azure Migrate 專案，就需要實施目標 Azure 環境。
+ 既然已經創建了 Azure Migrate 專案，就需要實施目標 Azure 環境。
 
 **Create a Virtual network**
 
@@ -117,13 +110,13 @@ generated](./media-zh-cnt/image1.png)
 
     - 資源組 - **AZMigrateRG**
 
-    - 虛擬網路名稱 - +++migration-vnet-XXXXXX+++ \[用亂數代替 XXXXXX\]
+    - 虛擬網路名稱 - `migration-vnet-XXXXXX` \[用亂數代替 XXXXXX\]
       虛擬網路 (VNet)
 
     -  **West US 2** 地區
 
-> **注意** - 確保區域與前面在實驗室 1 中為 **AZMigrateRG**
-> 資源組指出的位置/區域**相同**。
+    > **注意** - 確保區域與前面在實驗室 1 中為 **AZMigrateRG**
+    資源組指出的位置/區域**相同**。
 
 **Create a Storage account**
 
@@ -136,16 +129,16 @@ generated](./media-zh-cnt/image1.png)
 
     - 資源組 - AZMigrateRG
 
-    - 存儲帳戶名稱 - +++saXXXXXX+++ \[用亂數代替 XXXXXX］
+    - 存儲帳戶名稱 - `saXXXXXX` \[用亂數代替 XXXXXX］
 
     - **West US 2** 地區
 
-> **注意** - 確保區域與前面在實驗室 1 中為 **AZMigrateRG**
-> 資源組指出的位置/區域**相同**。
+    >  **注意** - 確保區域與前面在實驗室 1 中為 **AZMigrateRG**
+    資源組指出的位置/區域**相同**。
 
-- 性能 - **Standard**
+    - 性能 - **Standard**
 
-- 冗余 - **Locally-redundant storage (LRS)**
+    - 冗余 - **Locally-redundant storage (LRS)**
 
 4.  在 **Create a storage account** 頁面的
     **Networking** 選項卡上，設置以下設置，並將所有其他設置保留為預設值：
@@ -157,8 +150,7 @@ generated](./media-zh-cnt/image1.png)
 
     - Subnet - **default （10.0.0.0/24）**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media-zh-cnt/image9.png)
+    ![computer](./media-zh-cnt/image9.png)
 
 5.  在 **Data protection** 選項卡上，取消選中 **Enable soft delete for
     blobs**。將所有其他設置保留為預設值。
@@ -170,8 +162,7 @@ generated](./media-zh-cnt/image1.png)
 8.  展開 "資料管理"，選擇 **Data protection** ，然後取消選中 **Enable
     soft delete for blobs**，點擊 **Save** 按鈕。
 
-> ![A screenshot of a computer Description automatically
-> generated](./9403877940d3790c97d243e387927393087c7836.png)
+    ![computer](./media-zh-cnt/9403877940d3790c97d243e387927393087c7836.png)
 
 **Create a Public IP address**
 
@@ -186,37 +177,35 @@ generated](./media-zh-cnt/image1.png)
 
     - 地區 - **West US 2**
 
-> **注意** - 確保區域與前面在實驗室 1 中為 **AZMigrateRG**
-> 資源組指出的位置/區域**相同**。
+    > **注意** - 確保區域與前面在實驗室 1 中為 **AZMigrateRG**
+    資源組指出的位置/區域**相同**。
 
-- 姓名 - +++ipXXXXXX+++ \[用亂數代替 XXXXXX］
+    - 姓名 - `ipXXXXXX` \[用亂數代替 XXXXXX］
 
-- IP 版本 - **IPv4**
+    - IP 版本 - **IPv4**
 
-- SKU - **Basic**
+    - SKU - **Basic**
 
-- IP 位址分配 - **Static**
+    - IP 位址分配 - **Static**
 
-- 空閒超時（分鐘） - **4**
+    - 空閒超時（分鐘） - **4**
 
-- DNS 名稱標籤 - +++rhel-web-XXXXXX+++ \[用亂數代替 XXXXXX］
+    - DNS 名稱標籤 - `rhel-web-XXXXXX` \[用亂數代替 XXXXXX］
 
 4.  選擇 **Review + create**，然後 **create**
 
 **任務 3：配置 Hyper-V 虛擬機器的複製**
 
 1.  在 Edge 流覽器中打開一個新標籤頁並導航到 URL -
-    +++https://portal.azure.com/?feature.customportal=false&feature.canmodifystamps=true&microsoft_azure_migrate=migratecanary#view/Microsoft_Azure_Migrate/AmhResourceMenuBlade/~/getStarted+++
+    `https://portal.azure.com/?feature.customportal=false&feature.canmodifystamps=true&microsoft_azure_migrate=migratecanary#view/Microsoft_Azure_Migrate/AmhResourceMenuBlade/~/getStarted`
 
 2.  按一下 **Discover、 assess and migrate** 按鈕。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image11.png)
+    ![](./media-zh-cnt/image11.png)
 
 3.  在  **Migration and modernization** 部分，選擇 **Replicate**。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image12.png)
+    ![](./media-zh-cnt/image12.png)
 
 4.  您可能需要刷新顯示 **Azure Migrate Servers、 databases and web
     apps** 頁面的流覽器頁面。
@@ -260,16 +249,14 @@ generated](./media-zh-cnt/image12.png)
 11. 返回 "**Azure 遷移伺服器、資料庫和 Web 應用程式** "頁面，選擇
     "**刷新**"，然後在 "**遷移和現代化** "部分，選擇 "**概述**"。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image13.png)
+    ![](./media-zh-cnt/image13.png)
 
 12. 在 "遷移和現代化 "頁面的 "**複製** "部分，檢查複製機器清單中的
     "**狀態** "列。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image14.png)
+    ![](./media-zh-cnt/image14.png)
 
-等候狀態變為 "**受保護"**。這可能需要額外 15 分鐘。
+    > 等候狀態變為 "**受保護"**。這可能需要額外 15 分鐘。
 
 您需要刷新 "**遷移和現代化 複製機器** "以更新狀態資訊。
 
@@ -278,12 +265,11 @@ generated](./media-zh-cnt/image14.png)
 1.  在 Azure Portal 的 "**遷移和現代化 | 複製** "頁面中，選擇
     **RHEL-DB-01** 虛擬機器。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image15.png)
+    ![](./media-zh-cnt/image15.png)
 
 2.  在 **RHEL-DB-01** 頁面，選擇**測** **Test migration**。
 
-![](./media-zh-cnt/image16.png)
+    ![](./media-zh-cnt/image16.png)
 
 3.  選擇 **migration-vnet-XXXXXX** 虛擬網路，然後選擇**測 Test
     migration**。
@@ -297,9 +283,9 @@ generated](./media-zh-cnt/image15.png)
 6.  返回 **Migration and modernization Replicating machines**頁面。
     **Replication status** 應為 **Initiating test failover**
 
-![](./media-zh-cnt/image17.png)
+    ![](./media-zh-cnt/image17.png)
 
-等待**測試容錯移轉**完成。這可能需要 5-7 分鐘。
+    > 等待**測試容錯移轉**完成。這可能需要 5-7 分鐘。
 
 7.  返回 **Migration and modernization Replications** 頁面，選擇
     **Refresh** ，然後驗證兩台虛擬機器是否都處於 " **Cleanup test
@@ -312,29 +298,26 @@ generated](./media-zh-cnt/image15.png)
 
 9.  注意代表新複製的虛擬機器的條目。
 
-注意：最初，虛擬機器的名稱將由 **asr-temp**
-首碼和隨機生成的尾碼組成，但會自動重命名為 **RHEL-DB-01-test** 和
-**RHEL-WEB-01-test**。
+    > 注意：最初，虛擬機器的名稱將由 **asr-temp**
+    首碼和隨機生成的尾碼組成，但會自動重命名為 **RHEL-DB-01-test** 和
+    **RHEL-WEB-01-test**。
 
 10. 在**虛擬機器**頁面，選擇 **RHEL-WEB-01-test** 虛擬機器。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image18.png)
+    ![](./media-zh-cnt/image18.png)
 
 11. 在 **RHEL-WEB-01-test** 頁面的 **Settings**  下選擇 **Networking**。
 
 12. 在 **Networking** 刀片上，選擇網路介面 **nic-RHEL-WEB-01-00-test**
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image19.png)
+    ![](./media-zh-cnt/image19.png)
 
 13. 在 **nic-RHEL-WEB-01-00-test** 頁面，在 **"設置 "**下選擇 **"IP
     配置"**。
 
 14. 選擇 **nic-RHEL-WEB-01-00-test-ipConfig** 編輯 IP **配置**。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image20.png)
+    ![](./media-zh-cnt/image20.png)
 
 15. 在**編輯 IP 配置**刀片中，選中**關聯公共 IP
     位址核取方塊**，然後為 **Public IP address** 選擇 **ip43240741**。
@@ -343,17 +326,16 @@ generated](./media-zh-cnt/image20.png)
 
 17. 打開新的 Edge 標籤，轉到為公共 IP 分配的 **DNS name** ：
 
-> +++rhel-web-XXXXXX.westus2.cloudapp.azure.com+++++
+    `rhel-web-XXXXXX.westus2.cloudapp.azure.com`
 
 18. 驗證 RHEL-WEB-01-test 上託管的 Drupal 網站是否載入成功。
 
 19. 如果網站無法打開，請在虛擬機器的**網路設置**中創建一個**網路安全性群組**，並啟用**埠
     80**，如下圖所示。
 
-![](./media-zh-cnt/image21.png)
+    ![](./media-zh-cnt/image21.png)
 
-![A screenshot of a computer Description automatically
-generated](./b45e02540b0d40b862b56a1ef71fc116015ae4e1.png)
+    ![](./b45e02540b0d40b862b56a1ef71fc116015ae4e1.png)
 
 **Cleanup test migrations**
 
@@ -361,7 +343,7 @@ generated](./b45e02540b0d40b862b56a1ef71fc116015ae4e1.png)
 
 20. 選擇 **Clean up test migration** 操作。
 
-![](./media-zh-cnt/image23.png)
+    ![](./media-zh-cnt/image23.png)
 
 21. 將**備註**欄位留空，並選擇**測試已完成**核取方塊**。 Delete test
     virtual machine**，然後選擇 **Cleanup Test**
@@ -376,14 +358,13 @@ generated](./b45e02540b0d40b862b56a1ef71fc116015ae4e1.png)
 
 25. 等待 **Replication status 態**為 **Protected** 後再繼續。
 
-您可能需要在一兩分鐘後選擇 "**刷新** "才能看到更新。
+    > 您可能需要在一兩分鐘後選擇 "**刷新** "才能看到更新。
 
 **任務 5：執行遷移**
 
 1.  選擇 **RHEL-DB-01** 並觸發**遷移**操作。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image24.png)
+    ![](./media-zh-cnt/image24.png)
 
 2.  在 **"遷移** "頁面上，確保
     "**遷移前關閉機器以儘量減少資料丟失？**"選項設置為
@@ -396,7 +377,7 @@ generated](./media-zh-cnt/image24.png)
 5.  返回 "**遷移和現代化 | Replications** "頁面，選擇 "**刷新**
     "以監控遷移狀態。
 
-![](./media-zh-cnt/image25.png)
+    ![](./media-zh-cnt/image25.png)
 
 6.  讓 Edge 處於打開狀態，以便進行下一步操作。遷移將繼續處理。
 
@@ -409,7 +390,7 @@ generated](./media-zh-cnt/image24.png)
 1.  在 "**遷移和現代化 | 複製** "頁面上，驗證 "**狀態**
     "列是否顯示兩個虛擬機器**的計畫故障切換均已完成**。
 
-您可能需要選擇 "**刷新** "才能看到此更新。
+    > 您可能需要選擇 "**刷新** "才能看到此更新。
 
 2.  在 Azure Portal
     中，在**搜索**框中輸入虛擬機器，然後選擇**虛擬機器**。
@@ -420,14 +401,13 @@ generated](./media-zh-cnt/image24.png)
 
 5.  在**網路**刀片上，選擇網路介面 **nic-RHEL-WEB-01-00**
 
-![](./media-zh-cnt/image26.png)
+    ![](./media-zh-cnt/image26.png)
 
 6.  在 **nic-RHEL-WEB-01-00** 頁面的 "**設置 "**下選擇 **"IP 配置"**。
 
 7.  選擇 **nic-RHEL-WEB-01-00-ipConfig** 編輯 IP **配置**。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image27.png)
+    ![](./media-zh-cnt/image27.png)
 
 8.  在**編輯 IP 配置**刀片中，選中**關聯公共 IP
     位址核取方塊**，然後為**公共 IP 位址**選擇 **ip43240741**。
@@ -436,7 +416,7 @@ generated](./media-zh-cnt/image27.png)
 
 10. 打開新的 Edge 標籤，轉到為公共 IP 分配的 **DNS 名稱**：
 
-> +++rhel-web-XXXXXX.westus2.cloudapp.azure.com+++++
+    `rhel-web-XXXXXX.westus2.cloudapp.azure.com`
 
 11. 如果網站無法打開，請在虛擬機器的**網路設置**中創建**網路安全**性群組並啟用**埠
     80。**
@@ -446,5 +426,4 @@ generated](./media-zh-cnt/image27.png)
 13. 打開 **Hyper-V
     管理器**，注意兩個虛擬機器都已**關閉**。這些機器已成功遷移。
 
-![A screenshot of a computer Description automatically
-generated](./media-zh-cnt/image28.png)
+    ![](./media-zh-cnt/image28.png)
