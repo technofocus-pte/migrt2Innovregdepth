@@ -71,31 +71,19 @@ generated](./media-DE/image7.png)
 
 9.  Geben Sie den folgenden Befehl ein, um die Windows Server 2019
     Datacenter VM bereitzustellen
-
-    ` New-AzVm \`
-
-    -ResourceGroupName "PostgresRG" \`
-
-    -Name "PostgresSrv" \`
-
-    -Location "WestUS" \`
-
-    -VirtualNetworkName "PGVnet" \`
-
-    -SubnetName "PGSubnet" \`
-
-    -SecurityGroupName "PostgresNSG" \`
-
-    -Securitytype "Standard" \`
-
-    -PublicIpAddressName "PostgresSrvIP" \`
-
-    -ImageName
-    "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" \`
-
-    -Credential $cred \`
-
-    -Size "Standard_b2ms"`
+    # 
+        New-AzVm `
+            -ResourceGroupName "PostgresRG" `
+            -Name "PostgresSrv" `
+            -Location "WestUS" `
+            -VirtualNetworkName "PGVnet" `
+            -SubnetName "PGSubnet" `
+            -SecurityGroupName "PostgresNSG" `
+            -Securitytype "Standard" `
+            -PublicIpAddressName "PostgresSrvIP" `
+            -ImageName "Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest" `
+            -Credential $cred `
+            -Size "Standard_b2ms"
 
     ![A computer screen shot of a computer Description automatically
 generated](./media-DE/image9.png)
@@ -131,7 +119,7 @@ generated](./media-DE/image11.png)
 
     `sudo apt install -y postgresql-common`
 
-    `sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh `
+    `sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh`
 
     !](./media-DE/image14.png)
 
@@ -150,8 +138,7 @@ generated](./media-DE/image11.png)
 
     `sudo install -d /usr/share/postgresql-common/pgdg`
 
-    `sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
-    --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc`
+    `sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc`
 
     ![](./media-DE/image18.png)
 
@@ -361,7 +348,7 @@ generated](./media-DE/image40.png)
     > **Hinweis** - Ersetzen Sie den Befehl vor der Ausführung durch den
     **FQDN Ihrer Ububtu Server VM**, bevor Sie den Befehl ausführen. siehe
 
-    `scp "C:\Labfiles\dvdrental.tar"postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"`
+    `scp "C:\Labfiles\dvdrental.tar" postgres@FQDNofUbubtuServerVM:"dvdrentalbkp"`
 
     Wenn Sie aufgefordert werden, fortzufahren, geben Sie **"Yes"** und dann
 das Passwort ein - `P@55w.rd1234`
@@ -408,9 +395,9 @@ generated](./media-DE/image44.png)
 13. Wir können die Datenbankdetails überprüfen, indem wir die folgenden
     Befehle ausführen
 
-    `psql
+    `psql`
 
-    \c dvdrental`
+    `\c dvdrental`
 
     ![A screen shot of a computer Description automatically
 generated](./media-DE/image46.png)
