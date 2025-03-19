@@ -46,8 +46,7 @@ in order for discovery to identify the apps installed on them.
 
     Resource group – click on **Create new** `AZMigrateRG`
 
-    Project - `az-migrate-@lab.LabInstance.Id` [substitute XXXXXX with random
-    number]
+    Project - `az-migrate-@lab.LabInstance.Id`
 
     Geography - **United States**
 
@@ -66,8 +65,7 @@ in order for discovery to identify the apps installed on them.
 2.  On the **Discover** blade, on the **Are your Machines virtualized?** menu, select **Yes, with Hyper-V**.
 
 3.  Under **1. General product key**, in the **Name your
-    appliance** box, enter `HV-@lab.LabInstance.Id` substitute **XXXXX** with
-    the number used previously., then select **Generate key**.
+    appliance** box, enter `HV-@lab.LabInstance.Id`, then select **Generate key**.
 
     >**Note** - The key-generation process can take up to 2 minutes to complete.
 
