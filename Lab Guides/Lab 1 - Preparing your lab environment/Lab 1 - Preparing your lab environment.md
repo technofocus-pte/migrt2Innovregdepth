@@ -44,7 +44,7 @@ in order for discovery to identify the apps installed on them.
 
     Use the default values for any setting not specified in the table.
 
-    Resource group – click on **Create new** `AZMigrateRG`
+    Resource group – select **AZMigrateRG**
 
     Project - `az-migrate-@lab.LabInstance.Id`
 
