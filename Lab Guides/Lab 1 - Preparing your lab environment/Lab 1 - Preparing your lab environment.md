@@ -2,90 +2,14 @@
 
 ## Exercise 1: Preparing the lab environment
 
-## Task 0 – Setup the Azure Subscription
-
-1.  Login to the provided VM using the credential provided on the **Resources** tab of the Lab interface.
-
-    ![](./media/image61.png)
-
-2.  Open the edge browser and navigate to `http://www.microsoftazurepass.com`
-
-3.  Click the **Start** button to get started.
-
-    ![](./media/image62.png)
-
-    > <font color=Orangered> **Note**:  Do not use your **Company/Work Account** to login to redeem the Azure Pass, another Azure Pass will not be issued.</font>
-
-4.  Enter the **Office 365 Tenant credentials** provided on the **Resources/Home** tab of the Lab interface to complete the sign in process
-
-5.  Once the sign in process is completed, click on "**Confirm Microsoft Account**" if the correct email address is listed.
-
-    ![](./media/image63.png)
-
-6.  From the **Azure Promo Code** section on the **Resources** tab of the Lab interface, enter the **Promocode** in the Promo code box and click "**Claim Promo Code**".
-
-    ![](./media/image64.png)
-
-7.  It may take few seconds to process the redemption.
-
-    ![](./media/image65.png)
-
-8.  Enter the mandatory Profile information and select the check boxes and then click on "**Sign up**".
-
-    ![](./media/image66.png)
-
-9. You may be prompted to register and complete MFA authentication, proceed ahead with the MFA registration using **Microsoft Authenticator App** or **Phone method**.
-
-    ![](./media/image67.png)
-
-10. Once the Authentication is completed, click on the **Done** button.
-
-    ![](./media/image68.png)
-
-11.  On the feedback page, enter your feedback and click on **Submit**.
-    ![](./media/image69.png)
-
-12. It would automatically redirect you to the Azure Portal and now you are ready to use Azure services.
-    ![](./media/image70.png)
-
-
-13.  In the **Azure Portal** `https://portal.azure.com` search box type `subscriptions` and then click on **Subscriptions**
-    ![](./media/image71.png)
-
-14.  From the list of Subscriptions select the **Azure Pass –Sponsorship**. 
-    ![](./media/image72.png)
-
-15.  On the Azure Pass – Sponsorship page click on **Access control (IAM)**, then click on **+Add** drop-down and select **Add role assignment**. 
-    ![](./media/image73.png)
-
-16.  On the Add role assignment page, under the **Privileged administrator roles** tab select **Contributor** and then click on **Next**.
-    ![](./media/image74.png)
-
-17.  On the **Members** tab, click on **+ Select members**, then choose **MOD Administrator** and then click on the **Select** button. 
-    ![](./media/image75.png)
-
-18.  Click on **Review + assign** button.
-    ![](./media/image76.png)
-
-19.  Click on **Review + assign** button again
-
-
-
-     ![](./media/image77.png)
-
-
-20.  You should get the notification as shown in below image     
-
-     ![](./media/image78.png)
-
-21.  Click on the **Role assignments** tab to view the role assigned in the previous step. We can see the Users listed to whom the Contributor role was assigned.
-
-     ![](./media/image79.png)
-
 ## Task 1: Ensure the VMs are ready
 
 Hyper-V Integration Services must be installed and running on guest VMs
 in order for discovery to identify the apps installed on them.
+
+1.  Login to the provided VM using the credential provided on the **Resources** tab of the Lab interface.
+
+    ![](./media/image61.png)
 
 1.  Open the **Microsoft Edge** from the desktop, then go to the IP
     address of **RHEL-WEB-01**: `192.168.1.24`
@@ -122,7 +46,7 @@ in order for discovery to identify the apps installed on them.
 
     Resource group – click on **Create new** `AZMigrateRG`
 
-    Project - `az-migrate-XXXXXX` [substitute XXXXXX with random
+    Project - `az-migrate-@lab.LabInstance.Id` [substitute XXXXXX with random
     number]
 
     Geography - **United States**
@@ -142,7 +66,7 @@ in order for discovery to identify the apps installed on them.
 2.  On the **Discover** blade, on the **Are your Machines virtualized?** menu, select **Yes, with Hyper-V**.
 
 3.  Under **1. General product key**, in the **Name your
-    appliance** box, enter `HV-XXXXXX` substitute **XXXXX** with
+    appliance** box, enter `HV-@lab.LabInstance.Id` substitute **XXXXX** with
     the number used previously., then select **Generate key**.
 
     >**Note** - The key-generation process can take up to 2 minutes to complete.
@@ -232,71 +156,6 @@ in order for discovery to identify the apps installed on them.
 
 19. Leave Edge open for the next exercise. Discovery will continue
     processing.
-
-# Exercise 2: Enabling Microsoft Defender for Cloud
-
-## Task 1: Enable Microsoft Defender for Cloud
-
-1.  While in the Azure Portal, click on the Portal menu or from the home
-    page choose the Microsoft Defender for Cloud
-
-    ![A screenshot of a computer Description automatically
-    generated](./media/image6.png)
-
-2.  On the Notification – **You may be viewing limited information. To gettenant-wide visibility, click here -->** click on it.
-
-    ![](./media/image80.png)
-
-3.  On the **Get permissions** page, choose the **Security Admin** and
-    then click on **Get access** button.
-
-    ![](./media/image81.png)
-
-4.  You should get the notification as shown in below images
-
-    ![](./media/image82.png)
-
-    ![](./media/image83.png)
-
-
-5.  Refresh the browser and then in **Microsoft Defender for Cloud** page, under the **General** section,
-    navigate and click on **Getting started**. In the **Upgrade** tab,
-    navigate and click on the **Upgrade** button.
-
-    > <font color=Orangered> **Note**: You may need to wait for a few minutes for the upgrade to complete.</font>
-
-    ![A screenshot of a computer Description automatically
-    generated](./media/image7.png)
-
-## Task 2: Enable additional data collection setting for Defender for Cloud
-
-1.  On **Microsoft Defender for Cloud** page, navigate to **Management**
-    section and click on **Environment settings.**
-
-    > ![A screenshot of a computer Description automatically generated](./media/image11.png)
-
-2.  Scroll down and then expand **Tenant Root Group** and then click on the **Azure Pass – Sponsorship** Subscription listed.
-
-    ![A screenshot of a computer Description automatically generated](./media/image12.png)
-
-3.  Notice the Defender coverage is **11/12 plans** for the Subscription.
-
-4.  On **Settings | Defender plans** page, click on **Enable all plans.**
-
-    ![A screenshot of a computer Description automatically generated](./media/image13.png)
-
-5.  Select **Microsoft Defender for APIs Plan 1** and then click on
-    **Save** button.
-
-    ![A screenshot of a computer screen Description automatically generated](./media/image14.png)
-
-6.  Click on the **Save** button.
-
-    ![A screenshot of a computer Description automatically generated](./media/image15.png)
-
-7.  You should get the notifications as shown in below image.
-
-    ![A screenshot of a computer Description automatically generated](./media/image16.png)
 
 # Exercise 3: Create a Business case and run an assessment
 
