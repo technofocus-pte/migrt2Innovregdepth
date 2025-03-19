@@ -378,7 +378,7 @@ used for Migration.
 
     * Resource group – Click on Create new and provide name – `RG4AzPGDb`
 
-    * Server name - `ad4pfssrvXXXXX` substitute XXXXX with random number
+    * Server name - `ad4pfssrv@lab.LabInstance.Id`
 
     * Region – **West US**
 
@@ -528,6 +528,17 @@ used for Migration.
     tasks details.
 
     ![](./media/image69.png)
+
+    <font color=darkred>
+
+    * > Note - If the **LanguageValidation - failed** error appear, you can try to re-initiate migration again, if you are still facing then error, then please refer to following steps to refer how the migration could have been completed. 
+    
+        >You can **proceed/skip to the next Lab**.
+
+    </font>
+
+    ![](./media/image24a.png)
+
 
 15. On the **Migration** tab, it will show the migration status queued.
 

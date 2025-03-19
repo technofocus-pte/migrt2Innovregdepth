@@ -104,9 +104,7 @@ the target Azure environment.
 
     - Resource group- `AZMigrateRG`
 
-    - Virtual network name - `migration-vnet-XXXXXX` \[substitute
-    XXXXXX with random number\]
-
+    - Virtual network name - `migration-vnet-@lab.LabInstance.Id`
     - Region **West US 2**
 
     > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
@@ -122,8 +120,7 @@ the target Azure environment.
 
     - Resource group - `AZMigrateRG`
 
-    - Storage account name - `saXXXXXX` \[substitute XXXXXX with
-    random number\]
+    - Storage account name - `sa@lab.LabInstance.Id`
 
     - Region - **West US 2**
 
@@ -139,7 +136,7 @@ the target Azure environment.
 
     - Network Access - **Enable public access from selected virtual networks and IP addresses**
 
-    - Virtual network - **migration-vnet-XXXXXX**
+    - Virtual network - **migration-vnet-@lab.LabInstance.Id**
 
     - Subnets - **default (10.0.0.0/24)**
 
@@ -175,7 +172,7 @@ the target Azure environment.
 
         > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
 
-    - Name - `ipXXXXXX` \[substitute XXXXXX with random number\]
+    - Name - `ip@lab.LabInstance.Id`
 
     - IP Version - **IPv4**
 
@@ -185,7 +182,7 @@ the target Azure environment.
 
     - Idle timeout (minutes) - **4**
 
-    - DNS name label - `rhel-web-XXXXXX` \[substitute XXXXXX with random number\]
+    - DNS name label - `rhel-web-@lab.LabInstance.Id` 
 
 4.  Select **Review + create**, then **create**
 
@@ -224,9 +221,9 @@ the target Azure environment.
 
     - Resource group - **AZMigrateRG**
 
-    - Cache storage account - **saXXXXXX**
+    - Cache storage account - **sa@lab.LabInstance.Id**
 
-    - Virtual Network - **migration-vnet-XXXXXX**
+    - Virtual Network - **migration-vnet-@lab.LabInstance.Id**
 
     - Subnet - **Default**
 
@@ -267,14 +264,14 @@ machines** to update the status information.
 
     ![](./media/image15.png)
 
-3.  Select the **migration-vnet-XXXXXX** virtual network and then
+3.  Select the **migration-vnet-@lab.LabInstance.Id** virtual network and then
     select **Test migration**.
 
 4.  Go back to the **Migration and modernization Replicating
     machines** page, then select the **RHEL-WEB-01** virtual machine.
 
 5.  On the **RHEL-WEB-01** page, initiate a **Test migration** using
-    the **migration-vnet-XXXXXX** virtual network.
+    the **migration-vnet-@lab.LabInstance.Id** virtual network.
 
 6.  Go back to the **Migration and modernization Replicating
     machines** page. The **Replication status** should be **Initiating
@@ -327,7 +324,7 @@ machines** to update the status information.
 17. Open a new Edge tab and go to the **DNS name** you assigned to the
     public IP:
 
-    `rhel-web-XXXXXX.westus2.cloudapp.azure.com`
+    `rhel-web-@lab.LabInstance.Id.westus2.cloudapp.azure.com`
 
 18. Verify that the Drupal website hosted on RHEL-WEB-01-test loads.
 
@@ -422,7 +419,7 @@ the newly migrated RHEL-WEB-01 VM.
 
 9.  Select **Save** and wait for the association to complete.
 
-10. Open a new Edge tab and go to the **DNS name** you assigned to the public IP:     `rhel-web-XXXXXX.westus2.cloudapp.azure.com`
+10. Open a new Edge tab and go to the **DNS name** you assigned to the public IP:     `rhel-web-@lab.LabInstance.Id.westus2.cloudapp.azure.com`
 
 11. If the website does not open, then from the **Networking settings** of the Virtual Machine, create a **Network Security Group** and enable **Port 80** 
 
