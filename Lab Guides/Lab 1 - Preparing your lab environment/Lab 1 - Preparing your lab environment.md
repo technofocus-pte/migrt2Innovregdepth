@@ -44,7 +44,7 @@ in order for discovery to identify the apps installed on them.
 
     Use the default values for any setting not specified in the table.
 
-    Resource group – select **AZMigrateRG**
+    Resource group – click on **Create new** `AZMigrateRG`
 
     Project - `az-migrate-@lab.LabInstance.Id`
 
@@ -177,9 +177,9 @@ in order for discovery to identify the apps installed on them.
 
     - Business case name - `bc-43240741`
 
-    - Target location - **eastus**
+    - Target location - **West US**
 
-    - Migration strategy - **Azure recommended approach to minimize cost**
+    - Migration strategy - **Minimize migration time**
 
     - Savings options - **Reserved Instance + Azure Savings Plan**
 

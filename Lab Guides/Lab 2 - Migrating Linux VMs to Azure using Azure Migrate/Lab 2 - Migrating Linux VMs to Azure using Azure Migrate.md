@@ -102,7 +102,7 @@ the target Azure environment.
 
 3.  Use the following settings to create a virtual network.
 
-    - Resource group- `AZMigrateRG`
+    - Resource group - **AZMigrateRG**
 
     - Virtual network name - `migration-vnet-@lab.LabInstance.Id`
     - Region **West US 2**
@@ -118,13 +118,15 @@ the target Azure environment.
 
 3.  Use the following settings to create a storage account. Leave all other settings as their default values.
 
-    - Resource group - `AZMigrateRG`
+    - Resource group - **AZMigrateRG**
 
     - Storage account name - `sa@lab.LabInstance.Id`
 
     - Region - **West US 2**
 
     > <font color="red"> **Note** - Ensure that the Region is **same** as the Location / Region noted earlier in Lab 1 for the **AZMigrateRG** resource group.</font>
+
+    - Primary service - **Azure Blob storage or Azure Data Lake Storage Gen 2**
 
     - Performance - **Standard**
 
@@ -166,7 +168,7 @@ the target Azure environment.
 
 3.  Use the following settings to create a public IP.
 
-    - Resource group - `AZMigrateRG`
+    - Resource group - **AZMigrateRG**
 
     - Region - **West US 2**
 
