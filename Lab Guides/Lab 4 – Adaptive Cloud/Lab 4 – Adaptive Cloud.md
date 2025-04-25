@@ -13,7 +13,7 @@ devices.
 
     ![](./media/image61.png)
 
-2. Right-click on Star-men and select Windows PowerShell (Admin)
+2. Right-click on Start-men and select Windows PowerShell (Admin)
 
 3. Type the below commands to donwload the **Windows Server 2022 image**
 
