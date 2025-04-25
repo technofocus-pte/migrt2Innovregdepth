@@ -28,7 +28,7 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
     deploying.
 
 6.  On the **Discover** blade, under **Prepare Hyper-V host servers**,
-    select the word **Download**, *not the **Download** button after
+    Click on **Download**, *not the **Download** button after
     it.*
 
     ![](./media/image3.png)
