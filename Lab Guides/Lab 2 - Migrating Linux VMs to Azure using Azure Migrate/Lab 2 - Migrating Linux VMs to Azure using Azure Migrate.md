@@ -75,7 +75,7 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
 
 16. Once the registration is complete, select **Finish**.
 
-17. Back in the browser, on the **Discover** blade, under **2. Finalize registration**, select word **Finalize registration**.
+17. Back in the browser, on the **Discover** blade, under **2. Finalize registration**, Click on **Finalize registration** button.
 
     ![](./media/image25.png)
 
