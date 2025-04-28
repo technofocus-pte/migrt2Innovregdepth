@@ -23,7 +23,7 @@ devices.
 
     `cd` then press the **Tab** key to auto populate the name of the folder, then press Enter key.
 
-    `azcopy copy "https://migrinnovregnlarcdepstrg.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"`
+    `azcopy copy "https://strg4vmimages2024.blob.core.windows.net/images/WinSrv20224Arc.zip" "C:\Users\Administrator\Downloads"`
 
 
     <font color=Darkgreen>
