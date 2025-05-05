@@ -1,4 +1,4 @@
-# Lab 3 - Migrating PostgreSQL to Azure.
+# Lab 4 - Migrating PostgreSQL to Azure.
 
 **Objective**
 
