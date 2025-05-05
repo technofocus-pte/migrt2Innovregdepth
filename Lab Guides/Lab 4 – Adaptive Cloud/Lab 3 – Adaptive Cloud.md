@@ -1,4 +1,4 @@
-# Lab 4 – Adaptive Cloud
+# Lab 3 – Adaptive Cloud
 
 ## Objective
 
