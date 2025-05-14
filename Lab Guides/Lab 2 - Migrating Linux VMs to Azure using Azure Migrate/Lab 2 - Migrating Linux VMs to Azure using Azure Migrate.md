@@ -178,7 +178,11 @@ the target Azure environment.
 
     - IP Version - **IPv4**
 
-    - SKU - **Basic**
+    - SKU - **Standard**
+
+    - Availability zone - from the drop-down select **No Zone**
+
+    - Tier - **Regional**
 
     - IP address assignment - **Static**
 

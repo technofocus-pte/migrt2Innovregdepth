@@ -238,17 +238,6 @@ devices.
 
     ![](./media/image37.png)
 
-10. Back on the **Overview** page, click on Security
-
-    ![](./media/image38.png)
-
-    >**Note**– We had enabled **Microsoft Defender for Cloud** earlier, we should be able to see the recommendations in about 30 minutes for the Server as it was recently onboarded.
-
-11. Once the recommendations for the on-boarded
-    server are available they should appear as shown in the below image.
-
-    ![](./media/image39.png)
-
 12. Back on the **Overview** page, click on **Updates**
 
     ![](./media/image40.png)
