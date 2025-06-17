@@ -45,6 +45,14 @@ In this Lab we will Migrate the Linux VM workload from our On-premise using the 
 8.  Go to the **Downloads** folder then select
     the **AzureSiteRecoveryProvider** file to launch the installer.
 
+    <font color=darkred>
+
+    > **Note** - If the setup does not start, open the Task manager, select the Details tab and choose the process **SetupDR.EXE** right-click on it and select End task and then select **AzureSiteRecoveryProvider.exe** right-click on it and select End task
+
+    </font>
+
+
+
 9.  In the Azure Site Recovery Provider setup (Hyper-V server) window, on the **Microsoft Update** tab, select **On (recommended)**, then select **Next**.
 
 10. On the **Installation** tab, accept the default Installation Location, then select **Install**.
@@ -235,9 +243,15 @@ the target Azure environment.
 
 9.  On the **Compute** tab of the Replicate page, use the following settings on both VMs:
 
+    - VM Security Type - **Standard**
+    
     - Azure VM Size - **Standard_D2s_v3**
 
     - OS Type - **Linux**
+
+    - Operating system - **Red Hat Enterprise Linux 7**
+
+    ![](./media/image11a.png)
 
 10. Leave the settings in the remaining tabs at their defaults and
     select **Replicate**.
